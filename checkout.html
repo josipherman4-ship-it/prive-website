@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Privé Academy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="brand_assets/Prive_LOGO_bel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
+          alice: '#eff8ff',
+          nightrider: '#2b2b2b',
+          mustard: '#c0b905',
+        },
+        fontFamily: {
+          display: ['"Bodoni Moda"', 'Didot', 'serif'],
+          sans: ['Montserrat', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<!-- =====================================================================
+     FB PIXEL: insert ID
+     Uncomment and replace INSERT_PIXEL_ID when the pixel exists.
+     InitiateCheckout fires on load — see the page script at the end.
+     =====================================================================
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'INSERT_PIXEL_ID');
+  fbq('track', 'PageView', { build: 'US' });   // FB PIXEL EVENT — PageView
+</script>
+-->
+
+<style>
+  body { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Bodoni Moda', Didot, serif; }
+
+  .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #013559; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 17px 38px; border-radius: 9999px; border: none; cursor: pointer; width: 100%; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease, background 300ms ease; box-shadow: 0 10px 24px -8px rgba(1,53,89,0.45); }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.01); background: #012842; box-shadow: 0 16px 32px -8px rgba(1,53,89,0.55); }
+  .btn-primary:active { transform: translateY(0) scale(0.99); }
+  .btn-primary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .card-elevated { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); }
+
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
+
+  .field-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(1,53,89,0.7); font-weight: 500; }
+  .field-input { margin-top: 8px; width: 100%; background: #fff; border: 1px solid rgba(1,53,89,0.15); padding: 13px 16px; font-size: 14.5px; border-radius: 4px; transition: border-color 200ms ease, box-shadow 200ms ease; }
+  .field-input:focus { outline: none; border-color: #013559; box-shadow: 0 0 0 3px rgba(1,53,89,0.08); }
+  .field-input::placeholder { color: rgba(43,43,43,0.35); }
+
+  .pay-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; border: 1.5px solid rgba(1,53,89,0.15); font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(1,53,89,0.6); cursor: pointer; transition: border-color 200ms ease, color 200ms ease, background 200ms ease; }
+  .pay-tab.active { border-color: #013559; color: #013559; background: #eff8ff; }
+  .pay-tab:focus-visible { outline: 2px solid #c0b905; outline-offset: 2px; }
+
+  /* Payment-plan selector — deliberately large, selectable cards, not fine print.
+     The instalment condition is printed on the control itself. */
+  .plan-card { position: relative; display: block; cursor: pointer; border: 1.5px solid rgba(1,53,89,0.18); background: #fff; padding: 22px 22px 22px 56px; border-radius: 6px; transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease; }
+  .plan-card:hover { border-color: rgba(1,53,89,0.45); }
+  .plan-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .plan-card .plan-dot { position: absolute; left: 20px; top: 24px; width: 20px; height: 20px; border-radius: 9999px; border: 1.5px solid rgba(1,53,89,0.35); transition: border-color 200ms ease; }
+  .plan-card .plan-dot::after { content: ""; position: absolute; inset: 4px; border-radius: 9999px; background: #013559; transform: scale(0); transition: transform 220ms cubic-bezier(0.34,1.56,0.64,1); }
+  .plan-card.selected { border-color: #013559; background: #eff8ff; box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 10px 24px -12px rgba(1,53,89,0.35); }
+  .plan-card.selected .plan-dot { border-color: #013559; }
+  .plan-card.selected .plan-dot::after { transform: scale(1); }
+  .plan-card:focus-within { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  ::selection { background: #c0b905; color: #013559; }
+</style>
+</head>
+<body class="bg-alice text-nightrider antialiased">
+
+<!-- The "Preview Mode" banner has been removed. Do not reinstate it. -->
+
+<!-- ================= MINIMAL HEADER ================= -->
+<header class="bg-navy border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html#top" class="flex items-center group" aria-label="Privé Academy home">
+        <img src="brand_assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-11 w-11 transition-transform duration-300 group-hover:rotate-[8deg]">
+      </a>
+      <div class="flex items-center gap-2 text-white/70 text-[12px] font-medium tracking-[0.04em] uppercase">
+        <svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="8" width="11" height="8" rx="1.5"/><path d="M6 8V5.5a3 3 0 016 0V8" stroke-linecap="round"/></svg>
+        Secure Checkout
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-14 lg:py-20">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+
+    <div class="max-w-2xl">
+      <div class="eyebrow">Checkout</div>
+      <h1 class="mt-2 font-display font-medium text-navy text-[28px] sm:text-[34px] leading-tight">Complete Your Enrollment</h1>
+      <p class="mt-2 text-nightrider/60 text-[14.5px]">Instant access to the curriculum. Your device ships to the address below.</p>
+    </div>
+
+    <form id="checkout-form" class="mt-10 grid lg:grid-cols-[1fr_400px] gap-10 items-start" novalidate>
+
+      <!-- ============ LEFT: FORM ============ -->
+      <div class="space-y-8">
+
+        <div class="bg-white p-7 sm:p-9 card-elevated">
+          <h2 class="font-display text-navy text-xl">Contact Information</h2>
+          <div class="mt-6 grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="field-label" for="co-first">First Name</label>
+              <input type="text" id="co-first" name="first_name" required autocomplete="given-name" class="field-input" placeholder="Jane">
+            </div>
+            <div>
+              <label class="field-label" for="co-last">Last Name</label>
+              <input type="text" id="co-last" name="last_name" required autocomplete="family-name" class="field-input" placeholder="Doe">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-email">Email Address</label>
+              <input type="email" id="co-email" name="email" required autocomplete="email" class="field-input" placeholder="jane@email.com">
+            </div>
+            <div class="sm:col-span-2">
+              <!-- Phone is REQUIRED. It is the sales channel. -->
+              <label class="field-label" for="co-phone">Phone Number</label>
+              <input type="tel" id="co-phone" name="phone" required autocomplete="tel" class="field-input" placeholder="+1 (555) 000-0000">
+              <p class="mt-2 text-[12.5px] text-nightrider/50 leading-relaxed">We use this if there's a problem with your order or your shipment. Not for marketing calls.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 sm:p-9 card-elevated">
+          <h2 class="font-display text-navy text-xl">Shipping Address</h2>
+          <p class="mt-1 text-[13px] text-nightrider/55">Your Plamere Premium device ships here.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-5">
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-country">Country</label>
+              <select class="field-input" id="co-country" name="country" required autocomplete="country-name">
+                <option value="">Select your country</option>
+                <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option>
+                <option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burundi</option>
+                <option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>Congo (Democratic Republic)</option><option>Costa Rica</option><option>Côte d'Ivoire</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czechia</option>
+                <option>Denmark</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option>
+                <option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Eswatini</option><option>Ethiopia</option>
+                <option>Fiji</option><option>Finland</option><option>France</option>
+                <option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option>
+                <option>Haiti</option><option>Honduras</option><option>Hong Kong</option><option>Hungary</option>
+                <option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option>
+                <option>Jamaica</option><option>Japan</option><option>Jordan</option>
+                <option>Kazakhstan</option><option>Kenya</option><option>Kiribati</option><option>Kosovo</option><option>Kuwait</option><option>Kyrgyzstan</option>
+                <option>Laos</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option>
+                <option>Macao</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Micronesia</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Myanmar</option>
+                <option>Namibia</option><option>Nauru</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>North Macedonia</option><option>Norway</option>
+                <option>Oman</option>
+                <option>Pakistan</option><option>Palau</option><option>Palestine</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option>
+                <option>Qatar</option>
+                <option>Romania</option><option>Russia</option><option>Rwanda</option>
+                <option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>Samoa</option><option>San Marino</option><option>São Tomé and Príncipe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Korea</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option>Switzerland</option><option>Syria</option>
+                <option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Tonga</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Türkiye</option><option>Turkmenistan</option><option>Tuvalu</option>
+                <option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Uruguay</option><option>Uzbekistan</option>
+                <option>Vanuatu</option><option>Vatican City</option><option>Venezuela</option><option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Zambia</option><option>Zimbabwe</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-street">Street Address</label>
+              <input type="text" id="co-street" name="street" required autocomplete="street-address" class="field-input" placeholder="123 Main Street">
+            </div>
+            <div>
+              <label class="field-label" for="co-city">City</label>
+              <input type="text" id="co-city" name="city" required autocomplete="address-level2" class="field-input" placeholder="City">
+            </div>
+            <div>
+              <label class="field-label" for="co-region">State / Region</label>
+              <input type="text" id="co-region" name="region" required autocomplete="address-level1" class="field-input" placeholder="State or region">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-postal">Postal Code</label>
+              <input type="text" id="co-postal" name="postal" required autocomplete="postal-code" class="field-input" placeholder="00000">
+            </div>
+          </div>
+          <!-- [US] shipping line. The EU build states European shipping instead. -->
+          <p class="mt-5 text-[12.5px] text-nightrider/55 leading-relaxed italic">Ships within the United States. Delivery timing is confirmed by email once your order is placed.</p>
+        </div>
+
+        <!-- ============ PAYMENT PLAN SELECTOR ============ -->
+        <div class="bg-white p-7 sm:p-9 card-elevated">
+          <h2 class="font-display text-navy text-xl">Choose Your Payment Plan</h2>
+
+          <div class="mt-6 space-y-4">
+            <label class="plan-card selected" data-plan="full">
+              <input type="radio" name="payment_plan" value="full" checked>
+              <span class="plan-dot" aria-hidden="true"></span>
+              <span class="block font-display text-navy text-[19px]">Pay in full</span>
+              <span class="mt-1.5 block text-[15px] text-nightrider/80"><strong class="text-navy">$3,000</strong> today.</span>
+              <span class="mt-2 block text-[13.5px] text-nightrider/65 leading-relaxed">Your device ships promptly after your order.</span>
+            </label>
+
+            <label class="plan-card" data-plan="instalment">
+              <input type="radio" name="payment_plan" value="instalment">
+              <span class="plan-dot" aria-hidden="true"></span>
+              <span class="block font-display text-navy text-[19px]">3 monthly payments</span>
+              <span class="mt-1.5 block text-[15px] text-nightrider/80"><strong class="text-navy">3 × $1,000.</strong> Total <strong class="text-navy">$3,000</strong>. Same price — no interest, no fee, no uplift.</span>
+              <span class="mt-2 block text-[13.5px] text-nightrider/80 leading-relaxed"><strong class="text-navy">Your device ships after your third and final payment.</strong> You get full access to the curriculum, the demonstrations and the Advance module immediately — the hardware follows the final payment.</span>
+            </label>
+          </div>
+
+          <p id="plan-confirm" class="mt-5 hidden items-start gap-2.5 bg-alice border-l-2 border-mustard p-4 text-[13.5px] text-navy leading-relaxed">
+            <span>You've selected the three-payment plan. Your device ships after payment 3.</span>
+          </p>
+        </div>
+
+        <div class="bg-white p-7 sm:p-9 card-elevated">
+          <div class="flex items-center justify-between">
+            <h2 class="font-display text-navy text-xl">Payment Method</h2>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4" aria-hidden="true"><rect x="3.5" y="8" width="11" height="8" rx="1.5"/><path d="M6 8V5.5a3 3 0 016 0V8" stroke-linecap="round"/></svg>
+          </div>
+
+          <div class="mt-6 flex gap-3">
+            <button type="button" id="tab-card" class="pay-tab active">
+              <svg width="18" height="14" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="22" height="16" rx="2"/><path d="M1 6.5h22" stroke-linecap="round"/></svg>
+              Card
+            </button>
+            <button type="button" id="tab-paypal" class="pay-tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 4h8a4 4 0 014 4c0 3-2 5-5 5H9l-1 6H4L7 4z"/></svg>
+              PayPal
+            </button>
+          </div>
+
+          <div id="card-fields" class="mt-6 grid sm:grid-cols-2 gap-5">
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-card">Card Number</label>
+              <input type="text" id="co-card" inputmode="numeric" autocomplete="off" class="field-input" placeholder="4242 4242 4242 4242">
+            </div>
+            <div>
+              <label class="field-label" for="co-exp">Expiry Date</label>
+              <input type="text" id="co-exp" autocomplete="off" class="field-input" placeholder="MM / YY">
+            </div>
+            <div>
+              <label class="field-label" for="co-cvc">CVC</label>
+              <input type="text" id="co-cvc" inputmode="numeric" autocomplete="off" class="field-input" placeholder="123">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="co-cardname">Name On Card</label>
+              <input type="text" id="co-cardname" autocomplete="off" class="field-input" placeholder="Jane Doe">
+            </div>
+          </div>
+
+          <div id="paypal-fields" class="mt-6 hidden bg-alice p-6 text-center text-[14px] text-nightrider/70">
+            You'll be redirected to PayPal to complete your payment securely.
+          </div>
+
+          <p class="mt-6 flex items-start gap-2 text-[12.5px] text-nightrider/45 leading-relaxed">
+            <svg class="mt-0.5 shrink-0" width="14" height="14" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3.5" y="8" width="11" height="8" rx="1.5"/><path d="M6 8V5.5a3 3 0 016 0V8" stroke-linecap="round"/></svg>
+            Your payment details are encrypted and never stored on our servers.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ============ RIGHT: ORDER SUMMARY ============ -->
+      <div class="lg:sticky lg:top-8 space-y-6">
+        <div class="bg-white p-7 sm:p-8 card-elevated">
+          <div class="flex gap-4 pb-6 border-b border-navy/10">
+            <div class="w-16 h-16 rounded-sm bg-navy shrink-0 flex items-center justify-center">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#C0B905" stroke-width="1.3" aria-hidden="true"><circle cx="13" cy="13" r="10"/><path d="M13 8v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display text-navy text-[17px] leading-snug">Fibroblast Specialist Certification</h3>
+              <p class="mt-1 text-[12.5px] text-nightrider/50">Online course · Plamere Premium device included</p>
+            </div>
+          </div>
+
+          <!-- [UNSOURCED — needs Josip: USD line-item split between
+               "Certification & Curriculum" and "Plamere Premium Device".
+               Only the EUR split (€1,630 / €1,160) exists. The rows are omitted
+               here rather than invented; restore them once the USD split is
+               confirmed. The refund clause below depends on this figure. -->
+
+          <div class="mt-6 pt-1 flex justify-between items-baseline">
+            <span class="font-display text-navy text-lg">Total</span>
+            <span id="summary-total" class="font-display text-navy text-2xl">$3,000</span>
+          </div>
+          <p id="summary-note" class="mt-1 text-[12px] text-nightrider/50">One payment</p>
+
+          <div id="summary-due" class="mt-4 pt-4 border-t border-navy/10 hidden justify-between items-baseline">
+            <span class="text-[13px] uppercase tracking-[0.08em] text-navy/70 font-semibold">Due today</span>
+            <span id="summary-due-amount" class="font-display text-navy text-xl">$1,000</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 sm:p-8 card-elevated">
+          <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Included</div>
+          <ul class="mt-4 space-y-2.5">
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Full theory curriculum + 4+ hours of live Master Trainer demonstrations</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Plamere Premium device, CE-certified, shipped to you</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Privé aftercare product line, pre-treatment creams, applicators</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Textbook and promotional material</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Guided practical assignments with direct trainer review</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Live one-to-one call with a Master Trainer</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Bonus: Plasma Soft-Lifting Advance module</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Official Privé Fibroblast Specialist certificate</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-[13.5px] text-nightrider/75">Lifetime access, no upgrade fees</span>
+            </li>
+          </ul>
+        </div>
+
+        <p id="checkout-error" class="hidden text-[13px] text-red-700 leading-relaxed" role="alert"></p>
+
+        <button type="submit" id="submit-btn" class="btn-primary">Complete Enrollment — $3,000</button>
+        <p class="text-center text-[11.5px] text-nightrider/45 leading-relaxed">By completing this purchase you agree to our <a href="#" class="underline hover:text-navy transition-colors">Terms</a> and <a href="#" class="underline hover:text-navy transition-colors">Refund Policy</a>. The device portion of your enrolment is refundable; the course content is non-refundable once purchased. If you selected the three-payment plan, your device ships after the final payment.</p>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<!-- ================= SLIM FOOTER ================= -->
+<footer class="bg-nightrider text-white/50">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.06em] uppercase">
+    <span>&copy; 2026 Privé Academy. All rights reserved.</span>
+    <div class="flex items-center gap-6">
+      <a href="online-course.html" class="hover:text-white transition-colors">Back To Course</a>
+      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-white transition-colors">Terms</a>
+      <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const BUILD = 'US';
+  const CURRENCY = 'USD';
+  const TOTAL = 3000;
+  const INSTALMENT = 1000;
+  const fmt = (n) => '$' + n.toLocaleString('en-US');
+
+  // FB PIXEL EVENT — InitiateCheckout, fires on load with value and currency.
+  // fbq('track', 'InitiateCheckout', { value: TOTAL, currency: CURRENCY, build: BUILD, content_name: 'Fibroblast Online Certification' });
+
+  // ---- Payment method tabs ----
+  const tabCard = document.getElementById('tab-card');
+  const tabPaypal = document.getElementById('tab-paypal');
+  const cardFields = document.getElementById('card-fields');
+  const paypalFields = document.getElementById('paypal-fields');
+
+  tabCard.addEventListener('click', () => {
+    tabCard.classList.add('active');
+    tabPaypal.classList.remove('active');
+    cardFields.classList.remove('hidden');
+    paypalFields.classList.add('hidden');
+  });
+  tabPaypal.addEventListener('click', () => {
+    tabPaypal.classList.add('active');
+    tabCard.classList.remove('active');
+    paypalFields.classList.remove('hidden');
+    cardFields.classList.add('hidden');
+  });
+
+  // ---- Payment plan selector ----
+  // Updates the order total, the "due today" line, the confirmation line and the
+  // submit button text live with the selection.
+  const planCards = document.querySelectorAll('.plan-card');
+  const planConfirm = document.getElementById('plan-confirm');
+  const summaryTotal = document.getElementById('summary-total');
+  const summaryNote = document.getElementById('summary-note');
+  const summaryDue = document.getElementById('summary-due');
+  const summaryDueAmount = document.getElementById('summary-due-amount');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function applyPlan(plan) {
+    planCards.forEach((c) => c.classList.toggle('selected', c.dataset.plan === plan));
+
+    if (plan === 'instalment') {
+      summaryTotal.textContent = fmt(TOTAL);
+      summaryNote.textContent = '3 × ' + fmt(INSTALMENT) + ' · same price, no interest or fee';
+      summaryDue.classList.remove('hidden');
+      summaryDue.classList.add('flex');
+      summaryDueAmount.textContent = fmt(INSTALMENT);
+      planConfirm.classList.remove('hidden');
+      planConfirm.classList.add('flex');
+      submitBtn.textContent = 'Start Plan — First Payment ' + fmt(INSTALMENT);
+    } else {
+      summaryTotal.textContent = fmt(TOTAL);
+      summaryNote.textContent = 'One payment';
+      summaryDue.classList.add('hidden');
+      summaryDue.classList.remove('flex');
+      planConfirm.classList.add('hidden');
+      planConfirm.classList.remove('flex');
+      submitBtn.textContent = 'Complete Enrollment — ' + fmt(TOTAL);
+    }
+  }
+
+  document.querySelectorAll('input[name="payment_plan"]').forEach((input) => {
+    input.addEventListener('change', () => applyPlan(input.value));
+  });
+  applyPlan('full');
+
+  // ---- Submit ----
+  // Demo only — no payment processor connected. Validates required fields,
+  // then hands off to the buyer thank-you state carrying the payment type so the
+  // Purchase event there can record it.
+  const errorBox = document.getElementById('checkout-error');
+  document.getElementById('checkout-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorBox.classList.add('hidden');
+
+    const required = document.querySelectorAll('#checkout-form [required]');
+    let firstInvalid = null;
+    required.forEach((el) => {
+      const bad = !el.value.trim() || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+      el.style.borderColor = bad ? '#b91c1c' : '';
+      if (bad && !firstInvalid) firstInvalid = el;
+    });
+
+    if (firstInvalid) {
+      errorBox.textContent = 'Please complete every required field before continuing.';
+      errorBox.classList.remove('hidden');
+      firstInvalid.focus();
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const plan = document.querySelector('input[name="payment_plan"]:checked').value;
+    window.location.href = 'thank-you.html?plan=' + encodeURIComponent(plan)
+      + '&build=' + encodeURIComponent(BUILD.toLowerCase());
+  });
+</script>
+</body>
+</html>

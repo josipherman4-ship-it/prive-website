@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Detail Pack Is On Its Way — Privé Academy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="brand_assets/Prive_LOGO_bel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
+          alice: '#eff8ff',
+          nightrider: '#2b2b2b',
+          mustard: '#c0b905',
+        },
+        fontFamily: {
+          display: ['"Bodoni Moda"', 'Didot', 'serif'],
+          sans: ['Montserrat', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<!-- =====================================================================
+     FB PIXEL: insert ID
+     Uncomment and replace INSERT_PIXEL_ID when the pixel exists.
+     Lead fires here carrying which opt-in placement it came from and the
+     optional "where are you now?" segment — see the page script at the end.
+     =====================================================================
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'INSERT_PIXEL_ID');
+  fbq('track', 'PageView');   // FB PIXEL EVENT — PageView
+</script>
+-->
+
+<style>
+  body { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Bodoni Moda', Didot, serif; }
+
+  .grain { position: relative; }
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: transparent; color: #013559; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 15px 38px; border: 1.5px solid rgba(1,53,89,0.45); border-radius: 9999px; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease, border-color 300ms ease; }
+  .btn-outline:hover { transform: translateY(-2px); background: #013559; color: #fff; border-color: #013559; }
+  .btn-outline:active { transform: translateY(0); }
+  .btn-outline:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .card-elevated { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); }
+
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
+  .rule-mustard { width: 48px; height: 1px; background: #c0b905; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .check-pop { animation: pop 600ms cubic-bezier(0.34,1.56,0.64,1) 200ms both; }
+  @keyframes pop { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  ::selection { background: #c0b905; color: #013559; }
+</style>
+</head>
+<body class="bg-white text-nightrider antialiased">
+
+<!-- ================= MINIMAL HEADER ================= -->
+<header class="bg-navy border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-center h-20">
+      <a href="index.html#top" class="flex items-center group" aria-label="Privé Academy home">
+        <img src="brand_assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-12 w-12 transition-transform duration-300 group-hover:rotate-[8deg]">
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========== CONFIRMATION ========== -->
+  <section class="grain relative bg-navy text-white overflow-hidden pt-16 pb-20 lg:pb-24">
+    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none" width="620" height="620" viewBox="0 0 520 520" aria-hidden="true">
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
+        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="324.7" y1="286.8" x2="398.6" y2="317.4"/>
+        <line x1="309.5" y1="309.5" x2="366.1" y2="366.1"/><line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/>
+        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/>
+        <line x1="210.5" y1="309.5" x2="153.9" y2="366.1"/><line x1="195.3" y1="286.8" x2="121.4" y2="317.4"/>
+        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/>
+        <line x1="210.5" y1="210.5" x2="153.9" y2="153.9"/><line x1="233.2" y1="195.3" x2="202.6" y2="121.4"/>
+        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="286.8" y1="195.3" x2="317.4" y2="121.4"/>
+        <line x1="309.5" y1="210.5" x2="366.1" y2="153.9"/><line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/>
+      </g>
+    </svg>
+
+    <div class="relative max-w-xl mx-auto px-6 text-center">
+      <div class="check-pop mx-auto w-20 h-20 rounded-full bg-white flex items-center justify-center">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#013559" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="eyebrow mt-8">Detail Pack On Its Way</div>
+      <h1 class="mt-3 font-display font-medium text-[32px] sm:text-[40px] leading-tight">Check Your Inbox. Then Expect a Call.</h1>
+    </div>
+  </section>
+
+  <!-- ========== TWO THINGS ARE HAPPENING ========== -->
+  <section class="bg-alice py-20 lg:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center reveal in">
+        <div class="eyebrow">What Happens Now</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[26px] sm:text-[32px] leading-tight">Two Things Are Happening</h2>
+      </div>
+
+      <div class="mt-10 space-y-5">
+        <div class="reveal in bg-white p-7 sm:p-8 card-elevated grid sm:grid-cols-[auto_1fr] gap-5 sm:gap-8" style="transition-delay:40ms">
+          <div class="font-display text-4xl text-mustard/70 leading-none">01</div>
+          <div>
+            <h3 class="font-display text-navy text-lg">The Course &amp; Kit Detail Pack is in your inbox.</h3>
+            <p class="mt-2 text-[14.5px] text-nightrider/75 leading-[1.7]">Arriving within a few minutes. Module-by-module syllabus, every item in the kit, the certification standard in full, the honest downtime and candidate-selection briefing, and the payment structure written out. Check spam if it hasn't landed in ten minutes.</p>
+          </div>
+        </div>
+        <div class="reveal in bg-white p-7 sm:p-8 card-elevated grid sm:grid-cols-[auto_1fr] gap-5 sm:gap-8" style="transition-delay:100ms">
+          <div class="font-display text-4xl text-mustard/70 leading-none">02</div>
+          <div>
+            <h3 class="font-display text-navy text-lg">A trainer will call you within one business day.</h3>
+            <p class="mt-2 text-[14.5px] text-nightrider/75 leading-[1.7]">From a Privé Academy number. If you miss it, we'll try once more and then leave you alone — we're not going to chase you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT THAT CALL ACTUALLY IS ========== -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center reveal in">
+        <div class="rule-mustard mx-auto mb-6"></div>
+        <h2 class="font-display font-medium text-navy text-[26px] sm:text-[32px] leading-tight">What That Call Actually Is</h2>
+      </div>
+      <div class="mt-8 space-y-4 reveal in" style="transition-delay:60ms">
+        <p class="text-nightrider/75 leading-[1.7]">It's a straight answer to whatever the pack doesn't cover — your situation, what you've already trained in, what you're actually worried about. If the honest answer is that this isn't the right fit for you right now, you'll get that answer. Nobody is going to try to close you on the phone.</p>
+        <p class="text-nightrider/75 leading-[1.7]">Have your questions ready. The awkward ones are the useful ones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== QUIET SECONDARY PATH BACK TO ENROLMENT ========== -->
+  <!-- No countdown, no held spot, no act-now discount. She raised her hand;
+       she didn't walk away from anything. -->
+  <section class="bg-alice py-16 lg:py-20 border-t border-navy/5">
+    <div class="max-w-2xl mx-auto px-6 text-center reveal in">
+      <p class="font-display text-navy text-xl">Already decided?</p>
+      <a href="checkout.html" id="enroll-link" class="btn-outline mt-6 w-full sm:w-auto">Enroll — <span id="enroll-price">$3,000</span></a>
+      <p class="mt-3 text-[13px] text-nightrider/55 italic" id="enroll-instalments">or 3 × $1,000</p>
+      <p class="mt-6 text-[13.5px] text-nightrider/60">Or <a href="online-course.html" id="course-link" class="text-navy underline decoration-mustard underline-offset-4 hover:text-navy-700 transition-colors">go back to the course page</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= SLIM FOOTER ================= -->
+<footer class="bg-nightrider text-white/50">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.06em] uppercase">
+    <span>&copy; 2026 Privé Academy. All rights reserved.</span>
+    <div class="flex items-center gap-6">
+      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-white transition-colors">Terms</a>
+      <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Lead context arrives from the sales page as
+  //   ?src=optin-1|optin-2 &stage=<segment> &build=us|eu
+  const params = new URLSearchParams(window.location.search);
+  const src = params.get('src') === 'optin-2' ? 'optin-2' : 'optin-1';
+  const stage = params.get('stage') || 'unspecified';
+  const build = params.get('build') === 'eu' ? 'EU' : 'US';
+
+  // FB PIXEL EVENT — Lead, carrying which opt-in placement it came from and the
+  // optional "where are you now?" segment value.
+  // fbq('track', 'Lead', {
+  //   content_name: 'Course & Kit Detail Pack',
+  //   build: build,
+  //   optin_placement: src,
+  //   segment: stage
+  // });
+
+  // Keep the quiet buy path pointing at the right build.
+  if (build === 'EU') {
+    document.getElementById('enroll-link').setAttribute('href', 'checkout-eu.html');
+    document.getElementById('enroll-price').textContent = '€2,790';
+    document.getElementById('enroll-instalments').textContent = 'or 3 × €930';
+    document.getElementById('course-link').setAttribute('href', 'online-course-eu.html');
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privé Academy — Plasma, Fibroblast &amp; Aesthetics Education</title>
+<link rel="icon" href="brand_assets/Prive_LOGO_bel.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
+          alice: '#eff8ff',
+          nightrider: '#2b2b2b',
+          mustard: '#c0b905',
+        },
+        fontFamily: {
+          display: ['"Bodoni Moda"', 'Didot', 'serif'],
+          sans: ['Montserrat', 'sans-serif'],
+        },
+        letterSpacing: { tightest2: '-0.03em' },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Bodoni Moda', Didot, serif; }
+
+  /* grain texture for depth on navy surfaces */
+  .grain { position: relative; }
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #013559; color: #fff;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 15px 38px; border-radius: 9999px; border: none; cursor: pointer;
+    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease, background 300ms ease;
+    box-shadow: 0 10px 24px -8px rgba(1,53,89,0.45);
+  }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.02); background: #012842; box-shadow: 0 16px 32px -8px rgba(1,53,89,0.55); }
+  .btn-primary:active { transform: translateY(0) scale(0.99); }
+  .btn-primary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .btn-primary-inverse {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #fff; color: #013559;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 15px 38px; border-radius: 9999px; border: none; cursor: pointer;
+    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease;
+    box-shadow: 0 10px 24px -8px rgba(0,0,0,0.35);
+  }
+  .btn-primary-inverse:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.45); }
+  .btn-primary-inverse:active { transform: translateY(0) scale(0.99); }
+  .btn-primary-inverse:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: #013559;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 14px 36px; border: 1.5px solid #c0b905; border-radius: 0;
+    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease;
+  }
+  .btn-secondary:hover { transform: translateY(-2px); background: #013559; color: #fff; border-color: #013559; }
+  .btn-secondary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .btn-secondary-inverse {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: #fff;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 14px 36px; border: 1.5px solid #c0b905; border-radius: 0;
+    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease;
+  }
+  .btn-secondary-inverse:hover { transform: translateY(-2px); background: #c0b905; color: #013559; }
+  .btn-secondary-inverse:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0;
+    background: #c0b905; transition: width 300ms ease;
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after { width: 100%; }
+  .nav-link:focus-visible { outline: 2px solid #c0b905; outline-offset: 4px; }
+  .nav-link.is-active::after { width: 100%; }
+
+  .card-elevated {
+    box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18);
+    transition: transform 400ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease;
+  }
+  .card-elevated:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1px 2px rgba(1,53,89,0.08), 0 28px 44px -14px rgba(1,53,89,0.28);
+  }
+
+  .img-tint { position: relative; overflow: hidden; }
+  .img-tint img { transition: transform 700ms cubic-bezier(0.22,1,0.36,1); }
+  .img-tint:hover img { transform: scale(1.06); }
+  .img-tint::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(1,53,89,0.55), rgba(1,53,89,0.08) 55%, rgba(1,53,89,0.18));
+    mix-blend-mode: multiply;
+  }
+  .img-tint::before {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%);
+  }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
+  .rule-mustard { width: 48px; height: 1px; background: #c0b905; }
+
+  #mobile-menu { transition: opacity 300ms ease, transform 300ms ease; transform-origin: top right; }
+  #mobile-menu.closed { opacity: 0; transform: scale(0.98) translateY(-8px); pointer-events: none; }
+
+  ::selection { background: #c0b905; color: #013559; }
+</style>
+</head>
+<body class="bg-white text-nightrider antialiased">
+
+<!-- ================= NAV ================= -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/10 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+      <a href="#top" class="flex items-center group">
+        <img src="brand_assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-14 w-14 transition-transform duration-300 group-hover:rotate-[8deg]">
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-6">
+        <a href="index.html#top" class="nav-link is-active text-white text-[13px] font-semibold tracking-[0.04em] uppercase whitespace-nowrap">Home</a>
+        <a href="online-course.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Online Course</a>
+        <a href="live-trainings.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Live Trainings</a>
+        <a href="shop.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Shop</a>
+        <a href="testimonials.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Testimonials</a>
+        <a href="gallery.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Gallery</a>
+        <a href="about-us.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">About Us</a>
+        <a href="index.html#contact" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Contact</a>
+      </nav>
+
+      <div class="hidden xl:block shrink-0">
+        <a href="index.html#contact" class="btn-primary-inverse !py-3 !px-7">Apply Now</a>
+      </div>
+
+      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="xl:hidden text-white p-2 -mr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard rounded">
+        <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="closed xl:hidden absolute inset-x-0 top-20 bg-navy border-t border-white/10 px-6 py-8 flex flex-col gap-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
+    <a href="index.html#top" class="text-mustard text-sm uppercase tracking-[0.08em] font-semibold">Home</a>
+    <a href="online-course.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Online Course</a>
+    <a href="live-trainings.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Live Trainings</a>
+    <a href="shop.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Shop</a>
+    <a href="testimonials.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Testimonials</a>
+    <a href="gallery.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Gallery</a>
+    <a href="about-us.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">About Us</a>
+    <a href="index.html#contact" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Contact</a>
+    <a href="index.html#contact" class="btn-primary-inverse justify-center mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="grain relative bg-navy text-white overflow-hidden pt-40 pb-28 lg:pt-48 lg:pb-32">
+    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[46%] opacity-[0.06] pointer-events-none" width="720" height="720" viewBox="0 0 520 520">
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
+        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="328.7" y1="273.7" x2="377.7" y2="283.4"/>
+        <line x1="324.7" y1="286.8" x2="398.6" y2="317.4"/><line x1="318.2" y1="298.9" x2="359.8" y2="326.7"/>
+        <line x1="309.5" y1="309.5" x2="366.1" y2="366.1"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
+        <line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/><line x1="273.7" y1="328.7" x2="283.4" y2="377.7"/>
+        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="246.3" y1="328.7" x2="236.6" y2="377.7"/>
+        <line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
+        <line x1="210.5" y1="309.5" x2="153.9" y2="366.1"/><line x1="201.8" y1="298.9" x2="160.2" y2="326.7"/>
+        <line x1="195.3" y1="286.8" x2="121.4" y2="317.4"/><line x1="191.3" y1="273.7" x2="142.3" y2="283.4"/>
+        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="191.3" y1="246.3" x2="142.3" y2="236.6"/>
+        <line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/><line x1="201.8" y1="221.1" x2="160.2" y2="193.3"/>
+        <line x1="210.5" y1="210.5" x2="153.9" y2="153.9"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
+        <line x1="233.2" y1="195.3" x2="202.6" y2="121.4"/><line x1="246.3" y1="191.3" x2="236.6" y2="142.3"/>
+        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="273.7" y1="191.3" x2="283.4" y2="142.3"/>
+        <line x1="286.8" y1="195.3" x2="317.4" y2="121.4"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
+        <line x1="309.5" y1="210.5" x2="366.1" y2="153.9"/><line x1="318.2" y1="221.1" x2="359.8" y2="193.3"/>
+        <line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/><line x1="328.7" y1="246.3" x2="377.7" y2="236.6"/>
+      </g>
+    </svg>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="eyebrow reveal in">Plasma &middot; Fibroblast &middot; Aesthetics Education</div>
+      <h1 class="mt-5 font-display font-medium text-[40px] leading-[1.1] tracking-[0.01em] sm:text-[52px] lg:text-[64px] reveal in" style="transition-delay:80ms">
+        The Standard For Practitioners Who Take The Craft Seriously.
+      </h1>
+      <p class="mt-7 text-white/75 text-lg leading-[1.7] max-w-2xl mx-auto reveal in" style="transition-delay:160ms">
+        Structured, step-by-step training built for practitioners who want to know they're ready — not just certified.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal in" style="transition-delay:240ms">
+        <a href="#apply" class="btn-primary-inverse">Apply To Enroll</a>
+        <a href="#programs" class="btn-secondary-inverse">View Curriculum</a>
+      </div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto mt-24 px-6">
+      <div class="border-t border-white/15 pt-8 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 text-center">
+        <div class="reveal in" style="transition-delay:80ms">
+          <div class="font-display text-3xl text-mustard">1,000+</div>
+          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Trained Specialists</div>
+        </div>
+        <div class="reveal in" style="transition-delay:140ms">
+          <div class="font-display text-3xl text-mustard">350+</div>
+          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Live Trainings Hosted</div>
+        </div>
+        <div class="reveal in" style="transition-delay:200ms">
+          <div class="font-display text-3xl text-mustard">2</div>
+          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Locations, EU &amp; US</div>
+        </div>
+        <div class="reveal in" style="transition-delay:260ms">
+          <div class="font-display text-3xl text-mustard">Est. 2010</div>
+          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Trusted Since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PATH FORK ================= -->
+  <section class="bg-alice py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <div class="eyebrow">Start Here</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[28px] lg:text-[34px] leading-tight">Two Ways To Train With Us</h2>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-2 gap-8">
+        <div class="reveal bg-navy text-white p-10 lg:p-12 card-elevated relative overflow-hidden" style="transition-delay:60ms">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#C0B905" stroke-width="1.4"><rect x="6" y="9" width="28" height="24" rx="2"/><path d="M6 16h28M13 5v7M27 5v7" stroke-linecap="round"/><circle cx="20" cy="24" r="3.2"/></svg>
+          <h3 class="mt-6 font-display text-2xl">Live Training</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">Two intensive days, in person, hands-on from the first hour — consultation, technique, and real practice under direct supervision.</p>
+          <a href="#contact" class="btn-secondary-inverse mt-8">See Locations</a>
+        </div>
+        <div class="reveal bg-white p-10 lg:p-12 card-elevated relative overflow-hidden" style="transition-delay:140ms">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#013559" stroke-width="1.4"><rect x="4" y="8" width="32" height="21" rx="2"/><path d="M14 34h12M20 29v5" stroke-linecap="round"/><path d="M17 14l7 4.5-7 4.5V14z" fill="#013559" stroke="none"/></svg>
+          <h3 class="mt-6 font-display text-2xl text-navy">Online Course</h3>
+          <p class="mt-3 text-nightrider/70 leading-relaxed">Self-paced, 6+ hours of core instruction plus bonus live-demonstration footage, with lifetime access to every future update.</p>
+          <a href="#programs" class="btn-secondary mt-8">Explore Curriculum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="bg-white py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="eyebrow">01 — The Academy</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Precision Over Promises.</h2>
+        <p class="mt-6 text-nightrider/75 leading-[1.7]">
+          Privé Academy was built for practitioners who take the craft seriously — real clinical hours, small cohorts, and instructors who still work on real clients. We teach the technique, the science behind it, and the judgment to know when to use it.
+        </p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-[15px] text-nightrider/80">Hands-on clinical hours, not just theory</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-[15px] text-nightrider/80">Small cohorts, capped at eight students</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-[15px] text-nightrider/80">Nationally recognized certification</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-[15px] text-nightrider/80">Ongoing mentorship after graduation</span>
+          </li>
+        </ul>
+        <a href="#programs" class="btn-secondary mt-10">Explore Programs</a>
+      </div>
+
+      <div class="reveal relative" style="transition-delay:120ms">
+        <div class="img-tint rounded-sm card-elevated aspect-[4/5] w-full max-w-md mx-auto">
+          <img src="brand_assets/reference-site/training-photos/LC-1.jpg" alt="Instructor guiding a student during hands-on Plasma-Fibroblast training" class="w-full h-full object-cover">
+        </div>
+        <div class="hidden lg:block absolute -bottom-8 -left-8 bg-navy text-white p-6 max-w-[220px] card-elevated">
+          <div class="font-display text-2xl text-mustard">8:1</div>
+          <div class="mt-1 text-[11px] tracking-[0.1em] uppercase text-white/70 leading-relaxed">Student to instructor ratio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE SCIENCE ================= -->
+  <section class="bg-alice py-24 lg:py-32">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center reveal">
+      <div class="eyebrow">02 — The Science</div>
+      <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">What Is Fibroblast?</h2>
+      <p class="mt-7 font-display text-xl sm:text-2xl text-navy leading-[1.4]">A 100% natural, non-surgical technique for skin tightening and rejuvenation.</p>
+      <p class="mt-7 text-nightrider/75 leading-[1.7] text-left sm:text-center">Plasma-Fibroblast uses ionized atmospheric air to create a controlled electric arc just above the skin's surface. The arc never touches the skin directly — instead it transmits heat into the upper layers, triggering the body's own healing response. Over the following 6&ndash;8 weeks, that response stimulates new collagen and elastin production, gradually tightening and resurfacing the treated area. Sessions run 60&ndash;90 minutes, most clients need around two treatments, and results typically last 2&ndash;4 years.</p>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMS ================= -->
+  <section id="programs" class="bg-white py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-xl reveal">
+        <div class="eyebrow">03 — What You'll Offer</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Real Treatments. Real Earning Potential.</h2>
+        <p class="mt-4 text-nightrider/70 leading-[1.7]">One technique, applied across a full range of non-surgical treatments — from $80 skin-tag removal to $700+ body-tightening sessions.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:60ms">
+          <div class="img-tint aspect-[4/3]">
+            <img src="brand_assets/reference-site/training-photos/LC-3.jpg" alt="Practitioner performing a Fibroblast treatment on the face" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
+              <span>$350 &ndash; $500</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
+            </div>
+            <h3 class="mt-3 font-display text-navy text-xl">Face &amp; Eyes</h3>
+            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Eyelid lifting, forehead lifting, crow's feet, and nasolabial lines.</p>
+            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:140ms">
+          <div class="img-tint aspect-[4/3]">
+            <img src="brand_assets/reference-site/training-photos/LC-6.jpg" alt="Two practitioners performing a Fibroblast treatment together" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
+              <span>$600 &ndash; $700</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
+            </div>
+            <h3 class="mt-3 font-display text-navy text-xl">Neck, Body &amp; Hands</h3>
+            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Neck tightening, belly tightening, and hand or knee rejuvenation.</p>
+            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:220ms">
+          <div class="img-tint aspect-[4/3]">
+            <!-- LC-9 and LC-15 must never be used anywhere on this site: both show
+                 trainees practising on oranges, which collides directly with the
+                 category's worst horror-story quote. LC-14 substituted here. -->
+            <img src="brand_assets/reference-site/training-photos/LC-14.jpg" alt="Close-up of a Plamere Premium fibroblast treatment in progress on a client's face" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
+              <span>From $80</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
+            </div>
+            <h3 class="mt-3 font-display text-navy text-xl">Scars &amp; Skin Renewal</h3>
+            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Acne scar rejuvenation, stretch mark improvement, and skin tag removal.</p>
+            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESULTS GALLERY ================= -->
+  <section id="results" class="bg-alice py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-xl reveal">
+        <div class="eyebrow">04 — Real Results</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Before &amp; After</h2>
+        <p class="mt-4 text-nightrider/70 leading-[1.7]">A sample of real client outcomes from Privé-trained specialists — unretouched, as documented in training.</p>
+      </div>
+    </div>
+
+    <div class="mt-14 pl-6 lg:pl-10">
+      <div class="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [scrollbar-width:thin]">
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:40ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA-template.jpg" alt="Before and after Fibroblast treatment around the eye area" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Eye Area — Fine Line Tightening</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:80ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA_11.jpg" alt="Before, after, and healed stages of acne scar rejuvenation" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Acne Scar Rejuvenation</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:120ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/Web_renewal_grafike.jpg" alt="Healing timeline from before treatment to two weeks after, full face" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Full Face — Healing Timeline</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:160ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA_19.jpg" alt="Before and after neck and jaw tightening" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Neck &amp; Jaw Tightening</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:200ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA-koleno.jpg" alt="Before and healed knee skin tightening" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Knee Tightening</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:240ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA-ig-post.jpg" alt="Before and after lower face and chin tightening" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Lower Face &amp; Chin</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:280ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA_13.jpg" alt="Close-up before and after acne scar rejuvenation" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Acne Scar Close-Up</div>
+        </div>
+        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:320ms">
+          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand_assets/reference-site/before-after/BA-stana-scar-nov-size.jpg" alt="14-day healing timeline for shoulder scar rejuvenation" class="w-full h-full object-cover"></div>
+          <div class="mt-3 text-[13px] text-nightrider/70">Shoulder Scar — 14 Day Healing</div>
+        </div>
+        <div class="shrink-0 w-px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= METHOD ================= -->
+  <section id="method" class="bg-white py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-xl reveal">
+        <div class="eyebrow">05 — Method</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Why Practitioners Choose Privé</h2>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        <div class="reveal" style="transition-delay:60ms">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><circle cx="17" cy="13" r="6"/><path d="M6 29c1.8-6 6-9 11-9s9.2 3 11 9" stroke-linecap="round"/></svg>
+          <h3 class="mt-5 font-display text-navy text-lg">Clinical Practice Hours</h3>
+          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Every program includes real hands-on hours, not just observation.</p>
+        </div>
+        <div class="reveal" style="transition-delay:120ms">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><rect x="7" y="5" width="20" height="24" rx="1.5"/><path d="M12 13h10M12 18h10M12 23h6" stroke-linecap="round"/></svg>
+          <h3 class="mt-5 font-display text-navy text-lg">Small Cohorts</h3>
+          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Capped class sizes so every student gets direct instructor attention.</p>
+        </div>
+        <div class="reveal" style="transition-delay:180ms">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><path d="M17 4l3.8 7.7L29 13l-6 5.8L24.5 27 17 23l-7.5 4L11 18.8 5 13l8.2-1.3L17 4z" stroke-linejoin="round"/></svg>
+          <h3 class="mt-5 font-display text-navy text-lg">Accredited Certification</h3>
+          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Nationally recognized credentials accepted across the industry.</p>
+        </div>
+        <div class="reveal" style="transition-delay:240ms">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><circle cx="17" cy="17" r="12"/><path d="M17 10v7l5 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 class="mt-5 font-display text-navy text-lg">Lifetime Alumni Support</h3>
+          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Continued mentorship, refreshers, and community after you graduate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOUNDER SPOTLIGHT ================= -->
+  <section class="grain relative bg-navy text-white py-24 lg:py-32 overflow-hidden">
+    <svg class="absolute -bottom-32 -right-32 opacity-[0.05] pointer-events-none" width="480" height="480" viewBox="0 0 520 520">
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
+        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/>
+        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/>
+        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/>
+        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/>
+      </g>
+    </svg>
+    <div class="relative max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[380px_1fr] gap-14 items-center">
+      <div class="rounded-sm card-elevated aspect-[4/5] reveal bg-white p-4">
+        <img src="brand_assets/reference-site/founder/samo-sambol-founder-portrait.png" alt="Samo Sambol, Founder and CEO of Privé Academy" class="w-full h-full object-cover object-top">
+      </div>
+      <div class="reveal" style="transition-delay:100ms">
+        <div class="eyebrow">Those That Know, Do.</div>
+        <!-- 2026-09-08 compliance fix. Two problems were live here:
+             (1) "personally developing and introducing the Plasma-Fibroblast method to the world
+                 of beauty" is the inventor/originator framing CLAUDE.md §2 explicitly bans. An
+                 earlier research revision walked that claim back deliberately. Restored to the
+                 defensible framing used everywhere else on the site.
+             (2) "tested by the National Laboratory for Health, Environment, and Food" has no
+                 source doc behind it and was cut from the funnel pages for the same reason.
+                 CE-marking is confirmed by Josip and stays. -->
+        <p class="mt-6 text-white/75 leading-[1.7] max-w-xl">Samo Sambol founded Privé Academy in December 2010, building its early reputation on Microblading before becoming the Master Trainer who successfully introduced and popularized the Plasma-Fibroblast treatment across the European beauty market.</p>
+        <p class="mt-4 text-white/75 leading-[1.7] max-w-xl">Since then, he's trained over 1,000 specialists worldwide and built a proprietary, CE-marked product line.</p>
+        <div class="mt-8">
+          <div class="font-semibold text-sm tracking-[0.04em]">Samo Sambol</div>
+          <div class="text-[13px] text-mustard tracking-[0.06em] uppercase mt-1">Founder &amp; CEO, Privé Academy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRAINING PHOTO STRIP ================= -->
+  <section class="bg-white py-20 lg:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
+      <div class="eyebrow">In The Room</div>
+      <h2 class="mt-3 font-display font-medium text-navy text-[28px] lg:text-[34px] leading-tight">350+ Live Trainings Around The World</h2>
+    </div>
+    <div class="mt-12 flex gap-4 overflow-x-auto px-6 pb-2 snap-x snap-mandatory [scrollbar-width:thin]">
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:20ms"><img src="brand_assets/reference-site/training-photos/LC-2.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:60ms"><img src="brand_assets/reference-site/training-photos/LC-4.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:100ms"><img src="brand_assets/reference-site/training-photos/LC-5.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:140ms"><img src="brand_assets/reference-site/training-photos/LC-7.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:180ms"><img src="brand_assets/reference-site/training-photos/LC-8.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:220ms"><img src="brand_assets/reference-site/training-photos/LC-10.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:260ms"><img src="brand_assets/reference-site/training-photos/LC-13.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:300ms"><img src="brand_assets/reference-site/training-photos/LC-16.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
+      <div class="shrink-0 w-px"></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials" class="bg-alice py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-xl reveal">
+        <div class="eyebrow">06 — Alumni</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Trained Here. Practicing Everywhere.</h2>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-8">
+        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:60ms">
+          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
+          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I like the most that master Samo was very informative and any questions we had was explained very good.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">LP</div>
+            <div>
+              <div class="text-sm font-semibold text-navy">Lenny Pay</div>
+              <div class="text-[12px] text-nightrider/60">Specialist, Texas</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:140ms">
+          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
+          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I flew to Slovenia for private training with CEO Samo. The training was amazing and I got to practice on a model.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">VM</div>
+            <div>
+              <div class="text-sm font-semibold text-navy">Vizela Meier</div>
+              <div class="text-[12px] text-nightrider/60">Specialist, Switzerland</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:220ms">
+          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
+          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I highly recommend this training, and Samo will make sure that you understand everything you need to know to perform this treatment in the best possible way.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">CR</div>
+            <div>
+              <div class="text-sm font-semibold text-navy">Carla Rose</div>
+              <div class="text-[12px] text-nightrider/60">Specialist, California</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHOP TEASER ================= -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-2 gap-0 card-elevated overflow-hidden reveal">
+        <div class="img-tint aspect-[4/3] lg:aspect-auto">
+          <img src="brand_assets/reference-site/misc/product-shot.jpg" alt="Privé aftercare and skin-healing product line" class="w-full h-full object-cover">
+        </div>
+        <div class="bg-navy text-white p-10 lg:p-14 flex flex-col justify-center">
+          <div class="eyebrow">Aftercare Line</div>
+          <h2 class="mt-3 font-display font-medium text-[28px] lg:text-[32px] leading-tight">The Privé Shop</h2>
+          <p class="mt-4 text-white/75 leading-[1.7] max-w-md">Our proprietary aftercare and skin-healing products, developed alongside the technique itself, EU-certified and lab-tested. Built for practitioners and their clients.</p>
+          <span class="mt-8 inline-flex w-fit items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-white/50 border border-white/25 px-8 py-4">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA BANNER ================= -->
+  <section id="apply" class="grain relative bg-navy text-white py-24 overflow-hidden">
+    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none" width="600" height="600" viewBox="0 0 520 520">
+      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
+        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
+        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
+        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
+        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
+      </g>
+    </svg>
+    <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
+      <h2 class="font-display font-medium text-[30px] sm:text-[38px] leading-tight">Ready To Raise Your Standard?</h2>
+      <p class="mt-5 text-white/75 leading-[1.7] max-w-xl mx-auto">Applications for our next cohort are open. Seats are limited to keep every class hands-on.</p>
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="btn-primary-inverse">Apply To Enroll</a>
+        <a href="#contact" class="btn-secondary-inverse">Talk To Admissions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / FOOTER LEAD-IN ================= -->
+  <section id="contact" class="bg-white py-24 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
+      <div class="reveal">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Speak With Admissions</h2>
+        <p class="mt-5 text-nightrider/70 leading-[1.7] max-w-md">Have questions about a program, financing, or start dates? Send us a note and admissions will follow up within one business day.</p>
+        <div class="mt-8 space-y-3 text-[14.5px] text-nightrider/80">
+          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><rect x="2" y="4" width="14" height="10" rx="1.2"/><path d="M2.5 5l6.5 5 6.5-5"/></svg> info@prive-academy.com</div>
+          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><path d="M4 3.5c0 6 4.5 10.5 10.5 10.5l1-3-3.7-1-1.3 1.3c-1.6-.9-2.9-2.2-3.8-3.8L8 5.4l-1-3.7-3 1z"/></svg> +1 (424) 291-9830</div>
+          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><path d="M9 16s6-5.2 6-9.5A6 6 0 003 6.5C3 10.8 9 16 9 16z"/><circle cx="9" cy="6.5" r="2"/></svg> Ljubljana, Slovenia &amp; Newark, NJ</div>
+        </div>
+      </div>
+      <form class="reveal bg-alice p-8 sm:p-10" style="transition-delay:100ms">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">First Name</label>
+            <input type="text" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Jane">
+          </div>
+          <div>
+            <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Last Name</label>
+            <input type="text" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Doe">
+          </div>
+        </div>
+        <div class="mt-5">
+          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Email</label>
+          <input type="email" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="jane@email.com">
+        </div>
+        <div class="mt-5">
+          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Program Of Interest</label>
+          <select class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors">
+            <option>Live Training</option>
+            <option>Online Course</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Message</label>
+          <textarea rows="3" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Tell us a bit about your goals"></textarea>
+        </div>
+        <button type="submit" class="btn-primary mt-7 w-full sm:w-auto justify-center">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-nightrider text-white/70">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
+    <div class="lg:col-span-2">
+      <a href="#top" class="inline-flex">
+        <img src="brand_assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-20 w-20">
+      </a>
+      <p class="mt-5 text-[14px] leading-relaxed max-w-xs">Structured, step-by-step training built for practitioners who want to know they're ready — not just certified.</p>
+      <div class="mt-6 flex items-center gap-4">
+        <a href="https://www.facebook.com/priveacademy/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/prive_academy/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Prive_Academy" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Explore</div>
+      <ul class="mt-5 space-y-3 text-[14px]">
+        <li><a href="online-course.html" class="hover:text-white transition-colors">Online Course</a></li>
+        <li><a href="live-trainings.html" class="hover:text-white transition-colors">Live Trainings</a></li>
+        <li><a href="shop.html" class="hover:text-white transition-colors">Shop</a></li>
+        <li><a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a></li>
+        <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
+        <li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Offices</div>
+      <ul class="mt-5 space-y-4 text-[14px] leading-relaxed">
+        <li><span class="text-white/90 font-medium">Europe</span><br>Celovška cesta 111<br>1000 Ljubljana, Slovenia</li>
+        <li><span class="text-white/90 font-medium">United States</span><br>One Gateway Center<br>Newark, NJ 07102</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Contact</div>
+      <ul class="mt-5 space-y-3 text-[14px]">
+        <li>info@prive-academy.com</li>
+        <li>+1 (424) 291-9830</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] tracking-[0.06em] uppercase text-white/40">
+      <span>&copy; 2026 Privé Academy. All rights reserved.</span>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('closed');
+    menu.classList.toggle('closed');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.add('closed');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }));
+
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('shadow-[0_8px_24px_-8px_rgba(0,0,0,0.35)]', window.scrollY > 8);
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
