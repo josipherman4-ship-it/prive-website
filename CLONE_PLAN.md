@@ -4,7 +4,7 @@ Source analyzed: **https://prive-academy.com/** (live site, fetched and rendered
 
 ## 0. Key finding first
 
-The live site is built in **WordPress + Elementor** (plus a GoHighLevel/LeadConnector funnel plugin), and visually it's generic page-builder output: white background, black text, default system fonts, no real color system, stock Elementor buttons/icons. It does **not** use the Navy / Alice Blue / Night Rider / Mustard + Bodoni Moda/Montserrat identity defined in `brand_assets/Prive_Academy_Brand_Guidelines.html`.
+The live site is built in **WordPress + Elementor** (plus a GoHighLevel/LeadConnector funnel plugin), and visually it's generic page-builder output: white background, black text, default system fonts, no real color system, stock Elementor buttons/icons. It does **not** use the Navy / Alice Blue / Night Rider / Mustard + Libre Bodoni/Montserrat identity defined in `prive-os/brand-assets/brand-kit/Prive_Academy_Brand_Guidelines.html`.
 
 That means this isn't a "make it look the same" clone. The brand guidelines are the intended direction; the homepage already built (`index.html`) is the correct visual foundation. **This plan is about porting the old site's proven structure, real content, and real photography into that new design system** — not copying its look.
 
@@ -50,7 +50,7 @@ Only the homepage was analyzed in depth. The other nav destinations are noted in
 
 ## 4. Downloaded assets
 
-Saved to `brand_assets/reference-site/` (all first-party — this is the client's own site, so these are safe to reuse; treat as working assets and swap for fresh/higher-res photography where the client can provide it):
+Saved to `brand-assets/reference-site/` (all first-party — this is the client's own site, so these are safe to reuse; treat as working assets and swap for fresh/higher-res photography where the client can provide it):
 
 - **`logo/`** — `logo-original.png`, `logo-header-color.png` (black sunburst mark, same mark as our navy/white lockup but in Night Rider — useful for a light-background variant we don't currently have), `logo-footer-white.png`
 - **`founder/samo-sambol-founder-portrait.png`** — real headshot of Master Samo Sambol, isolated on white, high-res (3712×3710)
