@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plasma tretmani prilagođeni potrebama vaše kože | Privé Studio</title>
+<meta name="description" content="Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.">
+<meta property="og:title" content="Plasma tretmani prilagođeni potrebama vaše kože | Privé Studio">
+<meta property="og:description" content="Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:image" content="brand-assets/photos/tretman-lice.jpg">
+<link rel="icon" href="brand-assets/1-favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
+          alice: '#eff8ff',
+          nightrider: '#2b2b2b',
+          mustard: '#c0b905',
+        },
+        fontFamily: {
+          display: ['"Libre Bodoni"', 'Didot', 'serif'],
+          sans: ['Montserrat', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  /* =====================================================================
+     PRIVÉ STUDIO — plasma tretmani, stranica za zahtjev za konzultacije.
+     Design system inherited from v2-hr-trening/edukacija-fibroblast.html so
+     this page belongs to the same site. Palette is Privé's brand kit:
+     navy #013559 · alice #EFF8FF · nightrider #2B2B2B · mustard #C0B905.
+
+     ENTITY NOTE — this page is Privé STUDIO (B2C, performs treatments), not
+     Privé ACADEMY (B2B, trains practitioners). Every logo file in the kit is
+     a lockup reading "PRIVÉ — ACADEMY —", i.e. the wrong entity, so the
+     wordmark here is set in type (.wm) and no logo image is loaded.
+     ===================================================================== */
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; }
+  /* sticky single-row nav (72px) clearance for in-page anchors */
+  :target, [id] { scroll-margin-top: 96px; }
+
+  .grain { position: relative; }
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* ---- wordmark, set in type ------------------------------------------
+     Echoes the proportions of the Privé lockup (serif name over a spaced,
+     rule-flanked sub-word) without reproducing the Academy artwork.
+     The trailing letter-space of "STUDIO" is balanced with a matching
+     padding-left so the sub-word stays optically centred under "PRIVÉ".  */
+  .wm { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; color: inherit; }
+  .wm-name { font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; letter-spacing: 0.1em; padding-left: 0.1em; }
+  .wm-sub { display: flex; align-items: center; gap: 7px; }
+  .wm-word { font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.42em; padding-left: 0.42em; }
+  .wm-rule { display: block; height: 1px; background: currentColor; opacity: 0.5; }
+
+  .wm-sm .wm-name { font-size: 23px; }
+  .wm-sm .wm-sub { margin-top: 7px; }
+  .wm-sm .wm-word { font-size: 8px; }
+  .wm-sm .wm-rule { width: 13px; }
+
+  .wm-lg .wm-name { font-size: 34px; }
+  .wm-lg .wm-sub { margin-top: 10px; }
+  .wm-lg .wm-word { font-size: 10px; }
+  .wm-lg .wm-rule { width: 20px; }
+
+  a.wm:focus-visible { outline: 2px solid #c0b905; outline-offset: 6px; }
+
+  /* ---- buttons --------------------------------------------------------- */
+  .btn-primary { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: #013559; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease, background 300ms ease; box-shadow: 0 10px 24px -8px rgba(1,53,89,0.45); }
+  .btn-primary:hover { transform: translateY(-2px); background: #012842; box-shadow: 0 16px 32px -8px rgba(1,53,89,0.55); }
+  .btn-primary:active { transform: translateY(0) scale(0.99); }
+  .btn-primary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .btn-primary-inverse { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: #fff; color: #013559; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease; box-shadow: 0 10px 24px -8px rgba(0,0,0,0.35); }
+  .btn-primary-inverse:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.45); }
+  .btn-primary-inverse:active { transform: translateY(0) scale(0.99); }
+  .btn-primary-inverse:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  .btn-outline { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: transparent; color: #013559; font-size: 12.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.35; padding: 15px 30px; border: 1.5px solid rgba(1,53,89,0.45); border-radius: 9999px; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease, border-color 300ms ease; }
+  .btn-outline:hover { transform: translateY(-2px); background: #013559; color: #fff; border-color: #013559; }
+  .btn-outline:active { transform: translateY(0); }
+  .btn-outline:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  /* ---- surfaces: base → elevated → floating ---------------------------- */
+  .card-static { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); }
+  .card-elevated { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); transition: transform 400ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease; }
+  .card-elevated:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(1,53,89,0.08), 0 28px 44px -14px rgba(1,53,89,0.28); }
+  .card-floating { box-shadow: 0 2px 4px rgba(1,53,89,0.08), 0 32px 60px -18px rgba(1,53,89,0.40); }
+
+  .img-tint { position: relative; overflow: hidden; }
+  .img-tint::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(1,53,89,0.55), rgba(1,53,89,0.08) 55%, rgba(1,53,89,0.18)); mix-blend-mode: multiply; }
+  .img-tint::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%); }
+  /* hero variant: the photo butts straight up against the navy copy panel, so
+     it carries an even navy wash rather than a bottom-weighted one — otherwise
+     the warm skin tones read as a separate image pasted next to the brand colour */
+  .img-tint-even::after { background: linear-gradient(to top, rgba(1,53,89,0.60), rgba(1,53,89,0.30) 55%, rgba(1,53,89,0.40)); }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Mustard clears AA only against navy and nightrider. On white/alice it is
+     2.06:1 / 1.92:1 — FAIL. So .eyebrow is for dark surfaces only and light
+     surfaces use .eyebrow-navy. (priv-academy-DESIGN.md §01a) */
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
+  .eyebrow-navy { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #013559; }
+  .rule-mustard { width: 48px; height: 1px; background: #c0b905; }
+  .rule-navy { width: 48px; height: 1px; background: rgba(1,53,89,0.35); }
+
+  ::selection { background: #c0b905; color: #013559; }
+
+  /* ---- treatment list markers ------------------------------------------ */
+  .tlist > li { position: relative; padding-left: 22px; }
+  .tlist > li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: #013559; transform: rotate(45deg); opacity: 0.55; }
+
+  /* ---- numbered process ladder ----------------------------------------
+     Genuine sequence (six steps, order matters), so numerals earn their place. */
+  .steps { counter-reset: step; }
+  .steps > li { counter-increment: step; position: relative; padding-left: 64px; padding-bottom: 42px; }
+  .steps > li:last-child { padding-bottom: 0; }
+  .steps > li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; font-size: 19px;
+    color: #013559; background: #ffffff; border: 1px solid rgba(1,53,89,0.20);
+    border-radius: 9999px;
+  }
+  .steps > li::after { content: ""; position: absolute; left: 22px; top: 50px; bottom: 6px; width: 1px; background: rgba(1,53,89,0.18); }
+  .steps > li:last-child::after { display: none; }
+  /* the ladder is stretched on desktop to balance the photo beside it; on
+     narrower screens the steps wrap to two lines and need no extra air */
+  @media (max-width: 1023px) { .steps > li { padding-bottom: 28px; } }
+
+  /* ---- form ------------------------------------------------------------ */
+  .field-label-dark { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 600; }
+  .field-note { font-size: 11px; letter-spacing: 0.04em; text-transform: none; color: rgba(255,255,255,0.5); font-weight: 400; }
+  .field-input-dark { margin-top: 9px; width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.22); padding: 13px 16px; font-size: 14.5px; color: #fff; border-radius: 4px; transition: border-color 200ms ease, box-shadow 200ms ease; font-family: 'Montserrat', sans-serif; }
+  .field-input-dark:focus { outline: none; border-color: #c0b905; box-shadow: 0 0 0 3px rgba(192,185,5,0.18); }
+  .field-input-dark[aria-invalid="true"] { border-color: #c0b905; }
+
+  /* File input. The native control is visually hidden and a bound <label> acts
+     as the trigger, because Chrome's built-in button and "no file chosen" text
+     are hard-coded English strings that cannot be translated from CSS and have
+     no place on a Croatian page. The input keeps both its labels, so the
+     control is still named and operable from the keyboard. */
+  .field-file { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .file-trigger {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 12px;
+    padding: 12px 24px; border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.06); color: #fff; border-radius: 9999px;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 200ms ease, border-color 200ms ease;
+  }
+  .file-trigger:hover { background: rgba(255,255,255,0.14); border-color: #fff; }
+  .file-trigger:active { background: rgba(255,255,255,0.2); }
+  .field-file:focus-visible + .file-trigger { outline: 2px solid #c0b905; outline-offset: 3px; }
+
+  /* option chips — radios, so the pre-selected treatment is visible at a glance */
+  .opt input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .opt label {
+    display: block; cursor: pointer; padding: 12px 20px; border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.05);
+    font-size: 13.5px; color: rgba(255,255,255,0.88); text-align: center;
+    transition: background 220ms ease, border-color 220ms ease, color 220ms ease;
+  }
+  .opt label:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
+  .opt input:checked + label { background: #ffffff; border-color: #ffffff; color: #013559; font-weight: 600; }
+  .opt input:focus-visible + label { outline: 2px solid #c0b905; outline-offset: 3px; }
+  /* transient cue when a treatment card pre-selects a value for you */
+  @keyframes optFlash { 0%,100% { box-shadow: 0 0 0 0 rgba(192,185,5,0); } 35% { box-shadow: 0 0 0 4px rgba(192,185,5,0.65); } }
+  .opt.flash label { animation: optFlash 1400ms ease 2; }
+
+  .consent { display: flex; align-items: flex-start; gap: 14px; }
+  .consent input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none; flex: none;
+    width: 22px; height: 22px; margin-top: 2px; border-radius: 3px;
+    border: 1.5px solid rgba(255,255,255,0.45); background: rgba(255,255,255,0.06);
+    cursor: pointer; transition: background 180ms ease, border-color 180ms ease;
+  }
+  .consent input[type="checkbox"]:hover { border-color: #ffffff; }
+  .consent input[type="checkbox"]:checked {
+    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2.6 7.3L5.6 10.3L11.4 4' fill='none' stroke='%23013559' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+    border-color: #ffffff;
+  }
+  .consent input[type="checkbox"]:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+  .consent input[aria-invalid="true"] { border-color: #c0b905; }
+
+  /* =====================================================================
+     ⟦TBC⟧ CHIPS — PRE-LAUNCH DEVICE, NOT FINAL DESIGN.
+     Every chip is an unconfirmed fact. They are loud on purpose: nothing
+     here may ship until each token is replaced with a confirmed value (and
+     the chip markup deleted with it). They intentionally break the brand's
+     "one mustard touch per view" rule for exactly as long as they exist.
+     Contrast is compliant: white on navy 12.69:1, mustard on navy 6.15:1.
+     ===================================================================== */
+  .tbc {
+    display: inline-flex; align-items: flex-start; gap: 10px;
+    background: #013559; color: #ffffff;
+    border: 1.5px dashed #c0b905;
+    padding: 7px 14px;
+    font-size: 13px; line-height: 1.5; font-weight: 500;
+    text-transform: none; letter-spacing: 0;
+    text-align: left;
+  }
+  .tbc::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 7px; background: #c0b905; transform: rotate(45deg); }
+  /* sitting inside a running sentence rather than on its own line */
+  .tbc-inline { vertical-align: middle; padding: 4px 12px; font-size: 12.5px; }
+  .tbc-inline::before { margin-top: 5px; }
+  /* on navy and nightrider surfaces the chip inverts: a light fill keeps it
+     readable and loud without turning the surface olive */
+  .tbc-dark { background: rgba(255,255,255,0.08); border-color: #c0b905; color: #ffffff; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .card-elevated, .btn-primary, .btn-primary-inverse, .btn-outline { transition: none; }
+    .card-elevated:hover, .btn-primary:hover, .btn-primary-inverse:hover, .btn-outline:hover { transform: none; }
+    .opt.flash label { animation: none; outline: 2px solid #c0b905; outline-offset: 3px; }
+  }
+</style>
+</head>
+<body class="bg-white text-nightrider antialiased" id="vrh">
+
+<a href="#glavni-sadrzaj" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:text-[13px]">Prijeđi na sadržaj</a>
+
+<!-- ================= NAV ================= -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-navy/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
+    <div class="flex items-center justify-between h-[72px] gap-4">
+      <a href="#vrh" class="wm wm-sm text-navy" aria-label="Privé Studio — početna">
+        <span class="wm-name">PRIVÉ</span>
+        <span class="wm-sub">
+          <span class="wm-rule" aria-hidden="true"></span>
+          <span class="wm-word">Studio</span>
+          <span class="wm-rule" aria-hidden="true"></span>
+        </span>
+      </a>
+
+      <nav aria-label="Glavna navigacija">
+        <a href="#konzultacije" class="btn-primary !py-3 !px-5 sm:!px-7 !text-[10.5px] sm:!text-[12px] !tracking-[0.06em] sm:!tracking-[0.08em]">Zatražite konzultacije</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="glavni-sadrzaj">
+
+  <!-- ================= §1 — HERO ================= -->
+  <section class="pt-[72px] bg-navy">
+    <div class="grid lg:grid-cols-[1.06fr_0.94fr] items-stretch">
+
+      <!-- copy panel -->
+      <div class="grain relative bg-navy text-white overflow-hidden order-last lg:order-none">
+        <!-- Privé ray motif, one faint instance — the only ornament on the page -->
+        <svg class="absolute -top-28 -left-32 opacity-[0.06] pointer-events-none hidden lg:block" width="560" height="560" viewBox="0 0 520 520" aria-hidden="true">
+          <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
+            <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="328.7" y1="273.7" x2="377.7" y2="283.4"/>
+            <line x1="324.7" y1="286.8" x2="398.6" y2="317.4"/><line x1="318.2" y1="298.9" x2="359.8" y2="326.7"/>
+            <line x1="309.5" y1="309.5" x2="366.1" y2="366.1"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
+            <line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/><line x1="273.7" y1="328.7" x2="283.4" y2="377.7"/>
+            <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="246.3" y1="328.7" x2="236.6" y2="377.7"/>
+            <line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
+            <line x1="210.5" y1="309.5" x2="153.9" y2="366.1"/><line x1="201.8" y1="298.9" x2="160.2" y2="326.7"/>
+            <line x1="195.3" y1="286.8" x2="121.4" y2="317.4"/><line x1="191.3" y1="273.7" x2="142.3" y2="283.4"/>
+            <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="191.3" y1="246.3" x2="142.3" y2="236.6"/>
+            <line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/><line x1="201.8" y1="221.1" x2="160.2" y2="193.3"/>
+            <line x1="210.5" y1="210.5" x2="153.9" y2="153.9"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
+            <line x1="233.2" y1="195.3" x2="202.6" y2="121.4"/><line x1="246.3" y1="191.3" x2="236.6" y2="142.3"/>
+            <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="273.7" y1="191.3" x2="283.4" y2="142.3"/>
+            <line x1="286.8" y1="195.3" x2="317.4" y2="121.4"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
+            <line x1="309.5" y1="210.5" x2="366.1" y2="153.9"/><line x1="318.2" y1="221.1" x2="359.8" y2="193.3"/>
+            <line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/><line x1="328.7" y1="246.3" x2="377.7" y2="236.6"/>
+          </g>
+        </svg>
+
+        <div class="relative h-full flex items-center">
+          <div class="w-full px-6 sm:px-10 lg:pl-[max(2.5rem,calc((100vw-72rem)/2+2.5rem))] lg:pr-14 py-16 sm:py-20 lg:py-28">
+            <div class="max-w-[34rem] lg:ml-auto">
+              <h1 class="font-display font-medium leading-[1.12] tracking-[-0.012em] text-[33px] sm:text-[42px] lg:text-[48px] reveal in">
+                Plasma tretmani prilagođeni potrebama vaše kože
+              </h1>
+              <div class="rule-mustard mt-8 reveal in" style="transition-delay:100ms"></div>
+              <p class="mt-8 text-white/80 text-[15.5px] sm:text-[16.5px] leading-[1.75] max-w-[46ch] reveal in" style="transition-delay:160ms">
+                Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.
+              </p>
+              <div class="mt-10 reveal in" style="transition-delay:220ms">
+                <a href="#konzultacije" class="btn-primary-inverse w-full sm:w-auto">Zatražite konzultacije</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- photo panel -->
+      <div class="img-tint img-tint-even relative h-[300px] sm:h-[400px] lg:h-auto lg:min-h-[640px] order-first lg:order-none bg-navy">
+        <img src="brand-assets/photos/tretman-lice.jpg"
+             alt="Specijalistica u zaštitnim rukavicama izvodi plasma tretman na licu klijentice"
+             class="absolute inset-0 w-full h-full object-cover object-[58%_42%]">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= §2 — TWO TREATMENTS, EQUAL WEIGHT =================
+       Both cards are deliberately identical: same surface, same shadow tier,
+       same internal rhythm, same button style, buttons bottom-aligned by
+       mt-auto. Neither is marked "recommended" — the whole premise of the
+       page is that the recommendation comes after the assessment.
+       ====================================================================== -->
+  <section id="tretmani" class="bg-alice py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Odaberite područje interesa</h2>
+      <div class="rule-navy mt-7 reveal"></div>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+
+        <!-- Kartica A — Plasma Pen -->
+        <article class="reveal bg-white card-static p-8 sm:p-10 lg:p-12 flex flex-col border-t-2 border-navy">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#013559" stroke-width="1.4" aria-hidden="true">
+            <path d="M14.8 3.9l5.3 5.3-9.6 9.6-6.3 1 1-6.3 9.6-9.6z" stroke-linejoin="round"/>
+            <path d="M13.1 5.6l5.3 5.3M5.2 13.5l5.3 5.3" stroke-linecap="round"/>
+          </svg>
+          <h3 class="mt-6 font-display text-navy text-[26px] sm:text-[30px] leading-[1.15]">Plasma Pen</h3>
+          <p class="mt-5 text-[15.5px] text-nightrider/80 leading-[1.75] max-w-[46ch]">
+            Nekirurški tretman namijenjen zatezanju kože, ublažavanju bora i korekciji određenih kožnih nepravilnosti.
+          </p>
+
+          <div class="mt-9 pt-8 border-t border-navy/12">
+            <p class="eyebrow-navy" id="pp-lista">Može se primjenjivati na</p>
+            <ul class="tlist mt-5 space-y-3 text-[15px] text-nightrider/85 leading-[1.6]" aria-labelledby="pp-lista">
+              <li>gornje i donje kapke</li>
+              <li>bore oko očiju i usana</li>
+              <li>čelo i područje između obrva</li>
+              <li>vrat i dekolte</li>
+              <li>trbuh i druga područja opuštene kože</li>
+              <li>određene kožne izrasline</li>
+            </ul>
+          </div>
+
+          <div class="mt-10 pt-2">
+            <a href="#konzultacije" class="btn-outline w-full" data-tretman="plasma-pen" data-tretman-naziv="Plasma Pen">Zanimaju me Plasma Pen tretmani</a>
+          </div>
+        </article>
+
+        <!-- Kartica B — Hladna plazma -->
+        <article class="reveal bg-white card-static p-8 sm:p-10 lg:p-12 flex flex-col border-t-2 border-navy" style="transition-delay:80ms">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#013559" stroke-width="1.4" aria-hidden="true">
+            <circle cx="12" cy="12" r="2.6"/>
+            <path d="M12 5.6a6.4 6.4 0 010 12.8M12 2.3a9.7 9.7 0 010 19.4" stroke-linecap="round"/>
+            <path d="M12 5.6a6.4 6.4 0 000 12.8M12 2.3a9.7 9.7 0 000 19.4" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+          <h3 class="mt-6 font-display text-navy text-[26px] sm:text-[30px] leading-[1.15]">Hladna plazma</h3>
+          <p class="mt-5 text-[15.5px] text-nightrider/80 leading-[1.75] max-w-[46ch]">
+            Neinvazivan tretman koji pomaže poboljšati izgled, ravnotežu i regeneraciju kože bez stvaranja površinskih točkica.
+          </p>
+
+          <div class="mt-9 pt-8 border-t border-navy/12">
+            <p class="eyebrow-navy" id="hp-lista">Preporučuje se kod</p>
+            <ul class="tlist mt-5 space-y-3 text-[15px] text-nightrider/85 leading-[1.6]" aria-labelledby="hp-lista">
+              <li>akni i problematične kože</li>
+              <li>proširenih pora i masne kože</li>
+              <li>pigmentacijskih nepravilnosti</li>
+              <li>dehidrirane i osjetljive kože</li>
+              <li>sitnih bora i slabijeg tonusa</li>
+              <li>potrebe za bržom regeneracijom kože</li>
+            </ul>
+          </div>
+
+          <div class="mt-10 pt-2">
+            <a href="#konzultacije" class="btn-outline w-full" data-tretman="hladna-plazma" data-tretman-naziv="Hladna plazma">Zanima me hladna plazma</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= §3 — KOJI JE TRETMAN ZA VAS? ================= -->
+  <section id="usporedba" class="bg-white py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Koji je tretman za vas?</h2>
+      <div class="rule-navy mt-7 reveal"></div>
+
+      <!-- The deck sets each treatment name in bold at the head of its own
+           sentence. Kept as a run-in lead-in so the sentence stays whole —
+           lifting the name into a standalone heading would leave the rest of
+           the line starting mid-sentence in lower case. -->
+      <div class="mt-12 grid md:grid-cols-2 gap-10 lg:gap-0">
+        <div class="reveal lg:pr-16">
+          <p class="text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.85] max-w-[42ch]">
+            <strong class="font-display font-medium text-navy text-[20px] sm:text-[22px] leading-[1.2] mr-1.5">Plasma Pen</strong>
+            odabire se kada je cilj kontrolirano zatezanje i obnova kože, uz period cijeljenja.
+          </p>
+        </div>
+        <div class="reveal lg:pl-16 lg:border-l lg:border-navy/12" style="transition-delay:80ms">
+          <p class="text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.85] max-w-[42ch]">
+            <strong class="font-display font-medium text-navy text-[20px] sm:text-[22px] leading-[1.2] mr-1.5">Hladna plazma</strong>
+            prikladnija je za poboljšanje stanja kože, umirivanje nepravilnosti i poticanje regeneracije bez klasičnog perioda oporavka.
+          </p>
+        </div>
+      </div>
+
+      <!-- the page's thesis, given the weight it deserves -->
+      <div class="reveal grain relative mt-14 lg:mt-16 bg-navy text-white overflow-hidden card-floating">
+        <div class="relative px-8 sm:px-12 lg:px-16 py-12 lg:py-16 text-center">
+          <div class="rule-mustard mx-auto"></div>
+          <p class="mt-8 font-display text-[22px] sm:text-[27px] lg:text-[31px] leading-[1.35] max-w-[24ch] mx-auto">
+            Točna preporuka donosi se nakon konzultacija i procjene kože.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= §4 — KAKO IZGLEDA POSTUPAK ================= -->
+  <section id="postupak" class="bg-alice py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Kako izgleda postupak</h2>
+      <div class="rule-navy mt-7 reveal"></div>
+
+      <div class="mt-12 grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-start lg:items-center">
+        <ol class="steps reveal">
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Pošaljete zahtjev za konzultacije.</p></li>
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Navedete područje ili problem koji želite tretirati.</p></li>
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Po potrebi pošaljete jasne fotografije područja.</p></li>
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Procjenjujemo koji je tretman prikladan za vas.</p></li>
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Dobivate preporuku, cijenu i dostupne termine.</p></li>
+          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Nakon potvrde dogovara se termin tretmana.</p></li>
+        </ol>
+
+        <!-- The source PNG has rounded corners baked in, so the image is scaled
+             very slightly past the frame to crop them off. -->
+        <figure class="reveal img-tint w-full h-[340px] sm:h-[440px] lg:h-[520px] card-static bg-navy" style="transition-delay:100ms">
+          <img src="brand-assets/photos/specijalist-pen.png"
+               alt="Specijalistica u zaštitnim rukavicama drži plasma uređaj"
+               class="absolute inset-0 w-full h-full object-cover object-[62%_40%] scale-[1.04]">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= §5 — OBRAZAC ZA KONZULTACIJE ================= -->
+  <section id="konzultacije" class="grain relative bg-navy text-white overflow-hidden py-20 lg:py-28" tabindex="-1">
+    <div class="relative max-w-3xl mx-auto px-6">
+      <div class="text-center">
+        <h2 class="reveal font-display font-medium text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15]">Zatražite konzultacije</h2>
+        <div class="rule-mustard mt-7 mx-auto reveal"></div>
+        <p class="reveal mt-7 text-[15.5px] sm:text-[16px] text-white/80 leading-[1.75] max-w-[52ch] mx-auto">
+          Ispunite kratki obrazac kako bismo mogli procijeniti vaše potrebe i preporučiti odgovarajući plasma tretman.
+        </p>
+      </div>
+
+      <!-- Live region: announces a treatment pre-selected by the §2 card CTAs. -->
+      <p id="obrazac-najava" class="sr-only" role="status" aria-live="polite"></p>
+
+      <!-- MARKUP ONLY — see the FORM HANDLER STUB in the page script below. -->
+      <form id="konzultacije-obrazac" class="reveal mt-12" novalidate style="transition-delay:60ms">
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="field-label-dark" for="f-ime">Ime i prezime <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
+            <input class="field-input-dark" type="text" id="f-ime" name="ime" required autocomplete="name">
+          </div>
+          <div>
+            <label class="field-label-dark" for="f-telefon">Broj telefona <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
+            <input class="field-input-dark" type="tel" id="f-telefon" name="telefon" required autocomplete="tel">
+          </div>
+          <div class="sm:col-span-2">
+            <label class="field-label-dark" for="f-email">E-mail <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
+            <input class="field-input-dark" type="email" id="f-email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <fieldset class="mt-8" id="polje-tretman">
+          <legend class="field-label-dark">Tretman koji vas zanima</legend>
+          <div class="mt-4 grid sm:grid-cols-3 gap-3">
+            <div class="opt">
+              <input type="radio" id="f-tretman-pen" name="tretman" value="plasma-pen">
+              <label for="f-tretman-pen">Plasma Pen</label>
+            </div>
+            <div class="opt">
+              <input type="radio" id="f-tretman-hladna" name="tretman" value="hladna-plazma">
+              <label for="f-tretman-hladna">Hladna plazma</label>
+            </div>
+            <div class="opt">
+              <input type="radio" id="f-tretman-nesiguran" name="tretman" value="nisam-siguran">
+              <label for="f-tretman-nesiguran">Nisam siguran/na</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="mt-8">
+          <label class="field-label-dark" for="f-podrucje">Područje koje želite tretirati</label>
+          <input class="field-input-dark" type="text" id="f-podrucje" name="podrucje">
+        </div>
+
+        <div class="mt-6">
+          <label class="field-label-dark" for="f-opis">Kratak opis problema ili željenog rezultata</label>
+          <textarea class="field-input-dark" id="f-opis" name="opis" rows="4"></textarea>
+        </div>
+
+        <div class="mt-8">
+          <label class="field-label-dark" for="f-fotografije">Fotografije područja <span class="field-note">(neobavezno, više datoteka)</span></label>
+          <input class="field-file" type="file" id="f-fotografije" name="fotografije" accept="image/*" multiple aria-describedby="f-fotografije-popis"><label class="file-trigger" for="f-fotografije"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 16.5l4.5-4 3.5 3 3-2.5 4.5 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Odaberite fotografije</label>
+          <div id="f-fotografije-popis" class="mt-5 hidden" role="status" aria-live="polite"></div>
+        </div>
+
+        <fieldset class="mt-8">
+          <legend class="field-label-dark">Željeni način kontakta</legend>
+          <div class="mt-4 grid sm:grid-cols-3 gap-3">
+            <div class="opt">
+              <input type="radio" id="f-kontakt-poziv" name="kontakt" value="poziv">
+              <label for="f-kontakt-poziv">Poziv</label>
+            </div>
+            <div class="opt">
+              <input type="radio" id="f-kontakt-whatsapp" name="kontakt" value="whatsapp">
+              <label for="f-kontakt-whatsapp">WhatsApp</label>
+            </div>
+            <div class="opt">
+              <input type="radio" id="f-kontakt-email" name="kontakt" value="email">
+              <label for="f-kontakt-email">E-mail</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Health data is sensitive personal data: consent is required and
+             unticked by default, and the privacy policy link is still a token. -->
+        <div class="mt-9 pt-8 border-t border-white/15 consent">
+          <input type="checkbox" id="f-privola" name="privola" required aria-describedby="privola-tekst">
+          <label for="f-privola" id="privola-tekst" class="text-[14px] text-white/85 leading-[2] cursor-pointer">
+            <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span>
+            Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam <span class="tbc tbc-dark tbc-inline">⟦TBC: poveznica na pravila privatnosti⟧</span>.
+          </label>
+        </div>
+
+        <p id="obrazac-greska" class="mt-6 text-[13.5px] text-mustard leading-[1.6] hidden" role="alert"></p>
+        <p id="obrazac-potvrda" class="mt-6 text-[13.5px] text-white leading-[1.6] hidden" role="status"></p>
+
+        <div class="mt-9">
+          <button type="submit" class="btn-primary-inverse w-full sm:w-auto">Pošaljite zahtjev</button>
+        </div>
+
+        <p class="mt-7 text-[13.5px] text-white/60 leading-[1.7]">Fotografije se koriste isključivo za procjenu tretmana.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= §6 — ZAVRŠNI DIO ================= -->
+  <section class="bg-white py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="reveal font-display font-medium text-navy text-[26px] sm:text-[32px] lg:text-[36px] leading-[1.2] max-w-[22ch] mx-auto">
+        Niste sigurni trebate li Plasma&nbsp;Pen ili hladnu plazmu?
+      </h2>
+      <div class="rule-navy mt-7 mx-auto reveal"></div>
+      <p class="reveal mt-7 text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.75] max-w-[54ch] mx-auto">
+        Pošaljite zahtjev za konzultacije. Nakon procjene kože dobit ćete preporuku tretmana, okvirnu cijenu i informacije o postupku.
+      </p>
+      <div class="mt-10 reveal">
+        <a href="#konzultacije" class="btn-primary w-full sm:w-auto">Zatražite konzultacije</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= PODNOŽJE ================= -->
+<footer class="bg-nightrider text-white/70 border-t border-mustard/60">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-[auto_1fr] gap-10 md:gap-16">
+    <div class="text-white">
+      <div class="wm wm-lg">
+        <span class="wm-name">PRIVÉ</span>
+        <span class="wm-sub">
+          <span class="wm-rule" aria-hidden="true"></span>
+          <span class="wm-word">Studio</span>
+          <span class="wm-rule" aria-hidden="true"></span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Every Studio contact detail is unconfirmed: the Academy's address and
+         info@prive-academy.com belong to the other entity and must not be
+         reused here. Each token stays visible until Sandra confirms a value. -->
+    <div class="flex flex-col items-start gap-3">
+      <span class="tbc tbc-dark">⟦TBC: kontakt e-mail za Studio — info@prive-academy.com je Akademijin⟧</span>
+      <span class="tbc tbc-dark">⟦TBC: telefon / WhatsApp broj⟧</span>
+      <span class="tbc tbc-dark">⟦TBC: adresa studija⟧</span>
+      <span class="tbc tbc-dark">⟦TBC: poveznica na pravila privatnosti⟧</span>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 py-6 text-[11px] tracking-[0.06em] uppercase text-white/45">
+      © 2026 Privé Studio.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- reveal on scroll ---------------------------------------------------
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('konzultacije-obrazac');
+  const formSection = document.getElementById('konzultacije');
+  const announce = document.getElementById('obrazac-najava');
+  const errorBox = document.getElementById('obrazac-greska');
+  const okBox = document.getElementById('obrazac-potvrda');
+  const consent = document.getElementById('f-privola');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- §2 card CTAs: scroll to the form AND pre-select the treatment ------
+  // The anchors work without JS (they simply jump to the form); JS adds the
+  // pre-selection, the focus move and the screen-reader announcement.
+  document.querySelectorAll('a[data-tretman]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const radio = form.querySelector('input[name="tretman"][value="' + link.dataset.tretman + '"]');
+      if (radio) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', { bubbles: true }));
+
+        // transient visual cue so sighted users see what changed
+        const chip = radio.closest('.opt');
+        document.querySelectorAll('.opt.flash').forEach(el => el.classList.remove('flash'));
+        void chip.offsetWidth;
+        chip.classList.add('flash');
+        setTimeout(() => chip.classList.remove('flash'), 3200);
+      }
+
+      formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+
+      // Move focus into the form without fighting the smooth scroll.
+      document.getElementById('f-ime').focus({ preventScroll: true });
+
+      announce.textContent = 'Odabran tretman: ' + link.dataset.tretmanNaziv +
+        '. Obrazac za konzultacije je otvoren, unesite svoje podatke.';
+    });
+  });
+
+  // ---- photo field: echo the chosen filenames back --------------------
+  // Client-side only. Nothing is uploaded anywhere.
+  const fileInput = document.getElementById('f-fotografije');
+  const fileList = document.getElementById('f-fotografije-popis');
+
+  fileInput.addEventListener('change', () => {
+    const files = Array.from(fileInput.files || []);
+    fileList.innerHTML = '';
+
+    if (!files.length) {
+      fileList.classList.add('hidden');
+      return;
+    }
+
+    const heading = document.createElement('p');
+    heading.className = 'text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60';
+    heading.textContent = files.length === 1 ? 'Odabrana datoteka' : 'Odabrane datoteke (' + files.length + ')';
+    fileList.appendChild(heading);
+
+    const ul = document.createElement('ul');
+    ul.className = 'mt-3 space-y-2';
+    files.forEach((file) => {
+      const li = document.createElement('li');
+      li.className = 'flex items-start gap-2.5 text-[13.5px] text-white/85 leading-[1.5] break-all';
+      li.innerHTML = '<svg class="mt-[5px] shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 16.5l4.5-4 3.5 3 3-2.5 4.5 4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      li.appendChild(document.createTextNode(file.name));
+      ul.appendChild(li);
+    });
+    fileList.appendChild(ul);
+    fileList.classList.remove('hidden');
+  });
+
+  // clear the invalid state as soon as consent is given
+  consent.addEventListener('change', () => {
+    if (consent.checked) consent.removeAttribute('aria-invalid');
+  });
+
+  // =========================================================================
+  // FORM HANDLER STUB — NO BACKEND IS CONNECTED.
+  // The validation below is client-side only. Nothing is sent anywhere, no
+  // lead is stored, and the selected photographs never leave the browser.
+  // REPLACE the marked block with the real submit (multipart POST to the CRM
+  // endpoint / webhook, then redirect to a thank-you page) before this page
+  // goes live. Health data is sensitive personal data — the endpoint must be
+  // covered by the Studio privacy policy that is still ⟦TBC⟧.
+  // =========================================================================
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    errorBox.classList.add('hidden'); errorBox.textContent = '';
+    okBox.classList.add('hidden'); okBox.textContent = '';
+
+    const ime = form.querySelector('[name="ime"]');
+    const telefon = form.querySelector('[name="telefon"]');
+    const email = form.querySelector('[name="email"]');
+
+    [ime, telefon, email].forEach(f => f.removeAttribute('aria-invalid'));
+    consent.removeAttribute('aria-invalid');
+
+    const missing = [];
+    if (!ime.value.trim()) { missing.push({ label: 'ime i prezime', el: ime }); }
+    if (!telefon.value.trim()) { missing.push({ label: 'broj telefona', el: telefon }); }
+    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      missing.push({ label: 'ispravnu e-mail adresu', el: email });
+    }
+
+    if (missing.length) {
+      missing.forEach(m => m.el.setAttribute('aria-invalid', 'true'));
+      const labels = missing.map(m => m.label);
+      const list = labels.length > 1
+        ? labels.slice(0, -1).join(', ') + ' i ' + labels[labels.length - 1]
+        : labels[0];
+      errorBox.textContent = 'Molimo unesite ' + list + '.';
+      errorBox.classList.remove('hidden');
+      missing[0].el.focus();
+      return;
+    }
+
+    // Consent is a hard gate: the form must not submit without it.
+    if (!consent.checked) {
+      consent.setAttribute('aria-invalid', 'true');
+      errorBox.textContent = 'Molimo potvrdite privolu za obradu podataka. Bez privole ne možemo obraditi vaš zahtjev ni fotografije.';
+      errorBox.classList.remove('hidden');
+      consent.focus();
+      return;
+    }
+
+    // ---- REPLACE FROM HERE ------------------------------------------------
+    okBox.textContent = 'Obrazac je ispravno ispunjen. Slanje još nije povezano — zahtjev se trenutno ne zaprima.';
+    okBox.classList.remove('hidden');
+    // ---- REPLACE TO HERE --------------------------------------------------
+  });
+</script>
+</body>
+</html>

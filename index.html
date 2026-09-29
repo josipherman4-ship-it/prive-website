@@ -1,736 +1,1896 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privé Academy — Plasma, Fibroblast &amp; Aesthetics Education</title>
-<link rel="icon" href="brand-assets/Prive_LOGO_bel.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
-          alice: '#eff8ff',
-          nightrider: '#2b2b2b',
-          mustard: '#c0b905',
-        },
-        fontFamily: {
-          display: ['"Libre Bodoni"', 'Didot', 'serif'],
-          sans: ['Montserrat', 'sans-serif'],
-        },
-        letterSpacing: { tightest2: '-0.03em' },
-      },
-    },
-  };
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privé Academy | Plasma Technology Academy</title>
+<meta name="description" content="Privé trains aestheticians and beauty professionals in non-invasive plasma treatments. 1,000+ specialists trained since 2010.">
+<link rel="icon" href="images/v4-favicon.png">
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Montserrat', sans-serif; }
-  h1, h2, h3, .font-display { font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; }
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-  /* grain texture for depth on navy surfaces */
-  .grain { position: relative; }
-  .grain::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-    pointer-events: none;
-    mix-blend-mode: overlay;
-  }
+/* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
+:where(#prive-v4-home, #prive-v4-home *, #prive-v4-home *::before, #prive-v4-home *::after){box-sizing: border-box; margin: 0; padding: 0;}
+:where(#prive-v4-home) ul,
+:where(#prive-v4-home) ol{list-style: none;}
+:where(#prive-v4-home) a{color: inherit; text-decoration: none;}
+:where(#prive-v4-home) img,
+:where(#prive-v4-home) svg,
+:where(#prive-v4-home) video,
+:where(#prive-v4-home) iframe{display: block; max-width: 100%;}
+:where(#prive-v4-home) button,
+:where(#prive-v4-home) input,
+:where(#prive-v4-home) select,
+:where(#prive-v4-home) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
 
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: #013559; color: #fff;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 15px 38px; border-radius: 9999px; border: none; cursor: pointer;
-    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease, background 300ms ease;
-    box-shadow: 0 10px 24px -8px rgba(1,53,89,0.45);
-  }
-  .btn-primary:hover { transform: translateY(-2px) scale(1.02); background: #012842; box-shadow: 0 16px 32px -8px rgba(1,53,89,0.55); }
-  .btn-primary:active { transform: translateY(0) scale(0.99); }
-  .btn-primary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+/* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-home ---- */
+#prive-v4-home,#prive-v4-home *,#prive-v4-home :after,#prive-v4-home :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-home .visible{visibility:visible}#prive-v4-home .static{position:static}#prive-v4-home .fixed{position:fixed}#prive-v4-home .mt-14{margin-top:3.5rem}#prive-v4-home .block{display:block}#prive-v4-home .flex{display:flex}#prive-v4-home .grid{display:grid}#prive-v4-home .hidden{display:none}#prive-v4-home .flex-col{flex-direction:column}#prive-v4-home .gap-10{gap:2.5rem}#prive-v4-home .gap-12{gap:3rem}#prive-v4-home .gap-5{gap:1.25rem}#prive-v4-home .gap-8{gap:2rem}#prive-v4-home .gap-x-8{-moz-column-gap:2rem;column-gap:2rem}#prive-v4-home .gap-y-10{row-gap:2.5rem}@media (min-width:640px){#prive-v4-home .sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:768px){#prive-v4-home .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}#prive-v4-home .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}#prive-v4-home .md\:gap-6{gap:1.5rem}}@media (min-width:1024px){#prive-v4-home .lg\:col-span-4{grid-column:span 4/span 4}#prive-v4-home .lg\:col-span-5{grid-column:span 5/span 5}#prive-v4-home .lg\:col-span-7{grid-column:span 7/span 7}#prive-v4-home .lg\:col-span-8{grid-column:span 8/span 8}#prive-v4-home .lg\:mt-20{margin-top:5rem}#prive-v4-home .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}#prive-v4-home .lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}#prive-v4-home .lg\:flex-row{flex-direction:row}#prive-v4-home .lg\:items-end{align-items:flex-end}#prive-v4-home .lg\:justify-between{justify-content:space-between}#prive-v4-home .lg\:gap-12{gap:3rem}#prive-v4-home .lg\:gap-16{gap:4rem}#prive-v4-home .lg\:gap-8{gap:2rem}}
 
-  .btn-primary-inverse {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: #fff; color: #013559;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 15px 38px; border-radius: 9999px; border: none; cursor: pointer;
-    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease;
-    box-shadow: 0 10px 24px -8px rgba(0,0,0,0.35);
-  }
-  .btn-primary-inverse:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.45); }
-  .btn-primary-inverse:active { transform: translateY(0) scale(0.99); }
-  .btn-primary-inverse:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+/* ---- components (src/styles/components.css) ---- */
+#prive-v4-home{--pv-navy: #013559;
+  --pv-navy-700: #012842;
+  --pv-alice: #eff8ff;
+  --pv-nightrider: #2b2b2b;
+  --pv-mustard: #c0b905;
+  --pv-white: #fff;
+  --pv-text-muted: rgba(43, 43, 43, .78);
+  --pv-line: rgba(1, 53, 89, .14);
+  --pv-line-strong: rgba(1, 53, 89, .3);
+  --pv-label: rgba(1, 53, 89, .78);
+  --pv-on-dark: rgba(255, 255, 255, .8);
+  --pv-on-dark-line: rgba(255, 255, 255, .14);
+  --pv-focus: var(--pv-navy);
 
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: #013559;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 14px 36px; border: 1.5px solid #c0b905; border-radius: 0;
-    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease;
-  }
-  .btn-secondary:hover { transform: translateY(-2px); background: #013559; color: #fff; border-color: #013559; }
-  .btn-secondary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
+  --pv-display: 'Libre Bodoni', Didot, serif;
+  --pv-sans: Montserrat, sans-serif;
+  --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --pv-out: cubic-bezier(.22, 1, .36, 1);
 
-  .btn-secondary-inverse {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: #fff;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 14px 36px; border: 1.5px solid #c0b905; border-radius: 0;
-    transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease;
-  }
-  .btn-secondary-inverse:hover { transform: translateY(-2px); background: #c0b905; color: #013559; }
-  .btn-secondary-inverse:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  
+  --pv-section-y: 4rem;
+  --pv-block-gap: 2.5rem;
+  --pv-gutter: 1.5rem;
+  --pv-nav-h: 4.5rem;
 
-  .nav-link { position: relative; }
-  .nav-link::after {
-    content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0;
-    background: #c0b905; transition: width 300ms ease;
-  }
-  .nav-link:hover::after, .nav-link:focus-visible::after { width: 100%; }
-  .nav-link:focus-visible { outline: 2px solid #c0b905; outline-offset: 4px; }
-  .nav-link.is-active::after { width: 100%; }
+  background-color: var(--pv-white);
+  color: var(--pv-nightrider);
+  font-family: var(--pv-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+@media (min-width: 1024px){
+#prive-v4-home{--pv-section-y: 6rem;
+    --pv-block-gap: 3.5rem;
+    --pv-gutter: 2.5rem;
+    --pv-nav-h: 5.25rem;
+    font-size: 1.0625rem;}
+}
+#prive-v4-home h1,
+#prive-v4-home h2,
+#prive-v4-home h3,
+#prive-v4-home .font-display{font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; line-height: 1.15;}
+#prive-v4-home .pv-needs{background: #eff8ff; color: #013559; outline: 1px dashed #013559; padding: 0 .25em;}
+#prive-v4-home.js-ready .pv-reveal{opacity: 0; transform: translateY(24px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1);}
+#prive-v4-home.js-ready .pv-reveal.is-in{opacity: 1; transform: none;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home.js-ready .pv-reveal{opacity: 1; transform: none; transition: none;}
+}
+#prive-v4-home .pv-ghl-form iframe{min-height: 480px;}
+#prive-v4-home .pv-ghl-calendar iframe{min-height: 640px;}
+@keyframes pv-rise{from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; }}
+@keyframes pv-burst{from { opacity: 0; transform: translateX(-50%) scale(.94); } to { opacity: 1; transform: translateX(-50%) scale(1); }}
+#prive-v4-home :focus-visible{outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-home ::selection{background: var(--pv-navy); color: var(--pv-white);}
+#prive-v4-home .pv-container{width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: var(--pv-gutter);}
+#prive-v4-home .pv-section{padding-block: var(--pv-section-y);}
+#prive-v4-home .pv-section[id]{scroll-margin-top: var(--pv-nav-h);}
+#prive-v4-home .pv-surface-alice{background: var(--pv-alice);}
+#prive-v4-home .pv-surface-white{background: var(--pv-white);}
+#prive-v4-home .pv-block{margin-top: var(--pv-block-gap);}
+#prive-v4-home .pv-surface-navy{background: var(--pv-navy); color: var(--pv-on-dark); --pv-focus: var(--pv-mustard);}
+#prive-v4-home .pv-grain{position: relative; isolation: isolate;}
+#prive-v4-home .pv-grain::before{content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;}
+#prive-v4-home .pv-eyebrow{display: inline-flex;
+  align-items: center;
+  gap: .875rem;
+  font-family: var(--pv-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--pv-navy);}
+#prive-v4-home .pv-eyebrow::before{content: ""; flex: none; width: 1.75rem; height: 1.5px; background: var(--pv-mustard);}
+#prive-v4-home .pv-surface-navy .pv-eyebrow{color: var(--pv-on-dark);}
+#prive-v4-home .pv-section-head{max-width: 44rem;}
+#prive-v4-home .pv-section-head > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-h2{font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.12;
+  letter-spacing: -.005em;
+  color: var(--pv-navy);
+  text-wrap: balance;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-h2{font-size: 2.5rem;}
+}
+#prive-v4-home .pv-surface-navy .pv-h2{color: var(--pv-white);}
+#prive-v4-home .pv-h3{font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  color: var(--pv-navy);}
+#prive-v4-home .pv-lead{font-size: 1.0625rem; line-height: 1.7; color: var(--pv-text-muted); max-width: 40rem; text-wrap: pretty;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-lead{font-size: 1.1875rem;}
+}
+#prive-v4-home .pv-surface-navy .pv-lead{color: var(--pv-on-dark);}
+#prive-v4-home .pv-prose > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-textlink{display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9375rem;
+  font-weight: 500;
+  color: var(--pv-navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--pv-line-strong);}
+#prive-v4-home .pv-textlink:hover{text-decoration-color: currentColor;}
+#prive-v4-home .pv-textlink:active{opacity: .7;}
+#prive-v4-home .pv-textlink svg{transition: transform 320ms var(--pv-spring);}
+#prive-v4-home .pv-textlink:hover svg{transform: translateX(3px);}
+#prive-v4-home .pv-textlink--inverse{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .4);}
+#prive-v4-home .pv-btn{position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  min-height: 3rem;
+  padding: .875rem 2.125rem;
+  font-family: var(--pv-sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 380ms var(--pv-spring);}
+#prive-v4-home .pv-btn::before{content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 240ms ease;}
+#prive-v4-home .pv-btn:hover{transform: translateY(-2px);}
+#prive-v4-home .pv-btn:hover::before{opacity: 1;}
+#prive-v4-home .pv-btn:active{transform: translateY(0) scale(.98); transition-duration: 120ms;}
+#prive-v4-home .pv-btn:focus-visible{outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-home .pv-btn--primary{background: var(--pv-navy); color: var(--pv-white); border-radius: 50px;}
+#prive-v4-home .pv-btn--primary::before{background: var(--pv-navy-700);}
+#prive-v4-home .pv-btn--secondary{background: transparent;
+  color: var(--pv-navy);
+  border: 1.5px solid var(--pv-mustard);
+  border-radius: 0;
+  padding: .8125rem 2rem;}
+#prive-v4-home .pv-btn--secondary::before{background: rgba(1, 53, 89, .06);}
+#prive-v4-home .pv-btn--inverse{background: var(--pv-white); color: var(--pv-navy); border-radius: 50px;}
+#prive-v4-home .pv-btn--inverse::before{background: var(--pv-alice);}
+#prive-v4-home .pv-btn--secondary-inverse{background: transparent;
+  color: var(--pv-white);
+  border: 1.5px solid var(--pv-mustard);
+  border-radius: 0;
+  padding: .8125rem 2rem;}
+#prive-v4-home .pv-btn--secondary-inverse::before{background: rgba(255, 255, 255, .1);}
+@media (max-width: 639px){
+#prive-v4-home .pv-btn{padding-inline: 1.5rem; letter-spacing: .07em;}
+#prive-v4-home .pv-btn--block-sm{width: 100%;}
+}
+#prive-v4-home .pv-icon-btn{position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--pv-line-strong);
+  color: var(--pv-navy);
+  cursor: pointer;
+  transition: transform 320ms var(--pv-spring), opacity 200ms ease;}
+#prive-v4-home .pv-icon-btn::before{content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(1, 53, 89, .07); opacity: 0; transition: opacity 200ms ease;}
+#prive-v4-home .pv-icon-btn:hover::before{opacity: 1;}
+#prive-v4-home .pv-icon-btn svg{transition: transform 320ms var(--pv-spring);}
+#prive-v4-home .pv-icon-btn[data-carousel-prev]:hover svg{transform: translateX(-2px);}
+#prive-v4-home .pv-icon-btn[data-carousel-next]:hover svg{transform: translateX(2px);}
+#prive-v4-home .pv-icon-btn:active{transform: scale(.94);}
+#prive-v4-home .pv-icon-btn[aria-disabled="true"]{opacity: .35; cursor: default;}
+#prive-v4-home .pv-icon-btn[aria-disabled="true"]::before{opacity: 0;}
+#prive-v4-home .pv-tag{display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .3125rem .75rem;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pv-navy);
+  border: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-tag--inverse{color: var(--pv-white); border-color: rgba(255, 255, 255, .35);}
+#prive-v4-home .pv-nav{position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--pv-navy);
+  color: var(--pv-white);
+  --pv-focus: var(--pv-mustard);}
+#prive-v4-home .pv-nav::after{content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, .16);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;}
+#prive-v4-home .pv-nav.is-scrolled::after{opacity: 1;}
+#prive-v4-home .pv-nav__bar{display: flex; align-items: center; justify-content: space-between; gap: 2rem; height: var(--pv-nav-h);}
+#prive-v4-home .pv-nav__logo{display: block; flex: none; transition: transform 380ms var(--pv-spring);}
+#prive-v4-home .pv-nav__logo img{width: 3.5rem; height: 3.5rem;}
+#prive-v4-home .pv-nav__logo:hover{transform: scale(1.04);}
+#prive-v4-home .pv-nav__logo:active{transform: scale(.97);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-nav__logo img{width: 4rem; height: 4rem;}
+}
+#prive-v4-home .pv-nav__links{display: none;}
+#prive-v4-home .pv-nav__link{position: relative;
+  padding-block: .5rem;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, .82);}
+#prive-v4-home .pv-nav__link::after{content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .125rem;
+  height: 1.5px;
+  background: var(--pv-mustard);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--pv-out);}
+#prive-v4-home .pv-nav__link:hover{color: var(--pv-white);}
+#prive-v4-home .pv-nav__link:hover::after,
+#prive-v4-home .pv-nav__link[aria-current="page"]::after{transform: scaleX(1);}
+#prive-v4-home .pv-nav__link[aria-current="page"]{color: var(--pv-white); font-weight: 600;}
+#prive-v4-home .pv-nav__link:active{opacity: .7;}
+#prive-v4-home .pv-nav__link:focus-visible{outline-offset: 4px;}
+#prive-v4-home .pv-nav__toggle{position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -.625rem;
+  color: var(--pv-white);
+  cursor: pointer;
+  transition: transform 260ms var(--pv-spring);}
+#prive-v4-home .pv-nav__toggle span{display: block; width: 1.375rem; height: 1.5px; background: currentColor; transition: transform 320ms var(--pv-out), opacity 200ms ease;}
+#prive-v4-home .pv-nav__toggle:hover span:nth-child(2){transform: scaleX(.64);}
+#prive-v4-home .pv-nav__toggle:active{transform: scale(.92);}
+#prive-v4-home .pv-nav__toggle.is-open span:nth-child(1){transform: translateY(6.5px) rotate(45deg);}
+#prive-v4-home .pv-nav__toggle.is-open span:nth-child(2){opacity: 0;}
+#prive-v4-home .pv-nav__toggle.is-open span:nth-child(3){transform: translateY(-6.5px) rotate(-45deg);}
+#prive-v4-home .pv-nav__menu{position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  
+  height: calc(100vh - var(--pv-nav-h));
+  height: calc(100dvh - var(--pv-nav-h));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--pv-navy);
+  border-top: 1px solid var(--pv-on-dark-line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-.5rem);
+  transition: opacity 240ms ease, transform 320ms var(--pv-out), visibility 0s linear 320ms;}
+#prive-v4-home .pv-nav__menu.is-open{opacity: 1; visibility: visible; transform: none; transition-delay: 0s;}
+#prive-v4-home .pv-nav__menu-list{padding-top: .5rem; padding-bottom: 2rem;}
+#prive-v4-home .pv-nav__menu-link{display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .85);}
+#prive-v4-home .pv-nav__menu-link::after{content: "";
+  width: 1.25rem;
+  height: 1.5px;
+  background: var(--pv-mustard);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 320ms var(--pv-out);}
+#prive-v4-home .pv-nav__menu-link:hover{color: var(--pv-white);}
+#prive-v4-home .pv-nav__menu-link:hover::after,
+#prive-v4-home .pv-nav__menu-link[aria-current="page"]::after{transform: scaleX(1);}
+#prive-v4-home .pv-nav__menu-link[aria-current="page"]{color: var(--pv-white); font-weight: 600;}
+#prive-v4-home .pv-nav__menu-link:active{opacity: .7;}
+#prive-v4-home .pv-nav__menu-link:focus-visible{outline-offset: -2px;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-nav__links{display: flex; align-items: center; gap: 1.5rem;}
+#prive-v4-home .pv-nav__toggle,
+#prive-v4-home .pv-nav__menu{display: none;}
+}
+@media (min-width: 1280px){
+#prive-v4-home .pv-nav__links{gap: 2.125rem;}
+}
+#prive-v4-home .pv-hero{position: relative;
+  overflow: clip;
+  background: var(--pv-navy);
+  color: var(--pv-on-dark);
+  text-align: center;
+  padding-top: 4.5rem;
+  --pv-focus: var(--pv-mustard);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-hero{padding-top: 7.5rem;}
+}
+#prive-v4-home .pv-hero__title-wrap{position: relative;}
+#prive-v4-home .pv-burst{position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 40rem;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  animation: pv-burst 1200ms var(--pv-out) both;}
+#prive-v4-home .pv-hero .pv-burst{bottom: 18%;}
+@media (min-width: 640px){
+#prive-v4-home .pv-hero .pv-burst{width: 58rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-hero .pv-burst{width: 78rem; bottom: 6%;}
+}
+#prive-v4-home .pv-hero__title{position: relative;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.75rem;
+  line-height: 1.04;
+  letter-spacing: .02em;
+  color: var(--pv-white);
+  animation: pv-rise 900ms var(--pv-out) 120ms both;}
+#prive-v4-home .pv-hero__title-line{display: block;}
+@media (min-width: 640px){
+#prive-v4-home .pv-hero__title{font-size: 3.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-hero__title{font-size: 5.25rem;}
+}
+#prive-v4-home .pv-hero__rule{display: block; width: 3rem; height: 1.5px; margin: 2rem auto 0; background: var(--pv-mustard); animation: pv-rise 900ms var(--pv-out) 220ms both;}
+#prive-v4-home .pv-hero__sub{max-width: 40rem;
+  margin: 1.75rem auto 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--pv-on-dark);
+  animation: pv-rise 900ms var(--pv-out) 280ms both;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-hero__sub{font-size: 1.25rem;}
+}
+#prive-v4-home .pv-hero__actions{display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  animation: pv-rise 900ms var(--pv-out) 380ms both;}
+@media (min-width: 640px){
+#prive-v4-home .pv-hero__actions{flex-direction: row; justify-content: center; gap: 2rem;}
+}
+#prive-v4-home .pv-hero__proof{display: grid;
+  margin-top: 4rem;
+  border-top: 1px solid var(--pv-on-dark-line);
+  animation: pv-rise 900ms var(--pv-out) 480ms both;}
+#prive-v4-home .pv-hero__proof li{padding: 1.125rem 0; font-size: .9375rem; line-height: 1.5; color: var(--pv-on-dark); text-wrap: balance;}
+#prive-v4-home .pv-hero__proof li + li{border-top: 1px solid rgba(255, 255, 255, .08);}
+@media (min-width: 768px){
+#prive-v4-home .pv-hero__proof{grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 5.5rem;}
+#prive-v4-home .pv-hero__proof li{padding: 2rem 1rem;}
+#prive-v4-home .pv-hero__proof li + li{border-top: 0; border-left: 1px solid var(--pv-on-dark-line);}
+}
+#prive-v4-home .pv-figure{font-family: var(--pv-display); font-size: 1.625rem; font-weight: 500; line-height: 1; letter-spacing: 0; color: var(--pv-white); margin-inline: .15em;}
+#prive-v4-home .pv-figure:first-child{margin-left: 0;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home .pv-burst,
+#prive-v4-home .pv-hero__title,
+#prive-v4-home .pv-hero__rule,
+#prive-v4-home .pv-hero__sub,
+#prive-v4-home .pv-hero__actions,
+#prive-v4-home .pv-hero__proof{animation: none;}
+}
+#prive-v4-home .pv-page-hero{position: relative; overflow: clip; padding-block: 4rem 3.75rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero{padding-block: 6.5rem 5.5rem;}
+}
+#prive-v4-home .pv-page-hero__inner{position: relative;}
+#prive-v4-home .pv-page-hero .pv-eyebrow{animation: pv-rise 900ms var(--pv-out) both;}
+#prive-v4-home .pv-page-hero__title{position: relative;
+  max-width: 16em;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.08;
+  letter-spacing: .01em;
+  color: var(--pv-white);
+  text-wrap: balance;
+  animation: pv-rise 900ms var(--pv-out) 80ms both;}
+#prive-v4-home .pv-eyebrow + .pv-page-hero__title,
+#prive-v4-home .pv-eyebrow + .pv-page-hero__title-wrap{margin-top: 1.25rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-page-hero__title{font-size: 3.25rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero__title{font-size: 4.25rem;}
+}
+#prive-v4-home .pv-page-hero__sub{position: relative;
+  max-width: 38rem;
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--pv-on-dark);
+  text-wrap: pretty;
+  animation: pv-rise 900ms var(--pv-out) 180ms both;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero__sub{font-size: 1.1875rem;}
+}
+#prive-v4-home .pv-page-hero__actions{position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2.25rem; animation: pv-rise 900ms var(--pv-out) 280ms both;}
+#prive-v4-home .pv-page-hero .pv-burst{left: 92%; width: 36rem;}
+#prive-v4-home .pv-page-hero .pv-burst g:first-child{stroke-opacity: .12;}
+#prive-v4-home .pv-page-hero .pv-burst g:last-child{stroke-opacity: .08;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero .pv-burst{left: 84%; width: 62rem;}
+}
+#prive-v4-home .pv-page-hero--center{text-align: center;}
+#prive-v4-home .pv-page-hero--center .pv-page-hero__title,
+#prive-v4-home .pv-page-hero--center .pv-page-hero__sub{margin-inline: auto;}
+#prive-v4-home .pv-page-hero--center .pv-page-hero__actions{justify-content: center;}
+#prive-v4-home .pv-page-hero__title-wrap,
+#prive-v4-home .pv-burst-wrap{position: relative;}
+#prive-v4-home .pv-burst-wrap > :not(.pv-burst){position: relative;}
+#prive-v4-home .pv-page-hero__title-wrap .pv-burst,
+#prive-v4-home .pv-burst-wrap .pv-burst{left: 50%; bottom: 20%; width: 40rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero__title-wrap .pv-burst,
+#prive-v4-home .pv-burst-wrap .pv-burst{width: 64rem; bottom: 10%;}
+}
+#prive-v4-home .pv-page-hero--tall{padding-block: 6rem 7rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-page-hero--tall{padding-block: 9rem 10rem;}
+}
+@media (max-width: 639px){
+#prive-v4-home .pv-page-hero__actions .pv-btn{width: 100%;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home .pv-page-hero .pv-eyebrow,
+#prive-v4-home .pv-page-hero__title,
+#prive-v4-home .pv-page-hero__sub,
+#prive-v4-home .pv-page-hero__actions{animation: none;}
+}
+#prive-v4-home .pv-cta{text-align: center;}
+#prive-v4-home .pv-cta__inner{max-width: 44rem; margin-inline: auto;}
+#prive-v4-home .pv-cta .pv-lead{margin: 1rem auto 0;}
+#prive-v4-home .pv-cta__actions{display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2.25rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-cta__actions{flex-direction: row; justify-content: center;}
+}
+@media (max-width: 639px){
+#prive-v4-home .pv-cta__actions .pv-btn{width: 100%;}
+}
+#prive-v4-home .pv-legal{max-width: 44rem; color: var(--pv-nightrider);}
+#prive-v4-home .pv-legal > * + *{margin-top: 1.125rem;}
+#prive-v4-home .pv-legal > p:first-of-type{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-legal h2{margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--pv-line); font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-legal h2{font-size: 1.75rem;}
+}
+#prive-v4-home .pv-legal h3{margin-top: 2rem; font-size: 1.25rem; line-height: 1.25; color: var(--pv-navy);}
+#prive-v4-home .pv-legal h4{margin-top: 1.75rem; font-family: var(--pv-sans); font-size: 1rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-legal p,
+#prive-v4-home .pv-legal li{line-height: 1.75;}
+#prive-v4-home .pv-legal ul{padding-left: 1.25rem; list-style: disc;}
+#prive-v4-home .pv-legal ol{padding-left: 1.5rem; list-style: decimal;}
+#prive-v4-home .pv-legal li + li{margin-top: .5rem;}
+#prive-v4-home .pv-legal li::marker{color: var(--pv-navy);}
+#prive-v4-home .pv-legal strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-legal a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong); overflow-wrap: anywhere;}
+#prive-v4-home .pv-legal a:hover{text-decoration-color: currentColor;}
+#prive-v4-home .pv-legal a:active{opacity: .7;}
+#prive-v4-home .pv-legal hr{margin-block: 2.5rem; border: 0; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-table-wrap{margin-top: 1.5rem; overflow-x: auto; border: 1px solid var(--pv-line);}
+#prive-v4-home .pv-table-wrap table{width: 100%; min-width: 36rem; border-collapse: collapse; font-size: .875rem; line-height: 1.55;}
+#prive-v4-home .pv-table-wrap th{padding: .75rem 1rem; text-align: left; white-space: nowrap; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--pv-navy); background: var(--pv-alice);}
+#prive-v4-home .pv-table-wrap td{padding: .875rem 1rem; vertical-align: top; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-table-wrap td:first-child{font-weight: 500; color: var(--pv-navy);}
+#prive-v4-home .pv-story{display: grid; gap: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-story{grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5rem; align-items: center;}
+}
+#prive-v4-home .pv-story__text > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-story__text > .pv-h2{margin-top: 1rem;}
+#prive-v4-home .pv-story__text p{color: var(--pv-nightrider); max-width: 38rem;}
+#prive-v4-home .pv-story__media img{width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 68% 40%;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-story__media img{aspect-ratio: 4 / 5;}
+}
+#prive-v4-home .pv-event{display: grid; max-width: 56rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-home .pv-event{grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);}
+}
+#prive-v4-home .pv-event__media img{width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%;}
+@media (min-width: 640px){
+#prive-v4-home .pv-event__media img{aspect-ratio: auto;}
+}
+#prive-v4-home .pv-event__body{display: flex; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-event__body{padding: 2.5rem;}
+}
+#prive-v4-home .pv-event__meta{display: flex; flex-wrap: wrap; gap: .5rem;}
+#prive-v4-home .pv-event__title{margin-top: 1.25rem; font-family: var(--pv-display); font-weight: 500; font-size: 1.75rem; line-height: 1.15; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-event__title{font-size: 2rem;}
+}
+#prive-v4-home .pv-event__date{display: flex; align-items: center; gap: .625rem; margin-top: .75rem; font-weight: 500; color: var(--pv-navy);}
+#prive-v4-home .pv-event__date svg{flex: none; width: 1.125rem; height: 1.125rem;}
+#prive-v4-home .pv-event__text{margin-top: 1rem; font-size: .9375rem; color: var(--pv-text-muted); max-width: 34rem;}
+#prive-v4-home .pv-event__body > .pv-btn{margin-top: 1.75rem;}
+#prive-v4-home .pv-note{margin-top: 1.5rem; font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-region{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-home .pv-region__map{display: flex; align-items: center; justify-content: center; height: 15rem; padding: 1.5rem; border-bottom: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-region__map{height: 21rem; padding: 2rem;}
+}
+#prive-v4-home .pv-region__map svg{width: auto; height: 100%; max-width: 100%; color: var(--pv-navy); opacity: .8;}
+#prive-v4-home .pv-region__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-region__body{padding: 2.5rem 2.75rem 2.75rem;}
+}
+#prive-v4-home .pv-region__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-region__title{font-size: 2.25rem;}
+}
+#prive-v4-home .pv-region__meta{margin-top: .625rem; font-size: .9375rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-region__cta{margin-top: auto; padding-top: 2rem;}
+@media (max-width: 639px){
+#prive-v4-home .pv-region__cta,
+#prive-v4-home .pv-region__cta .pv-btn{width: 100%;}
+}
+#prive-v4-home .pv-btn svg{flex: none; width: .875rem; height: .875rem; transition: transform 320ms var(--pv-spring);}
+#prive-v4-home .pv-btn:hover svg{transform: translate(2px, -2px);}
+#prive-v4-home .pv-review-grid{column-gap: 1.5rem;}
+@media (min-width: 768px){
+#prive-v4-home .pv-review-grid{columns: 2;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-review-grid{columns: 3;}
+}
+#prive-v4-home .pv-review-grid > *{height: auto; margin-bottom: 1.5rem; break-inside: avoid;}
+#prive-v4-home .pv-surface-alice .pv-review{background: var(--pv-white);}
+#prive-v4-home .pv-caption{margin-top: .875rem; font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-home .pv-surface-navy .pv-caption{color: var(--pv-on-dark);}
+#prive-v4-home .pv-h3-lg{font-family: var(--pv-display); font-weight: 500; font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-h3-lg{font-size: 1.75rem;}
+}
+#prive-v4-home .pv-split{display: grid; gap: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-split{grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5rem; align-items: center;}
+#prive-v4-home .pv-split--media-left{grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);}
+#prive-v4-home .pv-split--media-left > :first-child{order: 2;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-split--top{align-items: start;}
+}
+#prive-v4-home .pv-split__text > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-cert-img{aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%;}
+#prive-v4-home .pv-carousel__foot--end{justify-content: flex-end;}
+#prive-v4-home .pv-carousel__foot .pv-caption{max-width: 40rem; margin-top: 0;}
+#prive-v4-home .pv-cta--burst .pv-h2{font-size: 2.25rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-cta--burst .pv-h2{font-size: 3.25rem;}
+}
+#prive-v4-home .pv-split__text p{max-width: 38rem;}
+#prive-v4-home .pv-split__media img{width: 100%; height: auto;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-sticky{position: sticky; top: calc(var(--pv-nav-h) + 2rem); align-self: start;}
+}
+#prive-v4-home .pv-checks{display: grid; gap: .875rem;}
+#prive-v4-home .pv-checks li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; align-items: start;}
+#prive-v4-home .pv-checks svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-home .pv-surface-navy .pv-checks svg{color: var(--pv-white);}
+#prive-v4-home .pv-statement{max-width: 46rem; padding-left: 1.5rem; border-left: 2px solid var(--pv-navy); font-size: 1.125rem; font-weight: 500; line-height: 1.65; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-statement{font-size: 1.3125rem;}
+}
+#prive-v4-home .pv-sales-hero{position: relative; overflow: clip; padding-block: 3.5rem 4rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-sales-hero{padding-block: 5.5rem 6rem;}
+}
+#prive-v4-home .pv-sales-hero .pv-burst{left: 30%; width: 40rem;}
+#prive-v4-home .pv-sales-hero .pv-burst g:first-child{stroke-opacity: .1;}
+#prive-v4-home .pv-sales-hero .pv-burst g:last-child{stroke-opacity: .07;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-sales-hero .pv-burst{width: 70rem;}
+}
+#prive-v4-home .pv-sales-hero__grid{position: relative; display: grid; gap: 3rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-sales-hero__grid{grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4.5rem; align-items: center;}
+}
+#prive-v4-home .pv-sales-hero__title{margin-top: 1.25rem;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.125rem;
+  line-height: 1.1;
+  letter-spacing: .005em;
+  color: var(--pv-white);
+  text-wrap: balance;
+  animation: pv-rise 900ms var(--pv-out) 80ms both;}
+@media (min-width: 640px){
+#prive-v4-home .pv-sales-hero__title{font-size: 2.75rem;}
+}
+@media (min-width: 1280px){
+#prive-v4-home .pv-sales-hero__title{font-size: 3.25rem;}
+}
+#prive-v4-home .pv-sales-hero .pv-eyebrow{animation: pv-rise 900ms var(--pv-out) both;}
+#prive-v4-home .pv-sales-hero__sub{max-width: 36rem; margin-top: 1.5rem; font-size: 1.0625rem; line-height: 1.7; color: var(--pv-on-dark); animation: pv-rise 900ms var(--pv-out) 180ms both;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-sales-hero__sub{font-size: 1.1875rem;}
+}
+#prive-v4-home .pv-sales-hero .pv-checks{max-width: 36rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--pv-on-dark-line); color: rgba(255, 255, 255, .9); animation: pv-rise 900ms var(--pv-out) 260ms both;}
+#prive-v4-home .pv-lead-card{background: var(--pv-white); color: var(--pv-nightrider); --pv-focus: var(--pv-navy); animation: pv-rise 900ms var(--pv-out) 320ms both;}
+#prive-v4-home .pv-lead-card__media img{width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 62%;}
+#prive-v4-home .pv-lead-card__form{padding: 1.5rem 1.25rem 1.75rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-lead-card__form{padding: 2rem 2rem 2.25rem;}
+}
+#prive-v4-home .pv-form--stacked .pv-form__grid{grid-template-columns: minmax(0, 1fr); gap: 1rem;}
+#prive-v4-home .pv-form--stacked .pv-form__foot{flex-direction: column; align-items: stretch; gap: .875rem; margin-top: 1.5rem;}
+#prive-v4-home .pv-form--stacked .pv-form__foot .pv-btn{width: 100%;}
+@media (max-width: 380px){
+#prive-v4-home .pv-form--stacked .pv-form__foot .pv-btn{padding-inline: .75rem; font-size: 12px; letter-spacing: .05em;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home .pv-sales-hero__title,
+#prive-v4-home .pv-sales-hero .pv-eyebrow,
+#prive-v4-home .pv-sales-hero__sub,
+#prive-v4-home .pv-sales-hero .pv-checks,
+#prive-v4-home .pv-lead-card{animation: none;}
+}
+#prive-v4-home .pv-stages{display: grid; gap: 2.5rem; counter-reset: none;}
+@media (min-width: 768px){
+#prive-v4-home .pv-stages{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem;}
+}
+#prive-v4-home .pv-stage{padding-top: 1.5rem; border-top: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-stage__label{font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-home .pv-stage__title{margin-top: .75rem;}
+#prive-v4-home .pv-stage p{margin-top: .75rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-text-muted);}
+#prive-v4-home .pv-trainers-pair{display: grid; gap: 3.5rem;}
+@media (min-width: 768px){
+#prive-v4-home .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
+#prive-v4-home .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-trainers-pair{gap: 5rem;}
+}
+#prive-v4-home .pv-trainers-pair .pv-trainer__bio{font-size: 1.0625rem;}
+#prive-v4-home .pv-benefits{margin-top: 1.5rem; padding: 1.75rem 1.5rem; background: var(--pv-alice);}
+@media (min-width: 640px){
+#prive-v4-home .pv-benefits{padding: 2rem 2.25rem;}
+}
+#prive-v4-home .pv-benefits .pv-checks{margin-top: 1.25rem; font-size: .9375rem;}
+#prive-v4-home .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 22% 60%;}
+#prive-v4-home .pv-steps{display: grid; gap: 1.25rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-steps{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
+}
+#prive-v4-home .pv-step{display: flex; flex-direction: column; padding: 2rem 1.5rem 2.25rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-step{padding: 2.5rem 2.25rem 2.75rem;}
+}
+#prive-v4-home .pv-step__num{font-family: var(--pv-display); font-size: 2.75rem; line-height: 1; color: rgba(1, 53, 89, .28);}
+#prive-v4-home .pv-step__title{margin-top: 1.25rem;}
+#prive-v4-home .pv-step ul{display: grid; gap: .75rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-step li{position: relative; padding-left: 1.125rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-nightrider);}
+#prive-v4-home .pv-step li::before{content: ""; position: absolute; left: 0; top: .72em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+#prive-v4-home .pv-result img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-home .pv-result figcaption{display: flex; flex-direction: column; gap: .125rem; padding-top: .875rem;}
+#prive-v4-home .pv-result__area{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-result__stage{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-menu-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-home .pv-menu-card{padding: 2.25rem 2.5rem;}
+}
+#prive-v4-home .pv-menu__row{display: flex; align-items: baseline; gap: .75rem; padding-block: .875rem;}
+#prive-v4-home .pv-menu__row + .pv-menu__row{border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-menu__area{font-weight: 500; color: var(--pv-nightrider);}
+#prive-v4-home .pv-menu__leader{flex: 1; min-width: 1.5rem; border-bottom: 1px dotted var(--pv-line-strong); transform: translateY(-.3em);}
+#prive-v4-home .pv-menu__price{flex: none; font-family: var(--pv-display); font-size: 1.3125rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
+#prive-v4-home .pv-menu__label{margin-top: 1.25rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-home .pv-menu__basis{margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: var(--pv-text-muted);}
+@media (max-width: 380px){
+#prive-v4-home .pv-menu__row{flex-wrap: wrap;}
+#prive-v4-home .pv-menu__leader{display: none;}
+#prive-v4-home .pv-menu__price{margin-left: auto;}
+}
+#prive-v4-home .pv-fit .pv-checks{gap: 1.25rem; font-size: 1.0625rem;}
+#prive-v4-home .pv-notfor{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--pv-line-strong); color: var(--pv-nightrider);}
+#prive-v4-home .pv-notfor svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-home .pv-included > li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: 1rem; padding-block: 1.125rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-included > li:last-child{border-bottom: 1px solid var(--pv-line);}
+#prive-v4-home .pv-included > li > svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-home .pv-included strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-kit{display: grid; gap: .5rem 2rem; margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--pv-alice); font-size: .9375rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-kit{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-home .pv-kit li{position: relative; padding-left: 1.125rem; line-height: 1.6;}
+#prive-v4-home .pv-kit li::before{content: ""; position: absolute; left: 0; top: .75em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+#prive-v4-home .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
+#prive-v4-home .pv-cta--burst{position: relative; overflow: clip;}
+#prive-v4-home .pv-faq__a > * + *{margin-top: .875rem;}
+#prive-v4-home .pv-faq__a ul{display: grid; gap: .5rem; padding-left: 1.25rem; list-style: disc;}
+#prive-v4-home .pv-faq__a li::marker{color: var(--pv-navy);}
+#prive-v4-home .pv-faq__a strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-faq__a a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-home .pv-faq__a a:hover{text-decoration-color: currentColor;}
+#prive-v4-home .pv-faq__a a:active{opacity: .7;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-track.pv-track--wide{display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr auto; column-gap: 4.5rem; padding: 3.5rem 3.5rem 3rem;}
+#prive-v4-home .pv-track--wide .pv-track__head{grid-column: 1; grid-row: 1;}
+#prive-v4-home .pv-track--wide .pv-track__main{grid-column: 2; grid-row: 1 / span 2;}
+#prive-v4-home .pv-track--wide .pv-track__cta{grid-column: 1; grid-row: 2; align-self: end;}
+#prive-v4-home .pv-track--wide .pv-facts{grid-column: 1 / -1; grid-row: 3;}
+}
+#prive-v4-home .pv-track__main{margin-top: 1.25rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-track__main{margin-top: 0; padding-top: .5rem;}
+}
+#prive-v4-home .pv-track__main > p{max-width: 40rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-track__main > p + p{margin-top: 1rem;}
+#prive-v4-home .pv-track--navy .pv-track__main > p{color: var(--pv-on-dark);}
+#prive-v4-home .pv-track__main > .pv-track__outcome{margin-top: 1.75rem; color: var(--pv-nightrider);}
+#prive-v4-home .pv-track--navy .pv-track__main > .pv-track__outcome{color: rgba(255, 255, 255, .9);}
+#prive-v4-home .pv-facts{display: grid; margin-top: 2.5rem; border-top: 1px solid var(--pv-on-dark-line);}
+@media (min-width: 640px){
+#prive-v4-home .pv-facts{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-facts{grid-template-columns: repeat(4, minmax(0, 1fr));}
+}
+#prive-v4-home .pv-facts li{display: flex; align-items: center; gap: .75rem; padding: 1.125rem 0; font-size: .9375rem; line-height: 1.45; color: rgba(255, 255, 255, .9);}
+#prive-v4-home .pv-facts svg{flex: none; width: 1.5rem; height: 1.5rem; color: var(--pv-white);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-facts li{padding: 1.5rem 1.25rem 0 0;}
+#prive-v4-home .pv-facts li + li{padding-left: 1.25rem; border-left: 1px solid var(--pv-on-dark-line);}
+}
+#prive-v4-home .pv-next{position: relative; max-width: 52rem;}
+#prive-v4-home .pv-next > li{position: relative; display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1.25rem; padding-bottom: 2.75rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-next > li{grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1.75rem;}
+}
+#prive-v4-home .pv-next > li:not(:last-child)::before{content: ""; position: absolute; left: 1.375rem; top: 2.75rem; bottom: 0; width: 1px; background: var(--pv-line-strong);}
+@media (min-width: 640px){
+#prive-v4-home .pv-next > li:not(:last-child)::before{left: 1.625rem; top: 3.25rem;}
+}
+#prive-v4-home .pv-next__num{display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--pv-line-strong); border-radius: 50%; font-family: var(--pv-display); font-size: 1.25rem; color: var(--pv-navy); background: var(--pv-white);}
+@media (min-width: 640px){
+#prive-v4-home .pv-next__num{width: 3.25rem; height: 3.25rem; font-size: 1.375rem;}
+}
+#prive-v4-home .pv-next__body{padding-top: .375rem;}
+#prive-v4-home .pv-next__body p{margin-top: .5rem; max-width: 38rem; color: var(--pv-nightrider);}
+#prive-v4-home .pv-next .pv-ghl-calendar{position: relative; margin-top: 1.5rem; padding: .5rem; background: var(--pv-alice);}
+@media (max-width: 639px){
+#prive-v4-home .pv-next .pv-ghl-calendar{margin-left: -4rem; padding: 0;}
+}
+#prive-v4-home .pv-next .pv-ghl-calendar iframe{min-height: 680px;}
+#prive-v4-home .pv-support{max-width: 52rem; padding-top: 2rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-support p{margin-top: .5rem;}
+#prive-v4-home .pv-support a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-home .pv-support a:hover{text-decoration-color: currentColor;}
+#prive-v4-home .pv-support a:active{opacity: .7;}
+#prive-v4-home .pv-placeholder-wrap{padding-block: 1.5rem;}
+#prive-v4-home .pv-placeholder{display: grid;
+  gap: .75rem;
+  padding: 1.5rem;
+  border: 1.5px dashed var(--pv-line-strong);
+  background: repeating-linear-gradient(135deg, var(--pv-alice) 0 12px, var(--pv-white) 12px 24px);
+  color: var(--pv-label);}
+#prive-v4-home .pv-placeholder__label{font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;}
+#prive-v4-home .pv-placeholder__bar{height: .75rem; width: 60%; background: rgba(1, 53, 89, .1);}
+#prive-v4-home .pv-placeholder__bar + .pv-placeholder__bar{width: 38%;}
+#prive-v4-home .pv-form-panel--live .pv-ghl-form iframe{min-height: 312px;}
+#prive-v4-home .pv-track{display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 1.5rem;
+  background: var(--pv-white);
+  border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-home .pv-track{padding: 2.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-track{padding: 3.5rem 3.25rem;}
+}
+#prive-v4-home .pv-track__title{margin-top: 1.75rem; font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-track__title{font-size: 2.25rem;}
+}
+#prive-v4-home .pv-track__text{margin-top: 1rem; color: var(--pv-text-muted); max-width: 34rem;}
+#prive-v4-home .pv-track__outcome{margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line); color: var(--pv-nightrider); max-width: 34rem;}
+#prive-v4-home .pv-track__outcome strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-track__cta{margin-top: auto; padding-top: 2.5rem;}
+#prive-v4-home .pv-track--navy{background: var(--pv-navy); border-color: var(--pv-navy); --pv-focus: var(--pv-mustard);}
+#prive-v4-home .pv-track--navy .pv-track__title{color: var(--pv-white);}
+#prive-v4-home .pv-track--navy .pv-track__text{color: var(--pv-on-dark);}
+#prive-v4-home .pv-track--navy .pv-track__outcome{color: rgba(255, 255, 255, .9); border-top-color: var(--pv-on-dark-line);}
+#prive-v4-home .pv-track--navy .pv-track__outcome strong{color: var(--pv-white);}
+#prive-v4-home .pv-point{padding-top: 1.5rem; border-top: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-point__icon{width: 2.25rem; height: 2.25rem; color: var(--pv-navy);}
+#prive-v4-home .pv-point__title{margin-top: 1.25rem;}
+#prive-v4-home .pv-point__text{margin-top: .625rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-text-muted);}
+#prive-v4-home .pv-trainer{display: grid; gap: 2rem;}
+@media (min-width: 768px){
+#prive-v4-home .pv-trainer{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; align-items: center;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-trainer{gap: 5rem;}
+}
+#prive-v4-home .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-home .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-trainer__name{font-size: 2.5rem;}
+}
+#prive-v4-home .pv-trainer__role{margin-top: .75rem; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-home .pv-trainer__bio{margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--pv-line); font-size: 1.0625rem; line-height: 1.75; color: var(--pv-nightrider); max-width: 36rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-trainer__bio{font-size: 1.125rem;}
+}
+#prive-v4-home .pv-trust{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-trust__item{padding: 1rem 1rem 1rem 0; font-size: .875rem; line-height: 1.5; color: var(--pv-text-muted); overflow-wrap: anywhere;}
+#prive-v4-home .pv-trust__item + .pv-trust__item{padding-left: 1.25rem; border-left: 1px solid var(--pv-line);}
+#prive-v4-home .pv-trust__figure{display: flex; align-items: center; gap: .5rem; margin-bottom: .25rem; font-family: var(--pv-display); font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+#prive-v4-home .pv-trust__figure svg{flex: none; width: 1.125rem; height: 1.125rem; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-trust{min-width: 30rem;}
+#prive-v4-home .pv-trust__item{padding: 1.25rem 1.75rem 1.25rem 0;}
+#prive-v4-home .pv-trust__item + .pv-trust__item{padding-left: 1.75rem;}
+}
+#prive-v4-home .pv-video{display: flex; flex-direction: column;}
+#prive-v4-home .pv-video__media{position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--pv-navy);}
+#prive-v4-home .pv-video__media:has(:focus-visible){outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-home .pv-video__play{position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: pointer;}
+#prive-v4-home .pv-video__play:focus-visible{outline: none;}
+#prive-v4-home .pv-video__play img{width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--pv-out);}
+#prive-v4-home .pv-video__play::after{content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(1, 53, 89, .55), rgba(1, 53, 89, .06) 62%);
+  mix-blend-mode: multiply;
+  pointer-events: none;}
+#prive-v4-home .pv-video__icon{position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: -2rem 0 0 -2rem;
+  border-radius: 50%;
+  background: var(--pv-white);
+  color: var(--pv-navy);
+  transition: transform 380ms var(--pv-spring);}
+#prive-v4-home .pv-video__icon svg{width: 1.25rem; height: 1.25rem; margin-left: 3px;}
+#prive-v4-home .pv-video__play:hover img{transform: scale(1.04);}
+#prive-v4-home .pv-video__play:hover .pv-video__icon{transform: scale(1.1);}
+#prive-v4-home .pv-video__play:active .pv-video__icon{transform: scale(.94);}
+#prive-v4-home .pv-video__frame{position: absolute; inset: 0; width: 100%; height: 100%; border: 0;}
+#prive-v4-home .pv-video__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: .875rem; padding-top: 1.25rem;}
+#prive-v4-home .pv-video__quote{font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
+#prive-v4-home .pv-person{display: flex; flex-direction: column; gap: .125rem; margin-top: auto;}
+#prive-v4-home .pv-person__name{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-home .pv-person__meta{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-home .pv-review{display: flex; flex-direction: column; align-items: flex-start; height: 100%; padding: 1.75rem 1.5rem; background: var(--pv-alice);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-review{padding: 2rem;}
+}
+#prive-v4-home .pv-review__mark{display: block; height: 1.75rem; margin-top: 1.5rem; font-family: var(--pv-display); font-size: 3.5rem; line-height: 1; color: var(--pv-navy);}
+#prive-v4-home .pv-review__quote{flex: 1; margin-top: .5rem; font-size: 1rem; line-height: 1.7; color: var(--pv-nightrider);}
+#prive-v4-home .pv-review .pv-person{width: 100%; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-home .pv-carousel__track{display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;}
+#prive-v4-home .pv-carousel__track::-webkit-scrollbar{display: none;}
+#prive-v4-home .pv-carousel__track > *{scroll-snap-align: start;}
+#prive-v4-home .pv-carousel__track:focus-visible{outline-offset: 4px;}
+@media (min-width: 768px){
+#prive-v4-home .pv-carousel__track{grid-auto-columns: calc((100% - 1.5rem) / 2); gap: 1.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-carousel__track{grid-auto-columns: calc((100% - 3rem) / 3);}
+}
+#prive-v4-home .pv-carousel__foot{display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem;}
+#prive-v4-home .pv-carousel__controls{display: flex; gap: .5rem;}
+#prive-v4-home .pv-redirect{display: grid; gap: 2rem; padding: 2rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-home .pv-redirect--alice{background: var(--pv-alice); border-color: var(--pv-alice);}
+#prive-v4-home .pv-redirect__text > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-redirect__text > .pv-btn{margin-top: 2rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-redirect{padding: 2.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-redirect{grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4rem; padding: 3.5rem 4rem;}
+#prive-v4-home .pv-redirect--media{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem;}
+}
+#prive-v4-home .pv-ba{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-ba{gap: 1rem;}
+}
+#prive-v4-home .pv-ba img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-home .pv-ba figcaption{margin-top: .625rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-home .pv-ba__note{grid-column: 1 / -1; font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-home .pv-founder{overflow: clip; padding-top: var(--pv-section-y);}
+#prive-v4-home .pv-founder__grid{display: grid; gap: 3rem;}
+#prive-v4-home .pv-founder__text{align-self: center;}
+#prive-v4-home .pv-founder__text > * + *{margin-top: 1rem;}
+#prive-v4-home .pv-founder__text > .pv-h2{margin-top: 1rem;}
+#prive-v4-home .pv-founder__sign{margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--pv-on-dark-line);}
+#prive-v4-home .pv-founder__sign-name{display: block; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; color: var(--pv-white);}
+#prive-v4-home .pv-founder__sign-role{display: block; margin-top: .25rem; font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .7);}
+#prive-v4-home .pv-founder__media{position: relative;
+  order: 2;
+  width: 100%;
+  max-width: 26rem;
+  aspect-ratio: 5 / 6;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--pv-alice);}
+#prive-v4-home .pv-founder__media img{position: absolute; left: 50%; bottom: 0; width: auto; max-width: none; height: 94%; transform: translateX(-46%);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-founder__grid{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; align-items: end;}
+#prive-v4-home .pv-founder__media{order: 0; max-width: none;}
+#prive-v4-home .pv-founder__text{padding-bottom: var(--pv-section-y);}
+}
+#prive-v4-home .pv-faq-list{border-top: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-faq{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-faq__summary{display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; list-style: none; cursor: pointer;}
+#prive-v4-home .pv-faq__summary::-webkit-details-marker{display: none;}
+#prive-v4-home .pv-faq__summary::marker{content: "";}
+#prive-v4-home .pv-faq__summary:focus-visible{outline-offset: 2px;}
+#prive-v4-home .pv-faq__q{font-family: var(--pv-display); font-weight: 500; font-size: 1.25rem; line-height: 1.3; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: transparent;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-faq__q{font-size: 1.5rem;}
+}
+#prive-v4-home .pv-faq__summary:hover .pv-faq__q{text-decoration-color: var(--pv-line-strong);}
+#prive-v4-home .pv-faq__icon{position: relative; flex: none; width: 2.25rem; height: 2.25rem; border: 1px solid var(--pv-line-strong); border-radius: 50%; transition: transform 380ms var(--pv-spring);}
+#prive-v4-home .pv-faq__icon::before,
+#prive-v4-home .pv-faq__icon::after{content: ""; position: absolute; left: 50%; top: 50%; width: .75rem; height: 1.5px; margin: -.75px 0 0 -.375rem; background: var(--pv-navy);}
+#prive-v4-home .pv-faq__icon::after{transform: rotate(90deg);}
+#prive-v4-home .pv-faq[open] .pv-faq__icon{transform: rotate(45deg);}
+#prive-v4-home .pv-faq__summary:active .pv-faq__icon{transform: scale(.9);}
+#prive-v4-home .pv-faq[open] .pv-faq__summary:active .pv-faq__icon{transform: rotate(45deg) scale(.9);}
+#prive-v4-home .pv-faq__a{max-width: 44rem; padding: 0 0 1.75rem; color: var(--pv-nightrider);}
+@media (min-width: 640px){
+#prive-v4-home .pv-faq__a{padding-right: 3.75rem;}
+}
+#prive-v4-home .pv-faq[open] .pv-faq__a{animation: pv-rise 420ms var(--pv-out) both;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home .pv-faq[open] .pv-faq__a{animation: none;}
+}
+#prive-v4-home .pv-contact-list{display: grid; gap: 1.5rem; margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-home .pv-contact-list{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-home .pv-contact-list:first-child{margin-top: 0;}
+#prive-v4-home .pv-contact-list > :first-child{grid-column: 1 / -1;}
+#prive-v4-home .pv-contact-list dt{font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-home .pv-contact-list dd{margin-top: .375rem; font-size: 1rem; line-height: 1.6; color: var(--pv-nightrider); overflow-wrap: anywhere;}
+#prive-v4-home .pv-contact-list a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-home .pv-contact-list a:hover{text-decoration-color: currentColor;}
+#prive-v4-home .pv-contact-list a:active{opacity: .7;}
+#prive-v4-home .pv-form-panel{padding: 1.75rem 1.25rem; background: var(--pv-alice);}
+@media (min-width: 640px){
+#prive-v4-home .pv-form-panel{padding: 2.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-form-panel{padding: 3rem;}
+}
+#prive-v4-home .pv-form__grid{display: grid; gap: 1.25rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-form__grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-home .pv-field--full{grid-column: 1 / -1;}
+#prive-v4-home .pv-field label{display: block; margin-bottom: .5rem; font-size: 11px; font-weight: 500; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: var(--pv-navy);}
+#prive-v4-home .pv-field__req{margin-left: .125rem; color: var(--pv-navy);}
+#prive-v4-home .pv-field input,
+#prive-v4-home .pv-field select,
+#prive-v4-home .pv-field textarea{display: block;
+  width: 100%;
+  padding: .75rem 1rem;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--pv-nightrider);
+  background-color: var(--pv-white);
+  border: 1px solid rgba(1, 53, 89, .2);
+  border-radius: 0;}
+@media (min-width: 1024px){
+#prive-v4-home .pv-field input,
+#prive-v4-home .pv-field select,
+#prive-v4-home .pv-field textarea{font-size: 14px;}
+}
+#prive-v4-home .pv-field input:hover,
+#prive-v4-home .pv-field select:hover,
+#prive-v4-home .pv-field textarea:hover{border-color: rgba(1, 53, 89, .45);}
+#prive-v4-home .pv-field input:focus,
+#prive-v4-home .pv-field select:focus,
+#prive-v4-home .pv-field textarea:focus{border-color: var(--pv-navy); outline: 1px solid var(--pv-navy); outline-offset: 0;}
+#prive-v4-home .pv-field textarea{min-height: 8.5rem; resize: vertical;}
+#prive-v4-home .pv-field select{padding-right: 2.75rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23013559' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;}
+#prive-v4-home .pv-field select:invalid{color: var(--pv-text-muted);}
+#prive-v4-home .pv-form__foot{display: flex; flex-direction: column; align-items: stretch; gap: 1rem; margin-top: 1.75rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-form__foot{flex-direction: row; align-items: center; gap: 1.75rem;}
+#prive-v4-home .pv-form__foot .pv-btn{flex: none; white-space: nowrap;}
+}
+#prive-v4-home .pv-form__note{font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-home .pv-form__note a{color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px;}
+#prive-v4-home .pv-form__note a:hover{text-decoration-thickness: 2px;}
+#prive-v4-home .pv-form__note a:active{opacity: .7;}
+#prive-v4-home .pv-footer{background: var(--pv-nightrider); color: rgba(255, 255, 255, .72); font-size: .875rem; line-height: 1.7; --pv-focus: var(--pv-mustard);}
+#prive-v4-home .pv-footer__grid{display: grid; gap: 2.75rem; padding-block: 4rem 3rem;}
+@media (min-width: 640px){
+#prive-v4-home .pv-footer__grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (min-width: 1024px){
+#prive-v4-home .pv-footer__grid{grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: 3rem; padding-block: 5rem 4rem;}
+}
+#prive-v4-home .pv-footer__logo{display: inline-block; transition: transform 380ms var(--pv-spring);}
+#prive-v4-home .pv-footer__logo:hover{transform: scale(1.04);}
+#prive-v4-home .pv-footer__logo:active{transform: scale(.97);}
+#prive-v4-home .pv-footer__logo img{width: 5rem; height: 5rem;}
+#prive-v4-home .pv-footer__tagline{max-width: 20rem; margin-top: 1rem;}
+#prive-v4-home .pv-footer__head{font-family: var(--pv-sans); font-size: 11px; font-weight: 600; line-height: 1.4; letter-spacing: .18em; text-transform: uppercase; color: var(--pv-mustard);}
+#prive-v4-home .pv-footer__list{display: grid; gap: .75rem; margin-top: 1.25rem;}
+#prive-v4-home .pv-footer__list address{font-style: normal;}
+#prive-v4-home .pv-footer__label{display: block; font-weight: 500; color: rgba(255, 255, 255, .92);}
+#prive-v4-home .pv-footer__link{color: rgba(255, 255, 255, .72); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: transparent; overflow-wrap: anywhere;}
+#prive-v4-home .pv-footer__link:hover{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .5);}
+#prive-v4-home .pv-footer__link:active{opacity: .7;}
+#prive-v4-home .pv-footer__link[aria-current="page"]{color: var(--pv-white);}
+#prive-v4-home .pv-social{display: flex; gap: .75rem; margin-top: 1.5rem;}
+#prive-v4-home .pv-social a{display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .85);
+  transition: transform 320ms var(--pv-spring);}
+#prive-v4-home .pv-social a:hover{color: var(--pv-mustard); border-color: var(--pv-mustard); transform: translateY(-2px);}
+#prive-v4-home .pv-social a:active{transform: scale(.94);}
+#prive-v4-home .pv-social svg{width: 1rem; height: 1rem;}
+#prive-v4-home .pv-footer__bar{border-top: 1px solid rgba(255, 255, 255, .1);}
+#prive-v4-home .pv-footer__bar-inner{display: flex; flex-direction: column; gap: 1rem; padding-block: 1.5rem; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .58);}
+@media (min-width: 1024px){
+#prive-v4-home .pv-footer__bar-inner{flex-direction: row; align-items: center; justify-content: space-between;}
+}
+#prive-v4-home .pv-footer__legal{display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;}
+#prive-v4-home .pv-footer__legal-link{font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .66); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: transparent;}
+#prive-v4-home .pv-footer__legal-link:hover{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .5);}
+#prive-v4-home .pv-footer__legal-link:active{opacity: .7;}
+#prive-v4-home .pv-footer__legal-link[aria-current="page"]{color: var(--pv-white);}
+#prive-v4-home .pv-cookie{position: fixed;
+  z-index: 60;
+  left: .75rem;
+  right: .75rem;
+  bottom: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem 1.25rem;
+  background: var(--pv-white);
+  border: 1px solid var(--pv-navy);
+  color: var(--pv-nightrider);
+  font-size: 13px;
+  line-height: 1.6;}
+#prive-v4-home .pv-cookie[hidden]{display: none;}
+#prive-v4-home .pv-cookie.is-open{animation: pv-rise 420ms var(--pv-out) both;}
+@media (min-width: 640px){
+#prive-v4-home .pv-cookie{left: 1.5rem; right: auto; bottom: 1.5rem; width: 28rem; padding: 1.5rem;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-home .pv-cookie.is-open{animation: none;}
+}
+#prive-v4-home .pv-cookie a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px;}
+#prive-v4-home .pv-cookie a:hover{text-decoration-thickness: 2px;}
+#prive-v4-home .pv-cookie a:active{opacity: .7;}
+#prive-v4-home .pv-cookie__actions{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;}
+#prive-v4-home .pv-btn--consent{min-height: 2.75rem; padding: .625rem 1rem; font-size: 11.5px; color: var(--pv-navy); border: 1px solid var(--pv-navy); border-radius: 0;}
+#prive-v4-home .pv-btn--consent::before{background: rgba(1, 53, 89, .07);}
 
-  .card-elevated {
-    box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18);
-    transition: transform 400ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease;
-  }
-  .card-elevated:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 1px 2px rgba(1,53,89,0.08), 0 28px 44px -14px rgba(1,53,89,0.28);
-  }
-
-  .img-tint { position: relative; overflow: hidden; }
-  .img-tint img { transition: transform 700ms cubic-bezier(0.22,1,0.36,1); }
-  .img-tint:hover img { transform: scale(1.06); }
-  .img-tint::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(1,53,89,0.55), rgba(1,53,89,0.08) 55%, rgba(1,53,89,0.18));
-    mix-blend-mode: multiply;
-  }
-  .img-tint::before {
-    content: ""; position: absolute; inset: 0; z-index: 1;
-    background: linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%);
-  }
-
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
-  .rule-mustard { width: 48px; height: 1px; background: #c0b905; }
-
-  #mobile-menu { transition: opacity 300ms ease, transform 300ms ease; transform-origin: top right; }
-  #mobile-menu.closed { opacity: 0; transform: scale(0.98) translateY(-8px); pointer-events: none; }
-
-  ::selection { background: #c0b905; color: #013559; }
 </style>
+<style>body{margin:0}</style>
 </head>
-<body class="bg-white text-nightrider antialiased">
+<body>
+<div id="prive-v4-home" class="pv-root" data-page="home">
+<!-- Home. Section order and fixed copy: blueprint "Home Page" 1-11. TBD copy: content/COPY-DECK.md §1 (first headline option). -->
+<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
+     data-nav="<page key>" lets the build mark the current page with aria-current. -->
+<header class="pv-nav" data-nav-shell>
+  <div class="pv-container pv-nav__bar">
+    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
+      <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
+    </a>
 
-<!-- ================= NAV ================= -->
-<header id="site-nav" class="fixed top-0 inset-x-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/10 transition-shadow duration-300">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-20">
-      <a href="#top" class="flex items-center group">
-        <img src="brand-assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-14 w-14 transition-transform duration-300 group-hover:rotate-[8deg]">
-      </a>
+    <nav class="pv-nav__links" aria-label="Main">
+      <a class="pv-nav__link" href="index.html" data-nav="home" aria-current="page">Home</a>
+      <a class="pv-nav__link" href="online-certification.html" data-nav="online-certification">Online Certification</a>
+      <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
+      <a class="pv-nav__link" href="treatments.html" data-nav="treatments">Treatments</a>
+      <a class="pv-nav__link" href="shop.html" data-nav="shop">Shop</a>
+      <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
+      <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
+    </nav>
 
-      <nav class="hidden xl:flex items-center gap-6">
-        <a href="index.html#top" class="nav-link is-active text-white text-[13px] font-semibold tracking-[0.04em] uppercase whitespace-nowrap">Home</a>
-        <a href="online-course.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Online Course</a>
-        <a href="live-trainings.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Live Trainings</a>
-        <a href="shop.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Shop</a>
-        <a href="testimonials.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Testimonials</a>
-        <a href="gallery.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Gallery</a>
-        <a href="about-us.html" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">About Us</a>
-        <a href="index.html#contact" class="nav-link text-white/85 text-[13px] font-medium tracking-[0.04em] uppercase whitespace-nowrap">Contact</a>
-      </nav>
-
-      <div class="hidden xl:block shrink-0">
-        <a href="index.html#contact" class="btn-primary-inverse !py-3 !px-7">Apply Now</a>
-      </div>
-
-      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="xl:hidden text-white p-2 -mr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard rounded">
-        <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="hidden"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
-      </button>
-    </div>
+    <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <div id="mobile-menu" class="closed xl:hidden absolute inset-x-0 top-20 bg-navy border-t border-white/10 px-6 py-8 flex flex-col gap-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-    <a href="index.html#top" class="text-mustard text-sm uppercase tracking-[0.08em] font-semibold">Home</a>
-    <a href="online-course.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Online Course</a>
-    <a href="live-trainings.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Live Trainings</a>
-    <a href="shop.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Shop</a>
-    <a href="testimonials.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Testimonials</a>
-    <a href="gallery.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Gallery</a>
-    <a href="about-us.html" class="text-white text-sm uppercase tracking-[0.08em] font-medium">About Us</a>
-    <a href="index.html#contact" class="text-white text-sm uppercase tracking-[0.08em] font-medium">Contact</a>
-    <a href="index.html#contact" class="btn-primary-inverse justify-center mt-2">Apply Now</a>
+  <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
+    <nav class="pv-container pv-nav__menu-list" aria-label="Main">
+      <a class="pv-nav__menu-link" href="index.html" data-nav="home" aria-current="page">Home</a>
+      <a class="pv-nav__menu-link" href="online-certification.html" data-nav="online-certification">Online Certification</a>
+      <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
+      <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments">Treatments</a>
+      <a class="pv-nav__menu-link" href="shop.html" data-nav="shop">Shop</a>
+      <a class="pv-nav__menu-link" href="about.html" data-nav="about">About Us</a>
+      <a class="pv-nav__menu-link" href="contact.html" data-nav="contact">Contact</a>
+    </nav>
   </div>
 </header>
 
-<main id="top">
 
-  <!-- ================= HERO ================= -->
-  <section class="grain relative bg-navy text-white overflow-hidden pt-40 pb-28 lg:pt-48 lg:pb-32">
-    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[46%] opacity-[0.06] pointer-events-none" width="720" height="720" viewBox="0 0 520 520">
-      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
-        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="328.7" y1="273.7" x2="377.7" y2="283.4"/>
-        <line x1="324.7" y1="286.8" x2="398.6" y2="317.4"/><line x1="318.2" y1="298.9" x2="359.8" y2="326.7"/>
-        <line x1="309.5" y1="309.5" x2="366.1" y2="366.1"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
-        <line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/><line x1="273.7" y1="328.7" x2="283.4" y2="377.7"/>
-        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="246.3" y1="328.7" x2="236.6" y2="377.7"/>
-        <line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
-        <line x1="210.5" y1="309.5" x2="153.9" y2="366.1"/><line x1="201.8" y1="298.9" x2="160.2" y2="326.7"/>
-        <line x1="195.3" y1="286.8" x2="121.4" y2="317.4"/><line x1="191.3" y1="273.7" x2="142.3" y2="283.4"/>
-        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="191.3" y1="246.3" x2="142.3" y2="236.6"/>
-        <line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/><line x1="201.8" y1="221.1" x2="160.2" y2="193.3"/>
-        <line x1="210.5" y1="210.5" x2="153.9" y2="153.9"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
-        <line x1="233.2" y1="195.3" x2="202.6" y2="121.4"/><line x1="246.3" y1="191.3" x2="236.6" y2="142.3"/>
-        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="273.7" y1="191.3" x2="283.4" y2="142.3"/>
-        <line x1="286.8" y1="195.3" x2="317.4" y2="121.4"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
-        <line x1="309.5" y1="210.5" x2="366.1" y2="153.9"/><line x1="318.2" y1="221.1" x2="359.8" y2="193.3"/>
-        <line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/><line x1="328.7" y1="246.3" x2="377.7" y2="236.6"/>
-      </g>
-    </svg>
+<main id="pv-main">
 
-    <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <div class="eyebrow reveal in">Plasma &middot; Fibroblast &middot; Aesthetics Education</div>
-      <h1 class="mt-5 font-display font-medium text-[40px] leading-[1.1] tracking-[0.01em] sm:text-[52px] lg:text-[64px] reveal in" style="transition-delay:80ms">
-        The Standard For Practitioners Who Take The Craft Seriously.
-      </h1>
-      <p class="mt-7 text-white/75 text-lg leading-[1.7] max-w-2xl mx-auto reveal in" style="transition-delay:160ms">
-        Structured, step-by-step training built for practitioners who want to know they're ready — not just certified.
-      </p>
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal in" style="transition-delay:240ms">
-        <a href="#apply" class="btn-primary-inverse">Apply To Enroll</a>
-        <a href="#programs" class="btn-secondary-inverse">View Curriculum</a>
+  <!-- 1. Hero (blueprint copy + copy deck change 8: one button, one text link) -->
+  <section class="pv-hero pv-grain" aria-labelledby="pv-hero-title">
+    <div class="pv-container">
+      <div class="pv-hero__title-wrap">
+        <svg class="pv-burst" viewBox="0 0 1200 600" width="1200" height="600" fill="none" aria-hidden="true" focusable="false">
+  <g stroke="#fff" stroke-opacity=".17" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="22 11">
+    <line x1="749" y1="584" x2="1187" y2="538"/><line x1="743" y1="554" x2="1161" y2="418"/><line x1="730" y1="525" x2="1111" y2="305"/><line x1="711" y1="500" x2="1038" y2="205"/><line x1="688" y1="479" x2="947" y2="123"/><line x1="661" y1="463" x2="840" y2="61"/><line x1="631" y1="453" x2="723" y2="23"/><line x1="600" y1="450" x2="600" y2="10"/><line x1="569" y1="453" x2="477" y2="23"/><line x1="539" y1="463" x2="360" y2="61"/><line x1="512" y1="479" x2="253" y2="123"/><line x1="489" y1="500" x2="162" y2="205"/><line x1="470" y1="525" x2="89" y2="305"/><line x1="457" y1="554" x2="39" y2="418"/><line x1="451" y1="584" x2="13" y2="538"/>
+  </g>
+  <g stroke="#fff" stroke-opacity=".12" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 10 30 10">
+    <line x1="786" y1="560" x2="1060" y2="502"/><line x1="774" y1="523" x2="1029" y2="409"/><line x1="754" y1="488" x2="980" y2="324"/><line x1="727" y1="459" x2="914" y2="251"/><line x1="695" y1="435" x2="835" y2="193"/><line x1="659" y1="419" x2="745" y2="153"/><line x1="620" y1="411" x2="649" y2="133"/><line x1="580" y1="411" x2="551" y2="133"/><line x1="541" y1="419" x2="455" y2="153"/><line x1="505" y1="435" x2="365" y2="193"/><line x1="473" y1="459" x2="286" y2="251"/><line x1="446" y1="488" x2="220" y2="324"/><line x1="426" y1="523" x2="171" y2="409"/><line x1="414" y1="560" x2="140" y2="502"/>
+  </g>
+</svg>
+
+        <h1 class="pv-hero__title" id="pv-hero-title">Plasma Technology <span class="pv-hero__title-line">Academy</span></h1>
+      </div>
+      <span class="pv-hero__rule" aria-hidden="true"></span>
+      <p class="pv-hero__sub">We train aestheticians and beauty professionals in non-invasive plasma treatments designed for premium skin rejuvenation.</p>
+      <div class="pv-hero__actions">
+        <a class="pv-btn pv-btn--inverse" href="online-certification.html">Explore Online Certification</a>
+        <a class="pv-textlink pv-textlink--inverse" href="live-trainings.html">or see Live Trainings</a>
+      </div>
+      <ul class="pv-hero__proof" aria-label="Privé Academy in numbers">
+        <li><span class="pv-figure">1,000+</span> specialists trained</li>
+        <li><span class="pv-figure">350</span> live trainings held</li>
+        <li>Teaching and educating since <span class="pv-figure">2010</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. What We Teach -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-teach-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <p class="pv-eyebrow">Two Tracks</p>
+        <h2 class="pv-h2" id="pv-teach-title">What We Teach</h2>
+      </header>
+      <div class="pv-block grid gap-5 md:grid-cols-2 lg:gap-8">
+        <article class="pv-track pv-track--navy">
+          <p class="pv-tag pv-tag--inverse">Enrolling now</p>
+          <h3 class="pv-track__title">Fibroblast Education</h3>
+          <p class="pv-track__text">Plasma fibroblast tightens the skin with a small, controlled electric arc, without surgery. You learn the science, the technique and the judgment to know who is a good candidate, on the Plamere Premium device you keep.</p>
+          <p class="pv-track__outcome"><strong>The outcome:</strong> a premium skin-tightening treatment on your menu, and a certificate you earn when a Master Trainer has reviewed your results.</p>
+          <div class="pv-track__cta">
+            <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore Fibroblast Certification</a>
+          </div>
+        </article>
+        <article class="pv-track">
+          <p class="pv-tag">Coming soon</p>
+          <h3 class="pv-track__title">Cold Plasma Education</h3>
+          <p class="pv-track__text">Cold plasma works on the skin's surface at a low temperature. It helps improve the look, balance and regeneration of the skin without creating the surface dots a plasma pen leaves, so there's no classic recovery period.</p>
+          <p class="pv-track__outcome"><strong>The outcome:</strong> a skin-quality treatment you can offer clients who want visible improvement without downtime. The course is in development.</p>
+          <div class="pv-track__cta">
+            <a class="pv-btn pv-btn--secondary" href="cold-plasma.html">Join the Waitlist</a>
+          </div>
+        </article>
       </div>
     </div>
+  </section>
 
-    <div class="relative max-w-5xl mx-auto mt-24 px-6">
-      <div class="border-t border-white/15 pt-8 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 text-center">
-        <div class="reveal in" style="transition-delay:80ms">
-          <div class="font-display text-3xl text-mustard">1,000+</div>
-          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Trained Specialists</div>
+  <!-- 3. Why Trust Us (4 points, blueprint order) -->
+  <section class="pv-section pv-surface-white" aria-labelledby="pv-trust-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <p class="pv-eyebrow">Why Privé</p>
+        <h2 class="pv-h2" id="pv-trust-title">Training You Can Hold Us To</h2>
+      </header>
+      <ul class="pv-block grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="pv-point">
+          <svg class="pv-point__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><circle cx="12" cy="9" r="2.4"/><path d="M8.6 13.4 7.2 21l4.8-2.6 4.8 2.6-1.4-7.6"/></svg>
+          <!-- GATED (claim-rules.md §5): "Accredited" needs current CPD membership confirmed, otherwise rename to "Trainer-Reviewed Certification". Built as the blueprint wrote it. -->
+          <h3 class="pv-h3 pv-point__title">Accredited Certification</h3>
+          <p class="pv-point__text">A Privé certificate isn't handed out for finishing a video. It's issued once a trainer has personally reviewed your practical results.</p>
+        </li>
+        <li class="pv-point">
+          <svg class="pv-point__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.6C10 5.1 7 4.6 3.5 5.1v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5v-13C17 4.6 14 5.1 12 6.6z"/><path d="M12 6.6v13"/></svg>
+          <h3 class="pv-h3 pv-point__title">Theory</h3>
+          <p class="pv-point__text">The science behind plasma technology: how the skin is built, how it heals, and which clients are candidates and which aren't. You'll understand why it works before you work on a face.</p>
+        </li>
+        <li class="pv-point">
+          <svg class="pv-point__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/></svg>
+          <h3 class="pv-h3 pv-point__title">Real Practice</h3>
+          <p class="pv-point__text">Guided practical work with trainer feedback until your results are consistent. Online with assignments, or in the room at a live training.</p>
+        </li>
+        <li class="pv-point">
+          <svg class="pv-point__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1z"/><path d="M16 8.5h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1v3l-3.5-3H11a1 1 0 0 1-1-1v-1"/></svg>
+          <h3 class="pv-h3 pv-point__title">Ongoing Support</h3>
+          <p class="pv-point__text">Certification is the start, not the end. Certified specialists keep access to their trainers for questions, troubleshooting and second opinions.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Our Trainers (Sandra on Home; Samo has the Founder section) -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-trainers-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <p class="pv-eyebrow">Our Trainers</p>
+        <h2 class="pv-h2" id="pv-trainers-title">Taught By A Trainer Who Still Treats Clients Every Day</h2>
+      </header>
+      <div class="pv-block">
+        <!-- Trainer profile: Sandra Bijader (copy deck §1 Our Trainers). Self-contained so the
+     sales page can place it next to a trainer-samo partial under its own heading.
+     Her photo backdrop is alice (#f0f9ff), so it reads as a cutout on an alice section. -->
+<article class="pv-trainer">
+  <div class="pv-trainer__media">
+    <img src="images/v4-sandra.jpg" alt="Sandra Bijader, Master Trainer at Privé Academy" width="1200" height="1200" loading="lazy" decoding="async">
+  </div>
+  <div class="pv-trainer__body">
+    <h3 class="pv-trainer__name">Sandra Bijader</h3>
+    <p class="pv-trainer__role">Master Trainer</p>
+    <p class="pv-trainer__bio">Sandra has been with Privé for 10 years. A cosmetician and permanent-makeup artist by background, she treats clients in her own practice every day, on the same Plamere Premium our students train on. Students travel to learn from her: her class of 15 in Istanbul drew practitioners from several countries.</p>
+  </div>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Testimonials: trust bar, video layer (click-to-play, copy deck change 9), tagged reviews -->
+  <section class="pv-section pv-surface-white" id="pv-testimonials" aria-labelledby="pv-alumni-title">
+    <div class="pv-container">
+      <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <header class="pv-section-head">
+          <p class="pv-eyebrow">Alumni</p>
+          <h2 class="pv-h2" id="pv-alumni-title">Trained Here. Practising Everywhere.</h2>
+        </header>
+        <div class="pv-trust">
+          <p class="pv-trust__item">
+            <span class="pv-trust__figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9z" fill="currentColor"/></svg>[needs: googleRating]</span>
+            on Google &middot; [needs: googleReviewCount] reviews
+          </p>
+          <p class="pv-trust__item">
+            <span class="pv-trust__figure">1,000+</span>
+            specialists trained
+          </p>
         </div>
-        <div class="reveal in" style="transition-delay:140ms">
-          <div class="font-display text-3xl text-mustard">350+</div>
-          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Live Trainings Hosted</div>
+      </div>
+
+      <div class="pv-block grid gap-10 md:grid-cols-3 md:gap-6 lg:gap-8">
+        <article class="pv-video">
+  <div class="pv-video__media">
+    <button type="button" class="pv-video__play" data-video="-dOTQCnD8Jo" data-video-title="Video testimonial: Sarah Ponce" aria-label="Play video testimonial from Sarah Ponce">
+      <img src="images/v4-video-sarah-ponce.jpg" alt="" width="960" height="540" loading="lazy" decoding="async">
+      <span class="pv-video__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>
+      </span>
+    </button>
+  </div>
+  <div class="pv-video__body">
+    <p class="pv-tag">Why Privé</p>
+    <blockquote class="pv-video__quote"><p>&ldquo;I chose Privé Academy after I have done the research and found out they have the best equipped course.&rdquo;</p></blockquote>
+    <p class="pv-person">
+      <span class="pv-person__name">Sarah Ponce</span>
+      <span class="pv-person__meta">Live training, Los Angeles</span>
+    </p>
+  </div>
+</article>
+
+<article class="pv-video">
+  <div class="pv-video__media">
+    <button type="button" class="pv-video__play" data-video="v0ReGcDW6Kg" data-video-title="Video testimonial: Heather Freeman" aria-label="Play video testimonial from Heather Freeman">
+      <img src="images/v4-video-heather.jpg" alt="" width="960" height="540" loading="lazy" decoding="async">
+      <span class="pv-video__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>
+      </span>
+    </button>
+  </div>
+  <div class="pv-video__body">
+    <p class="pv-tag">Ready to treat</p>
+    <blockquote class="pv-video__quote"><p>&ldquo;I think that information was presented in a really great way and I feel ready to perform this treatment in my salon.&rdquo;</p></blockquote>
+    <p class="pv-person">
+      <span class="pv-person__name">Heather Freeman</span>
+      <span class="pv-person__meta">Live training, California</span>
+    </p>
+  </div>
+</article>
+
+<article class="pv-video">
+  <div class="pv-video__media">
+    <button type="button" class="pv-video__play" data-video="vat42Ny2Zs4" data-video-title="Video testimonial: Samia Reviera" aria-label="Play video testimonial from Samia Reviera">
+      <img src="images/v4-video-samia-reviera.jpg" alt="" width="960" height="540" loading="lazy" decoding="async">
+      <span class="pv-video__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>
+      </span>
+    </button>
+  </div>
+  <div class="pv-video__body">
+    <p class="pv-tag">Trainer attention</p>
+    <blockquote class="pv-video__quote"><p>&ldquo;The training was very detailed. The Master Trainer took a lot of time for each and every one of us and answered all of the questions.&rdquo;</p></blockquote>
+    <p class="pv-person">
+      <span class="pv-person__name">Samia Reviera</span>
+      <span class="pv-person__meta">Live training, California</span>
+    </p>
+  </div>
+</article>
+
+      </div>
+
+      <div class="pv-carousel mt-14 lg:mt-20" data-carousel>
+        <div class="pv-carousel__track" data-carousel-track tabindex="0" aria-label="Written reviews">
+          <article class="pv-review">
+  <p class="pv-tag">Theory</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>What I liked the most was the theory, because it was extremely thorough. We left with hardly any questions.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Veronica Payne</span>
+    <span class="pv-person__meta">Live training, Los Angeles</span>
+  </p>
+</article>
+
+<article class="pv-review">
+  <p class="pv-tag">Confidence</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>I have been trained really well and I am confident about performing this kind of treatment after taking this class.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Rachel Morris</span>
+    <span class="pv-person__meta">Live training, United Kingdom</span>
+  </p>
+</article>
+
+<article class="pv-review">
+  <p class="pv-tag">Trainer attention</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>Trainers made sure that they went through every detail of the course more than once so we could understand everything clearly.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Lenora Frost</span>
+    <span class="pv-person__meta">Live training, USA</span>
+  </p>
+</article>
+
+<article class="pv-review">
+  <p class="pv-tag">Business</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>It is an amazing way to make people happy and make money while doing it.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Galata Holmes</span>
+    <span class="pv-person__meta">Live training, United Kingdom</span>
+  </p>
+</article>
+
+<article class="pv-review">
+  <p class="pv-tag">Ready to treat</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>I feel like when leaving this class I could immediately start this new kind of treatment, as the training itself prepared me really well on how to do fibroblast.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Mick Barr</span>
+    <span class="pv-person__meta">Live training, USA</span>
+  </p>
+</article>
+
+<article class="pv-review">
+  <p class="pv-tag">Hands-on practice</p>
+  <span class="pv-review__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote class="pv-review__quote"><p>At the first half we learned about the theory and how to actually use the machine. After lunch we had our models coming, so we did the practice on them.</p></blockquote>
+  <p class="pv-person">
+    <span class="pv-person__name">Elle Lindsay</span>
+    <span class="pv-person__meta">Live training, United Kingdom</span>
+  </p>
+</article>
+
         </div>
-        <div class="reveal in" style="transition-delay:200ms">
-          <div class="font-display text-3xl text-mustard">2</div>
-          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Locations, EU &amp; US</div>
-        </div>
-        <div class="reveal in" style="transition-delay:260ms">
-          <div class="font-display text-3xl text-mustard">Est. 2010</div>
-          <div class="mt-1 text-[11px] tracking-[0.14em] uppercase text-white/60">Trusted Since</div>
+        <div class="pv-carousel__foot">
+          <a class="pv-textlink" href="testimonials.html">Read more testimonials
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+          <div class="pv-carousel__controls">
+            <button type="button" class="pv-icon-btn" data-carousel-prev aria-label="Previous reviews">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button type="button" class="pv-icon-btn" data-carousel-next aria-label="Next reviews">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= PATH FORK ================= -->
-  <section class="bg-alice py-20 lg:py-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <div class="eyebrow">Start Here</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[28px] lg:text-[34px] leading-tight">Two Ways To Train With Us</h2>
-      </div>
-
-      <div class="mt-14 grid md:grid-cols-2 gap-8">
-        <div class="reveal bg-navy text-white p-10 lg:p-12 card-elevated relative overflow-hidden" style="transition-delay:60ms">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#C0B905" stroke-width="1.4"><rect x="6" y="9" width="28" height="24" rx="2"/><path d="M6 16h28M13 5v7M27 5v7" stroke-linecap="round"/><circle cx="20" cy="24" r="3.2"/></svg>
-          <h3 class="mt-6 font-display text-2xl">Live Training</h3>
-          <p class="mt-3 text-white/75 leading-relaxed">Two intensive days, in person, hands-on from the first hour — consultation, technique, and real practice under direct supervision.</p>
-          <a href="#contact" class="btn-secondary-inverse mt-8">See Locations</a>
+  <!-- 6. Shop: single brief card -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-shop-title">
+    <div class="pv-container">
+      <article class="pv-redirect">
+        <div class="pv-redirect__text">
+          <p class="pv-eyebrow">For Practitioners</p>
+          <h2 class="pv-h2" id="pv-shop-title">Privé Shop</h2>
+          <p class="pv-lead">The device, applicators, pre-treatment and aftercare products the Privé protocol is built on. Two regional stores, for Europe and the US.</p>
         </div>
-        <div class="reveal bg-white p-10 lg:p-12 card-elevated relative overflow-hidden" style="transition-delay:140ms">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#013559" stroke-width="1.4"><rect x="4" y="8" width="32" height="21" rx="2"/><path d="M14 34h12M20 29v5" stroke-linecap="round"/><path d="M17 14l7 4.5-7 4.5V14z" fill="#013559" stroke="none"/></svg>
-          <h3 class="mt-6 font-display text-2xl text-navy">Online Course</h3>
-          <p class="mt-3 text-nightrider/70 leading-relaxed">Self-paced, 6+ hours of core instruction plus bonus live-demonstration footage, with lifetime access to every future update.</p>
-          <a href="#programs" class="btn-secondary mt-8">Explore Curriculum</a>
+        <div>
+          <a class="pv-btn pv-btn--primary pv-btn--block-sm" href="shop.html">Visit the Shop</a>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="bg-white py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
-      <div class="reveal">
-        <div class="eyebrow">01 — The Academy</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Precision Over Promises.</h2>
-        <p class="mt-6 text-nightrider/75 leading-[1.7]">
-          Privé Academy was built for practitioners who take the craft seriously — real clinical hours, small cohorts, and instructors who still work on real clients. We teach the technique, the science behind it, and the judgment to know when to use it.
+  <!-- 7. Founder Intro -->
+  <!-- UNSOURCED (copy deck §1): the blueprint asks for Samo's discovery story. The draft sticks to sourced facts until Samo supplies the anecdote. -->
+  <section class="pv-founder pv-surface-navy pv-grain" aria-labelledby="pv-founder-title">
+    <div class="pv-container pv-founder__grid">
+      <div class="pv-founder__media">
+        <img src="images/v4-samo.webp" alt="Samo Sambol, founder and CEO of Privé Academy" width="1400" height="1399" loading="lazy" decoding="async">
+      </div>
+      <div class="pv-founder__text">
+        <p class="pv-eyebrow">Our Founder</p>
+        <h2 class="pv-h2" id="pv-founder-title">Samo Sambol</h2>
+        <p class="pv-lead">Samo opened Privé Academy in Ljubljana in December 2010, and the academy first made its name teaching microblading. Then he turned to a newer technique: plasma fibroblast. He became the Master Trainer who introduced and popularized it across the European beauty market, and rebuilt Privé around teaching it properly.</p>
+        <p class="pv-lead">Today, more than 1,000 specialists have trained with Privé.</p>
+        <p class="pv-founder__sign">
+          <span class="pv-founder__sign-name">Samo Sambol</span>
+          <span class="pv-founder__sign-role">Founder &amp; CEO, Privé Academy</span>
         </p>
-        <ul class="mt-8 space-y-4">
-          <li class="flex items-start gap-3">
-            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="text-[15px] text-nightrider/80">Hands-on clinical hours, not just theory</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="text-[15px] text-nightrider/80">Small cohorts, capped at eight students</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="text-[15px] text-nightrider/80">Nationally recognized certification</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="mt-1 shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.25" stroke="#C0B905" stroke-width="1.5"/><path d="M5.5 9.3L7.8 11.6L12.7 6.3" stroke="#013559" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="text-[15px] text-nightrider/80">Ongoing mentorship after graduation</span>
-          </li>
-        </ul>
-        <a href="#programs" class="btn-secondary mt-10">Explore Programs</a>
-      </div>
-
-      <div class="reveal relative" style="transition-delay:120ms">
-        <div class="img-tint rounded-sm card-elevated aspect-[4/5] w-full max-w-md mx-auto">
-          <img src="brand-assets/reference-site/training-photos/LC-1.jpg" alt="Instructor guiding a student during hands-on Plasma-Fibroblast training" class="w-full h-full object-cover">
-        </div>
-        <div class="hidden lg:block absolute -bottom-8 -left-8 bg-navy text-white p-6 max-w-[220px] card-elevated">
-          <div class="font-display text-2xl text-mustard">8:1</div>
-          <div class="mt-1 text-[11px] tracking-[0.1em] uppercase text-white/70 leading-relaxed">Student to instructor ratio</div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= THE SCIENCE ================= -->
-  <section class="bg-alice py-24 lg:py-32">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center reveal">
-      <div class="eyebrow">02 — The Science</div>
-      <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">What Is Fibroblast?</h2>
-      <p class="mt-7 font-display text-xl sm:text-2xl text-navy leading-[1.4]">A 100% natural, non-surgical technique for skin tightening and rejuvenation.</p>
-      <p class="mt-7 text-nightrider/75 leading-[1.7] text-left sm:text-center">Plasma-Fibroblast uses ionized atmospheric air to create a controlled electric arc just above the skin's surface. The arc never touches the skin directly — instead it transmits heat into the upper layers, triggering the body's own healing response. Over the following 6&ndash;8 weeks, that response stimulates new collagen and elastin production, gradually tightening and resurfacing the treated area. Sessions run 60&ndash;90 minutes, most clients need around two treatments, and results typically last 2&ndash;4 years.</p>
+  <!-- 8. Treatments redirect card (same format as Shop, with two healed results) -->
+  <section class="pv-section pv-surface-white" aria-labelledby="pv-treat-title">
+    <div class="pv-container">
+      <article class="pv-redirect pv-redirect--alice pv-redirect--media">
+        <div class="pv-redirect__text">
+          <h2 class="pv-h2" id="pv-treat-title">Looking For The Treatment, Not The Training?</h2>
+          <p class="pv-lead">Privé Studio in Zagreb offers plasma pen and cold plasma treatments. Every treatment starts with a consultation, so we can assess your skin and recommend what suits you.</p>
+          <a class="pv-btn pv-btn--primary pv-btn--block-sm" href="treatments.html">Visit Privé Studio</a>
+        </div>
+        <div class="pv-ba">
+          <figure>
+            <img src="images/v4-ba-jawline.jpg" alt="Jawline before treatment and healed, side profile" width="1080" height="1080" loading="lazy" decoding="async">
+            <figcaption>Jawline</figcaption>
+          </figure>
+          <figure>
+            <img src="images/v4-ba-upper-eyelid.jpg" alt="Upper eyelid before and after treatment" width="1080" height="1080" loading="lazy" decoding="async">
+            <figcaption>Upper eyelid</figcaption>
+          </figure>
+          <p class="pv-ba__note">Results from Privé treatments. Individual results vary.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- ================= PROGRAMS ================= -->
-  <section id="programs" class="bg-white py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl reveal">
-        <div class="eyebrow">03 — What You'll Offer</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Real Treatments. Real Earning Potential.</h2>
-        <p class="mt-4 text-nightrider/70 leading-[1.7]">One technique, applied across a full range of non-surgical treatments — from $80 skin-tag removal to $700+ body-tightening sessions.</p>
-      </div>
-
-      <div class="mt-14 grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:60ms">
-          <div class="img-tint aspect-[4/3]">
-            <img src="brand-assets/reference-site/training-photos/LC-3.jpg" alt="Practitioner performing a Fibroblast treatment on the face" class="w-full h-full object-cover">
+  <!-- 9. FAQ -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-faq-title">
+    <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <header class="pv-section-head lg:col-span-4">
+        <p class="pv-eyebrow">FAQ</p>
+        <h2 class="pv-h2" id="pv-faq-title">Before You Choose A Course</h2>
+      </header>
+      <div class="pv-faq-list lg:col-span-8">
+        <details class="pv-faq" open>
+          <summary class="pv-faq__summary">
+            <h3 class="pv-faq__q">What is plasma technology, and how does it work?</h3>
+            <span class="pv-faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="pv-faq__a">
+            <p>Plasma is ionised gas, and aesthetics uses it in two ways. Plasma fibroblast creates a small, controlled electric arc just above the skin. The heat it transmits triggers the skin's natural repair response: new collagen and elastin, and visibly tighter skin over roughly 6 to 12 weeks. Cold plasma works on the surface at a much lower temperature, helping improve the skin's look and regeneration without the surface dots, so there's no classic recovery period. Neither result is permanent, and both belong in trained hands.</p>
           </div>
-          <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
-              <span>$350 &ndash; $500</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
-            </div>
-            <h3 class="mt-3 font-display text-navy text-xl">Face &amp; Eyes</h3>
-            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Eyelid lifting, forehead lifting, crow's feet, and nasolabial lines.</p>
-            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-            </a>
+        </details>
+        <details class="pv-faq">
+          <summary class="pv-faq__summary">
+            <h3 class="pv-faq__q">What makes Privé's training different from other courses?</h3>
+            <span class="pv-faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="pv-faq__a">
+            <p>Three things. You train on the Plamere Premium, the professional device our Master Trainer uses in her own practice every day, paired with applicators Samo designed for it. You don't certify by finishing videos: a trainer personally reviews your practical results first. And support doesn't end at graduation. More than 1,000 specialists have trained with us since 2010.</p>
           </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:140ms">
-          <div class="img-tint aspect-[4/3]">
-            <img src="brand-assets/reference-site/training-photos/LC-6.jpg" alt="Two practitioners performing a Fibroblast treatment together" class="w-full h-full object-cover">
+        </details>
+        <details class="pv-faq">
+          <summary class="pv-faq__summary">
+            <h3 class="pv-faq__q">Do I need prior experience or certification to enroll?</h3>
+            <span class="pv-faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="pv-faq__a">
+            <p>No. You don't need a license or prior experience to enroll. Our courses are built for working beauty professionals, for practitioners who've trained before and want to get it right, and for serious newcomers willing to put in the work. Enrolling and treating clients are separate questions, though. Who may perform plasma treatments is decided where you work, so confirm your local requirements and your insurer before you treat clients.</p>
           </div>
-          <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
-              <span>$600 &ndash; $700</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
-            </div>
-            <h3 class="mt-3 font-display text-navy text-xl">Neck, Body &amp; Hands</h3>
-            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Neck tightening, belly tightening, and hand or knee rejuvenation.</p>
-            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-            </a>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="reveal bg-white card-elevated flex flex-col" style="transition-delay:220ms">
-          <div class="img-tint aspect-[4/3]">
-            <!-- LC-9 and LC-15 must never be used anywhere on this site: both show
-                 trainees practising on oranges, which collides directly with the
-                 category's worst horror-story quote. LC-14 substituted here. -->
-            <img src="brand-assets/reference-site/training-photos/LC-14.jpg" alt="Close-up of a Plamere Premium fibroblast treatment in progress on a client's face" class="w-full h-full object-cover">
-          </div>
-          <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-center gap-3 text-[11px] tracking-[0.12em] uppercase text-navy/60 font-medium">
-              <span>From $80</span><span class="w-1 h-1 rounded-full bg-mustard"></span><span>Per Session</span>
-            </div>
-            <h3 class="mt-3 font-display text-navy text-xl">Scars &amp; Skin Renewal</h3>
-            <p class="mt-3 text-[14.5px] text-nightrider/70 leading-relaxed flex-1">Acne scar rejuvenation, stretch mark improvement, and skin tag removal.</p>
-            <a href="#contact" class="nav-link mt-6 inline-flex items-center gap-2 text-navy text-[13px] font-semibold uppercase tracking-[0.06em]">Learn More
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-            </a>
-          </div>
-        </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ================= RESULTS GALLERY ================= -->
-  <section id="results" class="bg-alice py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl reveal">
-        <div class="eyebrow">04 — Real Results</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Before &amp; After</h2>
-        <p class="mt-4 text-nightrider/70 leading-[1.7]">A sample of real client outcomes from Privé-trained specialists — unretouched, as documented in training.</p>
+  <!-- 10. Contact Us -->
+  <!-- Contact Us block for Home (copy deck §1 Contact Us). The Contact page uses
+     contact-details + contact-panel directly under its own H1 (copy deck §3). -->
+<section class="pv-section pv-surface-white" id="pv-contact" aria-labelledby="pv-contact-title">
+  <div class="pv-container grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <div class="pv-section-head">
+        <p class="pv-eyebrow">Get In Touch</p>
+        <h2 class="pv-h2" id="pv-contact-title">Questions Before You Start?</h2>
+        <p class="pv-lead">Ask us about the online certification, live trainings or an order. Send a message and we'll reply by email.</p>
       </div>
-    </div>
+      <!-- Contact details (copy deck §1 Contact Us, §3 Contact page): email, US phone, EU phone token, offices. -->
+<dl class="pv-contact-list">
+  <div>
+    <dt>Email</dt>
+    <dd><a href="mailto:info@prive-academy.com">info@prive-academy.com</a></dd>
+  </div>
+  <div>
+    <dt>United States</dt>
+    <dd><a href="tel:+14243601492">+1 (424) 360-1492</a></dd>
+  </div>
+  <div>
+    <dt>Europe</dt>
+    <dd><a href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></dd>
+  </div>
+  <div>
+    <dt>Offices</dt>
+    <dd>Ljubljana, Slovenia<br>Newark, NJ, USA</dd>
+  </div>
+</dl>
 
-    <div class="mt-14 pl-6 lg:pl-10">
-      <div class="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [scrollbar-width:thin]">
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:40ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA-template.jpg" alt="Before and after Fibroblast treatment around the eye area" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Eye Area — Fine Line Tightening</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:80ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA_11.jpg" alt="Before, after, and healed stages of acne scar rejuvenation" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Acne Scar Rejuvenation</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:120ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/Web_renewal_grafike.jpg" alt="Healing timeline from before treatment to two weeks after, full face" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Full Face — Healing Timeline</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:160ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA_19.jpg" alt="Before and after neck and jaw tightening" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Neck &amp; Jaw Tightening</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:200ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA-koleno.jpg" alt="Before and healed knee skin tightening" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Knee Tightening</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:240ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA-ig-post.jpg" alt="Before and after lower face and chin tightening" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Lower Face &amp; Chin</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:280ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA_13.jpg" alt="Close-up before and after acne scar rejuvenation" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Acne Scar Close-Up</div>
-        </div>
-        <div class="reveal shrink-0 w-[260px] sm:w-[320px] snap-start" style="transition-delay:320ms">
-          <div class="card-elevated overflow-hidden rounded-sm aspect-square"><img src="brand-assets/reference-site/before-after/BA-stana-scar-nov-size.jpg" alt="14-day healing timeline for shoulder scar rejuvenation" class="w-full h-full object-cover"></div>
-          <div class="mt-3 text-[13px] text-nightrider/70">Shoulder Scar — 14 Day Healing</div>
-        </div>
-        <div class="shrink-0 w-px"></div>
-      </div>
     </div>
-  </section>
-
-  <!-- ================= METHOD ================= -->
-  <section id="method" class="bg-white py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl reveal">
-        <div class="eyebrow">05 — Method</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Why Practitioners Choose Privé</h2>
-      </div>
-
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-        <div class="reveal" style="transition-delay:60ms">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><circle cx="17" cy="13" r="6"/><path d="M6 29c1.8-6 6-9 11-9s9.2 3 11 9" stroke-linecap="round"/></svg>
-          <h3 class="mt-5 font-display text-navy text-lg">Clinical Practice Hours</h3>
-          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Every program includes real hands-on hours, not just observation.</p>
-        </div>
-        <div class="reveal" style="transition-delay:120ms">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><rect x="7" y="5" width="20" height="24" rx="1.5"/><path d="M12 13h10M12 18h10M12 23h6" stroke-linecap="round"/></svg>
-          <h3 class="mt-5 font-display text-navy text-lg">Small Cohorts</h3>
-          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Capped class sizes so every student gets direct instructor attention.</p>
-        </div>
-        <div class="reveal" style="transition-delay:180ms">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><path d="M17 4l3.8 7.7L29 13l-6 5.8L24.5 27 17 23l-7.5 4L11 18.8 5 13l8.2-1.3L17 4z" stroke-linejoin="round"/></svg>
-          <h3 class="mt-5 font-display text-navy text-lg">Accredited Certification</h3>
-          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Nationally recognized credentials accepted across the industry.</p>
-        </div>
-        <div class="reveal" style="transition-delay:240ms">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#013559" stroke-width="1.4"><circle cx="17" cy="17" r="12"/><path d="M17 10v7l5 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3 class="mt-5 font-display text-navy text-lg">Lifetime Alumni Support</h3>
-          <p class="mt-2 text-[14.5px] text-nightrider/70 leading-relaxed">Continued mentorship, refreshers, and community after you graduate.</p>
-        </div>
-      </div>
+    <div class="lg:col-span-7">
+      <!-- The contact form on its alice panel. Real GHL form once forms.contact.id is set; the static mock until then. -->
+<div class="pv-form-panel">
+  <!-- DEMO WIRING: static mock of GHL form "V4 Contact Form". It does not create a contact. Build the form per ghl-native/forms.md#contact, put its id in site.config.json, rebuild. -->
+<div class="pv-ghl-form is-mock" data-form="contact"><!-- Static stand-in for the GHL "V4 Contact Form" (ghl-native/forms.md#contact).
+     Same fields, order and styling as the spec. The button is type="button", so it
+     can't pretend to submit. The build swaps this for the real iframe once the form id is set. -->
+<form class="pv-form" aria-label="Contact form" novalidate>
+  <div class="pv-form__grid">
+    <div class="pv-field">
+      <label for="pv-contact-first-name">First name<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-contact-first-name" name="first_name" type="text" autocomplete="given-name" required>
     </div>
-  </section>
-
-  <!-- ================= FOUNDER SPOTLIGHT ================= -->
-  <section class="grain relative bg-navy text-white py-24 lg:py-32 overflow-hidden">
-    <svg class="absolute -bottom-32 -right-32 opacity-[0.05] pointer-events-none" width="480" height="480" viewBox="0 0 520 520">
-      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
-        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/>
-        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/>
-        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/>
-        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/>
-      </g>
-    </svg>
-    <div class="relative max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[380px_1fr] gap-14 items-center">
-      <div class="rounded-sm card-elevated aspect-[4/5] reveal bg-white p-4">
-        <img src="brand-assets/reference-site/founder/samo-sambol-founder-portrait.png" alt="Samo Sambol, Founder and CEO of Privé Academy" class="w-full h-full object-cover object-top">
-      </div>
-      <div class="reveal" style="transition-delay:100ms">
-        <div class="eyebrow">Those That Know, Do.</div>
-        <!-- 2026-09-08 compliance fix. Two problems were live here:
-             (1) "personally developing and introducing the Plasma-Fibroblast method to the world
-                 of beauty" is the inventor/originator framing CLAUDE.md §2 explicitly bans. An
-                 earlier research revision walked that claim back deliberately. Restored to the
-                 defensible framing used everywhere else on the site.
-             (2) "tested by the National Laboratory for Health, Environment, and Food" has no
-                 source doc behind it and was cut from the funnel pages for the same reason.
-                 CE-marking is confirmed by Josip and stays. -->
-        <p class="mt-6 text-white/75 leading-[1.7] max-w-xl">Samo Sambol founded Privé Academy in December 2010, building its early reputation on Microblading before becoming the Master Trainer who successfully introduced and popularized the Plasma-Fibroblast treatment across the European beauty market.</p>
-        <p class="mt-4 text-white/75 leading-[1.7] max-w-xl">Since then, he's trained over 1,000 specialists worldwide and built a proprietary, CE-marked product line.</p>
-        <div class="mt-8">
-          <div class="font-semibold text-sm tracking-[0.04em]">Samo Sambol</div>
-          <div class="text-[13px] text-mustard tracking-[0.06em] uppercase mt-1">Founder &amp; CEO, Privé Academy</div>
-        </div>
-      </div>
+    <div class="pv-field">
+      <label for="pv-contact-last-name">Last name</label>
+      <input id="pv-contact-last-name" name="last_name" type="text" autocomplete="family-name">
     </div>
-  </section>
-
-  <!-- ================= TRAINING PHOTO STRIP ================= -->
-  <section class="bg-white py-20 lg:py-24 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center reveal">
-      <div class="eyebrow">In The Room</div>
-      <h2 class="mt-3 font-display font-medium text-navy text-[28px] lg:text-[34px] leading-tight">350+ Live Trainings Around The World</h2>
+    <div class="pv-field">
+      <label for="pv-contact-email">Email<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-contact-email" name="email" type="email" autocomplete="email" required>
     </div>
-    <div class="mt-12 flex gap-4 overflow-x-auto px-6 pb-2 snap-x snap-mandatory [scrollbar-width:thin]">
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:20ms"><img src="brand-assets/reference-site/training-photos/LC-2.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:60ms"><img src="brand-assets/reference-site/training-photos/LC-4.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:100ms"><img src="brand-assets/reference-site/training-photos/LC-5.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:140ms"><img src="brand-assets/reference-site/training-photos/LC-7.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:180ms"><img src="brand-assets/reference-site/training-photos/LC-8.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:220ms"><img src="brand-assets/reference-site/training-photos/LC-10.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:260ms"><img src="brand-assets/reference-site/training-photos/LC-13.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="reveal shrink-0 w-[180px] sm:w-[220px] aspect-[3/4] rounded-sm overflow-hidden card-elevated snap-start" style="transition-delay:300ms"><img src="brand-assets/reference-site/training-photos/LC-16.jpg" alt="Live training session" class="w-full h-full object-cover"></div>
-      <div class="shrink-0 w-px"></div>
+    <div class="pv-field">
+      <label for="pv-contact-phone">Phone</label>
+      <input id="pv-contact-phone" name="phone" type="tel" autocomplete="tel">
     </div>
-  </section>
-
-  <!-- ================= TESTIMONIALS ================= -->
-  <section id="testimonials" class="bg-alice py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-xl reveal">
-        <div class="eyebrow">06 — Alumni</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Trained Here. Practicing Everywhere.</h2>
-      </div>
-
-      <div class="mt-14 grid md:grid-cols-3 gap-8">
-        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:60ms">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
-          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I like the most that master Samo was very informative and any questions we had was explained very good.</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">LP</div>
-            <div>
-              <div class="text-sm font-semibold text-navy">Lenny Pay</div>
-              <div class="text-[12px] text-nightrider/60">Specialist, Texas</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:140ms">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
-          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I flew to Slovenia for private training with CEO Samo. The training was amazing and I got to practice on a model.</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">VM</div>
-            <div>
-              <div class="text-sm font-semibold text-navy">Vizela Meier</div>
-              <div class="text-[12px] text-nightrider/60">Specialist, Switzerland</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal bg-white p-8 card-elevated" style="transition-delay:220ms">
-          <svg width="28" height="20" viewBox="0 0 28 20" fill="#C0B905"><path d="M0 20V11.4C0 5.1 4.2.7 10.9 0l1 3.3C7.8 4.4 5.6 6.7 5.3 10H11v10H0zm15.7 0V11.4c0-6.3 4.2-10.7 10.9-11.4l1 3.3c-4.1 1.1-6.3 3.4-6.6 6.7H26.7v10H15.7z"/></svg>
-          <p class="mt-5 text-[15px] text-nightrider/80 leading-relaxed">I highly recommend this training, and Samo will make sure that you understand everything you need to know to perform this treatment in the best possible way.</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-[13px] font-semibold">CR</div>
-            <div>
-              <div class="text-sm font-semibold text-navy">Carla Rose</div>
-              <div class="text-[12px] text-nightrider/60">Specialist, California</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="pv-field pv-field--full">
+      <label for="pv-contact-interest">I'm interested in<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <select id="pv-contact-interest" name="interest" required>
+        <option value="" selected disabled>Select one</option>
+        <option>Online Certification: Fibroblast</option>
+        <option>Cold Plasma waitlist</option>
+        <option>Live Trainings</option>
+        <option>An order from the Shop</option>
+        <option>A treatment at Privé Studio</option>
+        <option>Something else</option>
+      </select>
     </div>
-  </section>
-
-  <!-- ================= SHOP TEASER ================= -->
-  <section class="bg-white py-20 lg:py-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-2 gap-0 card-elevated overflow-hidden reveal">
-        <div class="img-tint aspect-[4/3] lg:aspect-auto">
-          <img src="brand-assets/reference-site/misc/product-shot.jpg" alt="Privé aftercare and skin-healing product line" class="w-full h-full object-cover">
-        </div>
-        <div class="bg-navy text-white p-10 lg:p-14 flex flex-col justify-center">
-          <div class="eyebrow">Aftercare Line</div>
-          <h2 class="mt-3 font-display font-medium text-[28px] lg:text-[32px] leading-tight">The Privé Shop</h2>
-          <p class="mt-4 text-white/75 leading-[1.7] max-w-md">Our proprietary aftercare and skin-healing products, developed alongside the technique itself, EU-certified and lab-tested. Built for practitioners and their clients.</p>
-          <span class="mt-8 inline-flex w-fit items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-white/50 border border-white/25 px-8 py-4">Coming Soon</span>
-        </div>
-      </div>
+    <div class="pv-field pv-field--full">
+      <label for="pv-contact-message">Message<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <textarea id="pv-contact-message" name="message" rows="4" required></textarea>
     </div>
-  </section>
+  </div>
+  <div class="pv-form__foot">
+    <button type="button" class="pv-btn pv-btn--primary">Send Message</button>
+    <p class="pv-form__note">We use your details to reply to your message. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
+</form>
+</div>
+</div>
 
-  <!-- ================= CTA BANNER ================= -->
-  <section id="apply" class="grain relative bg-navy text-white py-24 overflow-hidden">
-    <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none" width="600" height="600" viewBox="0 0 520 520">
-      <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
-        <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
-        <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
-        <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
-        <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
-      </g>
-    </svg>
-    <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
-      <h2 class="font-display font-medium text-[30px] sm:text-[38px] leading-tight">Ready To Raise Your Standard?</h2>
-      <p class="mt-5 text-white/75 leading-[1.7] max-w-xl mx-auto">Applications for our next cohort are open. Seats are limited to keep every class hands-on.</p>
-      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#contact" class="btn-primary-inverse">Apply To Enroll</a>
-        <a href="#contact" class="btn-secondary-inverse">Talk To Admissions</a>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= CONTACT / FOOTER LEAD-IN ================= -->
-  <section id="contact" class="bg-white py-24 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
-      <div class="reveal">
-        <div class="eyebrow">Get In Touch</div>
-        <h2 class="mt-3 font-display font-medium text-navy text-[32px] lg:text-[36px] leading-tight">Speak With Admissions</h2>
-        <p class="mt-5 text-nightrider/70 leading-[1.7] max-w-md">Have questions about a program, financing, or start dates? Send us a note and admissions will follow up within one business day.</p>
-        <div class="mt-8 space-y-3 text-[14.5px] text-nightrider/80">
-          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><rect x="2" y="4" width="14" height="10" rx="1.2"/><path d="M2.5 5l6.5 5 6.5-5"/></svg> info@prive-academy.com</div>
-          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><path d="M4 3.5c0 6 4.5 10.5 10.5 10.5l1-3-3.7-1-1.3 1.3c-1.6-.9-2.9-2.2-3.8-3.8L8 5.4l-1-3.7-3 1z"/></svg> +1 (424) 291-9830</div>
-          <div class="flex items-center gap-3"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#013559" stroke-width="1.4"><path d="M9 16s6-5.2 6-9.5A6 6 0 003 6.5C3 10.8 9 16 9 16z"/><circle cx="9" cy="6.5" r="2"/></svg> Ljubljana, Slovenia &amp; Newark, NJ</div>
-        </div>
-      </div>
-      <form class="reveal bg-alice p-8 sm:p-10" style="transition-delay:100ms">
-        <div class="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">First Name</label>
-            <input type="text" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Jane">
-          </div>
-          <div>
-            <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Last Name</label>
-            <input type="text" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Doe">
-          </div>
-        </div>
-        <div class="mt-5">
-          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Email</label>
-          <input type="email" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="jane@email.com">
-        </div>
-        <div class="mt-5">
-          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Program Of Interest</label>
-          <select class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors">
-            <option>Live Training</option>
-            <option>Online Course</option>
-            <option>Not Sure Yet</option>
-          </select>
-        </div>
-        <div class="mt-5">
-          <label class="text-[11px] tracking-[0.1em] uppercase text-navy/70 font-medium">Message</label>
-          <textarea rows="3" class="mt-2 w-full bg-white border border-navy/15 px-4 py-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard focus:border-navy transition-colors" placeholder="Tell us a bit about your goals"></textarea>
-        </div>
-        <button type="submit" class="btn-primary mt-7 w-full sm:w-auto justify-center">Send Message</button>
-      </form>
-    </div>
-  </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-nightrider text-white/70">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
-    <div class="lg:col-span-2">
-      <a href="#top" class="inline-flex">
-        <img src="brand-assets/Prive_LOGO_bel.png" alt="Privé Academy" class="h-20 w-20">
+<!-- 11. Footer -->
+<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
+<footer class="pv-footer">
+  <div class="pv-container pv-footer__grid">
+    <div>
+      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
+        <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
       </a>
-      <p class="mt-5 text-[14px] leading-relaxed max-w-xs">Structured, step-by-step training built for practitioners who want to know they're ready — not just certified.</p>
-      <div class="mt-6 flex items-center gap-4">
-        <a href="https://www.facebook.com/priveacademy/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/prive_academy/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@Prive_Academy" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 flex items-center justify-center border border-white/15 rounded-full hover:border-mustard hover:text-mustard transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-mustard">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div>
-      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Explore</div>
-      <ul class="mt-5 space-y-3 text-[14px]">
-        <li><a href="online-course.html" class="hover:text-white transition-colors">Online Course</a></li>
-        <li><a href="live-trainings.html" class="hover:text-white transition-colors">Live Trainings</a></li>
-        <li><a href="shop.html" class="hover:text-white transition-colors">Shop</a></li>
-        <li><a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a></li>
-        <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
-        <li><a href="about-us.html" class="hover:text-white transition-colors">About Us</a></li>
+      <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>
+      <ul class="pv-social">
+        <li>
+          <a href="https://www.facebook.com/priveacademy/" target="_blank" rel="noopener" aria-label="Privé Academy on Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/prive_academy/" target="_blank" rel="noopener" aria-label="Privé Academy on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@Prive_Academy" target="_blank" rel="noopener" aria-label="Privé Academy on YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
       </ul>
     </div>
 
-    <div>
-      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Offices</div>
-      <ul class="mt-5 space-y-4 text-[14px] leading-relaxed">
-        <li><span class="text-white/90 font-medium">Europe</span><br>Celovška cesta 111<br>1000 Ljubljana, Slovenia</li>
-        <li><span class="text-white/90 font-medium">United States</span><br>One Gateway Center<br>Newark, NJ 07102</li>
+    <nav aria-labelledby="pv-footer-explore">
+      <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
+      <ul class="pv-footer__list">
+        <li><a class="pv-footer__link" href="online-certification.html" data-nav="online-certification">Online Certification</a></li>
+        <li><a class="pv-footer__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a></li>
+        <li><a class="pv-footer__link" href="treatments.html" data-nav="treatments">Treatments</a></li>
+        <li><a class="pv-footer__link" href="shop.html" data-nav="shop">Shop</a></li>
+        <li><a class="pv-footer__link" href="testimonials.html" data-nav="testimonials">Testimonials</a></li>
+        <li><a class="pv-footer__link" href="about.html" data-nav="about">About Us</a></li>
+        <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div role="group" aria-labelledby="pv-footer-offices">
+      <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
+      <ul class="pv-footer__list">
+        <li><address><span class="pv-footer__label">Europe</span>Celovška cesta 111<br>1000 Ljubljana, Slovenia</address></li>
+        <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
 
-    <div>
-      <div class="text-[11px] tracking-[0.14em] uppercase text-mustard font-semibold">Contact</div>
-      <ul class="mt-5 space-y-3 text-[14px]">
-        <li>info@prive-academy.com</li>
-        <li>+1 (424) 291-9830</li>
+    <div role="group" aria-labelledby="pv-footer-contact">
+      <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
+      <ul class="pv-footer__list">
+        <li><a class="pv-footer__link" href="mailto:info@prive-academy.com">info@prive-academy.com</a></li>
+        <li><span class="pv-footer__label">US</span><a class="pv-footer__link" href="tel:+14243601492">+1 (424) 360-1492</a></li>
+        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] tracking-[0.06em] uppercase text-white/40">
-      <span>&copy; 2026 Privé Academy. All rights reserved.</span>
-      <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition-colors">Terms</a>
-      </div>
+  <div class="pv-footer__bar">
+    <div class="pv-container pv-footer__bar-inner">
+      <p>&copy; 2026 Privé Academy. All rights reserved.</p>
+      <ul class="pv-footer__legal">
+        <li><a class="pv-footer__legal-link" href="privacy.html" data-nav="privacy">Privacy Policy</a></li>
+        <li><a class="pv-footer__legal-link" href="terms.html" data-nav="terms">Terms &amp; Conditions</a></li>
+        <li><a class="pv-footer__legal-link" href="cookies.html" data-nav="cookies">Cookie Policy</a></li>
+        <li><button type="button" class="pv-footer__legal-link" data-consent-open>Cookie settings</button></li>
+      </ul>
     </div>
   </div>
 </footer>
 
+<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
+     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
+<div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
+  <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
+  <div class="pv-cookie__actions">
+    <button type="button" class="pv-btn pv-btn--consent" data-consent="all">Accept All</button>
+    <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
+  </div>
+</div>
+
+
+</div>
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('icon-open');
-  const iconClose = document.getElementById('icon-close');
-  toggle.addEventListener('click', () => {
-    const isOpen = !menu.classList.contains('closed');
-    menu.classList.toggle('closed');
-    iconOpen.classList.toggle('hidden');
-    iconClose.classList.toggle('hidden');
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.add('closed');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-  }));
+(() => {
+// Page behaviour for every v4 page. build.mjs wraps this in the SOP's idempotent,
+// hydrationDone-aware init (HIGHLEVEL-CODED-PAGE-SOP.md Part 1 step 8) and calls
+// initPage(root) with the page root. initPage returns its own teardown.
+//
+// Markup hooks (all queried inside the root):
+//   [data-nav-shell]                     gets .is-scrolled past 8px
+//   [data-menu-toggle] + [data-menu]     mobile menu; toggles .is-open + aria-expanded
+//   .pv-reveal                           fades in once on scroll (gated on root.js-ready)
+//   [data-carousel] > [data-carousel-track], [data-carousel-prev], [data-carousel-next]
+//   [data-cookie-banner]                 consent banner; [data-consent="all|necessary"] buttons
+//   [data-consent-open]                  any link that re-opens the banner (footer)
+//   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
+//                                        youtube-nocookie iframe on click, so nothing
+//                                        from Google loads until the visitor asks
 
-  const nav = document.getElementById('site-nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('shadow-[0_8px_24px_-8px_rgba(0,0,0,0.35)]', window.scrollY > 8);
+const CONSENT_KEY = 'prive-consent-v1';
+
+function readConsent() {
+  try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
+}
+
+// Analytics and ad tags must wait for this. The site-wide GHL head snippet in
+// ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
+function applyConsent(choice) {
+  window.priveConsent = choice;
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      analytics_storage: choice.analytics ? 'granted' : 'denied',
+      ad_storage: choice.marketing ? 'granted' : 'denied',
+      ad_user_data: choice.marketing ? 'granted' : 'denied',
+      ad_personalization: choice.marketing ? 'granted' : 'denied',
+    });
+  }
+  window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
+}
+
+function initPage(root) {
+  const controller = new AbortController();
+  const { signal } = controller;
+  const cleanup = [() => controller.abort()];
+  root.classList.add('js-ready');
+
+  // ---- nav: scrolled state + mobile menu
+  const shell = root.querySelector('[data-nav-shell]');
+  if (shell) {
+    const onScroll = () => shell.classList.toggle('is-scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true, signal });
+    onScroll();
+  }
+  const toggle = root.querySelector('[data-menu-toggle]');
+  const menu = root.querySelector('[data-menu]');
+  if (toggle && menu) {
+    const setOpen = (open) => {
+      menu.classList.toggle('is-open', open);
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')), { signal });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
+  }
+
+  // ---- reveal on scroll
+  const reveals = root.querySelectorAll('.pv-reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+    cleanup.push(() => io.disconnect());
+  } else {
+    reveals.forEach(el => el.classList.add('is-in'));
+  }
+
+  // ---- carousels: prev/next scroll the track by one visible width
+  root.querySelectorAll('[data-carousel]').forEach(c => {
+    const track = c.querySelector('[data-carousel-track]');
+    if (!track) return;
+    const prev = c.querySelector('[data-carousel-prev]');
+    const next = c.querySelector('[data-carousel-next]');
+    const step = dir => track.scrollBy({ left: dir * track.clientWidth * 0.85, behavior: 'smooth' });
+    // aria-disabled (not disabled) keeps the buttons focusable at either end
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      prev?.setAttribute('aria-disabled', String(track.scrollLeft <= 2));
+      next?.setAttribute('aria-disabled', String(track.scrollLeft >= max));
+    };
+    prev?.addEventListener('click', () => step(-1), { signal });
+    next?.addEventListener('click', () => step(1), { signal });
+    track.addEventListener('scroll', sync, { passive: true, signal });
+    window.addEventListener('resize', sync, { passive: true, signal });
+    sync();
   });
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // ---- video facades: poster + play button until clicked
+  root.querySelectorAll('[data-video]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.video;
+      if (!/^[\w-]{6,20}$/.test(id)) return;
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+      frame.title = btn.dataset.videoTitle || 'Video testimonial';
+      frame.className = 'pv-video__frame';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      btn.replaceWith(frame);
+      frame.focus();
+    }, { signal });
+  });
+
+  // ---- cookie consent
+  const banner = root.querySelector('[data-cookie-banner]');
+  if (banner) {
+    const show = (on) => { banner.hidden = !on; banner.classList.toggle('is-open', on); };
+    const saved = readConsent();
+    if (saved) applyConsent(saved); else show(true);
+    banner.querySelectorAll('[data-consent]').forEach(btn => btn.addEventListener('click', () => {
+      const all = btn.dataset.consent === 'all';
+      const choice = { analytics: all, marketing: all, at: new Date().toISOString() };
+      try { localStorage.setItem(CONSENT_KEY, JSON.stringify(choice)); } catch { /* private mode: consent holds for this page view only */ }
+      applyConsent(choice);
+      show(false);
+    }, { signal }));
+    root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
+  }
+
+  return () => cleanup.forEach(fn => fn());
+}
+
+  function init() {
+    window.__priveV4Cleanup?.();
+    const teardowns = ["prive-v4-home"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean)
+      .map(root => initPage(root));
+    window.__priveV4Cleanup = () => teardowns.forEach(fn => fn());
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+  document.addEventListener('hydrationDone', init);
+})();
 </script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
 </body>
 </html>
