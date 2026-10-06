@@ -1,356 +1,1381 @@
-<!DOCTYPE html>
-<html lang="hr">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plasma tretmani prilagođeni potrebama vaše kože | Privé Studio</title>
-<meta name="description" content="Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.">
-<meta property="og:title" content="Plasma tretmani prilagođeni potrebama vaše kože | Privé Studio">
-<meta property="og:description" content="Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="hr_HR">
-<meta property="og:image" content="brand-assets/photos/tretman-lice.jpg">
-<link rel="icon" href="brand-assets/1-favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: { DEFAULT: '#013559', 50: '#e8f0f5', 700: '#012842', 800: '#011f34' },
-          alice: '#eff8ff',
-          nightrider: '#2b2b2b',
-          mustard: '#c0b905',
-        },
-        fontFamily: {
-          display: ['"Libre Bodoni"', 'Didot', 'serif'],
-          sans: ['Montserrat', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plasma tretmani | Privé Studio Zagreb</title>
+<meta name="description" content="Plasma Pen i hladna plazma u Privé Studiju. Prije svakog tretmana provodimo konzultacije i procjenu kože.">
+<link rel="icon" href="images/v4-favicon.png">
 <style>
-  /* =====================================================================
-     PRIVÉ STUDIO — plasma tretmani, stranica za zahtjev za konzultacije.
-     Design system inherited from v2-hr-trening/edukacija-fibroblast.html so
-     this page belongs to the same site. Palette is Privé's brand kit:
-     navy #013559 · alice #EFF8FF · nightrider #2B2B2B · mustard #C0B905.
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-     ENTITY NOTE — this page is Privé STUDIO (B2C, performs treatments), not
-     Privé ACADEMY (B2B, trains practitioners). Every logo file in the kit is
-     a lockup reading "PRIVÉ — ACADEMY —", i.e. the wrong entity, so the
-     wordmark here is set in type (.wm) and no logo image is loaded.
-     ===================================================================== */
+/* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
+:where(#prive-v4-treatments, #prive-v4-treatments *, #prive-v4-treatments *::before, #prive-v4-treatments *::after){box-sizing: border-box; margin: 0; padding: 0;}
+:where(#prive-v4-treatments) ul,
+:where(#prive-v4-treatments) ol{list-style: none;}
+:where(#prive-v4-treatments) a{color: inherit; text-decoration: none;}
+:where(#prive-v4-treatments) img,
+:where(#prive-v4-treatments) svg,
+:where(#prive-v4-treatments) video,
+:where(#prive-v4-treatments) iframe{display: block; max-width: 100%;}
+:where(#prive-v4-treatments) button,
+:where(#prive-v4-treatments) input,
+:where(#prive-v4-treatments) select,
+:where(#prive-v4-treatments) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
 
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Montserrat', sans-serif; }
-  h1, h2, h3, .font-display { font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; }
-  /* sticky single-row nav (72px) clearance for in-page anchors */
-  :target, [id] { scroll-margin-top: 96px; }
+/* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-treatments ---- */
+#prive-v4-treatments,#prive-v4-treatments *,#prive-v4-treatments :after,#prive-v4-treatments :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-treatments .static{position:static}#prive-v4-treatments .fixed{position:fixed}#prive-v4-treatments .grid{display:grid}#prive-v4-treatments .hidden{display:none}#prive-v4-treatments .gap-10{gap:2.5rem}#prive-v4-treatments .gap-5{gap:1.25rem}@media (min-width:768px){#prive-v4-treatments .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){#prive-v4-treatments .lg\:col-span-5{grid-column:span 5/span 5}#prive-v4-treatments .lg\:col-span-7{grid-column:span 7/span 7}#prive-v4-treatments .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}#prive-v4-treatments .lg\:gap-16{gap:4rem}#prive-v4-treatments .lg\:gap-8{gap:2rem}}
 
-  .grain { position: relative; }
-  .grain::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-    pointer-events: none;
-    mix-blend-mode: overlay;
-  }
+/* ---- components (src/styles/components.css) ---- */
+#prive-v4-treatments{--pv-navy: #013559;
+  --pv-navy-700: #012842;
+  --pv-alice: #eff8ff;
+  --pv-nightrider: #2b2b2b;
+  --pv-mustard: #c0b905;
+  --pv-white: #fff;
+  --pv-text-muted: rgba(43, 43, 43, .78);
+  --pv-line: rgba(1, 53, 89, .14);
+  --pv-line-strong: rgba(1, 53, 89, .3);
+  --pv-label: rgba(1, 53, 89, .78);
+  --pv-on-dark: rgba(255, 255, 255, .8);
+  --pv-on-dark-line: rgba(255, 255, 255, .14);
+  --pv-focus: var(--pv-navy);
 
-  /* ---- wordmark, set in type ------------------------------------------
-     Echoes the proportions of the Privé lockup (serif name over a spaced,
-     rule-flanked sub-word) without reproducing the Academy artwork.
-     The trailing letter-space of "STUDIO" is balanced with a matching
-     padding-left so the sub-word stays optically centred under "PRIVÉ".  */
-  .wm { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; color: inherit; }
-  .wm-name { font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; letter-spacing: 0.1em; padding-left: 0.1em; }
-  .wm-sub { display: flex; align-items: center; gap: 7px; }
-  .wm-word { font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.42em; padding-left: 0.42em; }
-  .wm-rule { display: block; height: 1px; background: currentColor; opacity: 0.5; }
+  --pv-display: 'Libre Bodoni', Didot, serif;
+  --pv-sans: Montserrat, sans-serif;
+  --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --pv-out: cubic-bezier(.22, 1, .36, 1);
 
-  .wm-sm .wm-name { font-size: 23px; }
-  .wm-sm .wm-sub { margin-top: 7px; }
-  .wm-sm .wm-word { font-size: 8px; }
-  .wm-sm .wm-rule { width: 13px; }
+  
+  --pv-section-y: 4rem;
+  --pv-block-gap: 2.5rem;
+  --pv-gutter: 1.5rem;
+  --pv-nav-h: 4.5rem;
 
-  .wm-lg .wm-name { font-size: 34px; }
-  .wm-lg .wm-sub { margin-top: 10px; }
-  .wm-lg .wm-word { font-size: 10px; }
-  .wm-lg .wm-rule { width: 20px; }
+  background-color: var(--pv-white);
+  color: var(--pv-nightrider);
+  font-family: var(--pv-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+@media (min-width: 1024px){
+#prive-v4-treatments{--pv-section-y: 6rem;
+    --pv-block-gap: 3.5rem;
+    --pv-gutter: 2.5rem;
+    --pv-nav-h: 5.25rem;
+    font-size: 1.0625rem;}
+}
+#prive-v4-treatments h1,
+#prive-v4-treatments h2,
+#prive-v4-treatments h3,
+#prive-v4-treatments .font-display{font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; line-height: 1.15;}
+#prive-v4-treatments .pv-needs{background: #eff8ff; color: #013559; outline: 1px dashed #013559; padding: 0 .25em;}
+#prive-v4-treatments.js-ready .pv-reveal{opacity: 0; transform: translateY(24px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1);}
+#prive-v4-treatments.js-ready .pv-reveal.is-in{opacity: 1; transform: none;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments.js-ready .pv-reveal{opacity: 1; transform: none; transition: none;}
+}
+#prive-v4-treatments .pv-ghl-form iframe{min-height: 480px;}
+#prive-v4-treatments .pv-ghl-calendar iframe{min-height: 640px;}
+@keyframes pv-rise{from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; }}
+@keyframes pv-burst{from { opacity: 0; transform: translateX(-50%) scale(.94); } to { opacity: 1; transform: translateX(-50%) scale(1); }}
+#prive-v4-treatments :focus-visible{outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-treatments ::selection{background: var(--pv-navy); color: var(--pv-white);}
+#prive-v4-treatments .pv-container{width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: var(--pv-gutter);}
+#prive-v4-treatments .pv-section{padding-block: var(--pv-section-y);}
+#prive-v4-treatments .pv-section[id]{scroll-margin-top: var(--pv-nav-h);}
+#prive-v4-treatments .pv-surface-alice{background: var(--pv-alice);}
+#prive-v4-treatments .pv-surface-white{background: var(--pv-white);}
+#prive-v4-treatments .pv-block{margin-top: var(--pv-block-gap);}
+#prive-v4-treatments .pv-surface-navy{background: var(--pv-navy); color: var(--pv-on-dark); --pv-focus: var(--pv-mustard);}
+#prive-v4-treatments .pv-grain{position: relative; isolation: isolate;}
+#prive-v4-treatments .pv-grain::before{content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;}
+#prive-v4-treatments .pv-eyebrow{display: inline-flex;
+  align-items: center;
+  gap: .875rem;
+  font-family: var(--pv-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--pv-navy);}
+#prive-v4-treatments .pv-eyebrow::before{content: ""; flex: none; width: 1.75rem; height: 1.5px; background: var(--pv-mustard);}
+#prive-v4-treatments .pv-surface-navy .pv-eyebrow{color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-section-head{max-width: 44rem;}
+#prive-v4-treatments .pv-section-head > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-h2{font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.12;
+  letter-spacing: -.005em;
+  color: var(--pv-navy);
+  text-wrap: balance;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-h2{font-size: 2.5rem;}
+}
+#prive-v4-treatments .pv-surface-navy .pv-h2{color: var(--pv-white);}
+#prive-v4-treatments .pv-h3{font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  color: var(--pv-navy);}
+#prive-v4-treatments .pv-lead{font-size: 1.0625rem; line-height: 1.7; color: var(--pv-text-muted); max-width: 40rem; text-wrap: pretty;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-lead{font-size: 1.1875rem;}
+}
+#prive-v4-treatments .pv-surface-navy .pv-lead{color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-prose > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-textlink{display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9375rem;
+  font-weight: 500;
+  color: var(--pv-navy);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--pv-line-strong);}
+#prive-v4-treatments .pv-textlink:hover{text-decoration-color: currentColor;}
+#prive-v4-treatments .pv-textlink:active{opacity: .7;}
+#prive-v4-treatments .pv-textlink svg{transition: transform 320ms var(--pv-spring);}
+#prive-v4-treatments .pv-textlink:hover svg{transform: translateX(3px);}
+#prive-v4-treatments .pv-textlink--inverse{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .4);}
+#prive-v4-treatments .pv-btn{position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  min-height: 3rem;
+  padding: .875rem 2.125rem;
+  font-family: var(--pv-sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 380ms var(--pv-spring);}
+#prive-v4-treatments .pv-btn::before{content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 240ms ease;}
+#prive-v4-treatments .pv-btn:hover{transform: translateY(-2px);}
+#prive-v4-treatments .pv-btn:hover::before{opacity: 1;}
+#prive-v4-treatments .pv-btn:active{transform: translateY(0) scale(.98); transition-duration: 120ms;}
+#prive-v4-treatments .pv-btn:focus-visible{outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-treatments .pv-btn--primary{background: var(--pv-navy); color: var(--pv-white); border-radius: 50px;}
+#prive-v4-treatments .pv-btn--primary::before{background: var(--pv-navy-700);}
+#prive-v4-treatments .pv-btn--secondary{background: transparent;
+  color: var(--pv-navy);
+  border: 1.5px solid var(--pv-mustard);
+  border-radius: 0;
+  padding: .8125rem 2rem;}
+#prive-v4-treatments .pv-btn--secondary::before{background: rgba(1, 53, 89, .06);}
+#prive-v4-treatments .pv-btn--inverse{background: var(--pv-white); color: var(--pv-navy); border-radius: 50px;}
+#prive-v4-treatments .pv-btn--inverse::before{background: var(--pv-alice);}
+#prive-v4-treatments .pv-btn--secondary-inverse{background: transparent;
+  color: var(--pv-white);
+  border: 1.5px solid var(--pv-mustard);
+  border-radius: 0;
+  padding: .8125rem 2rem;}
+#prive-v4-treatments .pv-btn--secondary-inverse::before{background: rgba(255, 255, 255, .1);}
+@media (max-width: 639px){
+#prive-v4-treatments .pv-btn{padding-inline: 1.5rem; letter-spacing: .07em;}
+#prive-v4-treatments .pv-btn--block-sm{width: 100%;}
+}
+#prive-v4-treatments .pv-icon-btn{position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--pv-line-strong);
+  color: var(--pv-navy);
+  cursor: pointer;
+  transition: transform 320ms var(--pv-spring), opacity 200ms ease;}
+#prive-v4-treatments .pv-icon-btn::before{content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(1, 53, 89, .07); opacity: 0; transition: opacity 200ms ease;}
+#prive-v4-treatments .pv-icon-btn:hover::before{opacity: 1;}
+#prive-v4-treatments .pv-icon-btn svg{transition: transform 320ms var(--pv-spring);}
+#prive-v4-treatments .pv-icon-btn[data-carousel-prev]:hover svg{transform: translateX(-2px);}
+#prive-v4-treatments .pv-icon-btn[data-carousel-next]:hover svg{transform: translateX(2px);}
+#prive-v4-treatments .pv-icon-btn:active{transform: scale(.94);}
+#prive-v4-treatments .pv-icon-btn[aria-disabled="true"]{opacity: .35; cursor: default;}
+#prive-v4-treatments .pv-icon-btn[aria-disabled="true"]::before{opacity: 0;}
+#prive-v4-treatments .pv-tag{display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .3125rem .75rem;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pv-navy);
+  border: 1px solid var(--pv-line-strong);}
+#prive-v4-treatments .pv-tag--inverse{color: var(--pv-white); border-color: rgba(255, 255, 255, .35);}
+#prive-v4-treatments .pv-nav{position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--pv-navy);
+  color: var(--pv-white);
+  --pv-focus: var(--pv-mustard);}
+#prive-v4-treatments .pv-nav::after{content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, .16);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;}
+#prive-v4-treatments .pv-nav.is-scrolled::after{opacity: 1;}
+#prive-v4-treatments .pv-nav__bar{display: flex; align-items: center; justify-content: space-between; gap: 2rem; height: var(--pv-nav-h);}
+#prive-v4-treatments .pv-nav__logo{display: block; flex: none; transition: transform 380ms var(--pv-spring);}
+#prive-v4-treatments .pv-nav__logo img{width: 3.5rem; height: 3.5rem;}
+#prive-v4-treatments .pv-nav__logo:hover{transform: scale(1.04);}
+#prive-v4-treatments .pv-nav__logo:active{transform: scale(.97);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-nav__logo img{width: 4rem; height: 4rem;}
+}
+#prive-v4-treatments .pv-nav__links{display: none;}
+#prive-v4-treatments .pv-nav__link{position: relative;
+  padding-block: .5rem;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, .82);}
+#prive-v4-treatments .pv-nav__link::after{content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .125rem;
+  height: 1.5px;
+  background: var(--pv-mustard);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--pv-out);}
+#prive-v4-treatments .pv-nav__link:hover{color: var(--pv-white);}
+#prive-v4-treatments .pv-nav__link:hover::after,
+#prive-v4-treatments .pv-nav__link[aria-current="page"]::after{transform: scaleX(1);}
+#prive-v4-treatments .pv-nav__link[aria-current="page"]{color: var(--pv-white); font-weight: 600;}
+#prive-v4-treatments .pv-nav__link:active{opacity: .7;}
+#prive-v4-treatments .pv-nav__link:focus-visible{outline-offset: 4px;}
+#prive-v4-treatments .pv-nav__toggle{position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -.625rem;
+  color: var(--pv-white);
+  cursor: pointer;
+  transition: transform 260ms var(--pv-spring);}
+#prive-v4-treatments .pv-nav__toggle span{display: block; width: 1.375rem; height: 1.5px; background: currentColor; transition: transform 320ms var(--pv-out), opacity 200ms ease;}
+#prive-v4-treatments .pv-nav__toggle:hover span:nth-child(2){transform: scaleX(.64);}
+#prive-v4-treatments .pv-nav__toggle:active{transform: scale(.92);}
+#prive-v4-treatments .pv-nav__toggle.is-open span:nth-child(1){transform: translateY(6.5px) rotate(45deg);}
+#prive-v4-treatments .pv-nav__toggle.is-open span:nth-child(2){opacity: 0;}
+#prive-v4-treatments .pv-nav__toggle.is-open span:nth-child(3){transform: translateY(-6.5px) rotate(-45deg);}
+#prive-v4-treatments .pv-nav__menu{position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  
+  height: calc(100vh - var(--pv-nav-h));
+  height: calc(100dvh - var(--pv-nav-h));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--pv-navy);
+  border-top: 1px solid var(--pv-on-dark-line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-.5rem);
+  transition: opacity 240ms ease, transform 320ms var(--pv-out), visibility 0s linear 320ms;}
+#prive-v4-treatments .pv-nav__menu.is-open{opacity: 1; visibility: visible; transform: none; transition-delay: 0s;}
+#prive-v4-treatments .pv-nav__menu-list{padding-top: .5rem; padding-bottom: 2rem;}
+#prive-v4-treatments .pv-nav__menu-link{display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .85);}
+#prive-v4-treatments .pv-nav__menu-link::after{content: "";
+  width: 1.25rem;
+  height: 1.5px;
+  background: var(--pv-mustard);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 320ms var(--pv-out);}
+#prive-v4-treatments .pv-nav__menu-link:hover{color: var(--pv-white);}
+#prive-v4-treatments .pv-nav__menu-link:hover::after,
+#prive-v4-treatments .pv-nav__menu-link[aria-current="page"]::after{transform: scaleX(1);}
+#prive-v4-treatments .pv-nav__menu-link[aria-current="page"]{color: var(--pv-white); font-weight: 600;}
+#prive-v4-treatments .pv-nav__menu-link:active{opacity: .7;}
+#prive-v4-treatments .pv-nav__menu-link:focus-visible{outline-offset: -2px;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-nav__links{display: flex; align-items: center; gap: 1.5rem;}
+#prive-v4-treatments .pv-nav__toggle,
+#prive-v4-treatments .pv-nav__menu{display: none;}
+}
+@media (min-width: 1280px){
+#prive-v4-treatments .pv-nav__links{gap: 2.125rem;}
+}
+#prive-v4-treatments .pv-hero{position: relative;
+  overflow: clip;
+  background: var(--pv-navy-700);
+  color: var(--pv-on-dark);
+  --pv-focus: var(--pv-mustard);}
+#prive-v4-treatments .pv-hero__main{position: relative;}
+#prive-v4-treatments .pv-hero__media{position: relative; aspect-ratio: 4 / 3; overflow: hidden;}
+#prive-v4-treatments .pv-hero__media img{width: 100%; height: 100%; object-fit: cover; object-position: 90% 30%;}
+#prive-v4-treatments .pv-hero__media::after{content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(1, 40, 66, 0) 50%, var(--pv-navy-700)); pointer-events: none;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-hero__media{aspect-ratio: 2 / 1;}
+#prive-v4-treatments .pv-hero__media img{object-position: 84% 30%;}
+}
+#prive-v4-treatments .pv-hero__body{position: relative; padding-top: .5rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-hero__media{position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 64%;
+    aspect-ratio: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 32%);
+    mask-image: linear-gradient(to right, transparent, black 32%);}
+#prive-v4-treatments .pv-hero__media::after{display: none;}
+#prive-v4-treatments .pv-hero__media img{object-position: 82% 30%;}
+#prive-v4-treatments .pv-hero__body{padding-block: 7rem 6rem;}
+#prive-v4-treatments .pv-hero__copy{max-width: 31rem;}
+}
+@media (min-width: 1280px){
+#prive-v4-treatments .pv-hero__copy{max-width: 34rem;}
+}
+#prive-v4-treatments .pv-burst{position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 40rem;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  animation: pv-burst 1200ms var(--pv-out) both;}
+#prive-v4-treatments .pv-hero__title{position: relative;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.75rem;
+  line-height: 1.04;
+  letter-spacing: .02em;
+  color: var(--pv-white);
+  animation: pv-rise 900ms var(--pv-out) 120ms both;}
+#prive-v4-treatments .pv-hero__title-line{display: block;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-hero__title{font-size: 3.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-hero__title{font-size: 4.5rem;}
+}
+@media (min-width: 1280px){
+#prive-v4-treatments .pv-hero__title{font-size: 5.25rem;}
+}
+#prive-v4-treatments .pv-hero__rule{display: block; width: 3rem; height: 1.5px; margin-top: 2rem; background: var(--pv-mustard); animation: pv-rise 900ms var(--pv-out) 220ms both;}
+#prive-v4-treatments .pv-hero__sub{max-width: 34rem;
+  margin-top: 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--pv-on-dark);
+  text-wrap: pretty;
+  animation: pv-rise 900ms var(--pv-out) 280ms both;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-hero__sub{font-size: 1.1875rem;}
+}
+#prive-v4-treatments .pv-hero__actions{display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  animation: pv-rise 900ms var(--pv-out) 380ms both;}
+#prive-v4-treatments .pv-hero__actions .pv-textlink{align-self: center;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-hero__actions{flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem;}
+#prive-v4-treatments .pv-hero__actions .pv-btn{white-space: nowrap;}
+#prive-v4-treatments .pv-hero__actions .pv-textlink{align-self: auto;}
+}
+#prive-v4-treatments .pv-hero__proof{display: grid;
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--pv-on-dark-line);
+  animation: pv-rise 900ms var(--pv-out) 480ms both;}
+#prive-v4-treatments .pv-hero__proof li{padding: 1.125rem 0; font-size: .9375rem; line-height: 1.5; color: var(--pv-on-dark); text-wrap: balance;}
+#prive-v4-treatments .pv-hero__proof li + li{border-top: 1px solid rgba(255, 255, 255, .08);}
+@media (min-width: 768px){
+#prive-v4-treatments .pv-hero__proof{grid-template-columns: repeat(3, minmax(0, 1fr));}
+#prive-v4-treatments .pv-hero__proof li{padding: 2rem 1.5rem 2.25rem;}
+#prive-v4-treatments .pv-hero__proof li:first-child{padding-left: 0;}
+#prive-v4-treatments .pv-hero__proof li + li{border-top: 0; border-left: 1px solid var(--pv-on-dark-line);}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-hero__proof{margin-top: 0;}
+}
+#prive-v4-treatments .pv-figure{font-family: var(--pv-display); font-size: 1.625rem; font-weight: 500; line-height: 1; letter-spacing: 0; color: var(--pv-white); margin-inline: .15em;}
+#prive-v4-treatments .pv-figure:first-child{margin-left: 0;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-burst,
+#prive-v4-treatments .pv-hero__title,
+#prive-v4-treatments .pv-hero__rule,
+#prive-v4-treatments .pv-hero__sub,
+#prive-v4-treatments .pv-hero__actions,
+#prive-v4-treatments .pv-hero__proof{animation: none;}
+}
+#prive-v4-treatments .pv-page-hero{position: relative; overflow: clip; padding-block: 4rem 3.75rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero{padding-block: 6.5rem 5.5rem;}
+}
+#prive-v4-treatments .pv-page-hero__inner{position: relative;}
+#prive-v4-treatments .pv-page-hero .pv-eyebrow{animation: pv-rise 900ms var(--pv-out) both;}
+#prive-v4-treatments .pv-page-hero__title{position: relative;
+  max-width: 16em;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.08;
+  letter-spacing: .01em;
+  color: var(--pv-white);
+  text-wrap: balance;
+  animation: pv-rise 900ms var(--pv-out) 80ms both;}
+#prive-v4-treatments .pv-eyebrow + .pv-page-hero__title,
+#prive-v4-treatments .pv-eyebrow + .pv-page-hero__title-wrap{margin-top: 1.25rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-page-hero__title{font-size: 3.25rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero__title{font-size: 4.25rem;}
+}
+#prive-v4-treatments .pv-page-hero__sub{position: relative;
+  max-width: 38rem;
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--pv-on-dark);
+  text-wrap: pretty;
+  animation: pv-rise 900ms var(--pv-out) 180ms both;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero__sub{font-size: 1.1875rem;}
+}
+#prive-v4-treatments .pv-page-hero__actions{position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2.25rem; animation: pv-rise 900ms var(--pv-out) 280ms both;}
+#prive-v4-treatments .pv-page-hero .pv-burst{left: 92%; width: 36rem;}
+#prive-v4-treatments .pv-page-hero .pv-burst g:first-child{stroke-opacity: .12;}
+#prive-v4-treatments .pv-page-hero .pv-burst g:last-child{stroke-opacity: .08;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero .pv-burst{left: 84%; width: 62rem;}
+}
+#prive-v4-treatments .pv-page-hero--center{text-align: center;}
+#prive-v4-treatments .pv-page-hero--center .pv-page-hero__title,
+#prive-v4-treatments .pv-page-hero--center .pv-page-hero__sub{margin-inline: auto;}
+#prive-v4-treatments .pv-page-hero--center .pv-page-hero__actions{justify-content: center;}
+#prive-v4-treatments .pv-page-hero__title-wrap,
+#prive-v4-treatments .pv-burst-wrap{position: relative;}
+#prive-v4-treatments .pv-burst-wrap > :not(.pv-burst){position: relative;}
+#prive-v4-treatments .pv-page-hero__title-wrap .pv-burst,
+#prive-v4-treatments .pv-burst-wrap .pv-burst{left: 50%; bottom: 20%; width: 40rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero__title-wrap .pv-burst,
+#prive-v4-treatments .pv-burst-wrap .pv-burst{width: 64rem; bottom: 10%;}
+}
+#prive-v4-treatments .pv-page-hero--tall{padding-block: 6rem 7rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero--tall{padding-block: 9rem 10rem;}
+}
+@media (max-width: 639px){
+#prive-v4-treatments .pv-page-hero__actions .pv-btn{width: 100%;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-page-hero .pv-eyebrow,
+#prive-v4-treatments .pv-page-hero__title,
+#prive-v4-treatments .pv-page-hero__sub,
+#prive-v4-treatments .pv-page-hero__actions{animation: none;}
+}
+#prive-v4-treatments .pv-cta{text-align: center;}
+#prive-v4-treatments .pv-cta__inner{max-width: 44rem; margin-inline: auto;}
+#prive-v4-treatments .pv-cta .pv-lead{margin: 1rem auto 0;}
+#prive-v4-treatments .pv-cta__actions{display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2.25rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-cta__actions{flex-direction: row; justify-content: center;}
+}
+@media (max-width: 639px){
+#prive-v4-treatments .pv-cta__actions .pv-btn{width: 100%;}
+}
+#prive-v4-treatments .pv-legal{max-width: 44rem; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-legal > * + *{margin-top: 1.125rem;}
+#prive-v4-treatments .pv-legal > p:first-of-type{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-legal h2{margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--pv-line); font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-legal h2{font-size: 1.75rem;}
+}
+#prive-v4-treatments .pv-legal h3{margin-top: 2rem; font-size: 1.25rem; line-height: 1.25; color: var(--pv-navy);}
+#prive-v4-treatments .pv-legal h4{margin-top: 1.75rem; font-family: var(--pv-sans); font-size: 1rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-legal p,
+#prive-v4-treatments .pv-legal li{line-height: 1.75;}
+#prive-v4-treatments .pv-legal ul{padding-left: 1.25rem; list-style: disc;}
+#prive-v4-treatments .pv-legal ol{padding-left: 1.5rem; list-style: decimal;}
+#prive-v4-treatments .pv-legal li + li{margin-top: .5rem;}
+#prive-v4-treatments .pv-legal li::marker{color: var(--pv-navy);}
+#prive-v4-treatments .pv-legal strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-legal a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong); overflow-wrap: anywhere;}
+#prive-v4-treatments .pv-legal a:hover{text-decoration-color: currentColor;}
+#prive-v4-treatments .pv-legal a:active{opacity: .7;}
+#prive-v4-treatments .pv-legal hr{margin-block: 2.5rem; border: 0; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-table-wrap{margin-top: 1.5rem; overflow-x: auto; border: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-table-wrap table{width: 100%; min-width: 36rem; border-collapse: collapse; font-size: .875rem; line-height: 1.55;}
+#prive-v4-treatments .pv-table-wrap th{padding: .75rem 1rem; text-align: left; white-space: nowrap; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--pv-navy); background: var(--pv-alice);}
+#prive-v4-treatments .pv-table-wrap td{padding: .875rem 1rem; vertical-align: top; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-table-wrap td:first-child{font-weight: 500; color: var(--pv-navy);}
+#prive-v4-treatments .pv-story{display: grid; gap: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-story{grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5rem; align-items: center;}
+}
+#prive-v4-treatments .pv-story__text > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-story__text > .pv-h2{margin-top: 1rem;}
+#prive-v4-treatments .pv-story__text p{color: var(--pv-nightrider); max-width: 38rem;}
+#prive-v4-treatments .pv-story__media img{width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 68% 40%;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-story__media img{aspect-ratio: 4 / 5;}
+}
+#prive-v4-treatments .pv-event{display: grid; max-width: 56rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-event{grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);}
+}
+#prive-v4-treatments .pv-event__media img{width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-event__media img{aspect-ratio: auto;}
+}
+#prive-v4-treatments .pv-event__body{display: flex; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-event__body{padding: 2.5rem;}
+}
+#prive-v4-treatments .pv-event__meta{display: flex; flex-wrap: wrap; gap: .5rem;}
+#prive-v4-treatments .pv-event__title{margin-top: 1.25rem; font-family: var(--pv-display); font-weight: 500; font-size: 1.75rem; line-height: 1.15; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-event__title{font-size: 2rem;}
+}
+#prive-v4-treatments .pv-event__date{display: flex; align-items: center; gap: .625rem; margin-top: .75rem; font-weight: 500; color: var(--pv-navy);}
+#prive-v4-treatments .pv-event__date svg{flex: none; width: 1.125rem; height: 1.125rem;}
+#prive-v4-treatments .pv-event__text{margin-top: 1rem; font-size: .9375rem; color: var(--pv-text-muted); max-width: 34rem;}
+#prive-v4-treatments .pv-event__body > .pv-btn{margin-top: 1.75rem;}
+#prive-v4-treatments .pv-note{margin-top: 1.5rem; font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-region{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-region__map{display: flex; align-items: center; justify-content: center; height: 15rem; padding: 1.5rem; border-bottom: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-region__map{height: 21rem; padding: 2rem;}
+}
+#prive-v4-treatments .pv-region__map svg{width: auto; height: 100%; max-width: 100%; color: var(--pv-navy); opacity: .8;}
+#prive-v4-treatments .pv-region__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-region__body{padding: 2.5rem 2.75rem 2.75rem;}
+}
+#prive-v4-treatments .pv-region__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-region__title{font-size: 2.25rem;}
+}
+#prive-v4-treatments .pv-region__meta{margin-top: .625rem; font-size: .9375rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-region__cta{margin-top: auto; padding-top: 2rem;}
+@media (max-width: 639px){
+#prive-v4-treatments .pv-region__cta,
+#prive-v4-treatments .pv-region__cta .pv-btn{width: 100%;}
+}
+#prive-v4-treatments .pv-btn svg{flex: none; width: .875rem; height: .875rem; transition: transform 320ms var(--pv-spring);}
+#prive-v4-treatments .pv-btn:hover svg{transform: translate(2px, -2px);}
+#prive-v4-treatments .pv-review-grid{column-gap: 1.5rem;}
+@media (min-width: 768px){
+#prive-v4-treatments .pv-review-grid{columns: 2;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-review-grid{columns: 3;}
+}
+#prive-v4-treatments .pv-review-grid > *{height: auto; margin-bottom: 1.5rem; break-inside: avoid;}
+#prive-v4-treatments .pv-surface-alice .pv-review{background: var(--pv-white);}
+#prive-v4-treatments .pv-caption{margin-top: .875rem; font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-surface-navy .pv-caption{color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-h3-lg{font-family: var(--pv-display); font-weight: 500; font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-h3-lg{font-size: 1.75rem;}
+}
+#prive-v4-treatments .pv-split{display: grid; gap: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-split{grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 5rem; align-items: center;}
+#prive-v4-treatments .pv-split--media-left{grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);}
+#prive-v4-treatments .pv-split--media-left > :first-child{order: 2;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-split--top{align-items: start;}
+}
+#prive-v4-treatments .pv-split__text > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-cert-img{aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%;}
+#prive-v4-treatments .pv-carousel__foot--end{justify-content: flex-end;}
+#prive-v4-treatments .pv-carousel__foot .pv-caption{max-width: 40rem; margin-top: 0;}
+#prive-v4-treatments .pv-cta--burst .pv-h2{font-size: 2.25rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-cta--burst .pv-h2{font-size: 3.25rem;}
+}
+#prive-v4-treatments .pv-split__text p{max-width: 38rem;}
+#prive-v4-treatments .pv-split__media img{width: 100%; height: auto;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-sticky{position: sticky; top: calc(var(--pv-nav-h) + 2rem); align-self: start;}
+}
+#prive-v4-treatments .pv-checks{display: grid; gap: .875rem;}
+#prive-v4-treatments .pv-checks li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; align-items: start;}
+#prive-v4-treatments .pv-checks svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-treatments .pv-surface-navy .pv-checks svg{color: var(--pv-white);}
+#prive-v4-treatments .pv-statement{max-width: 46rem; padding-left: 1.5rem; border-left: 2px solid var(--pv-navy); font-size: 1.125rem; font-weight: 500; line-height: 1.65; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-statement{font-size: 1.3125rem;}
+}
+#prive-v4-treatments .pv-sales-hero{position: relative; overflow: clip; padding-block: 3.5rem 4rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-sales-hero{padding-block: 5.5rem 6rem;}
+}
+#prive-v4-treatments .pv-sales-hero .pv-burst{left: 30%; width: 40rem;}
+#prive-v4-treatments .pv-sales-hero .pv-burst g:first-child{stroke-opacity: .1;}
+#prive-v4-treatments .pv-sales-hero .pv-burst g:last-child{stroke-opacity: .07;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-sales-hero .pv-burst{width: 70rem;}
+}
+#prive-v4-treatments .pv-sales-hero__grid{position: relative; display: grid; gap: 3rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-sales-hero__grid{grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4.5rem; align-items: center;}
+}
+#prive-v4-treatments .pv-sales-hero__title{margin-top: 1.25rem;
+  font-family: var(--pv-display);
+  font-weight: 500;
+  font-size: 2.125rem;
+  line-height: 1.1;
+  letter-spacing: .005em;
+  color: var(--pv-white);
+  text-wrap: balance;
+  animation: pv-rise 900ms var(--pv-out) 80ms both;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-sales-hero__title{font-size: 2.75rem;}
+}
+@media (min-width: 1280px){
+#prive-v4-treatments .pv-sales-hero__title{font-size: 3.25rem;}
+}
+#prive-v4-treatments .pv-sales-hero .pv-eyebrow{animation: pv-rise 900ms var(--pv-out) both;}
+#prive-v4-treatments .pv-sales-hero__sub{max-width: 36rem; margin-top: 1.5rem; font-size: 1.0625rem; line-height: 1.7; color: var(--pv-on-dark); animation: pv-rise 900ms var(--pv-out) 180ms both;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-sales-hero__sub{font-size: 1.1875rem;}
+}
+#prive-v4-treatments .pv-sales-hero .pv-checks{max-width: 36rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--pv-on-dark-line); color: rgba(255, 255, 255, .9); animation: pv-rise 900ms var(--pv-out) 260ms both;}
+#prive-v4-treatments .pv-lead-card{background: var(--pv-white); color: var(--pv-nightrider); --pv-focus: var(--pv-navy); animation: pv-rise 900ms var(--pv-out) 320ms both;}
+#prive-v4-treatments .pv-lead-card__media img{width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 62%;}
+#prive-v4-treatments .pv-lead-card__form{padding: 1.5rem 1.25rem 1.75rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-lead-card__form{padding: 2rem 2rem 2.25rem;}
+}
+#prive-v4-treatments .pv-form--stacked .pv-form__grid{grid-template-columns: minmax(0, 1fr); gap: 1rem;}
+#prive-v4-treatments .pv-form--stacked .pv-form__foot{flex-direction: column; align-items: stretch; gap: .875rem; margin-top: 1.5rem;}
+#prive-v4-treatments .pv-form--stacked .pv-form__foot .pv-btn{width: 100%;}
+@media (max-width: 380px){
+#prive-v4-treatments .pv-form--stacked .pv-form__foot .pv-btn{padding-inline: .75rem; font-size: 12px; letter-spacing: .05em;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-sales-hero__title,
+#prive-v4-treatments .pv-sales-hero .pv-eyebrow,
+#prive-v4-treatments .pv-sales-hero__sub,
+#prive-v4-treatments .pv-sales-hero .pv-checks,
+#prive-v4-treatments .pv-lead-card{animation: none;}
+}
+#prive-v4-treatments .pv-stages{display: grid; gap: 3rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-stages{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem;}
+}
+#prive-v4-treatments .pv-stage__img{width: 100%; height: auto;}
+#prive-v4-treatments .pv-stage__body{margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--pv-line-strong);}
+@media (min-width: 768px) and (max-width: 1023px){
+#prive-v4-treatments .pv-stage{display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-treatments .pv-stage__body{margin-top: 0;}
+}
+#prive-v4-treatments .pv-stage__label{font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-stage__title{margin-top: .75rem;}
+#prive-v4-treatments .pv-stage p{margin-top: .75rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-trainers-pair{display: grid; gap: 3.5rem;}
+@media (min-width: 768px){
+#prive-v4-treatments .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
+#prive-v4-treatments .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-trainers-pair{gap: 5rem;}
+}
+#prive-v4-treatments .pv-trainers-pair .pv-trainer__bio{font-size: 1.0625rem;}
+#prive-v4-treatments .pv-benefits{margin-top: 1.5rem; padding: 1.75rem 1.5rem; background: var(--pv-alice);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-benefits{padding: 2rem 2.25rem;}
+}
+#prive-v4-treatments .pv-benefits .pv-checks{margin-top: 1.25rem; font-size: .9375rem;}
+#prive-v4-treatments .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 22% 60%;}
+#prive-v4-treatments .pv-steps{display: grid; gap: 1.25rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-steps{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
+}
+#prive-v4-treatments .pv-step{display: flex; flex-direction: column; padding: 2rem 1.5rem 2.25rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-step{padding: 2.5rem 2.25rem 2.75rem;}
+}
+#prive-v4-treatments .pv-step__num{font-family: var(--pv-display); font-size: 2.75rem; line-height: 1; color: rgba(1, 53, 89, .28);}
+#prive-v4-treatments .pv-step__title{margin-top: 1.25rem;}
+#prive-v4-treatments .pv-step ul{display: grid; gap: .75rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-step li{position: relative; padding-left: 1.125rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-step li::before{content: ""; position: absolute; left: 0; top: .72em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+#prive-v4-treatments .pv-result img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-treatments .pv-result figcaption{display: flex; flex-direction: column; gap: .125rem; padding-top: .875rem;}
+#prive-v4-treatments .pv-result__area{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-result__stage{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-menu-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-menu-card{padding: 2.25rem 2.5rem;}
+}
+#prive-v4-treatments .pv-menu__row{display: flex; align-items: baseline; gap: .75rem; padding-block: .875rem;}
+#prive-v4-treatments .pv-menu__row + .pv-menu__row{border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-menu__area{font-weight: 500; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-menu__leader{flex: 1; min-width: 1.5rem; border-bottom: 1px dotted var(--pv-line-strong); transform: translateY(-.3em);}
+#prive-v4-treatments .pv-menu__price{flex: none; font-family: var(--pv-display); font-size: 1.3125rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
+#prive-v4-treatments .pv-menu__label{margin-top: 1.25rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-menu__basis{margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: var(--pv-text-muted);}
+@media (max-width: 380px){
+#prive-v4-treatments .pv-menu__row{flex-wrap: wrap;}
+#prive-v4-treatments .pv-menu__leader{display: none;}
+#prive-v4-treatments .pv-menu__price{margin-left: auto;}
+}
+#prive-v4-treatments .pv-fit .pv-checks{gap: 1.25rem; font-size: 1.0625rem;}
+#prive-v4-treatments .pv-notfor{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--pv-line-strong); color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-notfor svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-treatments .pv-included > li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: 1rem; padding-block: 1.125rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-included > li:last-child{border-bottom: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-included > li > svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
+#prive-v4-treatments .pv-included strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-kit{display: grid; gap: .5rem 2rem; margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--pv-alice); font-size: .9375rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-kit{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-treatments .pv-kit li{position: relative; padding-left: 1.125rem; line-height: 1.6;}
+#prive-v4-treatments .pv-kit li::before{content: ""; position: absolute; left: 0; top: .75em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+#prive-v4-treatments .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-cta--burst{position: relative; overflow: clip;}
+#prive-v4-treatments .pv-faq__a > * + *{margin-top: .875rem;}
+#prive-v4-treatments .pv-faq__a ul{display: grid; gap: .5rem; padding-left: 1.25rem; list-style: disc;}
+#prive-v4-treatments .pv-faq__a li::marker{color: var(--pv-navy);}
+#prive-v4-treatments .pv-faq__a strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-faq__a a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-treatments .pv-faq__a a:hover{text-decoration-color: currentColor;}
+#prive-v4-treatments .pv-faq__a a:active{opacity: .7;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-track.pv-track--wide{display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr auto; column-gap: 4.5rem; padding: 3.5rem 3.5rem 3rem;}
+#prive-v4-treatments .pv-track--wide .pv-track__head{grid-column: 1; grid-row: 1;}
+#prive-v4-treatments .pv-track--wide .pv-track__main{grid-column: 2; grid-row: 1 / span 2;}
+#prive-v4-treatments .pv-track--wide .pv-track__cta{grid-column: 1; grid-row: 2; align-self: end;}
+#prive-v4-treatments .pv-track--wide .pv-facts{grid-column: 1 / -1; grid-row: 3;}
+}
+#prive-v4-treatments .pv-track__main{margin-top: 1.25rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-track__main{margin-top: 0; padding-top: .5rem;}
+}
+#prive-v4-treatments .pv-track__main > p{max-width: 40rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-track__main > p + p{margin-top: 1rem;}
+#prive-v4-treatments .pv-track--navy .pv-track__main > p{color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-track__main > .pv-track__outcome{margin-top: 1.75rem; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-track--navy .pv-track__main > .pv-track__outcome{color: rgba(255, 255, 255, .9);}
+#prive-v4-treatments .pv-facts{display: grid; margin-top: 2.5rem; border-top: 1px solid var(--pv-on-dark-line);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-facts{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-facts{grid-template-columns: repeat(4, minmax(0, 1fr));}
+}
+#prive-v4-treatments .pv-facts li{display: flex; align-items: center; gap: .75rem; padding: 1.125rem 0; font-size: .9375rem; line-height: 1.45; color: rgba(255, 255, 255, .9);}
+#prive-v4-treatments .pv-facts svg{flex: none; width: 1.5rem; height: 1.5rem; color: var(--pv-white);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-facts li{padding: 1.5rem 1.25rem 0 0;}
+#prive-v4-treatments .pv-facts li + li{padding-left: 1.25rem; border-left: 1px solid var(--pv-on-dark-line);}
+}
+#prive-v4-treatments .pv-next{position: relative; max-width: 52rem;}
+#prive-v4-treatments .pv-next > li{position: relative; display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1.25rem; padding-bottom: 2.75rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-next > li{grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1.75rem;}
+}
+#prive-v4-treatments .pv-next > li:not(:last-child)::before{content: ""; position: absolute; left: 1.375rem; top: 2.75rem; bottom: 0; width: 1px; background: var(--pv-line-strong);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-next > li:not(:last-child)::before{left: 1.625rem; top: 3.25rem;}
+}
+#prive-v4-treatments .pv-next__num{display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--pv-line-strong); border-radius: 50%; font-family: var(--pv-display); font-size: 1.25rem; color: var(--pv-navy); background: var(--pv-white);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-next__num{width: 3.25rem; height: 3.25rem; font-size: 1.375rem;}
+}
+#prive-v4-treatments .pv-next__body{padding-top: .375rem;}
+#prive-v4-treatments .pv-next__body p{margin-top: .5rem; max-width: 38rem; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-next .pv-ghl-calendar{position: relative; margin-top: 1.5rem; padding: .5rem; background: var(--pv-alice);}
+@media (max-width: 639px){
+#prive-v4-treatments .pv-next .pv-ghl-calendar{margin-left: -4rem; padding: 0;}
+}
+#prive-v4-treatments .pv-next .pv-ghl-calendar iframe{min-height: 680px;}
+#prive-v4-treatments .pv-support{max-width: 52rem; padding-top: 2rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-support p{margin-top: .5rem;}
+#prive-v4-treatments .pv-support a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-treatments .pv-support a:hover{text-decoration-color: currentColor;}
+#prive-v4-treatments .pv-support a:active{opacity: .7;}
+#prive-v4-treatments .pv-placeholder-wrap{padding-block: 1.5rem;}
+#prive-v4-treatments .pv-placeholder{display: grid;
+  gap: .75rem;
+  padding: 1.5rem;
+  border: 1.5px dashed var(--pv-line-strong);
+  background: repeating-linear-gradient(135deg, var(--pv-alice) 0 12px, var(--pv-white) 12px 24px);
+  color: var(--pv-label);}
+#prive-v4-treatments .pv-placeholder__label{font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;}
+#prive-v4-treatments .pv-placeholder__bar{height: .75rem; width: 60%; background: rgba(1, 53, 89, .1);}
+#prive-v4-treatments .pv-placeholder__bar + .pv-placeholder__bar{width: 38%;}
+#prive-v4-treatments .pv-form-panel--live .pv-ghl-form iframe{min-height: 312px;}
+#prive-v4-treatments .pv-track{display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 1.5rem;
+  background: var(--pv-white);
+  border: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-track{padding: 2.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-track{padding: 3.5rem 3.25rem;}
+}
+#prive-v4-treatments .pv-track__title{margin-top: 1.75rem; font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-track__title{font-size: 2.25rem;}
+}
+#prive-v4-treatments .pv-track__text{margin-top: 1rem; color: var(--pv-text-muted); max-width: 34rem;}
+#prive-v4-treatments .pv-track__outcome{margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line); color: var(--pv-nightrider); max-width: 34rem;}
+#prive-v4-treatments .pv-track__outcome strong{font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-track__cta{margin-top: auto; padding-top: 2.5rem;}
+#prive-v4-treatments .pv-track--navy{background: var(--pv-navy); border-color: var(--pv-navy); --pv-focus: var(--pv-mustard);}
+#prive-v4-treatments .pv-track--navy .pv-track__title{color: var(--pv-white);}
+#prive-v4-treatments .pv-track--navy .pv-track__text{color: var(--pv-on-dark);}
+#prive-v4-treatments .pv-track--navy .pv-track__outcome{color: rgba(255, 255, 255, .9); border-top-color: var(--pv-on-dark-line);}
+#prive-v4-treatments .pv-track--navy .pv-track__outcome strong{color: var(--pv-white);}
+#prive-v4-treatments .pv-trainer{display: grid; gap: 2rem;}
+@media (min-width: 768px){
+#prive-v4-treatments .pv-trainer{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; align-items: center;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-trainer{gap: 5rem;}
+}
+#prive-v4-treatments .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-treatments .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-treatments .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-trainer__name{font-size: 2.5rem;}
+}
+#prive-v4-treatments .pv-trainer__role{margin-top: .75rem; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-trainer__bio{margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--pv-line); font-size: 1.0625rem; line-height: 1.75; color: var(--pv-nightrider); max-width: 36rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-trainer__bio{font-size: 1.125rem;}
+}
+#prive-v4-treatments .pv-trust{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1px solid var(--pv-line-strong);}
+#prive-v4-treatments .pv-trust__item{padding: 1rem 1rem 1rem 0; font-size: .875rem; line-height: 1.5; color: var(--pv-text-muted); overflow-wrap: anywhere;}
+#prive-v4-treatments .pv-trust__item + .pv-trust__item{padding-left: 1.25rem; border-left: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-trust__figure{display: flex; align-items: center; gap: .5rem; margin-bottom: .25rem; font-family: var(--pv-display); font-size: 1.5rem; line-height: 1.2; color: var(--pv-navy);}
+#prive-v4-treatments .pv-trust__figure svg{flex: none; width: 1.125rem; height: 1.125rem; color: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-trust{min-width: 30rem;}
+#prive-v4-treatments .pv-trust__item{padding: 1.25rem 1.75rem 1.25rem 0;}
+#prive-v4-treatments .pv-trust__item + .pv-trust__item{padding-left: 1.75rem;}
+}
+#prive-v4-treatments .pv-video{display: flex; flex-direction: column;}
+#prive-v4-treatments .pv-video__media{position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--pv-navy);}
+#prive-v4-treatments .pv-video__media:has(:focus-visible){outline: 2px solid var(--pv-focus); outline-offset: 3px;}
+#prive-v4-treatments .pv-video__play{position: absolute; inset: 0; display: block; width: 100%; height: 100%; cursor: pointer;}
+#prive-v4-treatments .pv-video__play:focus-visible{outline: none;}
+#prive-v4-treatments .pv-video__play img{width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--pv-out);}
+#prive-v4-treatments .pv-video__play::after{content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(1, 53, 89, .55), rgba(1, 53, 89, .06) 62%);
+  mix-blend-mode: multiply;
+  pointer-events: none;}
+#prive-v4-treatments .pv-video__icon{position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: -2rem 0 0 -2rem;
+  border-radius: 50%;
+  background: var(--pv-white);
+  color: var(--pv-navy);
+  transition: transform 380ms var(--pv-spring);}
+#prive-v4-treatments .pv-video__icon svg{width: 1.25rem; height: 1.25rem; margin-left: 3px;}
+#prive-v4-treatments .pv-video__play:hover img{transform: scale(1.04);}
+#prive-v4-treatments .pv-video__play:hover .pv-video__icon{transform: scale(1.1);}
+#prive-v4-treatments .pv-video__play:active .pv-video__icon{transform: scale(.94);}
+#prive-v4-treatments .pv-video__frame{position: absolute; inset: 0; width: 100%; height: 100%; border: 0;}
+#prive-v4-treatments .pv-video__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: .875rem; padding-top: 1.25rem;}
+#prive-v4-treatments .pv-video__quote{font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-person{display: flex; flex-direction: column; gap: .125rem; margin-top: auto;}
+#prive-v4-treatments .pv-person__name{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-treatments .pv-person__meta{font-size: .8125rem; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-review{display: flex; flex-direction: column; align-items: flex-start; height: 100%; padding: 1.75rem 1.5rem; background: var(--pv-alice);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-review{padding: 2rem;}
+}
+#prive-v4-treatments .pv-review__mark{display: block; height: 1.75rem; margin-top: 1.5rem; font-family: var(--pv-display); font-size: 3.5rem; line-height: 1; color: var(--pv-navy);}
+#prive-v4-treatments .pv-review__quote{flex: 1; margin-top: .5rem; font-size: 1rem; line-height: 1.7; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-review .pv-person{width: 100%; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-carousel__track{display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;}
+#prive-v4-treatments .pv-carousel__track::-webkit-scrollbar{display: none;}
+#prive-v4-treatments .pv-carousel__track > *{scroll-snap-align: start;}
+#prive-v4-treatments .pv-carousel__track:focus-visible{outline-offset: 4px;}
+@media (min-width: 768px){
+#prive-v4-treatments .pv-carousel__track{grid-auto-columns: calc((100% - 1.5rem) / 2); gap: 1.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-carousel__track{grid-auto-columns: calc((100% - 3rem) / 3);}
+}
+#prive-v4-treatments .pv-carousel__foot{display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem;}
+#prive-v4-treatments .pv-carousel__controls{display: flex; gap: .5rem;}
+#prive-v4-treatments .pv-redirect{display: grid; gap: 2rem; padding: 2rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-redirect--alice{background: var(--pv-alice); border-color: var(--pv-alice);}
+#prive-v4-treatments .pv-redirect__text > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-redirect__text > .pv-btn{margin-top: 2rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-redirect{padding: 2.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-redirect{grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4rem; padding: 3.5rem 4rem;}
+#prive-v4-treatments .pv-redirect--media{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem;}
+}
+#prive-v4-treatments .pv-redirect--banner{gap: 0; padding: 0; overflow: hidden;}
+#prive-v4-treatments .pv-redirect__banner img{width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: 92% 50%;}
+#prive-v4-treatments .pv-redirect--banner .pv-redirect__text{padding: 2rem 1.5rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-redirect--banner{padding: 0;}
+#prive-v4-treatments .pv-redirect__banner img{aspect-ratio: 2 / 1;}
+#prive-v4-treatments .pv-redirect--banner .pv-redirect__text{padding: 2.75rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-redirect--banner{grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0;}
+#prive-v4-treatments .pv-redirect__banner img{aspect-ratio: 5 / 2;}
+#prive-v4-treatments .pv-redirect--banner .pv-redirect__text{padding: 3rem 4rem 3.5rem;}
+}
+@media (min-width: 1280px){
+#prive-v4-treatments .pv-redirect--banner{position: relative; display: flex; align-items: center; aspect-ratio: 5 / 2; padding: 0;}
+#prive-v4-treatments .pv-redirect__banner{position: absolute; inset: 0;}
+#prive-v4-treatments .pv-redirect__banner img{height: 100%; aspect-ratio: auto; object-position: 100% 50%;}
+#prive-v4-treatments .pv-redirect--banner .pv-redirect__text{position: relative; max-width: 28rem; padding: 3rem 0 3rem 4rem;}
+#prive-v4-treatments .pv-redirect--banner .pv-lead{font-size: 1.0625rem;}
+}
+#prive-v4-treatments .pv-ba{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-ba{gap: 1rem;}
+}
+#prive-v4-treatments .pv-ba img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
+#prive-v4-treatments .pv-ba figcaption{margin-top: .625rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-ba__note{grid-column: 1 / -1; font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-founder{overflow: clip; padding-top: var(--pv-section-y);}
+#prive-v4-treatments .pv-founder__grid{display: grid; gap: 3rem;}
+#prive-v4-treatments .pv-founder__text{align-self: center;}
+#prive-v4-treatments .pv-founder__text > * + *{margin-top: 1rem;}
+#prive-v4-treatments .pv-founder__text > .pv-h2{margin-top: 1rem;}
+#prive-v4-treatments .pv-founder__sign{margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--pv-on-dark-line);}
+#prive-v4-treatments .pv-founder__sign-name{display: block; font-size: .9375rem; font-weight: 600; letter-spacing: .04em; color: var(--pv-white);}
+#prive-v4-treatments .pv-founder__sign-role{display: block; margin-top: .25rem; font-size: 11.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .7);}
+#prive-v4-treatments .pv-founder__media{position: relative;
+  order: 2;
+  width: 100%;
+  max-width: 26rem;
+  aspect-ratio: 5 / 6;
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--pv-alice);}
+#prive-v4-treatments .pv-founder__media img{position: absolute; left: 50%; bottom: 0; width: auto; max-width: none; height: 94%; transform: translateX(-46%);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-founder__grid{grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; align-items: end;}
+#prive-v4-treatments .pv-founder__media{order: 0; max-width: none;}
+#prive-v4-treatments .pv-founder__text{padding-bottom: var(--pv-section-y);}
+}
+#prive-v4-treatments .pv-faq-list{border-top: 1px solid var(--pv-line-strong);}
+#prive-v4-treatments .pv-faq{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-treatments .pv-faq__summary{display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; list-style: none; cursor: pointer;}
+#prive-v4-treatments .pv-faq__summary::-webkit-details-marker{display: none;}
+#prive-v4-treatments .pv-faq__summary::marker{content: "";}
+#prive-v4-treatments .pv-faq__summary:focus-visible{outline-offset: 2px;}
+#prive-v4-treatments .pv-faq__q{font-family: var(--pv-display); font-weight: 500; font-size: 1.25rem; line-height: 1.3; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: transparent;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-faq__q{font-size: 1.5rem;}
+}
+#prive-v4-treatments .pv-faq__summary:hover .pv-faq__q{text-decoration-color: var(--pv-line-strong);}
+#prive-v4-treatments .pv-faq__icon{position: relative; flex: none; width: 2.25rem; height: 2.25rem; border: 1px solid var(--pv-line-strong); border-radius: 50%; transition: transform 380ms var(--pv-spring);}
+#prive-v4-treatments .pv-faq__icon::before,
+#prive-v4-treatments .pv-faq__icon::after{content: ""; position: absolute; left: 50%; top: 50%; width: .75rem; height: 1.5px; margin: -.75px 0 0 -.375rem; background: var(--pv-navy);}
+#prive-v4-treatments .pv-faq__icon::after{transform: rotate(90deg);}
+#prive-v4-treatments .pv-faq[open] .pv-faq__icon{transform: rotate(45deg);}
+#prive-v4-treatments .pv-faq__summary:active .pv-faq__icon{transform: scale(.9);}
+#prive-v4-treatments .pv-faq[open] .pv-faq__summary:active .pv-faq__icon{transform: rotate(45deg) scale(.9);}
+#prive-v4-treatments .pv-faq__a{max-width: 44rem; padding: 0 0 1.75rem; color: var(--pv-nightrider);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-faq__a{padding-right: 3.75rem;}
+}
+#prive-v4-treatments .pv-faq[open] .pv-faq__a{animation: pv-rise 420ms var(--pv-out) both;}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-faq[open] .pv-faq__a{animation: none;}
+}
+#prive-v4-treatments .pv-contact-list{display: grid; gap: 1.5rem; margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--pv-line);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-contact-list{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-treatments .pv-contact-list:first-child{margin-top: 0;}
+#prive-v4-treatments .pv-contact-list > :first-child{grid-column: 1 / -1;}
+#prive-v4-treatments .pv-contact-list dt{font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-contact-list dd{margin-top: .375rem; font-size: 1rem; line-height: 1.6; color: var(--pv-nightrider); overflow-wrap: anywhere;}
+#prive-v4-treatments .pv-contact-list a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: var(--pv-line-strong);}
+#prive-v4-treatments .pv-contact-list a:hover{text-decoration-color: currentColor;}
+#prive-v4-treatments .pv-contact-list a:active{opacity: .7;}
+#prive-v4-treatments .pv-form-panel{padding: 1.75rem 1.25rem; background: var(--pv-alice);}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-form-panel{padding: 2.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-form-panel{padding: 3rem;}
+}
+#prive-v4-treatments .pv-form__grid{display: grid; gap: 1.25rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-form__grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+#prive-v4-treatments .pv-field--full{grid-column: 1 / -1;}
+#prive-v4-treatments .pv-field label{display: block; margin-bottom: .5rem; font-size: 11px; font-weight: 500; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: var(--pv-navy);}
+#prive-v4-treatments .pv-field__req{margin-left: .125rem; color: var(--pv-navy);}
+#prive-v4-treatments .pv-field input,
+#prive-v4-treatments .pv-field select,
+#prive-v4-treatments .pv-field textarea{display: block;
+  width: 100%;
+  padding: .75rem 1rem;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--pv-nightrider);
+  background-color: var(--pv-white);
+  border: 1px solid rgba(1, 53, 89, .2);
+  border-radius: 0;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-field input,
+#prive-v4-treatments .pv-field select,
+#prive-v4-treatments .pv-field textarea{font-size: 14px;}
+}
+#prive-v4-treatments .pv-field input:hover,
+#prive-v4-treatments .pv-field select:hover,
+#prive-v4-treatments .pv-field textarea:hover{border-color: rgba(1, 53, 89, .45);}
+#prive-v4-treatments .pv-field input:focus,
+#prive-v4-treatments .pv-field select:focus,
+#prive-v4-treatments .pv-field textarea:focus{border-color: var(--pv-navy); outline: 1px solid var(--pv-navy); outline-offset: 0;}
+#prive-v4-treatments .pv-field textarea{min-height: 8.5rem; resize: vertical;}
+#prive-v4-treatments .pv-field select{padding-right: 2.75rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23013559' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;}
+#prive-v4-treatments .pv-field select:invalid{color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-form__foot{display: flex; flex-direction: column; align-items: stretch; gap: 1rem; margin-top: 1.75rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-form__foot{flex-direction: row; align-items: center; gap: 1.75rem;}
+#prive-v4-treatments .pv-form__foot .pv-btn{flex: none; white-space: nowrap;}
+}
+#prive-v4-treatments .pv-form__note{font-size: .8125rem; line-height: 1.6; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-form__note a{color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px;}
+#prive-v4-treatments .pv-form__note a:hover{text-decoration-thickness: 2px;}
+#prive-v4-treatments .pv-form__note a:active{opacity: .7;}
+#prive-v4-treatments .pv-field__hint{margin-left: .25rem; text-transform: none; letter-spacing: 0; color: var(--pv-text-muted);}
+#prive-v4-treatments .pv-choice{min-width: 0; border: 0;}
+#prive-v4-treatments .pv-choice legend{display: block; margin-bottom: .625rem; padding: 0; font-size: 11px; font-weight: 500; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: var(--pv-navy);}
+#prive-v4-treatments .pv-choice__options{display: flex; flex-wrap: wrap; gap: .5rem;}
+#prive-v4-treatments .pv-choice .pv-choice__option{display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  margin: 0;
+  padding: .625rem 1rem;
+  font-size: .9375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--pv-nightrider);
+  background: var(--pv-white);
+  border: 1px solid rgba(1, 53, 89, .2);
+  cursor: pointer;}
+#prive-v4-treatments .pv-choice .pv-choice__option:hover{border-color: rgba(1, 53, 89, .45);}
+#prive-v4-treatments .pv-choice .pv-choice__option:has(:checked){border-color: var(--pv-navy); color: var(--pv-navy);}
+#prive-v4-treatments .pv-choice .pv-choice__option input,
+#prive-v4-treatments .pv-consent input{flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  padding: 0;
+  background: var(--pv-white);
+  border: 1px solid rgba(1, 53, 89, .45);
+  cursor: pointer;}
+#prive-v4-treatments .pv-choice .pv-choice__option input{border-radius: 50%;}
+#prive-v4-treatments .pv-choice .pv-choice__option input:checked{border-color: var(--pv-navy); background: radial-gradient(circle, var(--pv-navy) 0 42%, transparent 46%);}
+#prive-v4-treatments .pv-consent input:checked{border-color: var(--pv-navy);
+  background: var(--pv-navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E") center / .75rem no-repeat;}
+#prive-v4-treatments .pv-choice .pv-choice__option input:focus-visible,
+#prive-v4-treatments .pv-consent input:focus-visible{outline: 2px solid var(--pv-navy); outline-offset: 2px;}
+#prive-v4-treatments .pv-consent{display: grid; grid-template-columns: 1.125rem minmax(0, 1fr); gap: .875rem; align-items: start; font-size: .875rem; line-height: 1.6; color: var(--pv-nightrider); cursor: pointer;}
+#prive-v4-treatments .pv-consent input{margin-top: .15em;}
+#prive-v4-treatments .pv-field input[type="file"]{padding: .625rem; font-size: .875rem; color: var(--pv-text-muted); cursor: pointer;}
+#prive-v4-treatments .pv-field input[type="file"]::file-selector-button{margin-right: 1rem;
+  padding: .5rem 1rem;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--pv-navy);
+  background: var(--pv-white);
+  border: 1.5px solid var(--pv-mustard);
+  cursor: pointer;}
+#prive-v4-treatments .pv-field input[type="file"]::file-selector-button:hover{background: var(--pv-alice);}
+#prive-v4-treatments .pv-form-panel--white{background: var(--pv-white); color: var(--pv-nightrider); --pv-focus: var(--pv-navy);}
+#prive-v4-treatments .pv-studio-hero__media{max-width: 34rem;}
+#prive-v4-treatments .pv-studio-hero__media img{width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 40% 72%; animation: pv-rise 900ms var(--pv-out) 320ms both;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-studio-hero__grid{grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);}
+#prive-v4-treatments .pv-studio-hero__media img{aspect-ratio: 4 / 5; object-position: 50% 60%;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-studio-hero__media img{animation: none;}
+}
+#prive-v4-treatments .pv-treat__icon{width: 2rem; height: 2rem; color: var(--pv-navy);}
+#prive-v4-treatments .pv-treat__areas{width: 100%; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-dash-list{display: grid; gap: .5rem; margin-top: .875rem;}
+#prive-v4-treatments .pv-dash-list li{position: relative; padding-left: 1.125rem; font-size: .9375rem; line-height: 1.6; color: var(--pv-nightrider);}
+#prive-v4-treatments .pv-dash-list li::before{content: ""; position: absolute; left: 0; top: .78em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+#prive-v4-treatments .pv-flow{--pv-node: 3.25rem; display: grid; max-width: 40rem;}
+#prive-v4-treatments .pv-flow__step{position: relative; display: grid; grid-template-columns: var(--pv-node) minmax(0, 1fr); gap: 1.25rem; padding-bottom: 2rem;}
+#prive-v4-treatments .pv-flow__step:last-child{padding-bottom: 0;}
+#prive-v4-treatments .pv-flow__step:not(:last-child)::before{content: ""; position: absolute; left: calc(var(--pv-node) / 2); top: var(--pv-node); bottom: 0; width: 1px; background: var(--pv-line-strong);}
+#prive-v4-treatments .pv-flow__node{display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pv-node);
+  height: var(--pv-node);
+  border: 1px solid var(--pv-line-strong);
+  border-radius: 50%;
+  color: var(--pv-navy);
+  background: var(--pv-white);}
+#prive-v4-treatments .pv-flow__node svg{width: 42%; height: 42%;}
+#prive-v4-treatments .pv-flow__step--optional .pv-flow__node{border: 1.5px dashed var(--pv-line-strong);}
+#prive-v4-treatments .pv-flow__step--final .pv-flow__node{color: var(--pv-white); background: var(--pv-navy); border-color: var(--pv-navy);}
+#prive-v4-treatments .pv-flow__body{padding-top: .375rem;}
+#prive-v4-treatments .pv-flow__num{font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-treatments .pv-flow__text{margin-top: .375rem; font-size: 1rem; line-height: 1.6; color: var(--pv-nightrider); text-wrap: pretty;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-flow{--pv-node: 4.25rem; grid-template-columns: repeat(6, minmax(0, 1fr)); max-width: none;}
+#prive-v4-treatments .pv-flow__step{display: flex; flex-direction: column; gap: 1.5rem; padding: 0 1.5rem 0 0;}
+#prive-v4-treatments .pv-flow__step:not(:last-child)::before{left: calc(var(--pv-node) + .75rem); right: .75rem; top: calc(var(--pv-node) / 2); bottom: auto; width: auto; height: 1px;}
+#prive-v4-treatments .pv-flow__body{padding-top: 0;}
+#prive-v4-treatments .pv-flow__text{font-size: .9375rem;}
+}
+#prive-v4-treatments .pv-footer{background: var(--pv-nightrider); color: rgba(255, 255, 255, .72); font-size: .875rem; line-height: 1.7; --pv-focus: var(--pv-mustard);}
+#prive-v4-treatments .pv-footer__grid{display: grid; gap: 2.75rem; padding-block: 4rem 3rem;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-footer__grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-footer__grid{grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: 3rem; padding-block: 5rem 4rem;}
+}
+#prive-v4-treatments .pv-footer__logo{display: inline-block; transition: transform 380ms var(--pv-spring);}
+#prive-v4-treatments .pv-footer__logo:hover{transform: scale(1.04);}
+#prive-v4-treatments .pv-footer__logo:active{transform: scale(.97);}
+#prive-v4-treatments .pv-footer__logo img{width: 5rem; height: 5rem;}
+#prive-v4-treatments .pv-footer__tagline{max-width: 20rem; margin-top: 1rem;}
+#prive-v4-treatments .pv-footer__head{font-family: var(--pv-sans); font-size: 11px; font-weight: 600; line-height: 1.4; letter-spacing: .18em; text-transform: uppercase; color: var(--pv-mustard);}
+#prive-v4-treatments .pv-footer__list{display: grid; gap: .75rem; margin-top: 1.25rem;}
+#prive-v4-treatments .pv-footer__list address{font-style: normal;}
+#prive-v4-treatments .pv-footer__label{display: block; font-weight: 500; color: rgba(255, 255, 255, .92);}
+#prive-v4-treatments .pv-footer__link{color: rgba(255, 255, 255, .72); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; text-decoration-color: transparent; overflow-wrap: anywhere;}
+#prive-v4-treatments .pv-footer__link:hover{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .5);}
+#prive-v4-treatments .pv-footer__link:active{opacity: .7;}
+#prive-v4-treatments .pv-footer__link[aria-current="page"]{color: var(--pv-white);}
+#prive-v4-treatments .pv-social{display: flex; gap: .75rem; margin-top: 1.5rem;}
+#prive-v4-treatments .pv-social a{display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .85);
+  transition: transform 320ms var(--pv-spring);}
+#prive-v4-treatments .pv-social a:hover{color: var(--pv-mustard); border-color: var(--pv-mustard); transform: translateY(-2px);}
+#prive-v4-treatments .pv-social a:active{transform: scale(.94);}
+#prive-v4-treatments .pv-social svg{width: 1rem; height: 1rem;}
+#prive-v4-treatments .pv-footer__bar{border-top: 1px solid rgba(255, 255, 255, .1);}
+#prive-v4-treatments .pv-footer__bar-inner{display: flex; flex-direction: column; gap: 1rem; padding-block: 1.5rem; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .58);}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-footer__bar-inner{flex-direction: row; align-items: center; justify-content: space-between;}
+}
+#prive-v4-treatments .pv-footer__legal{display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;}
+#prive-v4-treatments .pv-footer__legal-link{font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .66); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: transparent;}
+#prive-v4-treatments .pv-footer__legal-link:hover{color: var(--pv-white); text-decoration-color: rgba(255, 255, 255, .5);}
+#prive-v4-treatments .pv-footer__legal-link:active{opacity: .7;}
+#prive-v4-treatments .pv-footer__legal-link[aria-current="page"]{color: var(--pv-white);}
+#prive-v4-treatments .pv-cookie{position: fixed;
+  z-index: 60;
+  left: .75rem;
+  right: .75rem;
+  bottom: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.125rem 1.25rem 1.25rem;
+  background: var(--pv-white);
+  border: 1px solid var(--pv-navy);
+  color: var(--pv-nightrider);
+  font-size: 13px;
+  line-height: 1.6;}
+#prive-v4-treatments .pv-cookie[hidden]{display: none;}
+#prive-v4-treatments .pv-cookie.is-open{animation: pv-rise 420ms var(--pv-out) both;}
+@media (min-width: 640px){
+#prive-v4-treatments .pv-cookie{left: 1.5rem; right: auto; bottom: 1.5rem; width: 28rem; padding: 1.5rem;}
+}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-treatments .pv-cookie.is-open{animation: none;}
+}
+#prive-v4-treatments .pv-cookie a{font-weight: 500; color: var(--pv-navy); text-decoration: underline; text-underline-offset: 3px;}
+#prive-v4-treatments .pv-cookie a:hover{text-decoration-thickness: 2px;}
+#prive-v4-treatments .pv-cookie a:active{opacity: .7;}
+#prive-v4-treatments .pv-cookie__actions{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;}
+#prive-v4-treatments .pv-btn--consent{min-height: 2.75rem; padding: .625rem 1rem; font-size: 11.5px; color: var(--pv-navy); border: 1px solid var(--pv-navy); border-radius: 0;}
+#prive-v4-treatments .pv-btn--consent::before{background: rgba(1, 53, 89, .07);}
 
-  a.wm:focus-visible { outline: 2px solid #c0b905; outline-offset: 6px; }
-
-  /* ---- buttons --------------------------------------------------------- */
-  .btn-primary { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: #013559; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease, background 300ms ease; box-shadow: 0 10px 24px -8px rgba(1,53,89,0.45); }
-  .btn-primary:hover { transform: translateY(-2px); background: #012842; box-shadow: 0 16px 32px -8px rgba(1,53,89,0.55); }
-  .btn-primary:active { transform: translateY(0) scale(0.99); }
-  .btn-primary:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
-
-  .btn-primary-inverse { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: #fff; color: #013559; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.35; padding: 16px 36px; border-radius: 9999px; border: none; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 300ms ease; box-shadow: 0 10px 24px -8px rgba(0,0,0,0.35); }
-  .btn-primary-inverse:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -8px rgba(0,0,0,0.45); }
-  .btn-primary-inverse:active { transform: translateY(0) scale(0.99); }
-  .btn-primary-inverse:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
-
-  .btn-outline { display: inline-flex; align-items: center; justify-content: center; text-align: center; background: transparent; color: #013559; font-size: 12.5px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.35; padding: 15px 30px; border: 1.5px solid rgba(1,53,89,0.45); border-radius: 9999px; cursor: pointer; transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 300ms ease, color 300ms ease, border-color 300ms ease; }
-  .btn-outline:hover { transform: translateY(-2px); background: #013559; color: #fff; border-color: #013559; }
-  .btn-outline:active { transform: translateY(0); }
-  .btn-outline:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
-
-  /* ---- surfaces: base → elevated → floating ---------------------------- */
-  .card-static { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); }
-  .card-elevated { box-shadow: 0 1px 2px rgba(1,53,89,0.06), 0 12px 28px -10px rgba(1,53,89,0.18); transition: transform 400ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease; }
-  .card-elevated:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(1,53,89,0.08), 0 28px 44px -14px rgba(1,53,89,0.28); }
-  .card-floating { box-shadow: 0 2px 4px rgba(1,53,89,0.08), 0 32px 60px -18px rgba(1,53,89,0.40); }
-
-  .img-tint { position: relative; overflow: hidden; }
-  .img-tint::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(1,53,89,0.55), rgba(1,53,89,0.08) 55%, rgba(1,53,89,0.18)); mix-blend-mode: multiply; }
-  .img-tint::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent 60%); }
-  /* hero variant: the photo butts straight up against the navy copy panel, so
-     it carries an even navy wash rather than a bottom-weighted one — otherwise
-     the warm skin tones read as a separate image pasted next to the brand colour */
-  .img-tint-even::after { background: linear-gradient(to top, rgba(1,53,89,0.60), rgba(1,53,89,0.30) 55%, rgba(1,53,89,0.40)); }
-
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  /* Mustard clears AA only against navy and nightrider. On white/alice it is
-     2.06:1 / 1.92:1 — FAIL. So .eyebrow is for dark surfaces only and light
-     surfaces use .eyebrow-navy. (priv-academy-DESIGN.md §01a) */
-  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #c0b905; }
-  .eyebrow-navy { font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #013559; }
-  .rule-mustard { width: 48px; height: 1px; background: #c0b905; }
-  .rule-navy { width: 48px; height: 1px; background: rgba(1,53,89,0.35); }
-
-  ::selection { background: #c0b905; color: #013559; }
-
-  /* ---- treatment list markers ------------------------------------------ */
-  .tlist > li { position: relative; padding-left: 22px; }
-  .tlist > li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: #013559; transform: rotate(45deg); opacity: 0.55; }
-
-  /* ---- numbered process ladder ----------------------------------------
-     Genuine sequence (six steps, order matters), so numerals earn their place. */
-  .steps { counter-reset: step; }
-  .steps > li { counter-increment: step; position: relative; padding-left: 64px; padding-bottom: 42px; }
-  .steps > li:last-child { padding-bottom: 0; }
-  .steps > li::before {
-    content: counter(step);
-    position: absolute; left: 0; top: 0;
-    width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Libre Bodoni', Didot, serif; font-weight: 500; font-size: 19px;
-    color: #013559; background: #ffffff; border: 1px solid rgba(1,53,89,0.20);
-    border-radius: 9999px;
-  }
-  .steps > li::after { content: ""; position: absolute; left: 22px; top: 50px; bottom: 6px; width: 1px; background: rgba(1,53,89,0.18); }
-  .steps > li:last-child::after { display: none; }
-  /* the ladder is stretched on desktop to balance the photo beside it; on
-     narrower screens the steps wrap to two lines and need no extra air */
-  @media (max-width: 1023px) { .steps > li { padding-bottom: 28px; } }
-
-  /* ---- form ------------------------------------------------------------ */
-  .field-label-dark { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 600; }
-  .field-note { font-size: 11px; letter-spacing: 0.04em; text-transform: none; color: rgba(255,255,255,0.5); font-weight: 400; }
-  .field-input-dark { margin-top: 9px; width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.22); padding: 13px 16px; font-size: 14.5px; color: #fff; border-radius: 4px; transition: border-color 200ms ease, box-shadow 200ms ease; font-family: 'Montserrat', sans-serif; }
-  .field-input-dark:focus { outline: none; border-color: #c0b905; box-shadow: 0 0 0 3px rgba(192,185,5,0.18); }
-  .field-input-dark[aria-invalid="true"] { border-color: #c0b905; }
-
-  /* File input. The native control is visually hidden and a bound <label> acts
-     as the trigger, because Chrome's built-in button and "no file chosen" text
-     are hard-coded English strings that cannot be translated from CSS and have
-     no place on a Croatian page. The input keeps both its labels, so the
-     control is still named and operable from the keyboard. */
-  .field-file { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-  .file-trigger {
-    display: inline-flex; align-items: center; gap: 10px; margin-top: 12px;
-    padding: 12px 24px; border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.06); color: #fff; border-radius: 9999px;
-    font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; cursor: pointer;
-    transition: background 200ms ease, border-color 200ms ease;
-  }
-  .file-trigger:hover { background: rgba(255,255,255,0.14); border-color: #fff; }
-  .file-trigger:active { background: rgba(255,255,255,0.2); }
-  .field-file:focus-visible + .file-trigger { outline: 2px solid #c0b905; outline-offset: 3px; }
-
-  /* option chips — radios, so the pre-selected treatment is visible at a glance */
-  .opt input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-  .opt label {
-    display: block; cursor: pointer; padding: 12px 20px; border-radius: 9999px;
-    border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.05);
-    font-size: 13.5px; color: rgba(255,255,255,0.88); text-align: center;
-    transition: background 220ms ease, border-color 220ms ease, color 220ms ease;
-  }
-  .opt label:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.1); }
-  .opt input:checked + label { background: #ffffff; border-color: #ffffff; color: #013559; font-weight: 600; }
-  .opt input:focus-visible + label { outline: 2px solid #c0b905; outline-offset: 3px; }
-  /* transient cue when a treatment card pre-selects a value for you */
-  @keyframes optFlash { 0%,100% { box-shadow: 0 0 0 0 rgba(192,185,5,0); } 35% { box-shadow: 0 0 0 4px rgba(192,185,5,0.65); } }
-  .opt.flash label { animation: optFlash 1400ms ease 2; }
-
-  .consent { display: flex; align-items: flex-start; gap: 14px; }
-  .consent input[type="checkbox"] {
-    appearance: none; -webkit-appearance: none; flex: none;
-    width: 22px; height: 22px; margin-top: 2px; border-radius: 3px;
-    border: 1.5px solid rgba(255,255,255,0.45); background: rgba(255,255,255,0.06);
-    cursor: pointer; transition: background 180ms ease, border-color 180ms ease;
-  }
-  .consent input[type="checkbox"]:hover { border-color: #ffffff; }
-  .consent input[type="checkbox"]:checked {
-    background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2.6 7.3L5.6 10.3L11.4 4' fill='none' stroke='%23013559' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
-    border-color: #ffffff;
-  }
-  .consent input[type="checkbox"]:focus-visible { outline: 2px solid #c0b905; outline-offset: 3px; }
-  .consent input[aria-invalid="true"] { border-color: #c0b905; }
-
-  /* =====================================================================
-     ⟦TBC⟧ CHIPS — PRE-LAUNCH DEVICE, NOT FINAL DESIGN.
-     Every chip is an unconfirmed fact. They are loud on purpose: nothing
-     here may ship until each token is replaced with a confirmed value (and
-     the chip markup deleted with it). They intentionally break the brand's
-     "one mustard touch per view" rule for exactly as long as they exist.
-     Contrast is compliant: white on navy 12.69:1, mustard on navy 6.15:1.
-     ===================================================================== */
-  .tbc {
-    display: inline-flex; align-items: flex-start; gap: 10px;
-    background: #013559; color: #ffffff;
-    border: 1.5px dashed #c0b905;
-    padding: 7px 14px;
-    font-size: 13px; line-height: 1.5; font-weight: 500;
-    text-transform: none; letter-spacing: 0;
-    text-align: left;
-  }
-  .tbc::before { content: ""; flex: none; width: 7px; height: 7px; margin-top: 7px; background: #c0b905; transform: rotate(45deg); }
-  /* sitting inside a running sentence rather than on its own line */
-  .tbc-inline { vertical-align: middle; padding: 4px 12px; font-size: 12.5px; }
-  .tbc-inline::before { margin-top: 5px; }
-  /* on navy and nightrider surfaces the chip inverts: a light fill keeps it
-     readable and loud without turning the surface olive */
-  .tbc-dark { background: rgba(255,255,255,0.08); border-color: #c0b905; color: #ffffff; }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .card-elevated, .btn-primary, .btn-primary-inverse, .btn-outline { transition: none; }
-    .card-elevated:hover, .btn-primary:hover, .btn-primary-inverse:hover, .btn-outline:hover { transform: none; }
-    .opt.flash label { animation: none; outline: 2px solid #c0b905; outline-offset: 3px; }
-  }
 </style>
+<style>body{margin:0}</style>
 </head>
-<body class="bg-white text-nightrider antialiased" id="vrh">
+<body>
+<div id="prive-v4-treatments" class="pv-root" data-page="treatments">
+<!-- Treatments (Privé Studio, Zagreb). Ported from v3-studio-tretmani/tretmani.html into the v4 design 2026-10-03.
+     Copy: v3-studio-tretmani/COPY-DECK-HR.md, word for word, in Croatian (Josip). Its hard rules still apply here:
+     no prices, no testimonials, counters or before/afters, no graphics with English captions, no outcome promises.
+     Changes against v3 (Josip): shared v4 nav + footer instead of the Studio wordmark, "Koji je tretman za vas?" removed,
+     "Kako izgleda postupak" turned into the step graphic below. Nav and footer stay English, so only <main> is lang="hr". -->
+<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
+     data-nav="<page key>" lets the build mark the current page with aria-current. -->
+<header class="pv-nav" data-nav-shell>
+  <div class="pv-container pv-nav__bar">
+    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
+      <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
+    </a>
 
-<a href="#glavni-sadrzaj" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:text-[13px]">Prijeđi na sadržaj</a>
+    <nav class="pv-nav__links" aria-label="Main">
+      <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__link" href="online-certification.html" data-nav="online-certification">Online Certification</a>
+      <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
+      <a class="pv-nav__link" href="treatments.html" data-nav="treatments" aria-current="page">Treatments</a>
+      <a class="pv-nav__link" href="shop.html" data-nav="shop">Shop</a>
+      <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
+      <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
+    </nav>
 
-<!-- ================= NAV ================= -->
-<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-navy/10">
-  <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[72px] gap-4">
-      <a href="#vrh" class="wm wm-sm text-navy" aria-label="Privé Studio — početna">
-        <span class="wm-name">PRIVÉ</span>
-        <span class="wm-sub">
-          <span class="wm-rule" aria-hidden="true"></span>
-          <span class="wm-word">Studio</span>
-          <span class="wm-rule" aria-hidden="true"></span>
-        </span>
-      </a>
+    <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
-      <nav aria-label="Glavna navigacija">
-        <a href="#konzultacije" class="btn-primary !py-3 !px-5 sm:!px-7 !text-[10.5px] sm:!text-[12px] !tracking-[0.06em] sm:!tracking-[0.08em]">Zatražite konzultacije</a>
-      </nav>
-    </div>
+  <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
+    <nav class="pv-container pv-nav__menu-list" aria-label="Main">
+      <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__menu-link" href="online-certification.html" data-nav="online-certification">Online Certification</a>
+      <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
+      <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments" aria-current="page">Treatments</a>
+      <a class="pv-nav__menu-link" href="shop.html" data-nav="shop">Shop</a>
+      <a class="pv-nav__menu-link" href="about.html" data-nav="about">About Us</a>
+      <a class="pv-nav__menu-link" href="contact.html" data-nav="contact">Contact</a>
+    </nav>
   </div>
 </header>
 
-<main id="glavni-sadrzaj">
 
-  <!-- ================= §1 — HERO ================= -->
-  <section class="pt-[72px] bg-navy">
-    <div class="grid lg:grid-cols-[1.06fr_0.94fr] items-stretch">
+<main id="pv-main" lang="hr">
 
-      <!-- copy panel -->
-      <div class="grain relative bg-navy text-white overflow-hidden order-last lg:order-none">
-        <!-- Privé ray motif, one faint instance — the only ornament on the page -->
-        <svg class="absolute -top-28 -left-32 opacity-[0.06] pointer-events-none hidden lg:block" width="560" height="560" viewBox="0 0 520 520" aria-hidden="true">
-          <g stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round">
-            <line x1="330.0" y1="260.0" x2="410.0" y2="260.0"/><line x1="328.7" y1="273.7" x2="377.7" y2="283.4"/>
-            <line x1="324.7" y1="286.8" x2="398.6" y2="317.4"/><line x1="318.2" y1="298.9" x2="359.8" y2="326.7"/>
-            <line x1="309.5" y1="309.5" x2="366.1" y2="366.1"/><line x1="298.9" y1="318.2" x2="326.7" y2="359.8"/>
-            <line x1="286.8" y1="324.7" x2="317.4" y2="398.6"/><line x1="273.7" y1="328.7" x2="283.4" y2="377.7"/>
-            <line x1="260.0" y1="330.0" x2="260.0" y2="410.0"/><line x1="246.3" y1="328.7" x2="236.6" y2="377.7"/>
-            <line x1="233.2" y1="324.7" x2="202.6" y2="398.6"/><line x1="221.1" y1="318.2" x2="193.3" y2="359.8"/>
-            <line x1="210.5" y1="309.5" x2="153.9" y2="366.1"/><line x1="201.8" y1="298.9" x2="160.2" y2="326.7"/>
-            <line x1="195.3" y1="286.8" x2="121.4" y2="317.4"/><line x1="191.3" y1="273.7" x2="142.3" y2="283.4"/>
-            <line x1="190.0" y1="260.0" x2="110.0" y2="260.0"/><line x1="191.3" y1="246.3" x2="142.3" y2="236.6"/>
-            <line x1="195.3" y1="233.2" x2="121.4" y2="202.6"/><line x1="201.8" y1="221.1" x2="160.2" y2="193.3"/>
-            <line x1="210.5" y1="210.5" x2="153.9" y2="153.9"/><line x1="221.1" y1="201.8" x2="193.3" y2="160.2"/>
-            <line x1="233.2" y1="195.3" x2="202.6" y2="121.4"/><line x1="246.3" y1="191.3" x2="236.6" y2="142.3"/>
-            <line x1="260.0" y1="190.0" x2="260.0" y2="110.0"/><line x1="273.7" y1="191.3" x2="283.4" y2="142.3"/>
-            <line x1="286.8" y1="195.3" x2="317.4" y2="121.4"/><line x1="298.9" y1="201.8" x2="326.7" y2="160.2"/>
-            <line x1="309.5" y1="210.5" x2="366.1" y2="153.9"/><line x1="318.2" y1="221.1" x2="359.8" y2="193.3"/>
-            <line x1="324.7" y1="233.2" x2="398.6" y2="202.6"/><line x1="328.7" y1="246.3" x2="377.7" y2="236.6"/>
-          </g>
-        </svg>
+  <!-- §1 Hero -->
+  <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-studio-title">
+    <svg class="pv-burst" viewBox="0 0 1200 600" width="1200" height="600" fill="none" aria-hidden="true" focusable="false">
+  <g stroke="#fff" stroke-opacity=".17" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="22 11">
+    <line x1="749" y1="584" x2="1187" y2="538"/><line x1="743" y1="554" x2="1161" y2="418"/><line x1="730" y1="525" x2="1111" y2="305"/><line x1="711" y1="500" x2="1038" y2="205"/><line x1="688" y1="479" x2="947" y2="123"/><line x1="661" y1="463" x2="840" y2="61"/><line x1="631" y1="453" x2="723" y2="23"/><line x1="600" y1="450" x2="600" y2="10"/><line x1="569" y1="453" x2="477" y2="23"/><line x1="539" y1="463" x2="360" y2="61"/><line x1="512" y1="479" x2="253" y2="123"/><line x1="489" y1="500" x2="162" y2="205"/><line x1="470" y1="525" x2="89" y2="305"/><line x1="457" y1="554" x2="39" y2="418"/><line x1="451" y1="584" x2="13" y2="538"/>
+  </g>
+  <g stroke="#fff" stroke-opacity=".12" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 10 30 10">
+    <line x1="786" y1="560" x2="1060" y2="502"/><line x1="774" y1="523" x2="1029" y2="409"/><line x1="754" y1="488" x2="980" y2="324"/><line x1="727" y1="459" x2="914" y2="251"/><line x1="695" y1="435" x2="835" y2="193"/><line x1="659" y1="419" x2="745" y2="153"/><line x1="620" y1="411" x2="649" y2="133"/><line x1="580" y1="411" x2="551" y2="133"/><line x1="541" y1="419" x2="455" y2="153"/><line x1="505" y1="435" x2="365" y2="193"/><line x1="473" y1="459" x2="286" y2="251"/><line x1="446" y1="488" x2="220" y2="324"/><line x1="426" y1="523" x2="171" y2="409"/><line x1="414" y1="560" x2="140" y2="502"/>
+  </g>
+</svg>
 
-        <div class="relative h-full flex items-center">
-          <div class="w-full px-6 sm:px-10 lg:pl-[max(2.5rem,calc((100vw-72rem)/2+2.5rem))] lg:pr-14 py-16 sm:py-20 lg:py-28">
-            <div class="max-w-[34rem] lg:ml-auto">
-              <h1 class="font-display font-medium leading-[1.12] tracking-[-0.012em] text-[33px] sm:text-[42px] lg:text-[48px] reveal in">
-                Plasma tretmani prilagođeni potrebama vaše kože
-              </h1>
-              <div class="rule-mustard mt-8 reveal in" style="transition-delay:100ms"></div>
-              <p class="mt-8 text-white/80 text-[15.5px] sm:text-[16.5px] leading-[1.75] max-w-[46ch] reveal in" style="transition-delay:160ms">
-                Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.
-              </p>
-              <div class="mt-10 reveal in" style="transition-delay:220ms">
-                <a href="#konzultacije" class="btn-primary-inverse w-full sm:w-auto">Zatražite konzultacije</a>
-              </div>
-            </div>
-          </div>
+    <div class="pv-container pv-sales-hero__grid pv-studio-hero__grid">
+      <div>
+        <p class="pv-eyebrow">Privé Studio Zagreb</p>
+        <h1 class="pv-sales-hero__title" id="pv-studio-title">Plasma tretmani prilagođeni potrebama vaše kože</h1>
+        <p class="pv-sales-hero__sub">Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.</p>
+        <div class="pv-page-hero__actions">
+          <a class="pv-btn pv-btn--inverse" href="#pv-konzultacije">Zatražite konzultacije</a>
         </div>
       </div>
-
-      <!-- photo panel -->
-      <div class="img-tint img-tint-even relative h-[300px] sm:h-[400px] lg:h-auto lg:min-h-[640px] order-first lg:order-none bg-navy">
-        <img src="brand-assets/photos/tretman-lice.jpg"
-             alt="Specijalistica u zaštitnim rukavicama izvodi plasma tretman na licu klijentice"
-             class="absolute inset-0 w-full h-full object-cover object-[58%_42%]">
-      </div>
-
+      <figure class="pv-studio-hero__media">
+        <img src="images/v4-studio-treatment.jpg" alt="Specijalistica u zaštitnim rukavicama izvodi plasma tretman na licu klijentice" width="537" height="806" fetchpriority="high" decoding="async">
+      </figure>
     </div>
   </section>
 
-  <!-- ================= §2 — TWO TREATMENTS, EQUAL WEIGHT =================
-       Both cards are deliberately identical: same surface, same shadow tier,
-       same internal rhythm, same button style, buttons bottom-aligned by
-       mt-auto. Neither is marked "recommended" — the whole premise of the
-       page is that the recommendation comes after the assessment.
-       ====================================================================== -->
-  <section id="tretmani" class="bg-alice py-20 lg:py-28">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Odaberite područje interesa</h2>
-      <div class="rule-navy mt-7 reveal"></div>
-
-      <div class="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-
-        <!-- Kartica A — Plasma Pen -->
-        <article class="reveal bg-white card-static p-8 sm:p-10 lg:p-12 flex flex-col border-t-2 border-navy">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#013559" stroke-width="1.4" aria-hidden="true">
-            <path d="M14.8 3.9l5.3 5.3-9.6 9.6-6.3 1 1-6.3 9.6-9.6z" stroke-linejoin="round"/>
-            <path d="M13.1 5.6l5.3 5.3M5.2 13.5l5.3 5.3" stroke-linecap="round"/>
-          </svg>
-          <h3 class="mt-6 font-display text-navy text-[26px] sm:text-[30px] leading-[1.15]">Plasma Pen</h3>
-          <p class="mt-5 text-[15.5px] text-nightrider/80 leading-[1.75] max-w-[46ch]">
-            Nekirurški tretman namijenjen zatezanju kože, ublažavanju bora i korekciji određenih kožnih nepravilnosti.
-          </p>
-
-          <div class="mt-9 pt-8 border-t border-navy/12">
-            <p class="eyebrow-navy" id="pp-lista">Može se primjenjivati na</p>
-            <ul class="tlist mt-5 space-y-3 text-[15px] text-nightrider/85 leading-[1.6]" aria-labelledby="pp-lista">
+  <!-- §2 Two treatments, equal weight: neither is marked as recommended, the recommendation comes after the assessment.
+       In v3 the buttons pre-selected the treatment in the form; a GHL form is an iframe, so they only scroll to it. -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-areas-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <h2 class="pv-h2" id="pv-areas-title">Odaberite područje interesa</h2>
+      </header>
+      <div class="pv-block grid gap-5 md:grid-cols-2 lg:gap-8">
+        <article class="pv-track">
+          <svg class="pv-treat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14.8 3.9l5.3 5.3-9.6 9.6-6.3 1 1-6.3 9.6-9.6z" stroke-linejoin="round"/><path d="M13.1 5.6l5.3 5.3M5.2 13.5l5.3 5.3" stroke-linecap="round"/></svg>
+          <h3 class="pv-track__title">Plasma Pen</h3>
+          <p class="pv-track__text">Nekirurški tretman namijenjen zatezanju kože, ublažavanju bora i korekciji određenih kožnih nepravilnosti.</p>
+          <div class="pv-treat__areas">
+            <p class="pv-stage__label" id="pv-pen-areas">Može se primjenjivati na</p>
+            <ul class="pv-dash-list" aria-labelledby="pv-pen-areas">
               <li>gornje i donje kapke</li>
               <li>bore oko očiju i usana</li>
               <li>čelo i područje između obrva</li>
@@ -359,27 +1384,17 @@
               <li>određene kožne izrasline</li>
             </ul>
           </div>
-
-          <div class="mt-10 pt-2">
-            <a href="#konzultacije" class="btn-outline w-full" data-tretman="plasma-pen" data-tretman-naziv="Plasma Pen">Zanimaju me Plasma Pen tretmani</a>
+          <div class="pv-track__cta">
+            <a class="pv-btn pv-btn--secondary" href="#pv-konzultacije">Zanimaju me Plasma Pen tretmani</a>
           </div>
         </article>
-
-        <!-- Kartica B — Hladna plazma -->
-        <article class="reveal bg-white card-static p-8 sm:p-10 lg:p-12 flex flex-col border-t-2 border-navy" style="transition-delay:80ms">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#013559" stroke-width="1.4" aria-hidden="true">
-            <circle cx="12" cy="12" r="2.6"/>
-            <path d="M12 5.6a6.4 6.4 0 010 12.8M12 2.3a9.7 9.7 0 010 19.4" stroke-linecap="round"/>
-            <path d="M12 5.6a6.4 6.4 0 000 12.8M12 2.3a9.7 9.7 0 000 19.4" stroke-linecap="round" opacity="0.4"/>
-          </svg>
-          <h3 class="mt-6 font-display text-navy text-[26px] sm:text-[30px] leading-[1.15]">Hladna plazma</h3>
-          <p class="mt-5 text-[15.5px] text-nightrider/80 leading-[1.75] max-w-[46ch]">
-            Neinvazivan tretman koji pomaže poboljšati izgled, ravnotežu i regeneraciju kože bez stvaranja površinskih točkica.
-          </p>
-
-          <div class="mt-9 pt-8 border-t border-navy/12">
-            <p class="eyebrow-navy" id="hp-lista">Preporučuje se kod</p>
-            <ul class="tlist mt-5 space-y-3 text-[15px] text-nightrider/85 leading-[1.6]" aria-labelledby="hp-lista">
+        <article class="pv-track">
+          <svg class="pv-treat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><path d="M12 5.6a6.4 6.4 0 010 12.8M12 2.3a9.7 9.7 0 010 19.4" stroke-linecap="round"/><path d="M12 5.6a6.4 6.4 0 000 12.8M12 2.3a9.7 9.7 0 000 19.4" stroke-linecap="round" opacity=".4"/></svg>
+          <h3 class="pv-track__title">Hladna plazma</h3>
+          <p class="pv-track__text">Neinvazivan tretman koji pomaže poboljšati izgled, ravnotežu i regeneraciju kože bez stvaranja površinskih točkica.</p>
+          <div class="pv-treat__areas">
+            <p class="pv-stage__label" id="pv-cold-areas">Preporučuje se kod</p>
+            <ul class="pv-dash-list" aria-labelledby="pv-cold-areas">
               <li>akni i problematične kože</li>
               <li>proširenih pora i masne kože</li>
               <li>pigmentacijskih nepravilnosti</li>
@@ -388,372 +1403,383 @@
               <li>potrebe za bržom regeneracijom kože</li>
             </ul>
           </div>
-
-          <div class="mt-10 pt-2">
-            <a href="#konzultacije" class="btn-outline w-full" data-tretman="hladna-plazma" data-tretman-naziv="Hladna plazma">Zanima me hladna plazma</a>
+          <div class="pv-track__cta">
+            <a class="pv-btn pv-btn--secondary" href="#pv-konzultacije">Zanima me hladna plazma</a>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ================= §3 — KOJI JE TRETMAN ZA VAS? ================= -->
-  <section id="usporedba" class="bg-white py-20 lg:py-28">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Koji je tretman za vas?</h2>
-      <div class="rule-navy mt-7 reveal"></div>
+  <!-- §4 Kako izgleda postupak, as a step graphic (Josip, 2026-10-03). Same six steps as the copy deck.
+       Step 3 is optional ("po potrebi"), so its node is dashed; the last node is filled because it's where the process lands. -->
+  <section class="pv-section pv-surface-white" aria-labelledby="pv-process-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <h2 class="pv-h2" id="pv-process-title">Kako izgleda postupak</h2>
+      </header>
+      <ol class="pv-block pv-flow">
+        <li class="pv-flow__step">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 3.5 10 14"/><path d="M20.5 3.5 14 20.5l-4-6.5-6.5-4z"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 1</p>
+            <p class="pv-flow__text">Pošaljete zahtjev za konzultacije.</p>
+          </div>
+        </li>
+        <li class="pv-flow__step">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 2</p>
+            <p class="pv-flow__text">Navedete područje ili problem koji želite tretirati.</p>
+          </div>
+        </li>
+        <li class="pv-flow__step pv-flow__step--optional">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5a1.5 1.5 0 0 1 1.5-1.5h2.5l1.5-2.5h6l1.5 2.5H19a1.5 1.5 0 0 1 1.5 1.5v9.5A1.5 1.5 0 0 1 19 19.5H5A1.5 1.5 0 0 1 3.5 18z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 3</p>
+            <p class="pv-flow__text">Po potrebi pošaljete jasne fotografije područja.</p>
+          </div>
+        </li>
+        <li class="pv-flow__step">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 4</p>
+            <p class="pv-flow__text">Procjenjujemo koji je tretman prikladan za vas.</p>
+          </div>
+        </li>
+        <li class="pv-flow__step">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l3.5 3.5v13.5H6z"/><path d="M15 3.5V7h3.5"/><path d="M9 12h6.5M9 15.5h6.5M9 8.5h3"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 5</p>
+            <p class="pv-flow__text">Dobivate preporuku, cijenu i dostupne termine.</p>
+          </div>
+        </li>
+        <li class="pv-flow__step pv-flow__step--final">
+          <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m9 14.8 2.2 2.2 4-4.2"/></svg></span>
+          <div class="pv-flow__body">
+            <p class="pv-flow__num">Korak 6</p>
+            <p class="pv-flow__text">Nakon potvrde dogovara se termin tretmana.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-      <!-- The deck sets each treatment name in bold at the head of its own
-           sentence. Kept as a run-in lead-in so the sentence stays whole —
-           lifting the name into a standalone heading would leave the rest of
-           the line starting mid-sentence in lower case. -->
-      <div class="mt-12 grid md:grid-cols-2 gap-10 lg:gap-0">
-        <div class="reveal lg:pr-16">
-          <p class="text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.85] max-w-[42ch]">
-            <strong class="font-display font-medium text-navy text-[20px] sm:text-[22px] leading-[1.2] mr-1.5">Plasma Pen</strong>
-            odabire se kada je cilj kontrolirano zatezanje i obnova kože, uz period cijeljenja.
-          </p>
-        </div>
-        <div class="reveal lg:pl-16 lg:border-l lg:border-navy/12" style="transition-delay:80ms">
-          <p class="text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.85] max-w-[42ch]">
-            <strong class="font-display font-medium text-navy text-[20px] sm:text-[22px] leading-[1.2] mr-1.5">Hladna plazma</strong>
-            prikladnija je za poboljšanje stanja kože, umirivanje nepravilnosti i poticanje regeneracije bez klasičnog perioda oporavka.
-          </p>
-        </div>
+  <!-- §5 Consultation request: native GHL form (ghl-native/forms.md#treatment-consult), mock until its id is set -->
+  <section class="pv-section pv-surface-navy pv-grain" id="pv-konzultacije" aria-labelledby="pv-consult-title">
+    <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <header class="pv-section-head lg:col-span-5 pv-sticky">
+        <h2 class="pv-h2" id="pv-consult-title">Zatražite konzultacije</h2>
+        <p class="pv-lead">Ispunite kratki obrazac kako bismo mogli procijeniti vaše potrebe i preporučiti odgovarajući plasma tretman.</p>
+      </header>
+      <div class="lg:col-span-7">
+        <div class="pv-form-panel pv-form-panel--white">
+          <!-- DEMO WIRING: static mock of GHL form "V4 Studio Consultation Request (HR)". It does not create a contact. Build the form per ghl-native/forms.md#treatment-consult, put its id in site.config.json, rebuild. -->
+<div class="pv-ghl-form is-mock" data-form="treatmentConsult"><!-- Static stand-in for the GHL "V4 Studio Consultation Request (HR)" form (ghl-native/forms.md#treatment-consult).
+     Fields, order and wording from v3-studio-tretmani/COPY-DECK-HR.md §5. type="button", so it can't pretend to submit.
+     Health data: the consent box is required and unticked, and needs Privé Studio's own privacy policy (not the Academy's). -->
+<form class="pv-form" aria-label="Obrazac za konzultacije" novalidate>
+  <div class="pv-form__grid">
+    <div class="pv-field">
+      <label for="pv-consult-name">Ime i prezime<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-consult-name" name="ime" type="text" autocomplete="name" required>
+    </div>
+    <div class="pv-field">
+      <label for="pv-consult-phone">Broj telefona<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-consult-phone" name="telefon" type="tel" autocomplete="tel" required>
+    </div>
+    <div class="pv-field pv-field--full">
+      <label for="pv-consult-email">E-mail<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-consult-email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <fieldset class="pv-field pv-field--full pv-choice">
+      <legend>Tretman koji vas zanima</legend>
+      <div class="pv-choice__options">
+        <label class="pv-choice__option"><input type="radio" name="tretman" value="plasma-pen"><span>Plasma Pen</span></label>
+        <label class="pv-choice__option"><input type="radio" name="tretman" value="hladna-plazma"><span>Hladna plazma</span></label>
+        <label class="pv-choice__option"><input type="radio" name="tretman" value="nisam-siguran"><span>Nisam siguran/na</span></label>
       </div>
-
-      <!-- the page's thesis, given the weight it deserves -->
-      <div class="reveal grain relative mt-14 lg:mt-16 bg-navy text-white overflow-hidden card-floating">
-        <div class="relative px-8 sm:px-12 lg:px-16 py-12 lg:py-16 text-center">
-          <div class="rule-mustard mx-auto"></div>
-          <p class="mt-8 font-display text-[22px] sm:text-[27px] lg:text-[31px] leading-[1.35] max-w-[24ch] mx-auto">
-            Točna preporuka donosi se nakon konzultacija i procjene kože.
-          </p>
+    </fieldset>
+    <div class="pv-field pv-field--full">
+      <label for="pv-consult-area">Područje koje želite tretirati</label>
+      <input id="pv-consult-area" name="podrucje" type="text">
+    </div>
+    <div class="pv-field pv-field--full">
+      <label for="pv-consult-desc">Kratak opis problema ili željenog rezultata</label>
+      <textarea id="pv-consult-desc" name="opis" rows="4"></textarea>
+    </div>
+    <div class="pv-field pv-field--full">
+      <label for="pv-consult-photos">Fotografije područja <span class="pv-field__hint">(neobavezno, više datoteka)</span></label>
+      <input id="pv-consult-photos" name="fotografije" type="file" accept="image/*" multiple>
+    </div>
+    <fieldset class="pv-field pv-field--full pv-choice">
+      <legend>Željeni način kontakta</legend>
+      <div class="pv-choice__options">
+        <label class="pv-choice__option"><input type="radio" name="kontakt" value="poziv"><span>Poziv</span></label>
+        <label class="pv-choice__option"><input type="radio" name="kontakt" value="whatsapp"><span>WhatsApp</span></label>
+        <label class="pv-choice__option"><input type="radio" name="kontakt" value="email"><span>E-mail</span></label>
+      </div>
+    </fieldset>
+    <label class="pv-field--full pv-consent">
+      <input type="checkbox" name="privola" required>
+      <span>Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam pravila privatnosti: [needs: studioPrivacyUrl]<span class="pv-field__req" aria-hidden="true">*</span></span>
+    </label>
+  </div>
+  <div class="pv-form__foot">
+    <button type="button" class="pv-btn pv-btn--primary">Pošaljite zahtjev</button>
+    <p class="pv-form__note">Fotografije se koriste isključivo za procjenu tretmana.</p>
+  </div>
+</form>
+</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= §4 — KAKO IZGLEDA POSTUPAK ================= -->
-  <section id="postupak" class="bg-alice py-20 lg:py-28">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <h2 class="reveal font-display font-medium text-navy text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15] max-w-xl">Kako izgleda postupak</h2>
-      <div class="rule-navy mt-7 reveal"></div>
-
-      <div class="mt-12 grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-start lg:items-center">
-        <ol class="steps reveal">
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Pošaljete zahtjev za konzultacije.</p></li>
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Navedete područje ili problem koji želite tretirati.</p></li>
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Po potrebi pošaljete jasne fotografije područja.</p></li>
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Procjenjujemo koji je tretman prikladan za vas.</p></li>
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Dobivate preporuku, cijenu i dostupne termine.</p></li>
-          <li><p class="pt-[11px] text-[15.5px] sm:text-[16px] text-nightrider/85 leading-[1.6] max-w-[46ch]">Nakon potvrde dogovara se termin tretmana.</p></li>
-        </ol>
-
-        <!-- The source PNG has rounded corners baked in, so the image is scaled
-             very slightly past the frame to crop them off. -->
-        <figure class="reveal img-tint w-full h-[340px] sm:h-[440px] lg:h-[520px] card-static bg-navy" style="transition-delay:100ms">
-          <img src="brand-assets/photos/specijalist-pen.png"
-               alt="Specijalistica u zaštitnim rukavicama drži plasma uređaj"
-               class="absolute inset-0 w-full h-full object-cover object-[62%_40%] scale-[1.04]">
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= §5 — OBRAZAC ZA KONZULTACIJE ================= -->
-  <section id="konzultacije" class="grain relative bg-navy text-white overflow-hidden py-20 lg:py-28" tabindex="-1">
-    <div class="relative max-w-3xl mx-auto px-6">
-      <div class="text-center">
-        <h2 class="reveal font-display font-medium text-[27px] sm:text-[34px] lg:text-[38px] leading-[1.15]">Zatražite konzultacije</h2>
-        <div class="rule-mustard mt-7 mx-auto reveal"></div>
-        <p class="reveal mt-7 text-[15.5px] sm:text-[16px] text-white/80 leading-[1.75] max-w-[52ch] mx-auto">
-          Ispunite kratki obrazac kako bismo mogli procijeniti vaše potrebe i preporučiti odgovarajući plasma tretman.
-        </p>
-      </div>
-
-      <!-- Live region: announces a treatment pre-selected by the §2 card CTAs. -->
-      <p id="obrazac-najava" class="sr-only" role="status" aria-live="polite"></p>
-
-      <!-- MARKUP ONLY — see the FORM HANDLER STUB in the page script below. -->
-      <form id="konzultacije-obrazac" class="reveal mt-12" novalidate style="transition-delay:60ms">
-
-        <div class="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label class="field-label-dark" for="f-ime">Ime i prezime <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
-            <input class="field-input-dark" type="text" id="f-ime" name="ime" required autocomplete="name">
-          </div>
-          <div>
-            <label class="field-label-dark" for="f-telefon">Broj telefona <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
-            <input class="field-input-dark" type="tel" id="f-telefon" name="telefon" required autocomplete="tel">
-          </div>
-          <div class="sm:col-span-2">
-            <label class="field-label-dark" for="f-email">E-mail <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span></label>
-            <input class="field-input-dark" type="email" id="f-email" name="email" required autocomplete="email">
-          </div>
+  <!-- §6 Closing -->
+  <section class="pv-section pv-surface-white pv-cta" aria-labelledby="pv-unsure-title">
+    <div class="pv-container">
+      <div class="pv-cta__inner">
+        <h2 class="pv-h2" id="pv-unsure-title">Niste sigurni trebate li Plasma&nbsp;Pen ili hladnu plazmu?</h2>
+        <p class="pv-lead">Pošaljite zahtjev za konzultacije. Nakon procjene kože dobit ćete preporuku tretmana, okvirnu cijenu i informacije o postupku.</p>
+        <div class="pv-cta__actions">
+          <a class="pv-btn pv-btn--primary" href="#pv-konzultacije">Zatražite konzultacije</a>
         </div>
-
-        <fieldset class="mt-8" id="polje-tretman">
-          <legend class="field-label-dark">Tretman koji vas zanima</legend>
-          <div class="mt-4 grid sm:grid-cols-3 gap-3">
-            <div class="opt">
-              <input type="radio" id="f-tretman-pen" name="tretman" value="plasma-pen">
-              <label for="f-tretman-pen">Plasma Pen</label>
-            </div>
-            <div class="opt">
-              <input type="radio" id="f-tretman-hladna" name="tretman" value="hladna-plazma">
-              <label for="f-tretman-hladna">Hladna plazma</label>
-            </div>
-            <div class="opt">
-              <input type="radio" id="f-tretman-nesiguran" name="tretman" value="nisam-siguran">
-              <label for="f-tretman-nesiguran">Nisam siguran/na</label>
-            </div>
-          </div>
-        </fieldset>
-
-        <div class="mt-8">
-          <label class="field-label-dark" for="f-podrucje">Područje koje želite tretirati</label>
-          <input class="field-input-dark" type="text" id="f-podrucje" name="podrucje">
-        </div>
-
-        <div class="mt-6">
-          <label class="field-label-dark" for="f-opis">Kratak opis problema ili željenog rezultata</label>
-          <textarea class="field-input-dark" id="f-opis" name="opis" rows="4"></textarea>
-        </div>
-
-        <div class="mt-8">
-          <label class="field-label-dark" for="f-fotografije">Fotografije područja <span class="field-note">(neobavezno, više datoteka)</span></label>
-          <input class="field-file" type="file" id="f-fotografije" name="fotografije" accept="image/*" multiple aria-describedby="f-fotografije-popis"><label class="file-trigger" for="f-fotografije"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 16.5l4.5-4 3.5 3 3-2.5 4.5 4" stroke-linecap="round" stroke-linejoin="round"/></svg>Odaberite fotografije</label>
-          <div id="f-fotografije-popis" class="mt-5 hidden" role="status" aria-live="polite"></div>
-        </div>
-
-        <fieldset class="mt-8">
-          <legend class="field-label-dark">Željeni način kontakta</legend>
-          <div class="mt-4 grid sm:grid-cols-3 gap-3">
-            <div class="opt">
-              <input type="radio" id="f-kontakt-poziv" name="kontakt" value="poziv">
-              <label for="f-kontakt-poziv">Poziv</label>
-            </div>
-            <div class="opt">
-              <input type="radio" id="f-kontakt-whatsapp" name="kontakt" value="whatsapp">
-              <label for="f-kontakt-whatsapp">WhatsApp</label>
-            </div>
-            <div class="opt">
-              <input type="radio" id="f-kontakt-email" name="kontakt" value="email">
-              <label for="f-kontakt-email">E-mail</label>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- Health data is sensitive personal data: consent is required and
-             unticked by default, and the privacy policy link is still a token. -->
-        <div class="mt-9 pt-8 border-t border-white/15 consent">
-          <input type="checkbox" id="f-privola" name="privola" required aria-describedby="privola-tekst">
-          <label for="f-privola" id="privola-tekst" class="text-[14px] text-white/85 leading-[2] cursor-pointer">
-            <span class="text-mustard" aria-hidden="true">*</span><span class="sr-only">(obavezno)</span>
-            Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam <span class="tbc tbc-dark tbc-inline">⟦TBC: poveznica na pravila privatnosti⟧</span>.
-          </label>
-        </div>
-
-        <p id="obrazac-greska" class="mt-6 text-[13.5px] text-mustard leading-[1.6] hidden" role="alert"></p>
-        <p id="obrazac-potvrda" class="mt-6 text-[13.5px] text-white leading-[1.6] hidden" role="status"></p>
-
-        <div class="mt-9">
-          <button type="submit" class="btn-primary-inverse w-full sm:w-auto">Pošaljite zahtjev</button>
-        </div>
-
-        <p class="mt-7 text-[13.5px] text-white/60 leading-[1.7]">Fotografije se koriste isključivo za procjenu tretmana.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- ================= §6 — ZAVRŠNI DIO ================= -->
-  <section class="bg-white py-20 lg:py-28">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="reveal font-display font-medium text-navy text-[26px] sm:text-[32px] lg:text-[36px] leading-[1.2] max-w-[22ch] mx-auto">
-        Niste sigurni trebate li Plasma&nbsp;Pen ili hladnu plazmu?
-      </h2>
-      <div class="rule-navy mt-7 mx-auto reveal"></div>
-      <p class="reveal mt-7 text-[15.5px] sm:text-[16px] text-nightrider/80 leading-[1.75] max-w-[54ch] mx-auto">
-        Pošaljite zahtjev za konzultacije. Nakon procjene kože dobit ćete preporuku tretmana, okvirnu cijenu i informacije o postupku.
-      </p>
-      <div class="mt-10 reveal">
-        <a href="#konzultacije" class="btn-primary w-full sm:w-auto">Zatražite konzultacije</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ================= PODNOŽJE ================= -->
-<footer class="bg-nightrider text-white/70 border-t border-mustard/60">
-  <div class="max-w-6xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-[auto_1fr] gap-10 md:gap-16">
-    <div class="text-white">
-      <div class="wm wm-lg">
-        <span class="wm-name">PRIVÉ</span>
-        <span class="wm-sub">
-          <span class="wm-rule" aria-hidden="true"></span>
-          <span class="wm-word">Studio</span>
-          <span class="wm-rule" aria-hidden="true"></span>
-        </span>
-      </div>
+<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
+<footer class="pv-footer">
+  <div class="pv-container pv-footer__grid">
+    <div>
+      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
+        <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+      </a>
+      <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>
+      <ul class="pv-social">
+        <li>
+          <a href="https://www.facebook.com/priveacademy/" target="_blank" rel="noopener" aria-label="Privé Academy on Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/prive_academy/" target="_blank" rel="noopener" aria-label="Privé Academy on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@Prive_Academy" target="_blank" rel="noopener" aria-label="Privé Academy on YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <!-- Every Studio contact detail is unconfirmed: the Academy's address and
-         info@prive-academy.com belong to the other entity and must not be
-         reused here. Each token stays visible until Sandra confirms a value. -->
-    <div class="flex flex-col items-start gap-3">
-      <span class="tbc tbc-dark">⟦TBC: kontakt e-mail za Studio — info@prive-academy.com je Akademijin⟧</span>
-      <span class="tbc tbc-dark">⟦TBC: telefon / WhatsApp broj⟧</span>
-      <span class="tbc tbc-dark">⟦TBC: adresa studija⟧</span>
-      <span class="tbc tbc-dark">⟦TBC: poveznica na pravila privatnosti⟧</span>
+    <nav aria-labelledby="pv-footer-explore">
+      <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
+      <ul class="pv-footer__list">
+        <li><a class="pv-footer__link" href="online-certification.html" data-nav="online-certification">Online Certification</a></li>
+        <li><a class="pv-footer__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a></li>
+        <li><a class="pv-footer__link" href="treatments.html" data-nav="treatments" aria-current="page">Treatments</a></li>
+        <li><a class="pv-footer__link" href="shop.html" data-nav="shop">Shop</a></li>
+        <li><a class="pv-footer__link" href="testimonials.html" data-nav="testimonials">Testimonials</a></li>
+        <li><a class="pv-footer__link" href="about.html" data-nav="about">About Us</a></li>
+        <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div role="group" aria-labelledby="pv-footer-offices">
+      <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
+      <ul class="pv-footer__list">
+        <li><address><span class="pv-footer__label">Europe</span>Celovška cesta 111<br>1000 Ljubljana, Slovenia</address></li>
+        <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
+      </ul>
+    </div>
+
+    <div role="group" aria-labelledby="pv-footer-contact">
+      <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
+      <ul class="pv-footer__list">
+        <li><a class="pv-footer__link" href="mailto:info@prive-academy.com">info@prive-academy.com</a></li>
+        <li><span class="pv-footer__label">US</span><a class="pv-footer__link" href="tel:+14243601492">+1 (424) 360-1492</a></li>
+        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></li>
+      </ul>
     </div>
   </div>
 
-  <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10 py-6 text-[11px] tracking-[0.06em] uppercase text-white/45">
-      © 2026 Privé Studio.
+  <div class="pv-footer__bar">
+    <div class="pv-container pv-footer__bar-inner">
+      <p>&copy; 2026 Privé Academy. All rights reserved.</p>
+      <ul class="pv-footer__legal">
+        <li><a class="pv-footer__legal-link" href="privacy.html" data-nav="privacy">Privacy Policy</a></li>
+        <li><a class="pv-footer__legal-link" href="terms.html" data-nav="terms">Terms &amp; Conditions</a></li>
+        <li><a class="pv-footer__legal-link" href="cookies.html" data-nav="cookies">Cookie Policy</a></li>
+        <li><button type="button" class="pv-footer__legal-link" data-consent-open>Cookie settings</button></li>
+      </ul>
     </div>
   </div>
 </footer>
 
+<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
+     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
+<div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
+  <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
+  <div class="pv-cookie__actions">
+    <button type="button" class="pv-btn pv-btn--consent" data-consent="all">Accept All</button>
+    <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
+  </div>
+</div>
+
+
+</div>
 <script>
-  // ---- reveal on scroll ---------------------------------------------------
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+(() => {
+// Page behaviour for every v4 page. build.mjs wraps this in the SOP's idempotent,
+// hydrationDone-aware init (HIGHLEVEL-CODED-PAGE-SOP.md Part 1 step 8) and calls
+// initPage(root) with the page root. initPage returns its own teardown.
+//
+// Markup hooks (all queried inside the root):
+//   [data-nav-shell]                     gets .is-scrolled past 8px
+//   [data-menu-toggle] + [data-menu]     mobile menu; toggles .is-open + aria-expanded
+//   .pv-reveal                           fades in once on scroll (gated on root.js-ready)
+//   [data-carousel] > [data-carousel-track], [data-carousel-prev], [data-carousel-next]
+//   [data-cookie-banner]                 consent banner; [data-consent="all|necessary"] buttons
+//   [data-consent-open]                  any link that re-opens the banner (footer)
+//   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
+//                                        youtube-nocookie iframe on click, so nothing
+//                                        from Google loads until the visitor asks
 
-  const form = document.getElementById('konzultacije-obrazac');
-  const formSection = document.getElementById('konzultacije');
-  const announce = document.getElementById('obrazac-najava');
-  const errorBox = document.getElementById('obrazac-greska');
-  const okBox = document.getElementById('obrazac-potvrda');
-  const consent = document.getElementById('f-privola');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CONSENT_KEY = 'prive-consent-v1';
 
-  // ---- §2 card CTAs: scroll to the form AND pre-select the treatment ------
-  // The anchors work without JS (they simply jump to the form); JS adds the
-  // pre-selection, the focus move and the screen-reader announcement.
-  document.querySelectorAll('a[data-tretman]').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
+function readConsent() {
+  try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
+}
 
-      const radio = form.querySelector('input[name="tretman"][value="' + link.dataset.tretman + '"]');
-      if (radio) {
-        radio.checked = true;
-        radio.dispatchEvent(new Event('change', { bubbles: true }));
-
-        // transient visual cue so sighted users see what changed
-        const chip = radio.closest('.opt');
-        document.querySelectorAll('.opt.flash').forEach(el => el.classList.remove('flash'));
-        void chip.offsetWidth;
-        chip.classList.add('flash');
-        setTimeout(() => chip.classList.remove('flash'), 3200);
-      }
-
-      formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-
-      // Move focus into the form without fighting the smooth scroll.
-      document.getElementById('f-ime').focus({ preventScroll: true });
-
-      announce.textContent = 'Odabran tretman: ' + link.dataset.tretmanNaziv +
-        '. Obrazac za konzultacije je otvoren, unesite svoje podatke.';
+// Analytics and ad tags must wait for this. The site-wide GHL head snippet in
+// ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
+function applyConsent(choice) {
+  window.priveConsent = choice;
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      analytics_storage: choice.analytics ? 'granted' : 'denied',
+      ad_storage: choice.marketing ? 'granted' : 'denied',
+      ad_user_data: choice.marketing ? 'granted' : 'denied',
+      ad_personalization: choice.marketing ? 'granted' : 'denied',
     });
+  }
+  window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
+}
+
+function initPage(root) {
+  const controller = new AbortController();
+  const { signal } = controller;
+  const cleanup = [() => controller.abort()];
+  root.classList.add('js-ready');
+
+  // ---- nav: scrolled state + mobile menu
+  const shell = root.querySelector('[data-nav-shell]');
+  if (shell) {
+    const onScroll = () => shell.classList.toggle('is-scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true, signal });
+    onScroll();
+  }
+  const toggle = root.querySelector('[data-menu-toggle]');
+  const menu = root.querySelector('[data-menu]');
+  if (toggle && menu) {
+    const setOpen = (open) => {
+      menu.classList.toggle('is-open', open);
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')), { signal });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
+  }
+
+  // ---- reveal on scroll
+  const reveals = root.querySelectorAll('.pv-reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+    cleanup.push(() => io.disconnect());
+  } else {
+    reveals.forEach(el => el.classList.add('is-in'));
+  }
+
+  // ---- carousels: prev/next scroll the track by one visible width
+  root.querySelectorAll('[data-carousel]').forEach(c => {
+    const track = c.querySelector('[data-carousel-track]');
+    if (!track) return;
+    const prev = c.querySelector('[data-carousel-prev]');
+    const next = c.querySelector('[data-carousel-next]');
+    const step = dir => track.scrollBy({ left: dir * track.clientWidth * 0.85, behavior: 'smooth' });
+    // aria-disabled (not disabled) keeps the buttons focusable at either end
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      prev?.setAttribute('aria-disabled', String(track.scrollLeft <= 2));
+      next?.setAttribute('aria-disabled', String(track.scrollLeft >= max));
+    };
+    prev?.addEventListener('click', () => step(-1), { signal });
+    next?.addEventListener('click', () => step(1), { signal });
+    track.addEventListener('scroll', sync, { passive: true, signal });
+    window.addEventListener('resize', sync, { passive: true, signal });
+    sync();
   });
 
-  // ---- photo field: echo the chosen filenames back --------------------
-  // Client-side only. Nothing is uploaded anywhere.
-  const fileInput = document.getElementById('f-fotografije');
-  const fileList = document.getElementById('f-fotografije-popis');
-
-  fileInput.addEventListener('change', () => {
-    const files = Array.from(fileInput.files || []);
-    fileList.innerHTML = '';
-
-    if (!files.length) {
-      fileList.classList.add('hidden');
-      return;
-    }
-
-    const heading = document.createElement('p');
-    heading.className = 'text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60';
-    heading.textContent = files.length === 1 ? 'Odabrana datoteka' : 'Odabrane datoteke (' + files.length + ')';
-    fileList.appendChild(heading);
-
-    const ul = document.createElement('ul');
-    ul.className = 'mt-3 space-y-2';
-    files.forEach((file) => {
-      const li = document.createElement('li');
-      li.className = 'flex items-start gap-2.5 text-[13.5px] text-white/85 leading-[1.5] break-all';
-      li.innerHTML = '<svg class="mt-[5px] shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 16.5l4.5-4 3.5 3 3-2.5 4.5 4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      li.appendChild(document.createTextNode(file.name));
-      ul.appendChild(li);
-    });
-    fileList.appendChild(ul);
-    fileList.classList.remove('hidden');
+  // ---- video facades: poster + play button until clicked
+  root.querySelectorAll('[data-video]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.video;
+      if (!/^[\w-]{6,20}$/.test(id)) return;
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+      frame.title = btn.dataset.videoTitle || 'Video testimonial';
+      frame.className = 'pv-video__frame';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      btn.replaceWith(frame);
+      frame.focus();
+    }, { signal });
   });
 
-  // clear the invalid state as soon as consent is given
-  consent.addEventListener('change', () => {
-    if (consent.checked) consent.removeAttribute('aria-invalid');
-  });
+  // ---- cookie consent
+  const banner = root.querySelector('[data-cookie-banner]');
+  if (banner) {
+    const show = (on) => { banner.hidden = !on; banner.classList.toggle('is-open', on); };
+    const saved = readConsent();
+    if (saved) applyConsent(saved); else show(true);
+    banner.querySelectorAll('[data-consent]').forEach(btn => btn.addEventListener('click', () => {
+      const all = btn.dataset.consent === 'all';
+      const choice = { analytics: all, marketing: all, at: new Date().toISOString() };
+      try { localStorage.setItem(CONSENT_KEY, JSON.stringify(choice)); } catch { /* private mode: consent holds for this page view only */ }
+      applyConsent(choice);
+      show(false);
+    }, { signal }));
+    root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
+  }
 
-  // =========================================================================
-  // FORM HANDLER STUB — NO BACKEND IS CONNECTED.
-  // The validation below is client-side only. Nothing is sent anywhere, no
-  // lead is stored, and the selected photographs never leave the browser.
-  // REPLACE the marked block with the real submit (multipart POST to the CRM
-  // endpoint / webhook, then redirect to a thank-you page) before this page
-  // goes live. Health data is sensitive personal data — the endpoint must be
-  // covered by the Studio privacy policy that is still ⟦TBC⟧.
-  // =========================================================================
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    errorBox.classList.add('hidden'); errorBox.textContent = '';
-    okBox.classList.add('hidden'); okBox.textContent = '';
+  return () => cleanup.forEach(fn => fn());
+}
 
-    const ime = form.querySelector('[name="ime"]');
-    const telefon = form.querySelector('[name="telefon"]');
-    const email = form.querySelector('[name="email"]');
-
-    [ime, telefon, email].forEach(f => f.removeAttribute('aria-invalid'));
-    consent.removeAttribute('aria-invalid');
-
-    const missing = [];
-    if (!ime.value.trim()) { missing.push({ label: 'ime i prezime', el: ime }); }
-    if (!telefon.value.trim()) { missing.push({ label: 'broj telefona', el: telefon }); }
-    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-      missing.push({ label: 'ispravnu e-mail adresu', el: email });
-    }
-
-    if (missing.length) {
-      missing.forEach(m => m.el.setAttribute('aria-invalid', 'true'));
-      const labels = missing.map(m => m.label);
-      const list = labels.length > 1
-        ? labels.slice(0, -1).join(', ') + ' i ' + labels[labels.length - 1]
-        : labels[0];
-      errorBox.textContent = 'Molimo unesite ' + list + '.';
-      errorBox.classList.remove('hidden');
-      missing[0].el.focus();
-      return;
-    }
-
-    // Consent is a hard gate: the form must not submit without it.
-    if (!consent.checked) {
-      consent.setAttribute('aria-invalid', 'true');
-      errorBox.textContent = 'Molimo potvrdite privolu za obradu podataka. Bez privole ne možemo obraditi vaš zahtjev ni fotografije.';
-      errorBox.classList.remove('hidden');
-      consent.focus();
-      return;
-    }
-
-    // ---- REPLACE FROM HERE ------------------------------------------------
-    okBox.textContent = 'Obrazac je ispravno ispunjen. Slanje još nije povezano — zahtjev se trenutno ne zaprima.';
-    okBox.classList.remove('hidden');
-    // ---- REPLACE TO HERE --------------------------------------------------
-  });
+  function init() {
+    window.__priveV4Cleanup?.();
+    const teardowns = ["prive-v4-treatments"]
+      .map(id => document.getElementById(id))
+      .filter(Boolean)
+      .map(root => initPage(root));
+    window.__priveV4Cleanup = () => teardowns.forEach(fn => fn());
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+  document.addEventListener('hydrationDone', init);
+})();
 </script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
 </body>
 </html>
