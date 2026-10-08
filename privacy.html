@@ -736,7 +736,7 @@
 #prive-v4-privacy .pv-benefits{padding: 2rem 2.25rem;}
 }
 #prive-v4-privacy .pv-benefits .pv-checks{margin-top: 1.25rem; font-size: .9375rem;}
-#prive-v4-privacy .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 22% 60%;}
+#prive-v4-privacy .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%;}
 #prive-v4-privacy .pv-steps{display: grid; gap: 1.25rem;}
 @media (min-width: 1024px){
 #prive-v4-privacy .pv-steps{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
@@ -761,11 +761,8 @@
 #prive-v4-privacy .pv-bars__title{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
 #prive-v4-privacy .pv-bars{display: grid; gap: 1.125rem; margin-top: 1.5rem;}
 #prive-v4-privacy .pv-bars__row{display: grid; gap: .5rem;}
-@media (min-width: 640px){
-#prive-v4-privacy .pv-bars__row{grid-template-columns: 10.5rem minmax(0, 1fr); gap: 1.25rem; align-items: center;}
-}
 #prive-v4-privacy .pv-bars__area{font-size: .9375rem; font-weight: 500; line-height: 1.35; color: var(--pv-nightrider);}
-#prive-v4-privacy .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem; border-left: 1.5px solid var(--pv-line-strong);}
+#prive-v4-privacy .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem;}
 #prive-v4-privacy .pv-bars__bar{flex: none; display: block; height: 14px; background: var(--pv-navy); border-radius: 0 4px 4px 0;}
 @media (min-width: 640px){
 #prive-v4-privacy .pv-bars__bar{height: 16px;}
@@ -784,9 +781,10 @@
 #prive-v4-privacy .pv-offers{grid-template-columns: repeat(3, minmax(0, 1fr));}
 }
 #prive-v4-privacy .pv-offer{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
-#prive-v4-privacy .pv-offer__media{display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 1.25rem; border-bottom: 1px solid var(--pv-line);}
-#prive-v4-privacy .pv-offer__media img{width: 100%; height: 100%; object-fit: contain;}
-#prive-v4-privacy .pv-offer__media--icon svg{width: 4.5rem; height: 4.5rem; color: var(--pv-navy);}
+#prive-v4-privacy .pv-offer__media{position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-privacy .pv-offer__media img{position: absolute; inset: 1.25rem; width: calc(100% - 2.5rem); height: calc(100% - 2.5rem); object-fit: contain;}
+#prive-v4-privacy .pv-offer__media--icon{background: var(--pv-alice);}
+#prive-v4-privacy .pv-offer__media--icon svg{width: 6rem; height: 6rem; color: var(--pv-navy);}
 #prive-v4-privacy .pv-offer__body{padding: 1.5rem 1.5rem 1.75rem;}
 #prive-v4-privacy .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
 #prive-v4-privacy .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
@@ -1302,14 +1300,74 @@
 #prive-v4-privacy .pv-cookie__actions{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;}
 #prive-v4-privacy .pv-btn--consent{min-height: 2.75rem; padding: .625rem 1rem; font-size: 11.5px; color: var(--pv-navy); border: 1px solid var(--pv-navy); border-radius: 0;}
 #prive-v4-privacy .pv-btn--consent::before{background: rgba(1, 53, 89, .07);}
+#prive-v4-privacy .pv-chips{display: flex; flex-wrap: wrap; gap: .5rem;}
+#prive-v4-privacy .pv-chips li{padding: .4375rem .875rem; font-size: .875rem; line-height: 1.4; color: var(--pv-navy); border: 1px solid var(--pv-line-strong);}
+#prive-v4-privacy .pv-track--navy .pv-chips li{color: var(--pv-white); border-color: rgba(255, 255, 255, .35);}
+#prive-v4-privacy .pv-chips__label{font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-privacy .pv-chips__label + .pv-chips{margin-top: .75rem;}
+#prive-v4-privacy .pv-split__text .pv-chips__label{margin-top: 1.75rem;}
+#prive-v4-privacy .pv-step__media{margin: -2rem -1.5rem 1.75rem; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-privacy .pv-step__media{margin: -2.5rem -2.25rem 2rem;}
+}
+#prive-v4-privacy .pv-step__media img{width: 100%; height: 100%; object-fit: cover;}
+#prive-v4-privacy .pv-step__media--art{position: relative; background: var(--pv-alice);}
+#prive-v4-privacy .pv-step__media--art img{position: absolute; inset: 8% 0; width: 100%; height: 84%; object-fit: contain;}
+#prive-v4-privacy .pv-step__text{margin-top: .75rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
+#prive-v4-privacy .pv-fit-grid{display: grid; gap: 1rem;}
+@media (min-width: 768px){
+#prive-v4-privacy .pv-fit-grid{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
+}
+#prive-v4-privacy .pv-fit-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-privacy .pv-fit-card{padding: 2.25rem 2rem;}
+}
+#prive-v4-privacy .pv-fit-card svg{width: 3.25rem; height: 3.25rem; color: var(--pv-navy);}
+#prive-v4-privacy .pv-fit-card p{margin-top: 1.25rem; font-size: 1rem; line-height: 1.6; color: var(--pv-nightrider);}
+#prive-v4-privacy .pv-fit .pv-notfor{max-width: 46rem;}
+#prive-v4-privacy .pv-offer__media--photo{overflow: hidden; background: var(--pv-alice);}
+#prive-v4-privacy .pv-offer__media--photo img{inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%;}
+#prive-v4-privacy .pv-track__media{align-self: stretch; margin: -2rem -1.5rem 2rem; aspect-ratio: 16 / 9; overflow: hidden;}
+@media (min-width: 640px){
+#prive-v4-privacy .pv-track__media{margin: -2.75rem -2.75rem 2.25rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-privacy .pv-track__media{margin: -3.5rem -3.25rem 2.5rem;}
+}
+#prive-v4-privacy .pv-track__media img{width: 100%; height: 100%; object-fit: cover;}
+#prive-v4-privacy .pv-track__main > .pv-chips{margin-top: 1.5rem; max-width: 40rem;}
+@media (min-width: 1024px){
+#prive-v4-privacy .pv-track.pv-track--wide.pv-track--media{grid-template-rows: 1fr auto auto auto 1fr auto;}
+#prive-v4-privacy .pv-track--media .pv-track__media{grid-column: 1; grid-row: 1 / span 5; height: 100%; min-height: 24rem; margin: 0; aspect-ratio: auto;}
+#prive-v4-privacy .pv-track--media .pv-track__head{grid-column: 2; grid-row: 2;}
+#prive-v4-privacy .pv-track--media .pv-track__main{grid-column: 2; grid-row: 3; margin-top: 1.25rem; padding-top: 0;}
+#prive-v4-privacy .pv-track--media .pv-track__cta{grid-column: 2; grid-row: 4; align-self: start; padding-top: 2rem;}
+#prive-v4-privacy .pv-track--media .pv-facts{grid-column: 1 / -1; grid-row: 6;}
+}
+#prive-v4-privacy .pv-founder__figures{display: grid; margin-top: 2rem; border-top: 1px solid var(--pv-on-dark-line);}
+#prive-v4-privacy .pv-founder__figures li{padding: 1.25rem 0; font-size: .9375rem; line-height: 1.5; color: var(--pv-on-dark); border-bottom: 1px solid var(--pv-on-dark-line);}
+#prive-v4-privacy .pv-founder__figures .pv-figure{display: block; margin: 0 0 .5rem; font-size: 2.25rem;}
+@media (min-width: 640px){
+#prive-v4-privacy .pv-founder__figures{grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--pv-on-dark-line);}
+#prive-v4-privacy .pv-founder__figures li{padding: 1.5rem 1.25rem 1.5rem 0; border-bottom: 0;}
+#prive-v4-privacy .pv-founder__figures li + li{padding-left: 1.25rem; border-left: 1px solid var(--pv-on-dark-line);}
+}
+#prive-v4-privacy .pv-founder__role{font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .7);}
+#prive-v4-privacy .pv-gallery{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem;}
+@media (min-width: 768px){
+#prive-v4-privacy .pv-gallery{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;}
+}
+#prive-v4-privacy .pv-gallery img{width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;}
+@media (max-width: 767px){
+#prive-v4-privacy .pv-gallery--3 > :first-child{grid-column: 1 / -1;}
+#prive-v4-privacy .pv-gallery--3 > :first-child img{aspect-ratio: 3 / 2;}
+}
 
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-privacy" class="pv-root" data-page="privacy">
-<!-- Privacy Policy. Hero + prose column; body is content/legal/privacy.md via the build's markdown converter.
-     COUNSEL notes in the markdown pass through as HTML comments on purpose. -->
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
@@ -1367,8 +1425,7 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <!-- COUNSEL: Boilerplate GDPR notice for the v4 demo (blueprint Stage 1 item 4). Lists only the data flows the v4 site actually has or will have at go-live. Needs a lawyer's read, and a check that each processor below has a signed DPA, before real traffic. -->
-<p><em>Last updated: 28 September 2026</em></p>
+        <p><em>Last updated: 28 September 2026</em></p>
 <p>This policy explains what personal data Privé Academy collects through this website, why, and what you can do about it.</p>
 <h2>Who is responsible for your data</h2>
 <p>PRIVÉ d.o.o., Ulica Ivane Kobilce 27, 1000 Ljubljana, Slovenia (registration number 3872572000) is the controller for personal data collected through this website. For purchases made in USD, Prive Academy, LLC, One Gateway Center, Suite 2600, Newark, NJ 07102, United States, is a joint controller for that order.</p>
@@ -1383,20 +1440,16 @@
 <h2>Who we share it with</h2>
 <p>We use these service providers to run the website and deliver your course. Each processes your data on our instructions:</p>
 <ul><li><strong>HighLevel (LeadConnector)</strong>: website hosting, forms, booking calendar, customer records and email. United States.</li><li><strong>Stripe</strong>: card payments. Ireland and United States.</li><li><strong>Kartra</strong>: the online course platform. United States.</li><li><strong>Google</strong>: web fonts, and Google Analytics if you consent to analytics cookies. United States.</li><li><strong>Meta</strong>: advertising measurement, only if you consent to marketing cookies. Ireland and United States.</li><li><strong>Couriers</strong>: to deliver your kit. They receive your name, address and phone number.</li></ul>
-<!-- COUNSEL: GA4 and the Meta pixel aren't live yet (connections.md). Keep them listed only once they're actually installed, or keep them with "if you consent" as drafted. Google Fonts are currently loaded from Google's servers, which transfers the visitor's IP to Google; the SOP's plan is to self-host before EU launch (HIGHLEVEL-CODED-PAGE-SOP.md Part 1 step 7), after which Google drops out of this list unless GA4 is in use. -->
 <p>We don't sell your personal data.</p>
 <h2>Transfers outside the EU</h2>
 <p>Some of these providers are based in, or access data from, the United States. Where they do, we rely on the EU-US Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses.</p>
-<!-- COUNSEL: Verify DPF certification for HighLevel, Kartra, Stripe and Meta at go-live, and that SCCs are in place where not. -->
 <h2>How long we keep it</h2>
 <ul><li>Enquiries and waitlist entries: until you ask us to delete them, or 2 years after our last contact.</li><li>Orders and invoices: as long as tax and accounting law requires (10 years in Slovenia).</li><li>Course account and certificate records: for as long as your access lasts, so we can confirm your certification if asked.</li></ul>
-<!-- COUNSEL: Confirm the Slovenian accounting retention period (ZDDV-1 / ZGD-1) and whether 2 years is right for leads. -->
 <h2>Your rights</h2>
 <p>You can ask us to show you the data we hold about you, correct it, delete it, restrict or object to how we use it, or send it to you in a portable format. Where we rely on your consent, you can withdraw it at any time, for example with the unsubscribe link in any email. Write to office@prive-academy.com. We'll answer within one month.</p>
 <p>If you think we've handled your data wrongly, you can complain to the Slovenian Information Commissioner (Informacijski pooblaščenec, <a href="https://www.ip-rs.si">www.ip-rs.si</a>) or to the data protection authority where you live.</p>
 <h2>US residents</h2>
 <p>If you're in the United States, you can make the same requests described above by writing to office@prive-academy.com. We don't sell or share personal information for cross-context behavioural advertising without the consent you give through our cookie banner.</p>
-<!-- COUNSEL: Check whether any US state privacy law (e.g. CCPA/CPRA thresholds) applies to Prive Academy, LLC at its current revenue and data volume. -->
 <h2>Changes</h2>
 <p>We'll update this policy when our data practices change, and change the date at the top when we do.</p>
       </article>

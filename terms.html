@@ -736,7 +736,7 @@
 #prive-v4-terms .pv-benefits{padding: 2rem 2.25rem;}
 }
 #prive-v4-terms .pv-benefits .pv-checks{margin-top: 1.25rem; font-size: .9375rem;}
-#prive-v4-terms .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 22% 60%;}
+#prive-v4-terms .pv-split__media .pv-device-img{aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%;}
 #prive-v4-terms .pv-steps{display: grid; gap: 1.25rem;}
 @media (min-width: 1024px){
 #prive-v4-terms .pv-steps{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
@@ -761,11 +761,8 @@
 #prive-v4-terms .pv-bars__title{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
 #prive-v4-terms .pv-bars{display: grid; gap: 1.125rem; margin-top: 1.5rem;}
 #prive-v4-terms .pv-bars__row{display: grid; gap: .5rem;}
-@media (min-width: 640px){
-#prive-v4-terms .pv-bars__row{grid-template-columns: 10.5rem minmax(0, 1fr); gap: 1.25rem; align-items: center;}
-}
 #prive-v4-terms .pv-bars__area{font-size: .9375rem; font-weight: 500; line-height: 1.35; color: var(--pv-nightrider);}
-#prive-v4-terms .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem; border-left: 1.5px solid var(--pv-line-strong);}
+#prive-v4-terms .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem;}
 #prive-v4-terms .pv-bars__bar{flex: none; display: block; height: 14px; background: var(--pv-navy); border-radius: 0 4px 4px 0;}
 @media (min-width: 640px){
 #prive-v4-terms .pv-bars__bar{height: 16px;}
@@ -784,9 +781,10 @@
 #prive-v4-terms .pv-offers{grid-template-columns: repeat(3, minmax(0, 1fr));}
 }
 #prive-v4-terms .pv-offer{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
-#prive-v4-terms .pv-offer__media{display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 1.25rem; border-bottom: 1px solid var(--pv-line);}
-#prive-v4-terms .pv-offer__media img{width: 100%; height: 100%; object-fit: contain;}
-#prive-v4-terms .pv-offer__media--icon svg{width: 4.5rem; height: 4.5rem; color: var(--pv-navy);}
+#prive-v4-terms .pv-offer__media{position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-terms .pv-offer__media img{position: absolute; inset: 1.25rem; width: calc(100% - 2.5rem); height: calc(100% - 2.5rem); object-fit: contain;}
+#prive-v4-terms .pv-offer__media--icon{background: var(--pv-alice);}
+#prive-v4-terms .pv-offer__media--icon svg{width: 6rem; height: 6rem; color: var(--pv-navy);}
 #prive-v4-terms .pv-offer__body{padding: 1.5rem 1.5rem 1.75rem;}
 #prive-v4-terms .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
 #prive-v4-terms .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
@@ -1302,14 +1300,74 @@
 #prive-v4-terms .pv-cookie__actions{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;}
 #prive-v4-terms .pv-btn--consent{min-height: 2.75rem; padding: .625rem 1rem; font-size: 11.5px; color: var(--pv-navy); border: 1px solid var(--pv-navy); border-radius: 0;}
 #prive-v4-terms .pv-btn--consent::before{background: rgba(1, 53, 89, .07);}
+#prive-v4-terms .pv-chips{display: flex; flex-wrap: wrap; gap: .5rem;}
+#prive-v4-terms .pv-chips li{padding: .4375rem .875rem; font-size: .875rem; line-height: 1.4; color: var(--pv-navy); border: 1px solid var(--pv-line-strong);}
+#prive-v4-terms .pv-track--navy .pv-chips li{color: var(--pv-white); border-color: rgba(255, 255, 255, .35);}
+#prive-v4-terms .pv-chips__label{font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
+#prive-v4-terms .pv-chips__label + .pv-chips{margin-top: .75rem;}
+#prive-v4-terms .pv-split__text .pv-chips__label{margin-top: 1.75rem;}
+#prive-v4-terms .pv-step__media{margin: -2rem -1.5rem 1.75rem; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-step__media{margin: -2.5rem -2.25rem 2rem;}
+}
+#prive-v4-terms .pv-step__media img{width: 100%; height: 100%; object-fit: cover;}
+#prive-v4-terms .pv-step__media--art{position: relative; background: var(--pv-alice);}
+#prive-v4-terms .pv-step__media--art img{position: absolute; inset: 8% 0; width: 100%; height: 84%; object-fit: contain;}
+#prive-v4-terms .pv-step__text{margin-top: .75rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
+#prive-v4-terms .pv-fit-grid{display: grid; gap: 1rem;}
+@media (min-width: 768px){
+#prive-v4-terms .pv-fit-grid{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;}
+}
+#prive-v4-terms .pv-fit-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-fit-card{padding: 2.25rem 2rem;}
+}
+#prive-v4-terms .pv-fit-card svg{width: 3.25rem; height: 3.25rem; color: var(--pv-navy);}
+#prive-v4-terms .pv-fit-card p{margin-top: 1.25rem; font-size: 1rem; line-height: 1.6; color: var(--pv-nightrider);}
+#prive-v4-terms .pv-fit .pv-notfor{max-width: 46rem;}
+#prive-v4-terms .pv-offer__media--photo{overflow: hidden; background: var(--pv-alice);}
+#prive-v4-terms .pv-offer__media--photo img{inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%;}
+#prive-v4-terms .pv-track__media{align-self: stretch; margin: -2rem -1.5rem 2rem; aspect-ratio: 16 / 9; overflow: hidden;}
+@media (min-width: 640px){
+#prive-v4-terms .pv-track__media{margin: -2.75rem -2.75rem 2.25rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-track__media{margin: -3.5rem -3.25rem 2.5rem;}
+}
+#prive-v4-terms .pv-track__media img{width: 100%; height: 100%; object-fit: cover;}
+#prive-v4-terms .pv-track__main > .pv-chips{margin-top: 1.5rem; max-width: 40rem;}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-track.pv-track--wide.pv-track--media{grid-template-rows: 1fr auto auto auto 1fr auto;}
+#prive-v4-terms .pv-track--media .pv-track__media{grid-column: 1; grid-row: 1 / span 5; height: 100%; min-height: 24rem; margin: 0; aspect-ratio: auto;}
+#prive-v4-terms .pv-track--media .pv-track__head{grid-column: 2; grid-row: 2;}
+#prive-v4-terms .pv-track--media .pv-track__main{grid-column: 2; grid-row: 3; margin-top: 1.25rem; padding-top: 0;}
+#prive-v4-terms .pv-track--media .pv-track__cta{grid-column: 2; grid-row: 4; align-self: start; padding-top: 2rem;}
+#prive-v4-terms .pv-track--media .pv-facts{grid-column: 1 / -1; grid-row: 6;}
+}
+#prive-v4-terms .pv-founder__figures{display: grid; margin-top: 2rem; border-top: 1px solid var(--pv-on-dark-line);}
+#prive-v4-terms .pv-founder__figures li{padding: 1.25rem 0; font-size: .9375rem; line-height: 1.5; color: var(--pv-on-dark); border-bottom: 1px solid var(--pv-on-dark-line);}
+#prive-v4-terms .pv-founder__figures .pv-figure{display: block; margin: 0 0 .5rem; font-size: 2.25rem;}
+@media (min-width: 640px){
+#prive-v4-terms .pv-founder__figures{grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--pv-on-dark-line);}
+#prive-v4-terms .pv-founder__figures li{padding: 1.5rem 1.25rem 1.5rem 0; border-bottom: 0;}
+#prive-v4-terms .pv-founder__figures li + li{padding-left: 1.25rem; border-left: 1px solid var(--pv-on-dark-line);}
+}
+#prive-v4-terms .pv-founder__role{font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .7);}
+#prive-v4-terms .pv-gallery{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem;}
+@media (min-width: 768px){
+#prive-v4-terms .pv-gallery{grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;}
+}
+#prive-v4-terms .pv-gallery img{width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;}
+@media (max-width: 767px){
+#prive-v4-terms .pv-gallery--3 > :first-child{grid-column: 1 / -1;}
+#prive-v4-terms .pv-gallery--3 > :first-child img{aspect-ratio: 3 / 2;}
+}
 
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-terms" class="pv-root" data-page="terms">
-<!-- Terms & Conditions. Hero + prose column; body is content/legal/terms.md via the build's markdown converter.
-     COUNSEL notes in the markdown pass through as HTML comments on purpose. -->
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
@@ -1367,14 +1425,12 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <!-- COUNSEL: Boilerplate draft for the v4 demo (blueprint Stage 1 item 4). Needs a lawyer's read before real payments run. Written to FIX, not repeat, the live US T&C problem in context/products-and-pricing.md §5 (Slovenian template copied onto US customers). Open points are marked COUNSEL inline. -->
-<p><em>Last updated: 28 September 2026</em></p>
+        <p><em>Last updated: 28 September 2026</em></p>
 <p>These Terms and Conditions apply to everything you buy from Privé Academy through this website: online courses, the Privé Professional Kit that comes with them, and any related services. Please read them before you enroll. By completing a purchase you agree to them.</p>
 <h2>1. Who we are</h2>
 <p>The seller depends on the currency you pay in.</p>
 <ul><li><strong>Purchases in EUR:</strong> PRIVÉ d.o.o., Ulica Ivane Kobilce 27, 1000 Ljubljana, Slovenia. Registration number 3872572000, VAT ID SI15822940.</li><li><strong>Purchases in USD:</strong> Prive Academy, LLC, One Gateway Center, Suite 2600, Newark, NJ 07102, United States. Tax ID 61-1906986.</li></ul>
 <p>In these terms, "Privé", "we" and "us" mean whichever of these two companies you bought from. You can reach either at office@prive-academy.com.</p>
-<!-- COUNSEL: Confirm which entity owns the Stripe account connected to GHL. If one Stripe account takes both currencies, the seller-by-currency split above needs to match how Stripe settles. -->
 <h2>2. What you're buying</h2>
 <p><strong>Online course.</strong> Access to the course content, delivered through our online learning platform. Access details are sent by email when your order is confirmed. Your access is personal and can't be shared, resold or transferred.</p>
 <p><strong>Privé Professional Kit.</strong> The physical equipment and products listed in your order, including the Plamere Premium device. We ship the kit to the address you give at checkout.</p>
@@ -1385,34 +1441,26 @@
 <p>You're responsible for following the safety, hygiene and aftercare guidance taught in the course, for assessing whether each client is suitable, and for any treatment you perform.</p>
 <h2>4. Prices and payment</h2>
 <p>Prices are shown at checkout in EUR or USD and include VAT where it applies. Payment is taken by card through Stripe. We don't see or store your full card details.</p>
-<!-- COUNSEL: Add installment-plan terms here if the checkout offers one (open decision with Sandra, blueprint checkout section). -->
 <h2>5. Delivery</h2>
 <p><strong>Course access</strong> starts when your order is confirmed. Login details are emailed to the address you used at checkout.</p>
 <p><strong>The Professional Kit</strong> ships separately. We email tracking details once it's dispatched. Delivery times depend on the destination. If something arrives damaged or missing, tell us within 7 days of delivery at office@prive-academy.com with photos, and we'll put it right.</p>
-<!-- COUNSEL: Confirm the 7-day damage-reporting window is acceptable for consumers in each market. Add dispatch times per region once Sandra confirms them. -->
 <h2>6. Cancellations, withdrawal and refunds</h2>
 <p>We've written this section to be read, not skimmed. There are two parts to your order and they're treated differently.</p>
 <p><strong>The Professional Kit (physical goods).</strong> If you're a consumer, you can withdraw from the purchase of the kit within 14 days of receiving it, without giving a reason. Tell us by email at office@prive-academy.com within that period, then return the kit within 14 days of telling us. The device and products must be unused and in their original packaging. Sealed hygiene items (applicators, creams, masks, serums) can't be returned once opened, because they can't be resold for health and hygiene reasons. You pay the return shipping. We refund the part of the price that corresponds to the returned kit within 14 days of receiving it back, using your original payment method.</p>
-<!-- COUNSEL: The bundle is sold at one price. Define how the kit's share of that price is set for refunds (a stated value on the order confirmation is the cleanest). Sandra/Josip to supply the figure. -->
 <p><strong>The online course (digital content).</strong> Course access opens immediately after purchase. At checkout we ask you to agree that access starts straight away and to confirm that you understand you lose your right of withdrawal for the course content once access begins. If you haven't accessed the course yet, you can still withdraw within 14 days of purchase for a full refund of the course portion. Once your access has begun, the course portion is non-refundable.</p>
-<!-- COUNSEL: This rests on Directive 2011/83/EU Art. 16(m) as amended by the Omnibus Directive: the exception only applies with prior express consent and acknowledgment, captured at checkout (see ghl-native/checkout.md, the required consent checkbox). Also confirm how "access has begun" is evidenced (Kartra login record). -->
 <p><strong>Business customers.</strong> If you buy in the course of your business rather than as a consumer, statutory withdrawal rights don't apply. Everything else in this section does.</p>
 <p><strong>US customers.</strong> The same rules apply to purchases from Prive Academy, LLC: the kit is returnable within 14 days of receipt as described above, and the course portion is non-refundable once access has begun.</p>
-<!-- COUNSEL: US terms were previously a copy of the Slovenian template, citing the Slovenian Consumer Protection Act. Confirm New Jersey requirements (e.g. refund-policy disclosure rules) are met by the paragraph above. -->
 <h2>7. Warranty</h2>
 <p>The Plamere Premium device carries the manufacturer's warranty. In addition, you have the legal guarantee that applies where you live: for consumers in the EU, at least 2 years for goods that don't conform to the contract. If something is wrong with the device, contact us first at office@prive-academy.com and we'll arrange repair or replacement.</p>
-<!-- COUNSEL: products-and-pricing.md §5 records "6 months general / 2 years consumer / 6 years UK". Confirm the device maker's own warranty terms and whether Privé or the manufacturer is the warrantor. -->
 <h2>8. Course content and intellectual property</h2>
 <p>All course videos, texts, textbooks and materials belong to Privé or its licensors. You may use them for your own learning and professional practice. You may not copy, record, share, resell or publish them. We may suspend access if your account is shared or the content is redistributed.</p>
 <p>The digital promotional material included with the course (flyers, banners, posters, before-and-after images) is licensed to you for promoting your own practice. You may not alter it to suggest results you didn't achieve, or use it for any other business.</p>
 <h2>9. Liability</h2>
 <p>We teach the technique carefully and honestly, but we don't control how, where or on whom you perform treatments. To the extent the law allows, we're not liable for any loss arising from treatments you perform, from your failure to follow the course guidance, or from practising where you aren't permitted to.</p>
 <p>Nothing in these terms limits liability that can't be limited by law, including for death or personal injury caused by negligence, or for fraud.</p>
-<!-- COUNSEL: Review the limitation language against Slovenian consumer law and New Jersey law separately. -->
 <h2>10. Complaints and disputes</h2>
 <p>If something has gone wrong, write to us at office@prive-academy.com and we'll reply within 8 working days. If we can't resolve it together, EU consumers can contact the consumer protection authority or out-of-court dispute resolution body in their country.</p>
 <p><strong>Governing law.</strong> Purchases from PRIVÉ d.o.o. are governed by the law of Slovenia; purchases from Prive Academy, LLC by the law of the State of New Jersey. If you're a consumer, you keep the protection of the mandatory consumer laws of the country where you live.</p>
-<!-- COUNSEL: No ODR-platform link on purpose: the EU ODR platform closed on 20 July 2025 (Regulation (EU) 2024/3228). Confirm whether Slovenian law requires naming a specific ADR provider here. -->
 <h2>11. Changes to these terms</h2>
 <p>We may update these terms from time to time. The version that applies to your purchase is the one published on the day you bought.</p>
       </article>
