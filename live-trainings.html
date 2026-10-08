@@ -754,35 +754,52 @@
 #prive-v4-live-trainings .pv-result figcaption{display: flex; flex-direction: column; gap: .125rem; padding-top: .875rem;}
 #prive-v4-live-trainings .pv-result__area{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
 #prive-v4-live-trainings .pv-result__stage{font-size: .8125rem; color: var(--pv-text-muted);}
-#prive-v4-live-trainings .pv-menu-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-live-trainings .pv-bars-card{padding: 1.75rem 1.5rem 2rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
 @media (min-width: 640px){
-#prive-v4-live-trainings .pv-menu-card{padding: 2.25rem 2.5rem;}
+#prive-v4-live-trainings .pv-bars-card{padding: 2.25rem 2.5rem 2.5rem;}
 }
-#prive-v4-live-trainings .pv-menu__row{display: flex; align-items: baseline; gap: .75rem; padding-block: .875rem;}
-#prive-v4-live-trainings .pv-menu__row + .pv-menu__row{border-top: 1px solid var(--pv-line);}
-#prive-v4-live-trainings .pv-menu__area{font-weight: 500; color: var(--pv-nightrider);}
-#prive-v4-live-trainings .pv-menu__leader{flex: 1; min-width: 1.5rem; border-bottom: 1px dotted var(--pv-line-strong); transform: translateY(-.3em);}
-#prive-v4-live-trainings .pv-menu__price{flex: none; font-family: var(--pv-display); font-size: 1.3125rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
+#prive-v4-live-trainings .pv-bars__title{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-live-trainings .pv-bars{display: grid; gap: 1.125rem; margin-top: 1.5rem;}
+#prive-v4-live-trainings .pv-bars__row{display: grid; gap: .5rem;}
+@media (min-width: 640px){
+#prive-v4-live-trainings .pv-bars__row{grid-template-columns: 10.5rem minmax(0, 1fr); gap: 1.25rem; align-items: center;}
+}
+#prive-v4-live-trainings .pv-bars__area{font-size: .9375rem; font-weight: 500; line-height: 1.35; color: var(--pv-nightrider);}
+#prive-v4-live-trainings .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem; border-left: 1.5px solid var(--pv-line-strong);}
+#prive-v4-live-trainings .pv-bars__bar{flex: none; display: block; height: 14px; background: var(--pv-navy); border-radius: 0 4px 4px 0;}
+@media (min-width: 640px){
+#prive-v4-live-trainings .pv-bars__bar{height: 16px;}
+}
+#prive-v4-live-trainings .pv-bars__price{flex: none; font-family: var(--pv-display); font-size: 1.1875rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
 #prive-v4-live-trainings .pv-menu__label{margin-top: 1.25rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
 #prive-v4-live-trainings .pv-menu__basis{margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: var(--pv-text-muted);}
-@media (max-width: 380px){
-#prive-v4-live-trainings .pv-menu__row{flex-wrap: wrap;}
-#prive-v4-live-trainings .pv-menu__leader{display: none;}
-#prive-v4-live-trainings .pv-menu__price{margin-left: auto;}
-}
 #prive-v4-live-trainings .pv-fit .pv-checks{gap: 1.25rem; font-size: 1.0625rem;}
 #prive-v4-live-trainings .pv-notfor{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--pv-line-strong); color: var(--pv-nightrider);}
 #prive-v4-live-trainings .pv-notfor svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
-#prive-v4-live-trainings .pv-included > li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: 1rem; padding-block: 1.125rem; border-top: 1px solid var(--pv-line);}
-#prive-v4-live-trainings .pv-included > li:last-child{border-bottom: 1px solid var(--pv-line);}
-#prive-v4-live-trainings .pv-included > li > svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
-#prive-v4-live-trainings .pv-included strong{font-weight: 600; color: var(--pv-navy);}
-#prive-v4-live-trainings .pv-kit{display: grid; gap: .5rem 2rem; margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--pv-alice); font-size: .9375rem;}
-@media (min-width: 640px){
-#prive-v4-live-trainings .pv-kit{grid-template-columns: repeat(2, minmax(0, 1fr));}
+#prive-v4-live-trainings .pv-offers{display: grid; gap: 1.25rem;}
+@media (min-width: 768px){
+#prive-v4-live-trainings .pv-offers{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;}
 }
-#prive-v4-live-trainings .pv-kit li{position: relative; padding-left: 1.125rem; line-height: 1.6;}
-#prive-v4-live-trainings .pv-kit li::before{content: ""; position: absolute; left: 0; top: .75em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-live-trainings .pv-offers{grid-template-columns: repeat(3, minmax(0, 1fr));}
+}
+#prive-v4-live-trainings .pv-offer{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-live-trainings .pv-offer__media{display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 1.25rem; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-live-trainings .pv-offer__media img{width: 100%; height: 100%; object-fit: contain;}
+#prive-v4-live-trainings .pv-offer__media--icon svg{width: 4.5rem; height: 4.5rem; color: var(--pv-navy);}
+#prive-v4-live-trainings .pv-offer__body{padding: 1.5rem 1.5rem 1.75rem;}
+#prive-v4-live-trainings .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
+#prive-v4-live-trainings .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
+#prive-v4-live-trainings .pv-offer__body .pv-tag + .pv-offer__title{margin-top: .875rem;}
+#prive-v4-live-trainings .pv-offer--bonus{border-color: var(--pv-mustard);}
+@media (min-width: 768px){
+#prive-v4-live-trainings .pv-offer--bonus{grid-column: 1 / -1; flex-direction: row; align-items: center;}
+#prive-v4-live-trainings .pv-offer--bonus .pv-offer__media{flex: 0 0 44%; border-bottom: 0; border-right: 1px solid var(--pv-line);}
+#prive-v4-live-trainings .pv-offer--bonus .pv-offer__body{padding: 2rem 2.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-live-trainings .pv-offer--bonus .pv-offer__media{flex-basis: 33.333%;}
+}
 #prive-v4-live-trainings .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
 #prive-v4-live-trainings .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
 #prive-v4-live-trainings .pv-cta--burst{position: relative; overflow: clip;}

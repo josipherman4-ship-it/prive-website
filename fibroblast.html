@@ -754,35 +754,50 @@
 #prive-v4-fibroblast .pv-result figcaption{display: flex; flex-direction: column; gap: .125rem; padding-top: .875rem;}
 #prive-v4-fibroblast .pv-result__area{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
 #prive-v4-fibroblast .pv-result__stage{font-size: .8125rem; color: var(--pv-text-muted);}
-#prive-v4-fibroblast .pv-menu-card{padding: 1.75rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-fibroblast .pv-bars-card{padding: 1.75rem 1.5rem 2rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
 @media (min-width: 640px){
-#prive-v4-fibroblast .pv-menu-card{padding: 2.25rem 2.5rem;}
+#prive-v4-fibroblast .pv-bars-card{padding: 2.25rem 2.5rem 2.5rem;}
 }
-#prive-v4-fibroblast .pv-menu__row{display: flex; align-items: baseline; gap: .75rem; padding-block: .875rem;}
-#prive-v4-fibroblast .pv-menu__row + .pv-menu__row{border-top: 1px solid var(--pv-line);}
-#prive-v4-fibroblast .pv-menu__area{font-weight: 500; color: var(--pv-nightrider);}
-#prive-v4-fibroblast .pv-menu__leader{flex: 1; min-width: 1.5rem; border-bottom: 1px dotted var(--pv-line-strong); transform: translateY(-.3em);}
-#prive-v4-fibroblast .pv-menu__price{flex: none; font-family: var(--pv-display); font-size: 1.3125rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
+#prive-v4-fibroblast .pv-bars__title{font-size: .9375rem; font-weight: 600; color: var(--pv-navy);}
+#prive-v4-fibroblast .pv-bars{display: grid; gap: 1.125rem; margin-top: 1.5rem;}
+#prive-v4-fibroblast .pv-bars__row{display: grid; gap: .5rem;}
+#prive-v4-fibroblast .pv-bars__area{font-size: .9375rem; font-weight: 500; line-height: 1.35; color: var(--pv-nightrider);}
+#prive-v4-fibroblast .pv-bars__track{display: flex; align-items: center; gap: .75rem; padding-right: 6.25rem;}
+#prive-v4-fibroblast .pv-bars__bar{flex: none; display: block; height: 14px; background: var(--pv-navy); border-radius: 0 4px 4px 0;}
+@media (min-width: 640px){
+#prive-v4-fibroblast .pv-bars__bar{height: 16px;}
+}
+#prive-v4-fibroblast .pv-bars__price{flex: none; font-family: var(--pv-display); font-size: 1.1875rem; line-height: 1; color: var(--pv-navy); white-space: nowrap;}
 #prive-v4-fibroblast .pv-menu__label{margin-top: 1.25rem; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--pv-label);}
 #prive-v4-fibroblast .pv-menu__basis{margin-top: .5rem; font-size: .875rem; line-height: 1.6; color: var(--pv-text-muted);}
-@media (max-width: 380px){
-#prive-v4-fibroblast .pv-menu__row{flex-wrap: wrap;}
-#prive-v4-fibroblast .pv-menu__leader{display: none;}
-#prive-v4-fibroblast .pv-menu__price{margin-left: auto;}
-}
 #prive-v4-fibroblast .pv-fit .pv-checks{gap: 1.25rem; font-size: 1.0625rem;}
 #prive-v4-fibroblast .pv-notfor{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: .875rem; margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--pv-line-strong); color: var(--pv-nightrider);}
 #prive-v4-fibroblast .pv-notfor svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
-#prive-v4-fibroblast .pv-included > li{display: grid; grid-template-columns: 1.375rem minmax(0, 1fr); gap: 1rem; padding-block: 1.125rem; border-top: 1px solid var(--pv-line);}
-#prive-v4-fibroblast .pv-included > li:last-child{border-bottom: 1px solid var(--pv-line);}
-#prive-v4-fibroblast .pv-included > li > svg{width: 1.375rem; height: 1.375rem; margin-top: .2em; color: var(--pv-navy);}
-#prive-v4-fibroblast .pv-included strong{font-weight: 600; color: var(--pv-navy);}
-#prive-v4-fibroblast .pv-kit{display: grid; gap: .5rem 2rem; margin-top: 1rem; padding: 1.25rem 1.5rem; background: var(--pv-alice); font-size: .9375rem;}
-@media (min-width: 640px){
-#prive-v4-fibroblast .pv-kit{grid-template-columns: repeat(2, minmax(0, 1fr));}
+#prive-v4-fibroblast .pv-offers{display: grid; gap: 1.25rem;}
+@media (min-width: 768px){
+#prive-v4-fibroblast .pv-offers{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;}
 }
-#prive-v4-fibroblast .pv-kit li{position: relative; padding-left: 1.125rem; line-height: 1.6;}
-#prive-v4-fibroblast .pv-kit li::before{content: ""; position: absolute; left: 0; top: .75em; width: .375rem; height: 1.5px; background: var(--pv-navy);}
+@media (min-width: 1024px){
+#prive-v4-fibroblast .pv-offers{grid-template-columns: repeat(3, minmax(0, 1fr));}
+}
+#prive-v4-fibroblast .pv-offer{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
+#prive-v4-fibroblast .pv-offer__media{position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-fibroblast .pv-offer__media img{position: absolute; inset: 1.25rem; width: calc(100% - 2.5rem); height: calc(100% - 2.5rem); object-fit: contain;}
+#prive-v4-fibroblast .pv-offer__media--icon{background: var(--pv-alice);}
+#prive-v4-fibroblast .pv-offer__media--icon svg{width: 6rem; height: 6rem; color: var(--pv-navy);}
+#prive-v4-fibroblast .pv-offer__body{padding: 1.5rem 1.5rem 1.75rem;}
+#prive-v4-fibroblast .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
+#prive-v4-fibroblast .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
+#prive-v4-fibroblast .pv-offer__body .pv-tag + .pv-offer__title{margin-top: .875rem;}
+#prive-v4-fibroblast .pv-offer--bonus{border-color: var(--pv-mustard);}
+@media (min-width: 768px){
+#prive-v4-fibroblast .pv-offer--bonus{grid-column: 1 / -1; flex-direction: row; align-items: center;}
+#prive-v4-fibroblast .pv-offer--bonus .pv-offer__media{flex: 0 0 44%; border-bottom: 0; border-right: 1px solid var(--pv-line);}
+#prive-v4-fibroblast .pv-offer--bonus .pv-offer__body{padding: 2rem 2.5rem;}
+}
+@media (min-width: 1024px){
+#prive-v4-fibroblast .pv-offer--bonus .pv-offer__media{flex-basis: 33.333%;}
+}
 #prive-v4-fibroblast .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
 #prive-v4-fibroblast .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
 #prive-v4-fibroblast .pv-cta--burst{position: relative; overflow: clip;}
@@ -1339,8 +1354,8 @@
   <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-sales-title">
     <div class="pv-container pv-sales-hero__grid">
       <div>
-        <h1 class="pv-sales-hero__title" id="pv-sales-title">Plasma Fibroblast Certification Course by the Master Trainer Who Pioneered the Treatment in Europe</h1>
-        <p class="pv-sales-hero__sub">With structured training, a professional device, and ongoing support from your first module to your first client.</p>
+        <h1 class="pv-sales-hero__title" id="pv-sales-title">Plasma Fibroblast Certification Course</h1>
+        <p class="pv-sales-hero__sub">Taught by the Master Trainer who pioneered the treatment in Europe. Structured training, a professional device and ongoing support, from your first module to your first client.</p>
         <ul class="pv-checks">
           <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Specialize in a premium treatment that clients are already looking for.</span></li>
           <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Practice at your own pace with real trainer feedback so you know you're doing it right.</span></li>
@@ -1470,27 +1485,16 @@
     </div>
   </section>
 
-  <!-- 4. The Device [B]. No FDA language anywhere (claim-rules section 1, row 2). -->
+  <!-- 4. The Device [B]. No FDA language anywhere (claim-rules section 1, row 2).
+       v5 2026-10-08: copy cut from four paragraphs plus a benefits list to one paragraph (Josip: cut by 80%). -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-device-title">
-    <div class="pv-container pv-split pv-split--top">
+    <div class="pv-container pv-split">
       <div class="pv-split__text">
         <h2 class="pv-h2" id="pv-device-title">The device we put in your hands is the same device we use in our own practice.</h2>
-        <p>Every Privé student trains on, and keeps, the Plamere Premium: a professional-grade device built for daily use, with a rechargeable battery and interchangeable attachments. It's the same device our trainers work with in their own practice, and the one this course is taught on.</p>
-        <p>What makes this more than an off-the-shelf setup is the applicator paired with it. Samo designed the single-use tips this course is built around: copper-coated for consistent conductivity, with a rounded 0.5mm point noticeably thinner than most needles on the market. That precision is what lets you work at lower, more controlled settings. The protocol you learn in this course is built around that exact device-and-applicator pairing.</p>
-        <p>The Plamere Premium is CE-marked. A CE mark covers the device. It doesn't decide who may perform the treatment where you work, so confirm your local requirements and your insurer before you treat clients.</p>
-        <p>Most of what's sold as a plasma pen comes with no way to know what it actually delivers. Technique doesn't transfer to an unknown device. Different pens produce different energy output and precision, even when the settings look the same. What you learn on the Plamere in this course applies to the Plamere. It doesn't apply to a device whose output you can't verify.</p>
+        <p>You train on, and keep, the Plamere Premium: a CE-marked professional device built for daily use. It's paired with the single-use applicator Samo designed, a 0.5mm copper-coated tip for lower, more controlled settings.</p>
       </div>
       <div class="pv-split__media">
         <img class="pv-device-img" src="images/v4-course-device.jpg" alt="A Plamere Premium pen in use on a client's cheek, a frame from the Privé course" width="1400" height="743" loading="lazy" decoding="async">
-        <div class="pv-benefits">
-          <h3 class="pv-h3">What This Means For You</h3>
-          <ul class="pv-checks">
-            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A genuine Plamere Premium, the same device our trainers use themselves</span></li>
-            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Built for daily professional use</span></li>
-            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>CE-marked, with documentation behind the claim</span></li>
-            <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Consistent, adjustable output: the same technique gives you the same treatment, every time</span></li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
@@ -1658,24 +1662,27 @@
         <p class="pv-lead">Fibroblast isn't permanent. It needs maintenance. But for practitioners with a proven track record, you can charge the prices we charge our own clients.</p>
       </div>
       <div>
-        <div class="pv-menu-card">
-          <ul class="pv-menu" aria-label="Privé Studio fibroblast treatment prices">
-            <li class="pv-menu__row"><span class="pv-menu__area">Upper eyelids</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">€400</span></li>
+        <!-- v5 2026-10-08: the menu as a bar chart (Josip). Same seven prices, sorted high to low; every bar carries its
+             value at the tip, so nothing hides behind hover. Not the legacy income graph: claim-rules section 3. -->
+        <figure class="pv-bars-card">
+          <figcaption class="pv-bars__title">Fibroblast price per treatment area</figcaption>
+          <ul class="pv-bars" aria-label="Privé Studio fibroblast treatment prices">
+            <li class="pv-bars__row"><span class="pv-bars__area">Full face</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 100%" aria-hidden="true"></span><span class="pv-bars__price">from €800</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Upper and lower eyelids</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">€600</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Upper and lower eyelids</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 75%" aria-hidden="true"></span><span class="pv-bars__price">€600</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Forehead lines</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">€450</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Lower face (jawline lift)</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 75%" aria-hidden="true"></span><span class="pv-bars__price">€600</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Lower face (jawline lift)</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">€600</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Neck</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 75%" aria-hidden="true"></span><span class="pv-bars__price">€600</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Neck</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">€600</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Forehead lines</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 56%" aria-hidden="true"></span><span class="pv-bars__price">€450</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Full face</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">from €800</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Upper eyelids</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 50%" aria-hidden="true"></span><span class="pv-bars__price">€400</span></span></li>
 
-<li class="pv-menu__row"><span class="pv-menu__area">Abdomen</span><span class="pv-menu__leader" aria-hidden="true"></span><span class="pv-menu__price">from €300</span></li>
+<li class="pv-bars__row"><span class="pv-bars__area">Abdomen</span><span class="pv-bars__track"><span class="pv-bars__bar" style="width: 38%" aria-hidden="true"></span><span class="pv-bars__price">from €300</span></span></li>
 
           </ul>
-        </div>
+        </figure>
         <p class="pv-menu__label">Privé Studio, Zagreb. Our own treatment menu, 2026.</p>
         <p class="pv-menu__basis">What you charge depends on your market, your experience and the rules where you work.</p>
       </div>
@@ -1829,35 +1836,68 @@
     </div>
   </section>
 
-  <!-- 11. What's Included [B]. Product names only, no claims about what the aftercare does (claim-rules section 1, row 16). -->
+  <!-- 11. What's Included [B] as a graphic offer stack (v5 2026-10-08, Josip's review pt. 3). Product visuals are cropped
+       from the old site's offer banners (brand-assets/site-photos/landing-graphics/offer-stack/), banner text left out.
+       Product names only, no claims about what the aftercare does (claim-rules section 1, row 16). No prices (row 11). -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-included-title">
-    <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
-      <header class="pv-section-head pv-sticky lg:col-span-4">
+    <div class="pv-container">
+      <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-included-title">Here's What You Get</h2>
       </header>
-      <ul class="pv-included lg:col-span-8">
-        <!-- CONFIRM: 11-hour figure pending Sandra -->
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>11 hours of course content (basic and advanced course combined).</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>4 hours of filmed live treatment demonstrations.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A one-on-one onboarding call with one of our Master Trainers: guidance through the learning process, plus tips on performing the treatment and getting the best results.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Privé Professional Kit</strong>, including:
-            <ul class="pv-kit">
-              <li>Plamere Premium device + an additional battery</li>
-              <li>After-care products: sets #1, #2, and #3</li>
-              <li>1x pre-treatment cream</li>
-              <li>3x pre-treatment sensitive creams</li>
-              <li>10x Privé practice/bent applicators</li>
-              <li>3x beta-glucan masks</li>
-              <li>1x beta-glucan serum</li>
-              <li>1x white skin pencil</li>
-            </ul>
-          </div></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Digital textbook.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Advanced Fibroblast Specialist certificate.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Digital promotional material: flyers, banners, posters, and before/after photos.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Privé Academy specialist t-shirt.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Neck strap.</span></li>
-        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lifetime access to course content and the Privé community.</span></li>
+      <ul class="pv-block pv-offers">
+        <li class="pv-offer">
+          <div class="pv-offer__media"><img src="images/v4-offer-course-app.jpg" alt="The Privé online course open on a tablet and a phone" width="360" height="354" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">The Online Course</h3>
+            <!-- CONFIRM: 11-hour figure pending Sandra -->
+            <p>11 hours of course content, basic and advanced combined, plus 4 hours of filmed live treatment demonstrations. Lifetime access to the course and the Privé community.</p>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <div class="pv-offer__media pv-offer__media--icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="28" height="22" rx="2"/><path d="M33 19.5l10-5.5v20l-10-5.5"/><circle cx="19" cy="20" r="4.5"/><path d="M11.5 33c1.2-4.4 4-6.6 7.5-6.6s6.3 2.2 7.5 6.6"/></svg></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">1:1 Onboarding Call</h3>
+            <p>With one of our Master Trainers: how to work through the course, plus tips on performing the treatment and getting the best results.</p>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <div class="pv-offer__media"><img src="images/v4-offer-professional-kit.jpg" alt="The Privé Professional Kit box with the Plamere Premium pen and applicator sleeves" width="650" height="410" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">Privé Professional Kit</h3>
+            <p>The Plamere Premium with an additional battery, 10 Privé practice/bent applicators, pre-treatment creams, 3 beta-glucan masks, a beta-glucan serum and a white skin pencil.</p>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <div class="pv-offer__media"><img src="images/v4-offer-after-care.jpg" alt="Privé After Care #1, #2 and #3 bottles and tubes with their boxes" width="720" height="364" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">After Care Sets #1, #2 &amp; #3</h3>
+            <p>Three full Privé After Care sets, packed in your kit.</p>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <div class="pv-offer__media"><img src="images/v4-offer-training-material.jpg" alt="Privé training material: textbook, specialist t-shirt, neck strap, product flyers and pre-treatment creams" width="775" height="435" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">Training Material</h3>
+            <p>Digital textbook, promotional material (flyers, banners, posters and before/after photos), a Privé Academy specialist t-shirt and a neck strap.</p>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <!-- CONFIRM (claim-rules section 5): the certificate artwork carries a small CPD seal; confirm Privé's CPD membership is current before launch.
+               The artwork also reads "Certified Fibroblast Specialist" while the course names it "Advanced Fibroblast Specialist". -->
+          <div class="pv-offer__media"><img src="images/v4-offer-certificate.jpg" alt="A sample Privé Fibroblast Specialist certificate" width="320" height="440" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">Advanced Fibroblast Specialist Certificate</h3>
+            <p>Earned when your trainer has reviewed your practical results and confirmed you're ready to treat clients.</p>
+          </div>
+        </li>
+        <li class="pv-offer pv-offer--bonus">
+          <div class="pv-offer__media"><img src="images/v4-offer-soft-lifting.jpg" alt="Two close-ups of a Plamere Premium pen with a soft-lifting attachment during treatment" width="500" height="324" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <p class="pv-tag">Bonus</p>
+            <h3 class="pv-offer__title">Plasma Soft-Lifting</h3>
+            <p>How to use the Plamere Premium's additional attachments together with the serums.</p>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
