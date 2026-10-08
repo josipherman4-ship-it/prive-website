@@ -725,7 +725,7 @@
 #prive-v4-fibroblast .pv-trainers-pair{display: grid; gap: 3.5rem;}
 @media (min-width: 768px){
 #prive-v4-fibroblast .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
-#prive-v4-fibroblast .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-fibroblast .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; align-content: start;}
 }
 @media (min-width: 1024px){
 #prive-v4-fibroblast .pv-trainers-pair{gap: 5rem;}
@@ -890,7 +890,7 @@
 @media (min-width: 1024px){
 #prive-v4-fibroblast .pv-trainer{gap: 5rem;}
 }
-#prive-v4-fibroblast .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-fibroblast .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong); background: var(--pv-alice);}
 #prive-v4-fibroblast .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
 #prive-v4-fibroblast .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
@@ -1335,16 +1335,8 @@
 <main id="pv-main">
 
   <!-- 1. Hero [B] + lead form [D] -->
+  <!-- v5 2026-10-06: dashed sunburst rays removed from this hero (Josip's review). Grain stays. -->
   <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-sales-title">
-    <svg class="pv-burst" viewBox="0 0 1200 600" width="1200" height="600" fill="none" aria-hidden="true" focusable="false">
-  <g stroke="#fff" stroke-opacity=".17" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="22 11">
-    <line x1="749" y1="584" x2="1187" y2="538"/><line x1="743" y1="554" x2="1161" y2="418"/><line x1="730" y1="525" x2="1111" y2="305"/><line x1="711" y1="500" x2="1038" y2="205"/><line x1="688" y1="479" x2="947" y2="123"/><line x1="661" y1="463" x2="840" y2="61"/><line x1="631" y1="453" x2="723" y2="23"/><line x1="600" y1="450" x2="600" y2="10"/><line x1="569" y1="453" x2="477" y2="23"/><line x1="539" y1="463" x2="360" y2="61"/><line x1="512" y1="479" x2="253" y2="123"/><line x1="489" y1="500" x2="162" y2="205"/><line x1="470" y1="525" x2="89" y2="305"/><line x1="457" y1="554" x2="39" y2="418"/><line x1="451" y1="584" x2="13" y2="538"/>
-  </g>
-  <g stroke="#fff" stroke-opacity=".12" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 10 30 10">
-    <line x1="786" y1="560" x2="1060" y2="502"/><line x1="774" y1="523" x2="1029" y2="409"/><line x1="754" y1="488" x2="980" y2="324"/><line x1="727" y1="459" x2="914" y2="251"/><line x1="695" y1="435" x2="835" y2="193"/><line x1="659" y1="419" x2="745" y2="153"/><line x1="620" y1="411" x2="649" y2="133"/><line x1="580" y1="411" x2="551" y2="133"/><line x1="541" y1="419" x2="455" y2="153"/><line x1="505" y1="435" x2="365" y2="193"/><line x1="473" y1="459" x2="286" y2="251"/><line x1="446" y1="488" x2="220" y2="324"/><line x1="426" y1="523" x2="171" y2="409"/><line x1="414" y1="560" x2="140" y2="502"/>
-  </g>
-</svg>
-
     <div class="pv-container pv-sales-hero__grid">
       <div>
         <p class="pv-eyebrow">1,000+ Specialists Trained</p>
@@ -1397,15 +1389,15 @@
       <header class="pv-section-head">
         <p class="pv-eyebrow">The Technique</p>
         <h2 class="pv-h2" id="pv-technique-title">Fibroblast Skin-Tightening Is One Of The Leading Natural Anti-Aging Treatments In The World.</h2>
-        <p class="pv-lead">The technique works by creating a small, controlled electric arc that stimulates the skin to produce new collagen and elastin fibres, causing the treated area to visibly contract and tighten over time. It's not a laser, and it's not an injectable. It's a targeted, non-invasive stimulation of your client's own skin.</p>
+        <p class="pv-lead">Precise points of plasma stimulate the skin to produce new collagen and elastin, so the treated area visibly tightens over time. No laser, no injectables.</p>
       </header>
       <!-- Stage graphics: the three skin cross-sections from the live site's "How Fibroblast-Skin Tightening Works?" block (2026-10-03). -->
       <ol class="pv-block pv-stages">
         <li class="pv-stage">
-          <img class="pv-stage__img" src="images/v4-skin-stage-1.jpg" alt="Illustration: a plasma pen's micro-arc touches the upper layer of the skin, above the collagen fibres and fibroblast cells beneath it" width="1200" height="641" loading="lazy" decoding="async">
+          <img class="pv-stage__img" src="images/v4-skin-stage-1.jpg" alt="Illustration: a precise point of plasma touches the upper layer of the skin, above the collagen fibres and fibroblast cells beneath it" width="1200" height="641" loading="lazy" decoding="async">
           <div class="pv-stage__body">
             <p class="pv-stage__label">Stage One</p>
-            <h3 class="pv-h3 pv-stage__title">Controlled Micro-Arc</h3>
+            <h3 class="pv-h3 pv-stage__title">Controlled Plasma Point</h3>
             <p>A precise, superficial point of contact with the upper dermal layer transmits heat to the lower levels of the skin, triggering the body's natural repair response.</p>
           </div>
         </li>
@@ -1464,6 +1456,7 @@
 </article>
 
         <!-- Trainer profile: Samo Sambol (sales page §3, content/sales-page-copy.md). Pairs with trainer-sandra.
+     v5 2026-10-06: bio absorbs the best of the home Founder section, which was cut.
      The cutout's hard edge disappears on alice, same as Sandra's alice studio backdrop. -->
 <article class="pv-trainer">
   <div class="pv-trainer__media">
@@ -1472,7 +1465,7 @@
   <div class="pv-trainer__body">
     <h3 class="pv-trainer__name">Samo Sambol</h3>
     <p class="pv-trainer__role">Founder &amp; Master Trainer</p>
-    <p class="pv-trainer__bio">Samo founded Privé in 2010 and introduced and popularized plasma fibroblast across the European beauty market. You'll meet him on screen in the course.</p>
+    <p class="pv-trainer__bio">Samo founded Privé in Ljubljana in 2010, and the academy first made its name teaching microblading. He then introduced and popularized plasma fibroblast across the European beauty market, and rebuilt Privé around teaching it properly. You'll meet him on screen in the course.</p>
   </div>
 </article>
 
@@ -1979,8 +1972,7 @@
             <span class="pv-faq__icon" aria-hidden="true"></span>
           </summary>
           <div class="pv-faq__a">
-            
-            <p>Here it is in full, so there are no surprises later: the device portion of your enrollment is refundable. The course content is non-refundable once purchased. Online courses are excluded from the EU 14-day withdrawal right once you've started the course or received the materials. Full terms are in our <a href="terms.html">Terms &amp; Conditions</a>.</p>
+                        <p>Here it is in full, so there are no surprises later: the device portion of your enrollment is refundable. The course content is non-refundable once purchased. Online courses are excluded from the EU 14-day withdrawal right once you've started the course or received the materials. Full terms are in our <a href="terms.html">Terms &amp; Conditions</a>.</p>
           </div>
         </details>
       </div>
@@ -2057,7 +2049,7 @@
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
-        <li><address><span class="pv-footer__label">Europe</span>Celovška cesta 111<br>1000 Ljubljana, Slovenia</address></li>
+        <li><address><span class="pv-footer__label">Europe</span>Ulica Ivane Kobilce 27<br>1000 Ljubljana, Slovenia</address></li>
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
@@ -2065,9 +2057,9 @@
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
-        <li><a class="pv-footer__link" href="mailto:info@prive-academy.com">info@prive-academy.com</a></li>
+        <li><a class="pv-footer__link" href="mailto:office@prive-academy.com">office@prive-academy.com</a></li>
         <li><span class="pv-footer__label">US</span><a class="pv-footer__link" href="tel:+14243601492">+1 (424) 360-1492</a></li>
-        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></li>
+        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:+385916393017">+385 91 639 3017</a></li>
       </ul>
     </div>
   </div>

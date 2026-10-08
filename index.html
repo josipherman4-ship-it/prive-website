@@ -725,7 +725,7 @@
 #prive-v4-home .pv-trainers-pair{display: grid; gap: 3.5rem;}
 @media (min-width: 768px){
 #prive-v4-home .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
-#prive-v4-home .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-home .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; align-content: start;}
 }
 @media (min-width: 1024px){
 #prive-v4-home .pv-trainers-pair{gap: 5rem;}
@@ -890,7 +890,7 @@
 @media (min-width: 1024px){
 #prive-v4-home .pv-trainer{gap: 5rem;}
 }
-#prive-v4-home .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-home .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong); background: var(--pv-alice);}
 #prive-v4-home .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
 #prive-v4-home .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
@@ -1334,11 +1334,11 @@
 
   <!-- 1. Hero (blueprint copy + copy deck change 8: one button, one text link).
        Banner photo (2026-10-03): a band on top below lg, the right side of the hero from lg.
-       1280px source, so it upscales on wide screens until Josip supplies a larger export. -->
+       v5 2026-10-06: Josip's sharpened 2560px export replaces the 1280px source that upscaled on wide screens. -->
   <section class="pv-hero pv-grain" aria-labelledby="pv-hero-title">
     <div class="pv-hero__main">
       <div class="pv-hero__media">
-        <img src="images/v4-hero-banner.jpg" alt="" width="1280" height="512" fetchpriority="high" decoding="async">
+        <img src="images/v4-hero-banner.jpg" alt="" width="2560" height="1024" fetchpriority="high" decoding="async">
       </div>
       <div class="pv-container pv-hero__body">
         <div class="pv-hero__copy">
@@ -1372,7 +1372,7 @@
         <article class="pv-track pv-track--navy">
           <p class="pv-tag pv-tag--inverse">Enrolling now</p>
           <h3 class="pv-track__title">Fibroblast Education</h3>
-          <p class="pv-track__text">Plasma fibroblast tightens the skin with a small, controlled electric arc, without surgery. You learn the science, the technique and the judgment to know who is a good candidate, on the Plamere Premium device you keep.</p>
+          <p class="pv-track__text">Plasma fibroblast tightens the skin with precise points of plasma, without surgery. You learn the science, the technique and the judgment to know who is a good candidate, on the Plamere Premium device you keep.</p>
           <p class="pv-track__outcome"><strong>The outcome:</strong> a premium skin-tightening treatment on your menu, and a certificate you earn when a Master Trainer has reviewed your results.</p>
           <div class="pv-track__cta">
             <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore Fibroblast Certification</a>
@@ -1391,14 +1391,14 @@
     </div>
   </section>
 
-  <!-- 4. Our Trainers (Sandra on Home; Samo has the Founder section) -->
+  <!-- 4. Our Trainers. v5 2026-10-06: Samo added next to Sandra, Founder section (7) cut and its story folded into his bio. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-trainers-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <p class="pv-eyebrow">Our Trainers</p>
-        <h2 class="pv-h2" id="pv-trainers-title">Taught By A Trainer Who Still Treats Clients Every Day</h2>
+        <h2 class="pv-h2" id="pv-trainers-title">The Trainers Behind 1,000+ Privé Specialists</h2>
       </header>
-      <div class="pv-block">
+      <div class="pv-block pv-trainers-pair">
         <!-- Trainer profile: Sandra Bijader (copy deck §1 Our Trainers). Self-contained so the
      sales page can place it next to a trainer-samo partial under its own heading.
      Her photo backdrop is alice (#f0f9ff), so it reads as a cutout on an alice section. -->
@@ -1410,6 +1410,20 @@
     <h3 class="pv-trainer__name">Sandra Bijader</h3>
     <p class="pv-trainer__role">Master Trainer</p>
     <p class="pv-trainer__bio">Sandra has been with Privé for 10 years. A cosmetician and permanent-makeup artist by background, she treats clients in her own practice every day, on the same Plamere Premium our students train on. Students travel to learn from her: her class of 15 in Istanbul drew practitioners from several countries.</p>
+  </div>
+</article>
+
+        <!-- Trainer profile: Samo Sambol (sales page §3, content/sales-page-copy.md). Pairs with trainer-sandra.
+     v5 2026-10-06: bio absorbs the best of the home Founder section, which was cut.
+     The cutout's hard edge disappears on alice, same as Sandra's alice studio backdrop. -->
+<article class="pv-trainer">
+  <div class="pv-trainer__media">
+    <img src="images/v4-samo.webp" alt="Samo Sambol, founder and Master Trainer at Privé Academy" width="1400" height="1399" loading="lazy" decoding="async">
+  </div>
+  <div class="pv-trainer__body">
+    <h3 class="pv-trainer__name">Samo Sambol</h3>
+    <p class="pv-trainer__role">Founder &amp; Master Trainer</p>
+    <p class="pv-trainer__bio">Samo founded Privé in Ljubljana in 2010, and the academy first made its name teaching microblading. He then introduced and popularized plasma fibroblast across the European beauty market, and rebuilt Privé around teaching it properly. You'll meet him on screen in the course.</p>
   </div>
 </article>
 
@@ -1595,26 +1609,6 @@
     </div>
   </section>
 
-  <!-- 7. Founder Intro -->
-  <!-- UNSOURCED (copy deck §1): the blueprint asks for Samo's discovery story. The draft sticks to sourced facts until Samo supplies the anecdote. -->
-  <section class="pv-founder pv-surface-navy pv-grain" aria-labelledby="pv-founder-title">
-    <div class="pv-container pv-founder__grid">
-      <div class="pv-founder__media">
-        <img src="images/v4-samo.webp" alt="Samo Sambol, founder and CEO of Privé Academy" width="1400" height="1399" loading="lazy" decoding="async">
-      </div>
-      <div class="pv-founder__text">
-        <p class="pv-eyebrow">Our Founder</p>
-        <h2 class="pv-h2" id="pv-founder-title">Samo Sambol</h2>
-        <p class="pv-lead">Samo opened Privé Academy in Ljubljana in December 2010, and the academy first made its name teaching microblading. Then he turned to a newer technique: plasma fibroblast. He became the Master Trainer who introduced and popularized it across the European beauty market, and rebuilt Privé around teaching it properly.</p>
-        <p class="pv-lead">Today, more than 1,000 specialists have trained with Privé.</p>
-        <p class="pv-founder__sign">
-          <span class="pv-founder__sign-name">Samo Sambol</span>
-          <span class="pv-founder__sign-role">Founder &amp; CEO, Privé Academy</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- 8. Treatments redirect card (same format as Shop, with two healed results) -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-treat-title">
     <div class="pv-container">
@@ -1654,7 +1648,7 @@
 <dl class="pv-contact-list">
   <div>
     <dt>Email</dt>
-    <dd><a href="mailto:info@prive-academy.com">info@prive-academy.com</a></dd>
+    <dd><a href="mailto:office@prive-academy.com">office@prive-academy.com</a></dd>
   </div>
   <div>
     <dt>United States</dt>
@@ -1662,7 +1656,7 @@
   </div>
   <div>
     <dt>Europe</dt>
-    <dd><a href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></dd>
+    <dd><a href="tel:+385916393017">+385 91 639 3017</a></dd>
   </div>
   <div>
     <dt>Offices</dt>
@@ -1772,7 +1766,7 @@
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
-        <li><address><span class="pv-footer__label">Europe</span>Celovška cesta 111<br>1000 Ljubljana, Slovenia</address></li>
+        <li><address><span class="pv-footer__label">Europe</span>Ulica Ivane Kobilce 27<br>1000 Ljubljana, Slovenia</address></li>
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
@@ -1780,9 +1774,9 @@
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
-        <li><a class="pv-footer__link" href="mailto:info@prive-academy.com">info@prive-academy.com</a></li>
+        <li><a class="pv-footer__link" href="mailto:office@prive-academy.com">office@prive-academy.com</a></li>
         <li><span class="pv-footer__label">US</span><a class="pv-footer__link" href="tel:+14243601492">+1 (424) 360-1492</a></li>
-        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:[needs: euPhoneTel]">[needs: euPhone]</a></li>
+        <li><span class="pv-footer__label">EU</span><a class="pv-footer__link" href="tel:+385916393017">+385 91 639 3017</a></li>
       </ul>
     </div>
   </div>
