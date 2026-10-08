@@ -725,7 +725,7 @@
 #prive-v4-privacy .pv-trainers-pair{display: grid; gap: 3.5rem;}
 @media (min-width: 768px){
 #prive-v4-privacy .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
-#prive-v4-privacy .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-privacy .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; align-content: start;}
 }
 @media (min-width: 1024px){
 #prive-v4-privacy .pv-trainers-pair{gap: 5rem;}
@@ -890,7 +890,7 @@
 @media (min-width: 1024px){
 #prive-v4-privacy .pv-trainer{gap: 5rem;}
 }
-#prive-v4-privacy .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-privacy .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong); background: var(--pv-alice);}
 #prive-v4-privacy .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
 #prive-v4-privacy .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
@@ -1291,6 +1291,8 @@
 </head>
 <body>
 <div id="prive-v4-privacy" class="pv-root" data-page="privacy">
+<!-- Privacy Policy. Hero + prose column; body is content/legal/privacy.md via the build's markdown converter.
+     COUNSEL notes in the markdown pass through as HTML comments on purpose. -->
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
@@ -1341,7 +1343,6 @@
 </svg>
 
     <div class="pv-container pv-page-hero__inner">
-      <p class="pv-eyebrow">Legal</p>
       <h1 class="pv-page-hero__title" id="pv-legal-title">Privacy Policy</h1>
     </div>
   </section>
@@ -1349,7 +1350,8 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <p><em>Last updated: 28 September 2026</em></p>
+        <!-- COUNSEL: Boilerplate GDPR notice for the v4 demo (blueprint Stage 1 item 4). Lists only the data flows the v4 site actually has or will have at go-live. Needs a lawyer's read, and a check that each processor below has a signed DPA, before real traffic. -->
+<p><em>Last updated: 28 September 2026</em></p>
 <p>This policy explains what personal data Privé Academy collects through this website, why, and what you can do about it.</p>
 <h2>Who is responsible for your data</h2>
 <p>PRIVÉ d.o.o., Ulica Ivane Kobilce 27, 1000 Ljubljana, Slovenia (registration number 3872572000) is the controller for personal data collected through this website. For purchases made in USD, Prive Academy, LLC, One Gateway Center, Suite 2600, Newark, NJ 07102, United States, is a joint controller for that order.</p>
@@ -1364,16 +1366,20 @@
 <h2>Who we share it with</h2>
 <p>We use these service providers to run the website and deliver your course. Each processes your data on our instructions:</p>
 <ul><li><strong>HighLevel (LeadConnector)</strong>: website hosting, forms, booking calendar, customer records and email. United States.</li><li><strong>Stripe</strong>: card payments. Ireland and United States.</li><li><strong>Kartra</strong>: the online course platform. United States.</li><li><strong>Google</strong>: web fonts, and Google Analytics if you consent to analytics cookies. United States.</li><li><strong>Meta</strong>: advertising measurement, only if you consent to marketing cookies. Ireland and United States.</li><li><strong>Couriers</strong>: to deliver your kit. They receive your name, address and phone number.</li></ul>
+<!-- COUNSEL: GA4 and the Meta pixel aren't live yet (connections.md). Keep them listed only once they're actually installed, or keep them with "if you consent" as drafted. Google Fonts are currently loaded from Google's servers, which transfers the visitor's IP to Google; the SOP's plan is to self-host before EU launch (HIGHLEVEL-CODED-PAGE-SOP.md Part 1 step 7), after which Google drops out of this list unless GA4 is in use. -->
 <p>We don't sell your personal data.</p>
 <h2>Transfers outside the EU</h2>
 <p>Some of these providers are based in, or access data from, the United States. Where they do, we rely on the EU-US Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses.</p>
+<!-- COUNSEL: Verify DPF certification for HighLevel, Kartra, Stripe and Meta at go-live, and that SCCs are in place where not. -->
 <h2>How long we keep it</h2>
 <ul><li>Enquiries and waitlist entries: until you ask us to delete them, or 2 years after our last contact.</li><li>Orders and invoices: as long as tax and accounting law requires (10 years in Slovenia).</li><li>Course account and certificate records: for as long as your access lasts, so we can confirm your certification if asked.</li></ul>
+<!-- COUNSEL: Confirm the Slovenian accounting retention period (ZDDV-1 / ZGD-1) and whether 2 years is right for leads. -->
 <h2>Your rights</h2>
 <p>You can ask us to show you the data we hold about you, correct it, delete it, restrict or object to how we use it, or send it to you in a portable format. Where we rely on your consent, you can withdraw it at any time, for example with the unsubscribe link in any email. Write to office@prive-academy.com. We'll answer within one month.</p>
 <p>If you think we've handled your data wrongly, you can complain to the Slovenian Information Commissioner (Informacijski pooblaščenec, <a href="https://www.ip-rs.si">www.ip-rs.si</a>) or to the data protection authority where you live.</p>
 <h2>US residents</h2>
 <p>If you're in the United States, you can make the same requests described above by writing to office@prive-academy.com. We don't sell or share personal information for cross-context behavioural advertising without the consent you give through our cookie banner.</p>
+<!-- COUNSEL: Check whether any US state privacy law (e.g. CCPA/CPRA thresholds) applies to Prive Academy, LLC at its current revenue and data volume. -->
 <h2>Changes</h2>
 <p>We'll update this policy when our data practices change, and change the date at the top when we do.</p>
       </article>

@@ -24,7 +24,7 @@
 :where(#prive-v4-live-trainings) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
 
 /* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-live-trainings ---- */
-#prive-v4-live-trainings,#prive-v4-live-trainings *,#prive-v4-live-trainings :after,#prive-v4-live-trainings :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-live-trainings .fixed{position:fixed}#prive-v4-live-trainings .hidden{display:none}#prive-v4-live-trainings .whitespace-nowrap{white-space:nowrap}
+#prive-v4-live-trainings,#prive-v4-live-trainings *,#prive-v4-live-trainings :after,#prive-v4-live-trainings :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-live-trainings .fixed{position:fixed}#prive-v4-live-trainings .hidden{display:none}
 
 /* ---- components (src/styles/components.css) ---- */
 #prive-v4-live-trainings{--pv-navy: #013559;
@@ -725,7 +725,7 @@
 #prive-v4-live-trainings .pv-trainers-pair{display: grid; gap: 3.5rem;}
 @media (min-width: 768px){
 #prive-v4-live-trainings .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
-#prive-v4-live-trainings .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-live-trainings .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; align-content: start;}
 }
 @media (min-width: 1024px){
 #prive-v4-live-trainings .pv-trainers-pair{gap: 5rem;}
@@ -890,7 +890,7 @@
 @media (min-width: 1024px){
 #prive-v4-live-trainings .pv-trainer{gap: 5rem;}
 }
-#prive-v4-live-trainings .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-live-trainings .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong); background: var(--pv-alice);}
 #prive-v4-live-trainings .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
 #prive-v4-live-trainings .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
@@ -1338,7 +1338,6 @@
   <section class="pv-section pv-surface-white" id="pv-events" aria-labelledby="pv-events-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <p class="pv-eyebrow"><span>Two Days &middot; In Person &middot; <span class="whitespace-nowrap">Hands-On</span></span></p>
         <h1 class="pv-h2" id="pv-events-title">Where We're Training Next</h1>
         <p class="pv-lead">One city on the calendar so far. More will be announced as dates are confirmed.</p>
       </header>

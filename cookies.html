@@ -725,7 +725,7 @@
 #prive-v4-cookies .pv-trainers-pair{display: grid; gap: 3.5rem;}
 @media (min-width: 768px){
 #prive-v4-cookies .pv-trainers-pair{grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem;}
-#prive-v4-cookies .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start;}
+#prive-v4-cookies .pv-trainers-pair .pv-trainer{grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; align-content: start;}
 }
 @media (min-width: 1024px){
 #prive-v4-cookies .pv-trainers-pair{gap: 5rem;}
@@ -890,7 +890,7 @@
 @media (min-width: 1024px){
 #prive-v4-cookies .pv-trainer{gap: 5rem;}
 }
-#prive-v4-cookies .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong);}
+#prive-v4-cookies .pv-trainer__media{border-bottom: 1px solid var(--pv-line-strong); background: var(--pv-alice);}
 #prive-v4-cookies .pv-trainer__media img{width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;}
 #prive-v4-cookies .pv-trainer__name{font-family: var(--pv-display); font-weight: 500; font-size: 2rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
@@ -1291,6 +1291,8 @@
 </head>
 <body>
 <div id="prive-v4-cookies" class="pv-root" data-page="cookies">
+<!-- Cookie Policy. Hero + prose column; body is content/legal/cookies.md via the build's markdown converter.
+     COUNSEL notes in the markdown pass through as HTML comments on purpose. -->
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
@@ -1341,7 +1343,6 @@
 </svg>
 
     <div class="pv-container pv-page-hero__inner">
-      <p class="pv-eyebrow">Legal</p>
       <h1 class="pv-page-hero__title" id="pv-legal-title">Cookie Policy</h1>
     </div>
   </section>
@@ -1349,7 +1350,8 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <p><em>Last updated: 28 September 2026</em></p>
+        <!-- COUNSEL: New for v4 (v1 had no cookie policy or banner). Mirrors what src/scripts/site.js and the consent banner actually do. Update the tables whenever a tag is added to the GHL tracking fields. -->
+<p><em>Last updated: 28 September 2026</em></p>
 <p>Cookies are small files a website stores in your browser. Some are needed for the site to work. Others help us understand how the site is used or measure our advertising, and we only set those if you say yes.</p>
 <h2>Your choice</h2>
 <p>When you first visit, a banner asks whether you accept analytics and marketing cookies or only the necessary ones. Nothing optional is set until you choose. You can change your mind at any time with the <strong>Cookie settings</strong> link at the bottom of every page.</p>
@@ -1360,6 +1362,7 @@
 <div class="pv-table-wrap"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Lasts</th></tr></thead><tbody><tr><td>_ga, _ga_*</td><td>Google Analytics</td><td>Counts visits and shows which pages are used, so we can improve the site</td><td>Up to 2 years</td></tr></tbody></table></div>
 <h2>Marketing (only with your consent)</h2>
 <div class="pv-table-wrap"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Lasts</th></tr></thead><tbody><tr><td>_fbp</td><td>Meta</td><td>Measures whether our ads lead to visits and enrollments</td><td>3 months</td></tr></tbody></table></div>
+<!-- COUNSEL: GA4 and the Meta pixel are not installed yet. They are listed so the policy is ready at go-live; remove any row whose tag isn't live. -->
 <h2>Embedded content</h2>
 <p>Our forms and booking calendar are provided by HighLevel and load from its servers. Our fonts load from Google Fonts, which receives your IP address to deliver them but sets no cookies.</p>
 <h2>Controlling cookies in your browser</h2>
