@@ -1364,22 +1364,55 @@
 }
 #prive-v4-cookies .pv-graph-card{padding: 1rem;}
 #prive-v4-cookies .pv-graph-card img{display: block; width: 100%; height: auto;}
+#prive-v4-cookies .pv-sphere{position: absolute;
+  z-index: 0;
+  top: -3rem;
+  left: 28%;
+  width: 28rem;
+  height: auto;
+  color: var(--pv-white);
+  pointer-events: none;
+  opacity: .75;
+  animation: pv-sphere-in 1600ms var(--pv-out) both;}
+@media (min-width: 1024px){
+#prive-v4-cookies .pv-sphere{top: 50%; left: -8rem; width: 52rem; transform: translateY(-50%); opacity: 1;}
+}
+#prive-v4-cookies .pv-sphere path{vector-effect: non-scaling-stroke;}
+#prive-v4-cookies .pv-sphere__lines{stroke-width: 1;}
+#prive-v4-cookies .pv-sphere__back .pv-sphere__lines{stroke-opacity: .045;}
+#prive-v4-cookies .pv-sphere__mid .pv-sphere__lines{stroke-opacity: .08;}
+#prive-v4-cookies .pv-sphere__front .pv-sphere__lines{stroke-opacity: .12;}
+#prive-v4-cookies .pv-sphere__back .pv-sphere__dots{stroke-width: 2.5; stroke-opacity: .14;}
+#prive-v4-cookies .pv-sphere__mid .pv-sphere__dots{stroke-width: 3.25; stroke-opacity: .24;}
+#prive-v4-cookies .pv-sphere__front .pv-sphere__dots{stroke-width: 4; stroke-opacity: .34;}
+@keyframes pv-sphere-in{from { opacity: 0; }}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-cookies .pv-sphere{animation: none;}
+}
+#prive-v4-cookies .pv-waitlist-strip{padding-block: 2.75rem;}
+#prive-v4-cookies .pv-waitlist-strip__inner{display: grid; gap: 1.5rem; align-items: center;}
+@media (min-width: 768px){
+#prive-v4-cookies .pv-waitlist-strip__inner{grid-template-columns: minmax(0, 1fr) auto; gap: 3rem;}
+}
+#prive-v4-cookies .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
+#prive-v4-cookies .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
 
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-cookies" class="pv-root" data-page="cookies">
+
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
-    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
+    <a class="pv-nav__logo" href="home.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
 
     <nav class="pv-nav__links" aria-label="Main">
-      <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1395,7 +1428,7 @@
 
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
-      <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__menu-link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__menu-link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1427,7 +1460,8 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <p><em>Last updated: 28 September 2026</em></p>
+        
+<p><em>Last updated: 28 September 2026</em></p>
 <p>Cookies are small files a website stores in your browser. Some are needed for the site to work. Others help us understand how the site is used or measure our advertising, and we only set those if you say yes.</p>
 <h2>Your choice</h2>
 <p>When you first visit, a banner asks whether you accept analytics and marketing cookies or only the necessary ones. Nothing optional is set until you choose. You can change your mind at any time with the <strong>Cookie settings</strong> link at the bottom of every page.</p>
@@ -1438,6 +1472,7 @@
 <div class="pv-table-wrap"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Lasts</th></tr></thead><tbody><tr><td>_ga, _ga_*</td><td>Google Analytics</td><td>Counts visits and shows which pages are used, so we can improve the site</td><td>Up to 2 years</td></tr></tbody></table></div>
 <h2>Marketing (only with your consent)</h2>
 <div class="pv-table-wrap"><table><thead><tr><th>Name</th><th>Set by</th><th>Purpose</th><th>Lasts</th></tr></thead><tbody><tr><td>_fbp</td><td>Meta</td><td>Measures whether our ads lead to visits and enrollments</td><td>3 months</td></tr></tbody></table></div>
+
 <h2>Embedded content</h2>
 <p>Our forms and booking calendar are provided by HighLevel and load from its servers. Our fonts load from Google Fonts, which receives your IP address to deliver them but sets no cookies.</p>
 <h2>Controlling cookies in your browser</h2>
@@ -1454,7 +1489,7 @@
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
-      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
+      <a class="pv-footer__logo" href="home.html" aria-label="Privé Academy, home">
         <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
       </a>
       <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>

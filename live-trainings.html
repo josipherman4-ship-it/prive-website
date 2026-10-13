@@ -1364,6 +1364,38 @@
 }
 #prive-v4-live-trainings .pv-graph-card{padding: 1rem;}
 #prive-v4-live-trainings .pv-graph-card img{display: block; width: 100%; height: auto;}
+#prive-v4-live-trainings .pv-sphere{position: absolute;
+  z-index: 0;
+  top: -3rem;
+  left: 28%;
+  width: 28rem;
+  height: auto;
+  color: var(--pv-white);
+  pointer-events: none;
+  opacity: .75;
+  animation: pv-sphere-in 1600ms var(--pv-out) both;}
+@media (min-width: 1024px){
+#prive-v4-live-trainings .pv-sphere{top: 50%; left: -8rem; width: 52rem; transform: translateY(-50%); opacity: 1;}
+}
+#prive-v4-live-trainings .pv-sphere path{vector-effect: non-scaling-stroke;}
+#prive-v4-live-trainings .pv-sphere__lines{stroke-width: 1;}
+#prive-v4-live-trainings .pv-sphere__back .pv-sphere__lines{stroke-opacity: .045;}
+#prive-v4-live-trainings .pv-sphere__mid .pv-sphere__lines{stroke-opacity: .08;}
+#prive-v4-live-trainings .pv-sphere__front .pv-sphere__lines{stroke-opacity: .12;}
+#prive-v4-live-trainings .pv-sphere__back .pv-sphere__dots{stroke-width: 2.5; stroke-opacity: .14;}
+#prive-v4-live-trainings .pv-sphere__mid .pv-sphere__dots{stroke-width: 3.25; stroke-opacity: .24;}
+#prive-v4-live-trainings .pv-sphere__front .pv-sphere__dots{stroke-width: 4; stroke-opacity: .34;}
+@keyframes pv-sphere-in{from { opacity: 0; }}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-live-trainings .pv-sphere{animation: none;}
+}
+#prive-v4-live-trainings .pv-waitlist-strip{padding-block: 2.75rem;}
+#prive-v4-live-trainings .pv-waitlist-strip__inner{display: grid; gap: 1.5rem; align-items: center;}
+@media (min-width: 768px){
+#prive-v4-live-trainings .pv-waitlist-strip__inner{grid-template-columns: minmax(0, 1fr) auto; gap: 3rem;}
+}
+#prive-v4-live-trainings .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
+#prive-v4-live-trainings .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
 
 </style>
 <style>body{margin:0}</style>
@@ -1377,12 +1409,12 @@
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
-    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
+    <a class="pv-nav__logo" href="home.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
 
     <nav class="pv-nav__links" aria-label="Main">
-      <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings" aria-current="page">Live Trainings</a>
       <a class="pv-nav__link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1398,7 +1430,7 @@
 
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
-      <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__menu-link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__menu-link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings" aria-current="page">Live Trainings</a>
       <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1450,7 +1482,7 @@
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
-      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
+      <a class="pv-footer__logo" href="home.html" aria-label="Privé Academy, home">
         <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
       </a>
       <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>

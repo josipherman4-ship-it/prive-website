@@ -1364,22 +1364,55 @@
 }
 #prive-v4-terms .pv-graph-card{padding: 1rem;}
 #prive-v4-terms .pv-graph-card img{display: block; width: 100%; height: auto;}
+#prive-v4-terms .pv-sphere{position: absolute;
+  z-index: 0;
+  top: -3rem;
+  left: 28%;
+  width: 28rem;
+  height: auto;
+  color: var(--pv-white);
+  pointer-events: none;
+  opacity: .75;
+  animation: pv-sphere-in 1600ms var(--pv-out) both;}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-sphere{top: 50%; left: -8rem; width: 52rem; transform: translateY(-50%); opacity: 1;}
+}
+#prive-v4-terms .pv-sphere path{vector-effect: non-scaling-stroke;}
+#prive-v4-terms .pv-sphere__lines{stroke-width: 1;}
+#prive-v4-terms .pv-sphere__back .pv-sphere__lines{stroke-opacity: .045;}
+#prive-v4-terms .pv-sphere__mid .pv-sphere__lines{stroke-opacity: .08;}
+#prive-v4-terms .pv-sphere__front .pv-sphere__lines{stroke-opacity: .12;}
+#prive-v4-terms .pv-sphere__back .pv-sphere__dots{stroke-width: 2.5; stroke-opacity: .14;}
+#prive-v4-terms .pv-sphere__mid .pv-sphere__dots{stroke-width: 3.25; stroke-opacity: .24;}
+#prive-v4-terms .pv-sphere__front .pv-sphere__dots{stroke-width: 4; stroke-opacity: .34;}
+@keyframes pv-sphere-in{from { opacity: 0; }}
+@media (prefers-reduced-motion: reduce){
+#prive-v4-terms .pv-sphere{animation: none;}
+}
+#prive-v4-terms .pv-waitlist-strip{padding-block: 2.75rem;}
+#prive-v4-terms .pv-waitlist-strip__inner{display: grid; gap: 1.5rem; align-items: center;}
+@media (min-width: 768px){
+#prive-v4-terms .pv-waitlist-strip__inner{grid-template-columns: minmax(0, 1fr) auto; gap: 3rem;}
+}
+#prive-v4-terms .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
+#prive-v4-terms .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
 
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-terms" class="pv-root" data-page="terms">
+
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
-    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
+    <a class="pv-nav__logo" href="home.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
 
     <nav class="pv-nav__links" aria-label="Main">
-      <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1395,7 +1428,7 @@
 
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
-      <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
+      <a class="pv-nav__menu-link" href="home.html" data-nav="home">Home</a>
       <a class="pv-nav__menu-link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1427,12 +1460,14 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <p><em>Last updated: 28 September 2026</em></p>
+        
+<p><em>Last updated: 28 September 2026</em></p>
 <p>These Terms and Conditions apply to everything you buy from Privé Academy through this website: online courses, the Privé Professional Kit that comes with them, and any related services. Please read them before you enroll. By completing a purchase you agree to them.</p>
 <h2>1. Who we are</h2>
 <p>The seller depends on the currency you pay in.</p>
 <ul><li><strong>Purchases in EUR:</strong> PRIVÉ d.o.o., Ulica Ivane Kobilce 27, 1000 Ljubljana, Slovenia. Registration number 3872572000, VAT ID SI15822940.</li><li><strong>Purchases in USD:</strong> Prive Academy, LLC, One Gateway Center, Suite 2600, Newark, NJ 07102, United States. Tax ID 61-1906986.</li></ul>
 <p>In these terms, "Privé", "we" and "us" mean whichever of these two companies you bought from. You can reach either at office@prive-academy.com.</p>
+
 <h2>2. What you're buying</h2>
 <p><strong>Online course.</strong> Access to the course content, delivered through our online learning platform. Access details are sent by email when your order is confirmed. Your access is personal and can't be shared, resold or transferred.</p>
 <p><strong>Privé Professional Kit.</strong> The physical equipment and products listed in your order, including the professional device. We ship the kit to the address you give at checkout.</p>
@@ -1443,26 +1478,34 @@
 <p>You're responsible for following the safety, hygiene and aftercare guidance taught in the course, for assessing whether each client is suitable, and for any treatment you perform.</p>
 <h2>4. Prices and payment</h2>
 <p>Prices are shown at checkout in EUR or USD and include VAT where it applies. Payment is taken by card through Stripe. We don't see or store your full card details.</p>
+
 <h2>5. Delivery</h2>
 <p><strong>Course access</strong> starts when your order is confirmed. Login details are emailed to the address you used at checkout.</p>
 <p><strong>The Professional Kit</strong> ships separately. We email tracking details once it's dispatched. Delivery times depend on the destination. If something arrives damaged or missing, tell us within 7 days of delivery at office@prive-academy.com with photos, and we'll put it right.</p>
+
 <h2>6. Cancellations, withdrawal and refunds</h2>
 <p>We've written this section to be read, not skimmed. There are two parts to your order and they're treated differently.</p>
 <p><strong>The Professional Kit (physical goods).</strong> If you're a consumer, you can withdraw from the purchase of the kit within 14 days of receiving it, without giving a reason. Tell us by email at office@prive-academy.com within that period, then return the kit within 14 days of telling us. The device and products must be unused and in their original packaging. Sealed hygiene items (applicators, creams, masks, serums) can't be returned once opened, because they can't be resold for health and hygiene reasons. You pay the return shipping. We refund the part of the price that corresponds to the returned kit within 14 days of receiving it back, using your original payment method.</p>
+
 <p><strong>The online course (digital content).</strong> Course access opens immediately after purchase. At checkout we ask you to agree that access starts straight away and to confirm that you understand you lose your right of withdrawal for the course content once access begins. If you haven't accessed the course yet, you can still withdraw within 14 days of purchase for a full refund of the course portion. Once your access has begun, the course portion is non-refundable.</p>
+
 <p><strong>Business customers.</strong> If you buy in the course of your business rather than as a consumer, statutory withdrawal rights don't apply. Everything else in this section does.</p>
 <p><strong>US customers.</strong> The same rules apply to purchases from Prive Academy, LLC: the kit is returnable within 14 days of receipt as described above, and the course portion is non-refundable once access has begun.</p>
+
 <h2>7. Warranty</h2>
 <p>The professional device carries the manufacturer's warranty. In addition, you have the legal guarantee that applies where you live: for consumers in the EU, at least 2 years for goods that don't conform to the contract. If something is wrong with the device, contact us first at office@prive-academy.com and we'll arrange repair or replacement.</p>
+
 <h2>8. Course content and intellectual property</h2>
 <p>All course videos, texts, textbooks and materials belong to Privé or its licensors. You may use them for your own learning and professional practice. You may not copy, record, share, resell or publish them. We may suspend access if your account is shared or the content is redistributed.</p>
 <p>The digital promotional material included with the course (flyers, banners, posters, before-and-after images) is licensed to you for promoting your own practice. You may not alter it to suggest results you didn't achieve, or use it for any other business.</p>
 <h2>9. Liability</h2>
 <p>We teach the technique carefully and honestly, but we don't control how, where or on whom you perform treatments. To the extent the law allows, we're not liable for any loss arising from treatments you perform, from your failure to follow the course guidance, or from practising where you aren't permitted to.</p>
 <p>Nothing in these terms limits liability that can't be limited by law, including for death or personal injury caused by negligence, or for fraud.</p>
+
 <h2>10. Complaints and disputes</h2>
 <p>If something has gone wrong, write to us at office@prive-academy.com and we'll reply within 8 working days. If we can't resolve it together, EU consumers can contact the consumer protection authority or out-of-court dispute resolution body in their country.</p>
 <p><strong>Governing law.</strong> Purchases from PRIVÉ d.o.o. are governed by the law of Slovenia; purchases from Prive Academy, LLC by the law of the State of New Jersey. If you're a consumer, you keep the protection of the mandatory consumer laws of the country where you live.</p>
+
 <h2>11. Changes to these terms</h2>
 <p>We may update these terms from time to time. The version that applies to your purchase is the one published on the day you bought.</p>
       </article>
@@ -1475,7 +1518,7 @@
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
-      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
+      <a class="pv-footer__logo" href="home.html" aria-label="Privé Academy, home">
         <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
       </a>
       <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>
