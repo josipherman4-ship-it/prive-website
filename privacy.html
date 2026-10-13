@@ -636,7 +636,7 @@
 }
 #prive-v4-privacy .pv-split__text > * + *{margin-top: 1rem;}
 #prive-v4-privacy .pv-cert-img{aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%;}
-#prive-v4-privacy .pv-carousel__foot--end{justify-content: flex-end;}
+#prive-v4-privacy .pv-carousel__foot.pv-carousel__foot--end{justify-content: flex-end;}
 #prive-v4-privacy .pv-carousel__foot .pv-caption{max-width: 40rem; margin-top: 0;}
 #prive-v4-privacy .pv-cta--burst .pv-h2{font-size: 2.25rem;}
 @media (min-width: 1024px){
@@ -1402,17 +1402,16 @@
 </head>
 <body>
 <div id="prive-v4-privacy" class="pv-root" data-page="privacy">
-
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
-    <a class="pv-nav__logo" href="home.html" aria-label="Privé Academy, home">
+    <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
 
     <nav class="pv-nav__links" aria-label="Main">
-      <a class="pv-nav__link" href="home.html" data-nav="home">Home</a>
+      <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1428,7 +1427,7 @@
 
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
-      <a class="pv-nav__menu-link" href="home.html" data-nav="home">Home</a>
+      <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
       <a class="pv-nav__menu-link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
       <a class="pv-nav__menu-link" href="live-trainings.html" data-nav="live-trainings">Live Trainings</a>
       <a class="pv-nav__menu-link" href="treatments.html" data-nav="treatments">Treatments</a>
@@ -1460,8 +1459,7 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        
-<p><em>Last updated: 28 September 2026</em></p>
+        <p><em>Last updated: 28 September 2026</em></p>
 <p>This policy explains what personal data Privé Academy collects through this website, why, and what you can do about it.</p>
 <h2>Who is responsible for your data</h2>
 <p>PRIVÉ d.o.o., Ulica Ivane Kobilce 27, 1000 Ljubljana, Slovenia (registration number 3872572000) is the controller for personal data collected through this website. For purchases made in USD, Prive Academy, LLC, One Gateway Center, Suite 2600, Newark, NJ 07102, United States, is a joint controller for that order.</p>
@@ -1476,20 +1474,16 @@
 <h2>Who we share it with</h2>
 <p>We use these service providers to run the website and deliver your course. Each processes your data on our instructions:</p>
 <ul><li><strong>HighLevel (LeadConnector)</strong>: website hosting, forms, booking calendar, customer records and email. United States.</li><li><strong>Stripe</strong>: card payments. Ireland and United States.</li><li><strong>Kartra</strong>: the online course platform. United States.</li><li><strong>Google</strong>: web fonts, and Google Analytics if you consent to analytics cookies. United States.</li><li><strong>Meta</strong>: advertising measurement, only if you consent to marketing cookies. Ireland and United States.</li><li><strong>Couriers</strong>: to deliver your kit. They receive your name, address and phone number.</li></ul>
-
 <p>We don't sell your personal data.</p>
 <h2>Transfers outside the EU</h2>
 <p>Some of these providers are based in, or access data from, the United States. Where they do, we rely on the EU-US Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses.</p>
-
 <h2>How long we keep it</h2>
 <ul><li>Enquiries and waitlist entries: until you ask us to delete them, or 2 years after our last contact.</li><li>Orders and invoices: as long as tax and accounting law requires (10 years in Slovenia).</li><li>Course account and certificate records: for as long as your access lasts, so we can confirm your certification if asked.</li></ul>
-
 <h2>Your rights</h2>
 <p>You can ask us to show you the data we hold about you, correct it, delete it, restrict or object to how we use it, or send it to you in a portable format. Where we rely on your consent, you can withdraw it at any time, for example with the unsubscribe link in any email. Write to office@prive-academy.com. We'll answer within one month.</p>
 <p>If you think we've handled your data wrongly, you can complain to the Slovenian Information Commissioner (Informacijski pooblaščenec, <a href="https://www.ip-rs.si">www.ip-rs.si</a>) or to the data protection authority where you live.</p>
 <h2>US residents</h2>
 <p>If you're in the United States, you can make the same requests described above by writing to office@prive-academy.com. We don't sell or share personal information for cross-context behavioural advertising without the consent you give through our cookie banner.</p>
-
 <h2>Changes</h2>
 <p>We'll update this policy when our data practices change, and change the date at the top when we do.</p>
       </article>
@@ -1502,7 +1496,7 @@
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
-      <a class="pv-footer__logo" href="home.html" aria-label="Privé Academy, home">
+      <a class="pv-footer__logo" href="index.html" aria-label="Privé Academy, home">
         <img src="images/v4-logo-white.png" alt="" width="500" height="500" loading="lazy" decoding="async">
       </a>
       <p class="pv-footer__tagline">Structured training for practitioners who want to know they're ready, not just certified.</p>
