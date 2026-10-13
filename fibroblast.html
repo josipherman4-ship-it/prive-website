@@ -788,15 +788,10 @@
 #prive-v4-fibroblast .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
 #prive-v4-fibroblast .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
 #prive-v4-fibroblast .pv-offer__body .pv-tag + .pv-offer__title{margin-top: .875rem;}
+#prive-v4-fibroblast .pv-offer__list{display: grid; gap: .5rem; margin-top: .875rem;}
+#prive-v4-fibroblast .pv-offer__list li{position: relative; padding-left: 1.125rem; font-size: .9375rem; line-height: 1.55; color: var(--pv-text-muted);}
+#prive-v4-fibroblast .pv-offer__list li::before{content: ""; position: absolute; left: 0; top: .62em; width: .375rem; height: .375rem; background: var(--pv-mustard);}
 #prive-v4-fibroblast .pv-offer--bonus{border-color: var(--pv-mustard);}
-@media (min-width: 768px){
-#prive-v4-fibroblast .pv-offer--bonus{grid-column: 1 / -1; flex-direction: row; align-items: center;}
-#prive-v4-fibroblast .pv-offer--bonus .pv-offer__media{flex: 0 0 44%; border-bottom: 0; border-right: 1px solid var(--pv-line);}
-#prive-v4-fibroblast .pv-offer--bonus .pv-offer__body{padding: 2rem 2.5rem;}
-}
-@media (min-width: 1024px){
-#prive-v4-fibroblast .pv-offer--bonus .pv-offer__media{flex-basis: 33.333%;}
-}
 #prive-v4-fibroblast .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
 #prive-v4-fibroblast .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
 #prive-v4-fibroblast .pv-cta--burst{position: relative; overflow: clip;}
@@ -1694,30 +1689,102 @@
     </div>
   </section>
 
-  <!-- 5. Our Trainers [D] -->
-  <section class="pv-section pv-surface-alice" aria-labelledby="pv-trainers-title">
+  <!-- 5. What's Included [B] as a graphic offer stack (v5 2026-10-08, Josip's review pt. 3). Product visuals are cropped
+       from the old site's offer banners (brand-assets/site-photos/landing-graphics/offer-stack/), banner text left out.
+       Product names only, no claims about what the aftercare does (claim-rules section 1, row 16). No prices (row 11).
+       v5 2026-10-13 (Josip): moved up above the trainer, copy turned into bullets, six cards in his order. The course card
+       split into course (6+ hours) and demonstrations (4+ hours); kit and After Care merged (one set, #1-#3, as in the
+       blueprint); Training Material card dropped; Soft-Lifting is a regular card now, so the grid stays 3 + 3. -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-included-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-trainers-title">The Trainers Behind 1,000+ Privé Specialists</h2>
+        <h2 class="pv-h2" id="pv-included-title">Here's What You Get</h2>
       </header>
-      <div class="pv-block pv-trainers-pair">
-        <!-- Trainer profile: Samo Sambol (sales page §3, content/sales-page-copy.md). Pairs with trainer-sandra.
-     v5 2026-10-06: bio absorbs the best of the home Founder section, which was cut.
-     The cutout's hard edge disappears on alice, same as Sandra's alice studio backdrop. -->
-<article class="pv-trainer">
-  <div class="pv-trainer__media">
-    <img src="images/v4-samo.webp" alt="Samo Sambol, CEO and founder of Privé Academy" width="1400" height="1399" loading="lazy" decoding="async">
-  </div>
-  <div class="pv-trainer__body">
-    <h3 class="pv-trainer__name">Samo Sambol</h3>
-    <p class="pv-trainer__role">CEO &amp; Founder</p>
-    <!-- v5 pt. 4: bio cut from 47 to 29 words; the microblading history lives on About.
-         v5 2026-10-11: title and bio rewritten to Josip's copy. "Across the world" widens claim-rules §2 ("European market"); Josip's call.
-         v5 2026-10-13: bio rewritten to Josip's copy ("one of the earliest adopters" replaces "introduced"). Shared by Home and Fibroblast. -->
-    <p class="pv-trainer__bio">As Privé's founder and one of the earliest adopters of the Fibroblast method, Samo popularized the treatment across the world and built the academy around teaching Fibroblast the right way.</p>
-  </div>
-</article>
+      <ul class="pv-block pv-offers">
+        <li class="pv-offer">
+          <!-- v5 2026-10-13 (Josip): Samo presenting, a frame from the online course (an exception to removing him from this page); title is the hours -->
+          <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-course-theory.jpg" alt="Samo Sambol presenting in front of a lesson screen in the Privé online course" width="1400" height="743" loading="lazy" decoding="async" style="object-position: 35% 50%"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">6h+ of Training</h3>
+            <ul class="pv-offer__list">
+              <li>From the science to your first client</li>
+              <li>Lifetime access to the course and the Privé community</li>
+            </ul>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <!-- Photo: the Drive macro from the Device section (removed 2026-10-13). CONFIRM (Sandra): source and the client's consent,
+               same gate as the before/after set (claim-rules section 4).
+               "Filmed" kept from the blueprint: the demonstrations are recorded, and the word stops "live" reading as live attendance. -->
+          <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-device-macro.jpg" alt="Close-up of a plasma pen tip working under a client's eye, with fresh treatment dots on the skin" width="1600" height="1200" loading="lazy" decoding="async" style="object-position: 50% 50%"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">4h+ of Filmed Live Treatment Demonstrations</h3>
+            <ul class="pv-offer__list">
+              <li>Showing how the treatment is performed on many different areas of the body</li>
+            </ul>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <!-- v5 pt. 4: Sandra's photo replaces the camera icon; the onboarding calendar is hers ("Support call with Master Trainer Sandra") -->
+          <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-sandra.jpg" alt="Sandra Bijader, Privé Master Trainer" width="1200" height="1200" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">1:1 Onboarding Call</h3>
+            <ul class="pv-offer__list">
+              <li>With one of our Master Trainers</li>
+              <li>How to work through the course</li>
+              <li>Tips on performing the treatment and getting the best results</li>
+            </ul>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <!-- The shop banner (kit box, device, applicators, pre-treatment cream, beta-glucan mask, After Care #1-#3), cropped to its product group -->
+          <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-shop-banner.jpg" alt="The Privé Professional Kit with the professional device, applicators, pre-treatment cream, a beta-glucan mask and After Care #1, #2 and #3" width="1280" height="512" loading="lazy" decoding="async" style="object-position: 88% 50%"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">Privé Professional Kit &amp; After&nbsp;Care&nbsp;Set</h3>
+            <ul class="pv-offer__list">
+              <li>The professional device with an additional battery</li>
+              <li>10 Privé practice/bent applicators</li>
+              <li>Pre-treatment creams, 3 beta-glucan masks, a beta-glucan serum and a white skin pencil</li>
+              <li>Privé After Care #1, #2 and #3</li>
+            </ul>
+          </div>
+        </li>
+        <li class="pv-offer pv-offer--bonus">
+          <div class="pv-offer__media"><img src="images/v4-offer-soft-lifting.jpg" alt="Two close-ups of a professional device with a soft-lifting attachment during treatment" width="500" height="324" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <p class="pv-tag">Bonus</p>
+            <h3 class="pv-offer__title">Plasma Soft-Lifting</h3>
+            <ul class="pv-offer__list">
+              <li>How to use the professional device's additional attachments</li>
+              <li>How to combine them with the serums</li>
+            </ul>
+          </div>
+        </li>
+        <li class="pv-offer">
+          <!-- CONFIRM (claim-rules section 5): the certificate artwork carries a small CPD seal; confirm Privé's CPD membership is current before launch.
+               The artwork reads "Certified Fibroblast Specialist", which now matches the regular course's certificate name (confirm with Sandra). -->
+          <div class="pv-offer__media"><img src="images/v4-offer-certificate.jpg" alt="A sample Privé Fibroblast Specialist certificate" width="320" height="440" loading="lazy" decoding="async"></div>
+          <div class="pv-offer__body">
+            <h3 class="pv-offer__title">Fibroblast Specialist Certificate</h3>
+            <ul class="pv-offer__list">
+              <li>Earned when your trainer has reviewed your practical results</li>
+              <li>Confirms you're ready to treat clients</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- 6. Our Trainer [D]. v5 2026-10-13 (Josip): Samo removed from this page; Sandra alone in the single-trainer layout
+       (photo left, bio right). Heading was "The Trainers Behind 1,000+ Privé Specialists": the 1,000+ is academy-wide, not
+       Sandra's alone (COPY-DECK section 0, row 3). On white now, so her alice photo backdrop reads as a panel. -->
+  <section class="pv-section pv-surface-white" aria-labelledby="pv-trainers-title">
+    <div class="pv-container">
+      <header class="pv-section-head">
+        <h2 class="pv-h2" id="pv-trainers-title">Meet Your Master Trainer</h2>
+      </header>
+      <div class="pv-block">
         <!-- Trainer profile: Sandra Bijader (copy deck §1 Our Trainers). Self-contained so the
      sales page can place it next to a trainer-samo partial under its own heading.
      Her photo backdrop is alice (#f0f9ff), so it reads as a cutout on an alice section. -->
@@ -1738,10 +1805,11 @@
     </div>
   </section>
 
-  <!-- 6. Curriculum [B], card 1 title and card 3 name [D]. A real sequence, so the cards are numbered.
+  <!-- 7. Curriculum [B], card 1 title and card 3 name [D]. A real sequence, so the cards are numbered.
        v5 pt. 4 (F3a): a photo on each step, ten bullets down to one line per step, lead shortened.
-       Live-training photos stand in for the online course until Kartra screenshots exist (next pass). -->
-  <section class="pv-section pv-surface-white" aria-labelledby="pv-mission-title">
+       Live-training photos stand in for the online course until Kartra screenshots exist (next pass).
+       v5 2026-10-13: on alice; steps 1 and 2 swapped from lc-19 and lc-6 (both Samo) to lc-17 and lc-12 (Samo removed from this page). -->
+  <section class="pv-section pv-surface-alice" aria-labelledby="pv-mission-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-mission-title">Our Simple Mission</h2>
@@ -1750,7 +1818,7 @@
       <ol class="pv-block pv-steps">
         <li class="pv-step">
           <div class="pv-step__media">
-            <img src="images/v4-lc-19.jpg" alt="Samo Sambol explaining technique at a flipchart during a Privé training" width="785" height="1177" loading="lazy" decoding="async" style="object-position: 50% 30%">
+            <img src="images/v4-lc-17.jpg" alt="A practitioner holding a plasma pen during a Privé live training, with models on treatment beds behind her" width="785" height="1177" loading="lazy" decoding="async" style="object-position: 50% 40%">
           </div>
           <span class="pv-step__num" aria-hidden="true">01</span>
           <h3 class="pv-h3-lg pv-step__title">Master the Theory</h3>
@@ -1758,7 +1826,7 @@
         </li>
         <li class="pv-step">
           <div class="pv-step__media">
-            <img src="images/v4-lc-6.jpg" alt="A Privé trainer and a student working on a model during a live training" width="785" height="1177" loading="lazy" decoding="async" style="object-position: 50% 40%">
+            <img src="images/v4-lc-12.jpg" alt="A practitioner treating a model's face with a plasma pen during a Privé live training" width="785" height="1177" loading="lazy" decoding="async" style="object-position: 50% 32%">
           </div>
           <span class="pv-step__num" aria-hidden="true">02</span>
           <h3 class="pv-h3-lg pv-step__title">Master the Skill</h3>
@@ -1773,21 +1841,6 @@
           <p class="pv-step__text">Your trainer reviews your practice results, then certifies you.</p>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <!-- 7. Certification [B] -->
-  <section class="pv-section pv-surface-navy pv-grain" aria-labelledby="pv-cert-title">
-    <div class="pv-container pv-split pv-split--media-left">
-      <div class="pv-split__text">
-        <h2 class="pv-h2" id="pv-cert-title">Certification Is The Beginning, Not The End.</h2>
-        <!-- v5 pt. 4: 77 words down to 38 -->
-        <p class="pv-lead">This certificate isn't handed out for finishing a video. It means your trainer has reviewed your practical results and confirmed you're ready for real clients. After graduation, you keep access to your trainers and the Privé community.</p>
-      </div>
-      <figure class="pv-split__media">
-        <!-- STAND-IN: needs a real graduate-with-certificate photo (Sandra) -->
-        <img class="pv-cert-img" src="images/v4-lc-5.jpg" alt="A group of Privé live-training graduates holding their certificates" width="785" height="1177" loading="lazy" decoding="async">
-      </figure>
     </div>
   </section>
 
@@ -2037,75 +2090,9 @@
     </div>
   </section>
 
-  <!-- 9. What's Included [B] as a graphic offer stack (v5 2026-10-08, Josip's review pt. 3). Product visuals are cropped
-       from the old site's offer banners (brand-assets/site-photos/landing-graphics/offer-stack/), banner text left out.
-       Product names only, no claims about what the aftercare does (claim-rules section 1, row 16). No prices (row 11). -->
-  <section class="pv-section pv-surface-alice" aria-labelledby="pv-included-title">
-    <div class="pv-container">
-      <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-included-title">Here's What You Get</h2>
-      </header>
-      <ul class="pv-block pv-offers">
-        <li class="pv-offer">
-          <div class="pv-offer__media"><img src="images/v4-offer-course-app.jpg" alt="The Privé online course open on a tablet and a phone" width="360" height="354" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">The Online Course</h3>
-            <!-- 2026-10-13 (Josip): standard course only, 6 hours of course content; the 11-hour basic+advanced figure is retired -->
-            <p>6 hours of course content, from the science to your first client, plus 4 hours of filmed live treatment demonstrations. Lifetime access to the course and the Privé community.</p>
-          </div>
-        </li>
-        <li class="pv-offer">
-          <!-- v5 pt. 4: Sandra's photo replaces the camera icon; the onboarding calendar is hers ("Support call with Master Trainer Sandra") -->
-          <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-sandra.jpg" alt="Sandra Bijader, Privé Master Trainer" width="1200" height="1200" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">1:1 Onboarding Call</h3>
-            <p>With one of our Master Trainers: how to work through the course, plus tips on performing the treatment and getting the best results.</p>
-          </div>
-        </li>
-        <li class="pv-offer">
-          <div class="pv-offer__media"><img src="images/v4-offer-professional-kit.jpg" alt="The Privé Professional Kit box with the professional device and applicator sleeves" width="650" height="410" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">Privé Professional Kit</h3>
-            <p>The professional device with an additional battery, 10 Privé practice/bent applicators, pre-treatment creams, 3 beta-glucan masks, a beta-glucan serum and a white skin pencil.</p>
-          </div>
-        </li>
-        <li class="pv-offer">
-          <div class="pv-offer__media"><img src="images/v4-offer-after-care.jpg" alt="Privé After Care #1, #2 and #3 bottles and tubes with their boxes" width="1075" height="598" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">After Care Sets #1, #2 &amp; #3</h3>
-            <p>Three full Privé After Care sets, packed in your kit.</p>
-          </div>
-        </li>
-        <li class="pv-offer">
-          <div class="pv-offer__media"><img src="images/v4-offer-training-material.jpg" alt="Privé training material: textbook, specialist t-shirt, neck strap, product flyers and pre-treatment creams" width="775" height="435" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">Training Material</h3>
-            <p>Digital textbook, promotional material (flyers, banners, posters and before/after photos), a Privé Academy specialist t-shirt and a neck strap.</p>
-          </div>
-        </li>
-        <li class="pv-offer">
-          <!-- CONFIRM (claim-rules section 5): the certificate artwork carries a small CPD seal; confirm Privé's CPD membership is current before launch.
-               The artwork reads "Certified Fibroblast Specialist", which now matches the regular course's certificate name (confirm with Sandra). -->
-          <div class="pv-offer__media"><img src="images/v4-offer-certificate.jpg" alt="A sample Privé Fibroblast Specialist certificate" width="320" height="440" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <h3 class="pv-offer__title">Fibroblast Specialist Certificate</h3>
-            <p>Earned when your trainer has reviewed your practical results and confirmed you're ready to treat clients.</p>
-          </div>
-        </li>
-        <li class="pv-offer pv-offer--bonus">
-          <div class="pv-offer__media"><img src="images/v4-offer-soft-lifting.jpg" alt="Two close-ups of a professional device with a soft-lifting attachment during treatment" width="500" height="324" loading="lazy" decoding="async"></div>
-          <div class="pv-offer__body">
-            <p class="pv-tag">Bonus</p>
-            <h3 class="pv-offer__title">Plasma Soft-Lifting</h3>
-            <p>How to use the professional device's additional attachments together with the serums.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 10. CTA. 2026-10-13 (Josip): there is no guarantee, so no guarantee slot or risk-reversal wording. -->
-  <section class="pv-section pv-surface-white pv-cta" aria-labelledby="pv-start-title">
+  <!-- 9. CTA. 2026-10-13 (Josip): there is no guarantee, so no guarantee slot or risk-reversal wording.
+       v5 2026-10-13: stays after the testimonials now the offer stack moved up; on alice. -->
+  <section class="pv-section pv-surface-alice pv-cta" aria-labelledby="pv-start-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
         <h2 class="pv-h2" id="pv-start-title">Start Your Certification</h2>
@@ -2117,50 +2104,23 @@
     </div>
   </section>
 
-  <!-- 11. Who Is This For [B]. v5 pt. 4: three icon tiles, each line about 8 words, "not for" in one sentence. -->
-  <section class="pv-section pv-surface-alice pv-fit" aria-labelledby="pv-fit-title">
-    <div class="pv-container">
-      <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-fit-title">Who This Course Is For</h2>
-      </header>
-      <ul class="pv-block pv-fit-grid">
-        <li class="pv-fit-card">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="24" height="34" rx="2"/><path d="M14 15h12M14 21h12M14 27h7"/><circle cx="35" cy="35" r="8"/><path d="M35 31v8M31 35h8"/></svg>
-          <p>Practitioners adding a premium treatment to a low-ticket menu.</p>
-        </li>
-        <li class="pv-fit-card">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M38 20a15 15 0 0 0-27.5-4"/><path d="M10 9v7h7"/><path d="M10 28a15 15 0 0 0 27.5 4"/><path d="M38 39v-7h-7"/></svg>
-          <p>Practitioners who trained before but don't feel confident yet.</p>
-        </li>
-        <li class="pv-fit-card">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 42V22"/><path d="M24 27c0-7-5-12-13-12 0 7 5 12 13 12z"/><path d="M24 22c0-6 4-10 11-10 0 6-4 10-11 10z"/><path d="M15 42h18"/></svg>
-          <p>Serious beginners who want to learn it properly.</p>
-        </li>
-      </ul>
-      <p class="pv-notfor"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M7.8 7.8l6.4 6.4M14.2 7.8l-6.4 6.4" stroke-linecap="round"/></svg><span>Not for anyone who would take this treatment lightly or skip the safety guidelines.</span></p>
-    </div>
-  </section>
-
-  <!-- 12. The Device (v5 2026-10-13: moved after the offer stack)  [B]. No FDA language anywhere (claim-rules section 1, row 2).
-       v5 2026-10-08: copy cut from four paragraphs plus a benefits list to one paragraph (Josip: cut by 80%).
-       v5 pt. 4: the CE pairing line (claim-rules section 2) went missing in that cut; it's back as a caption.
-       Photo is the Drive macro (brand-assets/drive-photos/720C6477...). CONFIRM (Sandra): source and the client's consent,
-       same gate as the before/after set (claim-rules section 4). Replace with a clean device packshot once one exists. -->
-  <section class="pv-section pv-surface-white" aria-labelledby="pv-device-title">
-    <div class="pv-container pv-split">
+  <!-- 10. Certification [B]. v5 2026-10-13 (Josip): moved down, just above the FAQ. -->
+  <section class="pv-section pv-surface-navy pv-grain" aria-labelledby="pv-cert-title">
+    <div class="pv-container pv-split pv-split--media-left">
       <div class="pv-split__text">
-        <h2 class="pv-h2" id="pv-device-title">The device we put in your hands is the same device we use in our own practice.</h2>
-        <p>You train on, and keep, a CE-marked professional device built for daily use. It's paired with the single-use applicator Samo designed, a 0.5mm copper-coated tip for lower, more controlled settings.</p>
-        <p class="pv-caption">A CE mark covers the device. It doesn't decide who may perform the treatment where you work.</p>
+        <h2 class="pv-h2" id="pv-cert-title">Certification Is The Beginning, Not The End.</h2>
+        <!-- v5 pt. 4: 77 words down to 38 -->
+        <p class="pv-lead">This certificate isn't handed out for finishing a video. It means your trainer has reviewed your practical results and confirmed you're ready for real clients. After graduation, you keep access to your trainers and the Privé community.</p>
       </div>
-      <div class="pv-split__media">
-        <img class="pv-device-img" src="images/v4-device-macro.jpg" alt="Close-up of a plasma pen tip working under a client's eye, with fresh treatment dots on the skin" width="1600" height="1200" loading="lazy" decoding="async">
-      </div>
+      <figure class="pv-split__media">
+        <!-- STAND-IN: needs a real graduate-with-certificate photo (Sandra). Samo is in the back row (Josip to decide, 2026-10-13) -->
+        <img class="pv-cert-img" src="images/v4-lc-5.jpg" alt="A group of Privé live-training graduates holding their certificates" width="785" height="1177" loading="lazy" decoding="async">
+      </figure>
     </div>
   </section>
 
-  <!-- 13. FAQ [B], Q5 and Q7 adjusted per COPY-DECK section 0 -->
-  <section class="pv-section pv-surface-alice" aria-labelledby="pv-enroll-faq-title">
+  <!-- 11. FAQ [B], Q5 and Q7 adjusted per COPY-DECK section 0. v5 2026-10-13: on white; hours match the offer stack (6+ / 4+). -->
+  <section class="pv-section pv-surface-white" aria-labelledby="pv-enroll-faq-title">
     <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <header class="pv-section-head pv-sticky lg:col-span-4">
         <h2 class="pv-h2" id="pv-enroll-faq-title">Questions Worth Asking Before You Enroll</h2>
@@ -2196,7 +2156,7 @@
           </summary>
           <div class="pv-faq__a">
             <!-- 2026-10-13 (Josip): students practise on an orange first, then a real model once technique is sound -->
-            <p>Not if nobody checks your work, and that's the gap this course closes. You see every technique in 6 hours of course content and 4 hours of filmed treatments. You practise on an orange first, then move on to a real model once your technique is sound, with a Master Trainer reviewing your results until they're consistent.</p>
+            <p>Not if nobody checks your work, and that's the gap this course closes. You see every technique in 6+ hours of training and 4+ hours of filmed treatment demonstrations. You practise on an orange first, then move on to a real model once your technique is sound, with a Master Trainer reviewing your results until they're consistent.</p>
             <p>This is an online course. To train in a room with a trainer, see <a href="live-trainings.html">Live Trainings</a>.</p>
           </div>
         </details>
@@ -2237,7 +2197,7 @@
     </div>
   </section>
 
-  <!-- 14. Final CTA [B]: bookends the hero -->
+  <!-- 12. Final CTA [B]: bookends the hero -->
   <section class="pv-section pv-surface-navy pv-grain pv-cta pv-cta--burst" aria-labelledby="pv-final-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
@@ -2262,7 +2222,7 @@
     </div>
   </section>
 
-  <!-- 15. Cold plasma waitlist strip (v5 2026-10-13): quiet last line before the footer, links to the waitlist page.
+  <!-- 13. Cold plasma waitlist strip (v5 2026-10-13): quiet last line before the footer, links to the waitlist page.
        The hub page that used to carry the Cold Plasma card was retired. -->
   <section class="pv-section pv-surface-alice pv-waitlist-strip" aria-labelledby="pv-cold-strip-title">
     <div class="pv-container pv-waitlist-strip__inner">

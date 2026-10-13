@@ -788,15 +788,10 @@
 #prive-v4-live-trainings .pv-offer__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.375rem; line-height: 1.2; color: var(--pv-navy);}
 #prive-v4-live-trainings .pv-offer__body p:not(.pv-tag){margin-top: .625rem; font-size: .9375rem; line-height: 1.65; color: var(--pv-text-muted);}
 #prive-v4-live-trainings .pv-offer__body .pv-tag + .pv-offer__title{margin-top: .875rem;}
+#prive-v4-live-trainings .pv-offer__list{display: grid; gap: .5rem; margin-top: .875rem;}
+#prive-v4-live-trainings .pv-offer__list li{position: relative; padding-left: 1.125rem; font-size: .9375rem; line-height: 1.55; color: var(--pv-text-muted);}
+#prive-v4-live-trainings .pv-offer__list li::before{content: ""; position: absolute; left: 0; top: .62em; width: .375rem; height: .375rem; background: var(--pv-mustard);}
 #prive-v4-live-trainings .pv-offer--bonus{border-color: var(--pv-mustard);}
-@media (min-width: 768px){
-#prive-v4-live-trainings .pv-offer--bonus{grid-column: 1 / -1; flex-direction: row; align-items: center;}
-#prive-v4-live-trainings .pv-offer--bonus .pv-offer__media{flex: 0 0 44%; border-bottom: 0; border-right: 1px solid var(--pv-line);}
-#prive-v4-live-trainings .pv-offer--bonus .pv-offer__body{padding: 2rem 2.5rem;}
-}
-@media (min-width: 1024px){
-#prive-v4-live-trainings .pv-offer--bonus .pv-offer__media{flex-basis: 33.333%;}
-}
 #prive-v4-live-trainings .pv-cta__note{margin-top: 1.5rem; font-size: .875rem; color: var(--pv-text-muted);}
 #prive-v4-live-trainings .pv-cta__micro{max-width: 34rem; margin: 1.5rem auto 0; font-size: .875rem; line-height: 1.6; color: var(--pv-on-dark);}
 #prive-v4-live-trainings .pv-cta--burst{position: relative; overflow: clip;}
@@ -1452,16 +1447,36 @@
 
 <main id="pv-main">
 
-  <!-- v5 2026-10-13: Zagreb 15-16 October event removed, no live trainings are scheduled. The section keeps the h1
-       and offers a way to register interest (Contact). Re-add an event card (see git history) when a date is set. -->
+  <!-- v5 2026-10-13: the Zagreb 15-16 October date was removed earlier today; the Zagreb class is back as a standing,
+       on-request training (Josip: runs indefinitely, scheduled when someone gets in touch). Event card from v4, no fixed
+       date, "Seats Limited" tag dropped (no scarcity on an open-ended class, claim-rules section 1 row 13). -->
   <section class="pv-section pv-surface-white" id="pv-events" aria-labelledby="pv-events-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <h1 class="pv-h2" id="pv-events-title">No Live Trainings Scheduled Right Now</h1>
-        <p class="pv-lead">We're not running any in-person trainings at the moment. If you'd like to train with us in person, tell us where you're based and we'll let you know when new dates are announced.</p>
+        <h1 class="pv-h2" id="pv-events-title">Train With Us In Person</h1>
+        <p class="pv-lead">Our Zagreb training runs on request. There are no fixed dates: get in touch and we'll plan your class with you.</p>
       </header>
+
       <div class="pv-block">
-        <a class="pv-btn pv-btn--primary" href="contact.html">Get In Touch</a>
+        <article class="pv-event">
+          <div class="pv-event__media">
+            <img src="images/v4-lc-17.jpg" alt="Practitioners at a Privé Academy live training session" width="785" height="1177" loading="lazy" decoding="async">
+          </div>
+          <div class="pv-event__body">
+            <p class="pv-event__meta">
+              <span class="pv-tag">2-Day Live Training</span>
+              <span class="pv-tag">On Request</span>
+            </p>
+            <h2 class="pv-event__title">Zagreb, Croatia</h2>
+            <p class="pv-event__date">
+              <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3.5" width="14" height="12.5" rx="1.5"/><path d="M2 7h14M6 2v3M12 2v3" stroke-linecap="round"/></svg>
+              <span>Dates on request</span>
+            </p>
+            <p class="pv-event__text">Two intensive days of hands-on Plasma Fibroblast training, led in person by our instructor team: consultation, technique, and real practice from the first hour.</p>
+            <a class="pv-btn pv-btn--primary" href="contact.html">Request A Date</a>
+          </div>
+        </article>
+        <p class="pv-note">Based somewhere else? Tell us where. We take location interest into account when planning future live trainings.</p>
       </div>
     </div>
   </section>
