@@ -637,7 +637,6 @@
 }
 #prive-v4-404 .pv-split__text > * + *{margin-top: 1rem;}
 #prive-v4-404 .pv-cert-img{aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%;}
-#prive-v4-404 .pv-carousel__foot.pv-carousel__foot--end{justify-content: flex-end;}
 #prive-v4-404 .pv-carousel__foot .pv-caption{max-width: 40rem; margin-top: 0;}
 #prive-v4-404 .pv-cta--burst .pv-h2{font-size: 2.25rem;}
 @media (min-width: 1024px){
@@ -988,7 +987,15 @@
 #prive-v4-404 .pv-carousel__track{grid-auto-columns: calc((100% - 3rem) / 3);}
 }
 #prive-v4-404 .pv-carousel__foot{display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem;}
-#prive-v4-404 .pv-carousel__controls{display: flex; gap: .5rem;}
+#prive-v4-404 .pv-carousel{position: relative;}
+#prive-v4-404 .pv-carousel__nav{position: absolute; z-index: 1; top: var(--pv-carousel-mid, 50%); translate: 0 -50%; background: var(--pv-white);}
+#prive-v4-404 .pv-carousel__nav--prev{left: .75rem;}
+#prive-v4-404 .pv-carousel__nav--next{right: .75rem;}
+#prive-v4-404 .pv-carousel__nav[aria-disabled="true"]{opacity: 1; color: var(--pv-line-strong);}
+@media (min-width: 1360px){
+#prive-v4-404 .pv-carousel__nav--prev{left: -4.5rem;}
+#prive-v4-404 .pv-carousel__nav--next{right: -4.5rem;}
+}
 #prive-v4-404 .pv-redirect{display: grid; gap: 2rem; padding: 2rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
 #prive-v4-404 .pv-redirect--alice{background: var(--pv-alice); border-color: var(--pv-alice);}
 #prive-v4-404 .pv-redirect__text > * + *{margin-top: 1rem;}
@@ -1562,6 +1569,7 @@
 //   [data-menu-toggle] + [data-menu]     mobile menu; toggles .is-open + aria-expanded
 //   .pv-reveal                           fades in once on scroll (gated on root.js-ready)
 //   [data-carousel] > [data-carousel-track], [data-carousel-prev], [data-carousel-next]
+//                                        (sets --pv-carousel-mid on the carousel for the arrows)
 //   [data-cookie-banner]                 consent banner; [data-consent="all|necessary"] buttons
 //   [data-consent-open]                  any link that re-opens the banner (footer)
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
@@ -1640,11 +1648,27 @@ function initPage(root) {
       prev?.setAttribute('aria-disabled', String(track.scrollLeft <= 2));
       next?.setAttribute('aria-disabled', String(track.scrollLeft >= max));
     };
+    // prev/next sit beside the cards, centred on the media (square photo, 16:9 video), not the whole card:
+    // --pv-carousel-mid is that centre, measured from the top of the carousel
+    const place = () => {
+      const media = track.querySelector('.pv-video__media, img');
+      if (!media) return;
+      const m = media.getBoundingClientRect();
+      c.style.setProperty('--pv-carousel-mid', `${m.top - c.getBoundingClientRect().top + m.height / 2}px`);
+    };
     prev?.addEventListener('click', () => step(-1), { signal });
     next?.addEventListener('click', () => step(1), { signal });
     track.addEventListener('scroll', sync, { passive: true, signal });
     window.addEventListener('resize', sync, { passive: true, signal });
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(place);
+      ro.observe(track);
+      cleanup.push(() => ro.disconnect());
+    } else {
+      window.addEventListener('resize', place, { passive: true, signal });
+    }
     sync();
+    place();
   });
 
   // ---- video facades: poster + play button until clicked

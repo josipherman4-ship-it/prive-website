@@ -636,7 +636,6 @@
 }
 #prive-v4-fibroblast .pv-split__text > * + *{margin-top: 1rem;}
 #prive-v4-fibroblast .pv-cert-img{aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%;}
-#prive-v4-fibroblast .pv-carousel__foot.pv-carousel__foot--end{justify-content: flex-end;}
 #prive-v4-fibroblast .pv-carousel__foot .pv-caption{max-width: 40rem; margin-top: 0;}
 #prive-v4-fibroblast .pv-cta--burst .pv-h2{font-size: 2.25rem;}
 @media (min-width: 1024px){
@@ -987,7 +986,15 @@
 #prive-v4-fibroblast .pv-carousel__track{grid-auto-columns: calc((100% - 3rem) / 3);}
 }
 #prive-v4-fibroblast .pv-carousel__foot{display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem;}
-#prive-v4-fibroblast .pv-carousel__controls{display: flex; gap: .5rem;}
+#prive-v4-fibroblast .pv-carousel{position: relative;}
+#prive-v4-fibroblast .pv-carousel__nav{position: absolute; z-index: 1; top: var(--pv-carousel-mid, 50%); translate: 0 -50%; background: var(--pv-white);}
+#prive-v4-fibroblast .pv-carousel__nav--prev{left: .75rem;}
+#prive-v4-fibroblast .pv-carousel__nav--next{right: .75rem;}
+#prive-v4-fibroblast .pv-carousel__nav[aria-disabled="true"]{opacity: 1; color: var(--pv-line-strong);}
+@media (min-width: 1360px){
+#prive-v4-fibroblast .pv-carousel__nav--prev{left: -4.5rem;}
+#prive-v4-fibroblast .pv-carousel__nav--next{right: -4.5rem;}
+}
 #prive-v4-fibroblast .pv-redirect{display: grid; gap: 2rem; padding: 2rem 1.5rem; background: var(--pv-white); border: 1px solid var(--pv-line);}
 #prive-v4-fibroblast .pv-redirect--alice{background: var(--pv-alice); border-color: var(--pv-alice);}
 #prive-v4-fibroblast .pv-redirect__text > * + *{margin-top: 1rem;}
@@ -1652,12 +1659,11 @@
 </figure>
 
         </div>
+        <!-- v5 2026-10-13: arrows split to either side of the photos, centred on them (was a pair in the foot) -->
+        <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--prev" data-carousel-prev aria-label="Previous results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--next" data-carousel-next aria-label="Next results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="pv-carousel__foot">
           <p class="pv-caption">Results from Privé treatments. Individual results vary. Results fade over time and need maintenance.</p>
-          <div class="pv-carousel__controls">
-            <button type="button" class="pv-icon-btn" data-carousel-prev aria-label="Previous results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button type="button" class="pv-icon-btn" data-carousel-next aria-label="Next results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
         </div>
       </div>
     </div>
@@ -2024,12 +2030,9 @@
 </article>
 
         </div>
-        <div class="pv-carousel__foot pv-carousel__foot--end">
-          <div class="pv-carousel__controls">
-            <button type="button" class="pv-icon-btn" data-carousel-prev aria-label="Previous videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button type="button" class="pv-icon-btn" data-carousel-next aria-label="Next videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
-        </div>
+        <!-- v5 2026-10-13: arrows split to either side of the videos, centred on them; the foot they sat in is gone -->
+        <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--prev" data-carousel-prev aria-label="Previous videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--next" data-carousel-next aria-label="Next videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </div>
   </section>
@@ -2368,6 +2371,7 @@
 //   [data-menu-toggle] + [data-menu]     mobile menu; toggles .is-open + aria-expanded
 //   .pv-reveal                           fades in once on scroll (gated on root.js-ready)
 //   [data-carousel] > [data-carousel-track], [data-carousel-prev], [data-carousel-next]
+//                                        (sets --pv-carousel-mid on the carousel for the arrows)
 //   [data-cookie-banner]                 consent banner; [data-consent="all|necessary"] buttons
 //   [data-consent-open]                  any link that re-opens the banner (footer)
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
@@ -2446,11 +2450,27 @@ function initPage(root) {
       prev?.setAttribute('aria-disabled', String(track.scrollLeft <= 2));
       next?.setAttribute('aria-disabled', String(track.scrollLeft >= max));
     };
+    // prev/next sit beside the cards, centred on the media (square photo, 16:9 video), not the whole card:
+    // --pv-carousel-mid is that centre, measured from the top of the carousel
+    const place = () => {
+      const media = track.querySelector('.pv-video__media, img');
+      if (!media) return;
+      const m = media.getBoundingClientRect();
+      c.style.setProperty('--pv-carousel-mid', `${m.top - c.getBoundingClientRect().top + m.height / 2}px`);
+    };
     prev?.addEventListener('click', () => step(-1), { signal });
     next?.addEventListener('click', () => step(1), { signal });
     track.addEventListener('scroll', sync, { passive: true, signal });
     window.addEventListener('resize', sync, { passive: true, signal });
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(place);
+      ro.observe(track);
+      cleanup.push(() => ro.disconnect());
+    } else {
+      window.addEventListener('resize', place, { passive: true, signal });
+    }
     sync();
+    place();
   });
 
   // ---- video facades: poster + play button until clicked
