@@ -1790,7 +1790,7 @@
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-students-title">What Our Students Say</h2>
       </header>
-      <div class="pv-carousel pv-block" data-carousel>
+      <div class="pv-carousel pv-block" data-carousel data-carousel-loop>
         <div class="pv-carousel__track" data-carousel-track tabindex="0" aria-label="Video testimonials">
           <article class="pv-video">
   <div class="pv-video__media">
@@ -2227,6 +2227,7 @@
 //   .pv-reveal                           fades in once on scroll (gated on root.js-ready)
 //   [data-carousel] > [data-carousel-track], [data-carousel-prev], [data-carousel-next]
 //                                        (sets --pv-carousel-mid on the carousel for the arrows)
+//   [data-carousel-loop]                 on [data-carousel]: endless, the last card leads into the first
 //   [data-cookie-banner]                 consent banner; [data-consent="all|necessary"] buttons
 //   [data-consent-open]                  any link that re-opens the banner (footer)
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
@@ -2292,11 +2293,53 @@ function initPage(root) {
     const prev = c.querySelector('[data-carousel-prev]');
     const next = c.querySelector('[data-carousel-next]');
     const step = dir => track.scrollBy({ left: dir * track.clientWidth * 0.85, behavior: 'smooth' });
-    // aria-disabled (not disabled) keeps the buttons focusable at either end
+    // [data-carousel-loop]: a copy of the cards on each side. Once the track comes to rest inside a copy it
+    // jumps one set width back to the matching original, so the last card runs straight into the first.
+    // Copies are hidden from assistive tech and the tab order; they stay clickable (the video facades
+    // below bind to them too). No jump while a playing video is in view, so it isn't scrolled away.
+    const loop = c.hasAttribute('data-carousel-loop') && track.children.length > 1;
+    let recentre = () => {};
+    if (loop) {
+      const items = [...track.children];
+      const copies = () => items.map(el => {
+        const k = el.cloneNode(true);
+        k.setAttribute('aria-hidden', 'true');
+        k.setAttribute('data-carousel-copy', '');
+        k.querySelectorAll('a, button, [tabindex]').forEach(f => { f.tabIndex = -1; });
+        return k;
+      });
+      track.prepend(...copies());
+      track.append(...copies());
+      // teardown runs before every re-init (hydrationDone): drop the copies so they aren't copied again
+      cleanup.push(() => track.querySelectorAll(':scope > [data-carousel-copy]').forEach(k => k.remove()));
+      const n = items.length;
+      const playingInView = () => {
+        const t = track.getBoundingClientRect();
+        return [...track.querySelectorAll('iframe')].some(f => {
+          const r = f.getBoundingClientRect();
+          return r.right > t.left && r.left < t.right;
+        });
+      };
+      recentre = () => {
+        const set = track.children[n].offsetLeft - track.children[0].offsetLeft;
+        if (!set || playingInView()) return;
+        const x = track.scrollLeft;
+        if (x < set - 2) track.scrollTo({ left: x + set, behavior: 'instant' });
+        else if (x >= 2 * set - 2) track.scrollTo({ left: x - set, behavior: 'instant' });
+      };
+      if ('onscrollend' in window) {
+        track.addEventListener('scrollend', recentre, { signal });
+      } else {
+        let t;
+        track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(recentre, 150); }, { passive: true, signal });
+        cleanup.push(() => clearTimeout(t));
+      }
+    }
+    // aria-disabled (not disabled) keeps the buttons focusable at either end; a loop has no ends
     const sync = () => {
       const max = track.scrollWidth - track.clientWidth - 2;
-      prev?.setAttribute('aria-disabled', String(track.scrollLeft <= 2));
-      next?.setAttribute('aria-disabled', String(track.scrollLeft >= max));
+      prev?.setAttribute('aria-disabled', String(!loop && track.scrollLeft <= 2));
+      next?.setAttribute('aria-disabled', String(!loop && track.scrollLeft >= max));
     };
     // prev/next sit beside the cards, centred on the media (square photo, 16:9 video), not the whole card:
     // --pv-carousel-mid is that centre, measured from the top of the carousel
@@ -2310,15 +2353,17 @@ function initPage(root) {
     next?.addEventListener('click', () => step(1), { signal });
     track.addEventListener('scroll', sync, { passive: true, signal });
     window.addEventListener('resize', sync, { passive: true, signal });
+    // recentre on resize too: it also starts a loop on the originals once the track has a width
+    const onResize = () => { place(); recentre(); };
     if ('ResizeObserver' in window) {
-      const ro = new ResizeObserver(place);
+      const ro = new ResizeObserver(onResize);
       ro.observe(track);
       cleanup.push(() => ro.disconnect());
     } else {
-      window.addEventListener('resize', place, { passive: true, signal });
+      window.addEventListener('resize', onResize, { passive: true, signal });
     }
     sync();
-    place();
+    onResize();
   });
   // ---- video facades: poster + play button until clicked
   root.querySelectorAll('[data-video]').forEach(btn => {
