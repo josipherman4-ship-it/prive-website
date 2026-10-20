@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plasma tretmani | Privé Studio Zagreb</title>
-<meta name="description" content="Plasma Pen i hladna plazma u Privé Studiju. Prije svakog tretmana provodimo konzultacije i procjenu kože.">
+<title>Plasma Treatments | Privé Studio Zagreb</title>
+<meta name="description" content="Plasma Fibroblast and Cold Plasma at Privé Studio in Zagreb. Every treatment starts with a consultation and a skin assessment.">
 <link rel="icon" href="images/v4-favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
@@ -511,6 +511,12 @@
 @media (min-width: 1024px){
 #prive-v4-treatments .pv-page-hero--tall{padding-block: 9rem 10rem;}
 }
+#prive-v4-treatments .pv-page-hero--compact{padding-block: 2.5rem 2.25rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-page-hero--compact{padding-block: 3.25rem 3rem;}
+#prive-v4-treatments .pv-page-hero--compact .pv-page-hero__title{font-size: 3.25rem;}
+#prive-v4-treatments .pv-page-hero--compact .pv-page-hero__sub{margin-top: 1rem;}
+}
 @media (max-width: 639px){
 #prive-v4-treatments .pv-page-hero__actions .pv-btn{width: 100%;}
 }
@@ -589,15 +595,9 @@
 #prive-v4-treatments .pv-event__body > .pv-btn{margin-top: 1.75rem;}
 #prive-v4-treatments .pv-note{margin-top: 1.5rem; font-size: .8125rem; color: var(--pv-text-muted);}
 #prive-v4-treatments .pv-region{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
-#prive-v4-treatments .pv-region__map{display: flex; align-items: center; justify-content: center; height: 15rem; padding: 1.5rem; border-bottom: 1px solid var(--pv-line);}
-@media (min-width: 1024px){
-#prive-v4-treatments .pv-region__map{height: 21rem; padding: 2rem;}
-}
-#prive-v4-treatments .pv-region__map svg{width: auto; height: 100%; max-width: 100%; color: var(--pv-navy); opacity: .8;}
+#prive-v4-treatments .pv-region__map{aspect-ratio: 16 / 9; padding: 1rem; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-treatments .pv-region__map svg{display: block; width: 100%; height: 100%; color: var(--pv-navy);}
 #prive-v4-treatments .pv-region__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
-@media (min-width: 1024px){
-#prive-v4-treatments .pv-region__body{padding: 2.5rem 2.75rem 2.75rem;}
-}
 #prive-v4-treatments .pv-region__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
 #prive-v4-treatments .pv-region__title{font-size: 2.25rem;}
@@ -607,6 +607,16 @@
 @media (max-width: 639px){
 #prive-v4-treatments .pv-region__cta,
 #prive-v4-treatments .pv-region__cta .pv-btn{width: 100%;}
+}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-region__body{display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.5rem; align-items: center; padding: 1.75rem 2.25rem;}
+#prive-v4-treatments .pv-region__title,
+#prive-v4-treatments .pv-region__meta{grid-column: 1;}
+#prive-v4-treatments .pv-region__cta{grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 0;}
+}
+#prive-v4-treatments .pv-section--region{padding-top: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-treatments .pv-section--region{padding-top: 3rem;}
 }
 #prive-v4-treatments .pv-btn svg{flex: none; width: .875rem; height: .875rem; transition: transform 320ms var(--pv-spring);}
 #prive-v4-treatments .pv-btn:hover svg{transform: translate(2px, -2px);}
@@ -1405,11 +1415,11 @@
 </head>
 <body>
 <div id="prive-v4-treatments" class="pv-root" data-page="treatments">
-<!-- Treatments (Privé Studio, Zagreb). Ported from v3-studio-tretmani/tretmani.html into the v4 design 2026-10-03.
-     Copy: v3-studio-tretmani/COPY-DECK-HR.md, word for word, in Croatian (Josip). Its hard rules still apply here:
-     no prices, no testimonials, counters or before/afters, no graphics with English captions, no outcome promises.
-     Changes against v3 (Josip): shared v4 nav + footer instead of the Studio wordmark, "Koji je tretman za vas?" removed,
-     "Kako izgleda postupak" turned into the step graphic below. Nav and footer stay English, so only <main> is lang="hr". -->
+<!-- Treatments (Privé Studio, Zagreb), English. v5 2026-10-20 (Josip): translated from the Croatian page, which now lives
+     separately as src/pages/treatments-hr.html (/tretmani, local use, not in the nav). This one is the nav's Treatments link.
+     Translation is section for section from the Croatian copy (v3-studio-tretmani/COPY-DECK-HR.md); keep the two in step.
+     "Plasma Pen" is rendered as "Plasma Fibroblast" here, matching the home page card and the Academy's naming.
+     The copy deck's hard rules still apply: no prices, no testimonials or counters, no outcome promises. -->
 <!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
      data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
@@ -1447,7 +1457,7 @@
 </header>
 
 
-<main id="pv-main" lang="hr">
+<main id="pv-main">
 
   <!-- §1 Hero -->
   <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-studio-title">
@@ -1462,213 +1472,222 @@
 
     <div class="pv-container pv-sales-hero__grid pv-studio-hero__grid">
       <div>
-        <h1 class="pv-sales-hero__title" id="pv-studio-title">Plasma tretmani prilagođeni potrebama vaše kože</h1>
-        <p class="pv-sales-hero__sub">Otkrijte mogućnosti Plasma Pen i hladne plazme. Prije svakog tretmana provodimo konzultacije kako bismo procijenili stanje kože, utvrdili jeste li kandidat i preporučili odgovarajući tretman.</p>
+        <h1 class="pv-sales-hero__title" id="pv-studio-title">Plasma Treatments Tailored To Your Skin</h1>
+        <p class="pv-sales-hero__sub">Discover what Plasma Fibroblast and Cold Plasma can do. Every treatment starts with a consultation, so we can assess your skin, confirm you're a good candidate and recommend the right treatment.</p>
         <div class="pv-page-hero__actions">
-          <a class="pv-btn pv-btn--inverse" href="#pv-konzultacije">Zatražite konzultacije</a>
+          <a class="pv-btn pv-btn--inverse" href="#pv-consultation">Request A Consultation</a>
         </div>
       </div>
       <figure class="pv-studio-hero__media">
-        <img src="images/v4-studio-treatment.jpg" alt="Specijalistica u zaštitnim rukavicama izvodi plasma tretman na licu klijentice" width="537" height="806" fetchpriority="high" decoding="async">
+        <img src="images/v4-studio-treatment.jpg" alt="A specialist in protective gloves performing a plasma treatment on a client's face" width="537" height="806" fetchpriority="high" decoding="async">
       </figure>
     </div>
   </section>
 
   <!-- §2 Two treatments, equal weight: neither is marked as recommended, the recommendation comes after the assessment.
-       In v3 the buttons pre-selected the treatment in the form; a GHL form is an iframe, so they only scroll to it. -->
+       The buttons only scroll to the form: a GHL form is an iframe, so they can't pre-select the treatment. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-areas-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-areas-title">Odaberite područje interesa</h2>
+        <h2 class="pv-h2" id="pv-areas-title">Choose Your Area Of Interest</h2>
       </header>
       <div class="pv-block grid gap-5 md:grid-cols-2 lg:gap-8">
+        <!-- Card photos (v5 2026-10-20, Josip): Plasma Fibroblast takes the Drive macro from the Fibroblast sales page offer stack;
+             Cold Plasma uses a Drive WhatsApp photo. CONFIRM (Sandra): both are Studio clients and consent is on file (claim-rules §4). -->
         <article class="pv-track">
+          <div class="pv-track__media">
+            <img src="images/v4-device-macro.jpg" alt="Close-up of a plasma pen tip under a client's eye, with fresh treatment dots on the skin" width="1600" height="1200" loading="lazy" decoding="async" style="object-position: 50% 50%">
+          </div>
           <svg class="pv-treat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14.8 3.9l5.3 5.3-9.6 9.6-6.3 1 1-6.3 9.6-9.6z" stroke-linejoin="round"/><path d="M13.1 5.6l5.3 5.3M5.2 13.5l5.3 5.3" stroke-linecap="round"/></svg>
-          <h3 class="pv-track__title">Plasma Pen</h3>
-          <p class="pv-track__text">Nekirurški tretman namijenjen zatezanju kože, ublažavanju bora i korekciji određenih kožnih nepravilnosti.</p>
+          <h3 class="pv-track__title">Plasma Fibroblast</h3>
+          <p class="pv-track__text">A non-surgical treatment for tightening the skin, softening wrinkles and correcting certain skin irregularities.</p>
           <div class="pv-treat__areas">
-            <p class="pv-stage__label" id="pv-pen-areas">Može se primjenjivati na</p>
+            <p class="pv-stage__label" id="pv-pen-areas">Can be used on</p>
             <ul class="pv-dash-list" aria-labelledby="pv-pen-areas">
-              <li>gornje i donje kapke</li>
-              <li>bore oko očiju i usana</li>
-              <li>čelo i područje između obrva</li>
-              <li>vrat i dekolte</li>
-              <li>trbuh i druga područja opuštene kože</li>
-              <li>određene kožne izrasline</li>
+              <li>upper and lower eyelids</li>
+              <li>wrinkles around the eyes and lips</li>
+              <li>the forehead and the area between the brows</li>
+              <li>the neck and décolletage</li>
+              <li>the abdomen and other areas of loose skin</li>
+              <li>certain skin growths</li>
             </ul>
           </div>
           <div class="pv-track__cta">
-            <a class="pv-btn pv-btn--secondary" href="#pv-konzultacije">Zanimaju me Plasma Pen tretmani</a>
+            <a class="pv-btn pv-btn--secondary" href="#pv-consultation">I'm Interested In Plasma Fibroblast</a>
           </div>
         </article>
         <article class="pv-track">
+          <div class="pv-track__media">
+            <img src="images/v4-cold-plasma.jpg" alt="Cold Plasma: a specialist's gloved hand holding the device against a client's temple" width="1049" height="1600" loading="lazy" decoding="async" style="object-position: 50% 20%">
+          </div>
           <svg class="pv-treat__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><path d="M12 5.6a6.4 6.4 0 010 12.8M12 2.3a9.7 9.7 0 010 19.4" stroke-linecap="round"/><path d="M12 5.6a6.4 6.4 0 000 12.8M12 2.3a9.7 9.7 0 000 19.4" stroke-linecap="round" opacity=".4"/></svg>
-          <h3 class="pv-track__title">Hladna plazma</h3>
-          <p class="pv-track__text">Neinvazivan tretman koji pomaže poboljšati izgled, ravnotežu i regeneraciju kože bez stvaranja površinskih točkica.</p>
+          <h3 class="pv-track__title">Cold Plasma</h3>
+          <p class="pv-track__text">A non-invasive treatment that helps improve the look, balance and regeneration of the skin, without creating surface dots.</p>
           <div class="pv-treat__areas">
-            <p class="pv-stage__label" id="pv-cold-areas">Preporučuje se kod</p>
+            <p class="pv-stage__label" id="pv-cold-areas">Recommended for</p>
             <ul class="pv-dash-list" aria-labelledby="pv-cold-areas">
-              <li>akni i problematične kože</li>
-              <li>proširenih pora i masne kože</li>
-              <li>pigmentacijskih nepravilnosti</li>
-              <li>dehidrirane i osjetljive kože</li>
-              <li>sitnih bora i slabijeg tonusa</li>
-              <li>potrebe za bržom regeneracijom kože</li>
+              <li>acne and problem skin</li>
+              <li>enlarged pores and oily skin</li>
+              <li>pigmentation irregularities</li>
+              <li>dehydrated and sensitive skin</li>
+              <li>fine lines and loss of firmness</li>
+              <li>skin that needs faster regeneration</li>
             </ul>
           </div>
           <div class="pv-track__cta">
-            <a class="pv-btn pv-btn--secondary" href="#pv-konzultacije">Zanima me hladna plazma</a>
+            <a class="pv-btn pv-btn--secondary" href="#pv-consultation">I'm Interested In Cold Plasma</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- §3b Before/after, eyelids and abdomen (v5 2026-10-06, Josip's review). Both areas are on the Plasma Pen list above.
+  <!-- §3b Before/after, eyelids and abdomen (v5 2026-10-06, Josip's review). Both areas are on the Plasma Fibroblast list above.
        CONFIRM (Sandra): these are academy images; confirm they are Studio clients before the page takes real traffic,
        on top of the consent gate in claim-rules §4. Images carry their own BEFORE/AFTER labels, never cropped. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-studio-results-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-studio-results-title">Prije i poslije</h2>
+        <h2 class="pv-h2" id="pv-studio-results-title">Before And After</h2>
       </header>
       <div class="pv-block grid gap-5 md:grid-cols-2 lg:gap-8">
         <figure class="pv-result">
-          <img src="images/v4-ba-eyelids.jpg" alt="Oba oka prije i poslije Plasma Pen tretmana gornjih kapaka" width="1080" height="1080" loading="lazy" decoding="async">
+          <img src="images/v4-ba-eyelids.jpg" alt="Both eyes before and after a Plasma Fibroblast treatment of the upper eyelids" width="1080" height="1080" loading="lazy" decoding="async">
           <figcaption>
-            <span class="pv-result__area">Gornji kapci</span>
-            <span class="pv-result__stage">Prije i poslije</span>
+            <span class="pv-result__area">Upper eyelids</span>
+            <span class="pv-result__stage">Before and after</span>
           </figcaption>
         </figure>
         <figure class="pv-result">
-          <img src="images/v4-ba-abdomen.jpg" alt="Koža trbuha oko pupka prije tretmana i nakon cijeljenja, s manje naborane teksture" width="1200" height="1200" loading="lazy" decoding="async">
+          <img src="images/v4-ba-abdomen.jpg" alt="Abdomen skin around the navel before treatment and healed, with a less crepey texture" width="1200" height="1200" loading="lazy" decoding="async">
           <figcaption>
-            <span class="pv-result__area">Trbuh</span>
-            <span class="pv-result__stage">Prije i nakon cijeljenja</span>
+            <span class="pv-result__area">Abdomen</span>
+            <span class="pv-result__stage">Before and healed</span>
           </figcaption>
         </figure>
       </div>
-      <p class="pv-caption pv-block">Rezultati Privé tretmana. Rezultati se razlikuju od osobe do osobe, s vremenom slabe i zahtijevaju održavanje.</p>
+      <p class="pv-caption pv-block">Results from Privé treatments. Individual results vary, fade over time and need maintenance.</p>
     </div>
   </section>
 
-  <!-- §4 Kako izgleda postupak, as a step graphic (Josip, 2026-10-03). Same six steps as the copy deck.
-       Step 3 is optional ("po potrebi"), so its node is dashed; the last node is filled because it's where the process lands. -->
+  <!-- §4 How it works, as a step graphic (Josip, 2026-10-03). Same six steps as the copy deck.
+       Step 3 is optional ("if needed"), so its node is dashed; the last node is filled because it's where the process lands. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-process-title">
     <div class="pv-container">
       <header class="pv-section-head">
-        <h2 class="pv-h2" id="pv-process-title">Kako izgleda postupak</h2>
+        <h2 class="pv-h2" id="pv-process-title">How It Works</h2>
       </header>
       <ol class="pv-block pv-flow">
         <li class="pv-flow__step">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 3.5 10 14"/><path d="M20.5 3.5 14 20.5l-4-6.5-6.5-4z"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 1</p>
-            <p class="pv-flow__text">Pošaljete zahtjev za konzultacije.</p>
+            <p class="pv-flow__num">Step 1</p>
+            <p class="pv-flow__text">You send a consultation request.</p>
           </div>
         </li>
         <li class="pv-flow__step">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 2</p>
-            <p class="pv-flow__text">Navedete područje ili problem koji želite tretirati.</p>
+            <p class="pv-flow__num">Step 2</p>
+            <p class="pv-flow__text">You tell us the area or concern you'd like treated.</p>
           </div>
         </li>
         <li class="pv-flow__step pv-flow__step--optional">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5a1.5 1.5 0 0 1 1.5-1.5h2.5l1.5-2.5h6l1.5 2.5H19a1.5 1.5 0 0 1 1.5 1.5v9.5A1.5 1.5 0 0 1 19 19.5H5A1.5 1.5 0 0 1 3.5 18z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 3</p>
-            <p class="pv-flow__text">Po potrebi pošaljete jasne fotografije područja.</p>
+            <p class="pv-flow__num">Step 3</p>
+            <p class="pv-flow__text">If needed, you send clear photos of the area.</p>
           </div>
         </li>
         <li class="pv-flow__step">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 4</p>
-            <p class="pv-flow__text">Procjenjujemo koji je tretman prikladan za vas.</p>
+            <p class="pv-flow__num">Step 4</p>
+            <p class="pv-flow__text">We assess which treatment is right for you.</p>
           </div>
         </li>
         <li class="pv-flow__step">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h9l3.5 3.5v13.5H6z"/><path d="M15 3.5V7h3.5"/><path d="M9 12h6.5M9 15.5h6.5M9 8.5h3"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 5</p>
-            <p class="pv-flow__text">Dobivate preporuku, cijenu i dostupne termine.</p>
+            <p class="pv-flow__num">Step 5</p>
+            <p class="pv-flow__text">You receive a recommendation, the price and available appointments.</p>
           </div>
         </li>
         <li class="pv-flow__step pv-flow__step--final">
           <span class="pv-flow__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="m9 14.8 2.2 2.2 4-4.2"/></svg></span>
           <div class="pv-flow__body">
-            <p class="pv-flow__num">Korak 6</p>
-            <p class="pv-flow__text">Nakon potvrde dogovara se termin tretmana.</p>
+            <p class="pv-flow__num">Step 6</p>
+            <p class="pv-flow__text">Once you confirm, we book your treatment.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- §5 Consultation request: native GHL form (ghl-native/forms.md#treatment-consult), mock until its id is set -->
-  <section class="pv-section pv-surface-navy pv-grain" id="pv-konzultacije" aria-labelledby="pv-consult-title">
+  <!-- §5 Consultation request: native GHL form (ghl-native/forms.md#treatment-consult-en), mock until its id is set -->
+  <section class="pv-section pv-surface-navy pv-grain" id="pv-consultation" aria-labelledby="pv-consult-title">
     <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <header class="pv-section-head lg:col-span-5 pv-sticky">
-        <h2 class="pv-h2" id="pv-consult-title">Zatražite konzultacije</h2>
-        <p class="pv-lead">Ispunite kratki obrazac kako bismo mogli procijeniti vaše potrebe i preporučiti odgovarajući plasma tretman.</p>
+        <h2 class="pv-h2" id="pv-consult-title">Request A Consultation</h2>
+        <p class="pv-lead">Fill in the short form so we can assess your needs and recommend the right plasma treatment.</p>
       </header>
       <div class="lg:col-span-7">
         <div class="pv-form-panel pv-form-panel--white">
-          <!-- DEMO WIRING: static mock of GHL form "V4 Studio Consultation Request (HR)". It does not create a contact. Build the form per ghl-native/forms.md#treatment-consult, put its id in site.config.json, rebuild. -->
-<div class="pv-ghl-form is-mock" data-form="treatmentConsult"><!-- Static stand-in for the GHL "V4 Studio Consultation Request (HR)" form (ghl-native/forms.md#treatment-consult).
-     Fields, order and wording from v3-studio-tretmani/COPY-DECK-HR.md §5. type="button", so it can't pretend to submit.
+          <!-- DEMO WIRING: static mock of GHL form "V4 Studio Consultation Request (EN)". It does not create a contact. Build the form per ghl-native/forms.md#treatment-consult-en, put its id in site.config.json, rebuild. -->
+<div class="pv-ghl-form is-mock" data-form="treatmentConsultEn"><!-- Static stand-in for the GHL "V4 Studio Consultation Request (EN)" form (ghl-native/forms.md#treatment-consult-en).
+     English translation of form-mock-treatmentConsult.html (the Croatian form on treatments-hr); same fields and order.
+     type="button", so it can't pretend to submit.
      Health data: the consent box is required and unticked, and needs Privé Studio's own privacy policy (not the Academy's). -->
-<form class="pv-form" aria-label="Obrazac za konzultacije" novalidate>
+<form class="pv-form" aria-label="Consultation request form" novalidate>
   <div class="pv-form__grid">
     <div class="pv-field">
-      <label for="pv-consult-name">Ime i prezime<span class="pv-field__req" aria-hidden="true">*</span></label>
-      <input id="pv-consult-name" name="ime" type="text" autocomplete="name" required>
+      <label for="pv-consult-name">Full name<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-consult-name" name="name" type="text" autocomplete="name" required>
     </div>
     <div class="pv-field">
-      <label for="pv-consult-phone">Broj telefona<span class="pv-field__req" aria-hidden="true">*</span></label>
-      <input id="pv-consult-phone" name="telefon" type="tel" autocomplete="tel" required>
+      <label for="pv-consult-phone">Phone number<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <input id="pv-consult-phone" name="phone" type="tel" autocomplete="tel" required>
     </div>
     <div class="pv-field pv-field--full">
-      <label for="pv-consult-email">E-mail<span class="pv-field__req" aria-hidden="true">*</span></label>
+      <label for="pv-consult-email">Email<span class="pv-field__req" aria-hidden="true">*</span></label>
       <input id="pv-consult-email" name="email" type="email" autocomplete="email" required>
     </div>
     <fieldset class="pv-field pv-field--full pv-choice">
-      <legend>Tretman koji vas zanima</legend>
+      <legend>Treatment you're interested in</legend>
       <div class="pv-choice__options">
-        <label class="pv-choice__option"><input type="radio" name="tretman" value="plasma-pen"><span>Plasma Pen</span></label>
-        <label class="pv-choice__option"><input type="radio" name="tretman" value="hladna-plazma"><span>Hladna plazma</span></label>
-        <label class="pv-choice__option"><input type="radio" name="tretman" value="nisam-siguran"><span>Nisam siguran/na</span></label>
+        <label class="pv-choice__option"><input type="radio" name="treatment" value="plasma-fibroblast"><span>Plasma Fibroblast</span></label>
+        <label class="pv-choice__option"><input type="radio" name="treatment" value="cold-plasma"><span>Cold Plasma</span></label>
+        <label class="pv-choice__option"><input type="radio" name="treatment" value="not-sure"><span>Not sure</span></label>
       </div>
     </fieldset>
     <div class="pv-field pv-field--full">
-      <label for="pv-consult-area">Područje koje želite tretirati</label>
-      <input id="pv-consult-area" name="podrucje" type="text">
+      <label for="pv-consult-area">Area you'd like treated</label>
+      <input id="pv-consult-area" name="area" type="text">
     </div>
     <div class="pv-field pv-field--full">
-      <label for="pv-consult-desc">Kratak opis problema ili željenog rezultata</label>
-      <textarea id="pv-consult-desc" name="opis" rows="4"></textarea>
+      <label for="pv-consult-desc">A short description of the concern or the result you'd like</label>
+      <textarea id="pv-consult-desc" name="description" rows="4"></textarea>
     </div>
     <div class="pv-field pv-field--full">
-      <label for="pv-consult-photos">Fotografije područja <span class="pv-field__hint">(neobavezno, više datoteka)</span></label>
-      <input id="pv-consult-photos" name="fotografije" type="file" accept="image/*" multiple>
+      <label for="pv-consult-photos">Photos of the area <span class="pv-field__hint">(optional, multiple files)</span></label>
+      <input id="pv-consult-photos" name="photos" type="file" accept="image/*" multiple>
     </div>
     <fieldset class="pv-field pv-field--full pv-choice">
-      <legend>Željeni način kontakta</legend>
+      <legend>Preferred contact method</legend>
       <div class="pv-choice__options">
-        <label class="pv-choice__option"><input type="radio" name="kontakt" value="poziv"><span>Poziv</span></label>
-        <label class="pv-choice__option"><input type="radio" name="kontakt" value="whatsapp"><span>WhatsApp</span></label>
-        <label class="pv-choice__option"><input type="radio" name="kontakt" value="email"><span>E-mail</span></label>
+        <label class="pv-choice__option"><input type="radio" name="contact" value="call"><span>Call</span></label>
+        <label class="pv-choice__option"><input type="radio" name="contact" value="whatsapp"><span>WhatsApp</span></label>
+        <label class="pv-choice__option"><input type="radio" name="contact" value="email"><span>Email</span></label>
       </div>
     </fieldset>
     <label class="pv-field--full pv-consent">
-      <input type="checkbox" name="privola" required>
-      <span>Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam pravila privatnosti: [needs: studioPrivacyUrl]<span class="pv-field__req" aria-hidden="true">*</span></span>
+      <input type="checkbox" name="consent" required>
+      <span>I agree that Privé Studio may process my data and photos to assess and recommend a treatment. I have read the privacy policy: [needs: studioPrivacyUrl]<span class="pv-field__req" aria-hidden="true">*</span></span>
     </label>
   </div>
   <div class="pv-form__foot">
-    <button type="button" class="pv-btn pv-btn--primary">Pošaljite zahtjev</button>
-    <p class="pv-form__note">Fotografije se koriste isključivo za procjenu tretmana.</p>
+    <button type="button" class="pv-btn pv-btn--primary">Send Request</button>
+    <p class="pv-form__note">Photos are used only to assess your treatment.</p>
   </div>
 </form>
 </div>
@@ -1681,10 +1700,10 @@
   <section class="pv-section pv-surface-white pv-cta" aria-labelledby="pv-unsure-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
-        <h2 class="pv-h2" id="pv-unsure-title">Niste sigurni trebate li Plasma&nbsp;Pen ili hladnu plazmu?</h2>
-        <p class="pv-lead">Pošaljite zahtjev za konzultacije. Nakon procjene kože dobit ćete preporuku tretmana, okvirnu cijenu i informacije o postupku.</p>
+        <h2 class="pv-h2" id="pv-unsure-title">Not Sure Whether You Need Plasma&nbsp;Fibroblast Or Cold&nbsp;Plasma?</h2>
+        <p class="pv-lead">Send a consultation request. After a skin assessment, you'll receive a treatment recommendation, an estimated price and information about the procedure.</p>
         <div class="pv-cta__actions">
-          <a class="pv-btn pv-btn--primary" href="#pv-konzultacije">Zatražite konzultacije</a>
+          <a class="pv-btn pv-btn--primary" href="#pv-consultation">Request A Consultation</a>
         </div>
       </div>
     </div>

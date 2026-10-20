@@ -511,6 +511,12 @@
 @media (min-width: 1024px){
 #prive-v4-terms .pv-page-hero--tall{padding-block: 9rem 10rem;}
 }
+#prive-v4-terms .pv-page-hero--compact{padding-block: 2.5rem 2.25rem;}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-page-hero--compact{padding-block: 3.25rem 3rem;}
+#prive-v4-terms .pv-page-hero--compact .pv-page-hero__title{font-size: 3.25rem;}
+#prive-v4-terms .pv-page-hero--compact .pv-page-hero__sub{margin-top: 1rem;}
+}
 @media (max-width: 639px){
 #prive-v4-terms .pv-page-hero__actions .pv-btn{width: 100%;}
 }
@@ -589,15 +595,9 @@
 #prive-v4-terms .pv-event__body > .pv-btn{margin-top: 1.75rem;}
 #prive-v4-terms .pv-note{margin-top: 1.5rem; font-size: .8125rem; color: var(--pv-text-muted);}
 #prive-v4-terms .pv-region{display: flex; flex-direction: column; background: var(--pv-white); border: 1px solid var(--pv-line);}
-#prive-v4-terms .pv-region__map{display: flex; align-items: center; justify-content: center; height: 15rem; padding: 1.5rem; border-bottom: 1px solid var(--pv-line);}
-@media (min-width: 1024px){
-#prive-v4-terms .pv-region__map{height: 21rem; padding: 2rem;}
-}
-#prive-v4-terms .pv-region__map svg{width: auto; height: 100%; max-width: 100%; color: var(--pv-navy); opacity: .8;}
+#prive-v4-terms .pv-region__map{aspect-ratio: 16 / 9; padding: 1rem; border-bottom: 1px solid var(--pv-line);}
+#prive-v4-terms .pv-region__map svg{display: block; width: 100%; height: 100%; color: var(--pv-navy);}
 #prive-v4-terms .pv-region__body{display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.75rem 1.5rem 2rem;}
-@media (min-width: 1024px){
-#prive-v4-terms .pv-region__body{padding: 2.5rem 2.75rem 2.75rem;}
-}
 #prive-v4-terms .pv-region__title{font-family: var(--pv-display); font-weight: 500; font-size: 1.875rem; line-height: 1.1; color: var(--pv-navy);}
 @media (min-width: 1024px){
 #prive-v4-terms .pv-region__title{font-size: 2.25rem;}
@@ -607,6 +607,16 @@
 @media (max-width: 639px){
 #prive-v4-terms .pv-region__cta,
 #prive-v4-terms .pv-region__cta .pv-btn{width: 100%;}
+}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-region__body{display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.5rem; align-items: center; padding: 1.75rem 2.25rem;}
+#prive-v4-terms .pv-region__title,
+#prive-v4-terms .pv-region__meta{grid-column: 1;}
+#prive-v4-terms .pv-region__cta{grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 0;}
+}
+#prive-v4-terms .pv-section--region{padding-top: 2.5rem;}
+@media (min-width: 1024px){
+#prive-v4-terms .pv-section--region{padding-top: 3rem;}
 }
 #prive-v4-terms .pv-btn svg{flex: none; width: .875rem; height: .875rem; transition: transform 320ms var(--pv-spring);}
 #prive-v4-terms .pv-btn:hover svg{transform: translate(2px, -2px);}
@@ -1462,7 +1472,7 @@
   <section class="pv-section pv-surface-white">
     <div class="pv-container">
       <article class="pv-legal" aria-labelledby="pv-legal-title">
-        <p><em>Last updated: 28 September 2026</em></p>
+<p><em>Last updated: 28 September 2026</em></p>
 <p>These Terms and Conditions apply to everything you buy from Privé Academy through this website: online courses, the Privé Professional Kit that comes with them, and any related services. Please read them before you enroll. By completing a purchase you agree to them.</p>
 <h2>1. Who we are</h2>
 <p>The seller depends on the currency you pay in.</p>
