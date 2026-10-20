@@ -691,17 +691,8 @@
 #prive-v4-fibroblast .pv-sales-hero__sub{font-size: 1.1875rem;}
 }
 #prive-v4-fibroblast .pv-sales-hero .pv-checks{max-width: 36rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--pv-on-dark-line); color: rgba(255, 255, 255, .9); animation: pv-rise 900ms var(--pv-out) 260ms both;}
-#prive-v4-fibroblast .pv-sales-hero__grid--photo{grid-template-areas: "copy" "media" "form";}
-#prive-v4-fibroblast .pv-sales-hero__copy{grid-area: copy;}
-#prive-v4-fibroblast .pv-sales-hero__media{grid-area: media; animation: pv-rise 900ms var(--pv-out) 240ms both;}
-#prive-v4-fibroblast .pv-sales-hero__media img{width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 78%;}
-#prive-v4-fibroblast .pv-sales-hero__grid--photo .pv-lead-card{grid-area: form;}
-@media (min-width: 1024px){
-#prive-v4-fibroblast .pv-sales-hero__grid--photo{grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "copy media" "form media"; gap: 3rem 4.5rem; align-items: start;}
-#prive-v4-fibroblast .pv-sales-hero__media{position: sticky; top: 7.5rem;}
-#prive-v4-fibroblast .pv-sales-hero__media img{aspect-ratio: 4 / 5; object-position: 50% 90%;}
-}
 #prive-v4-fibroblast .pv-lead-card{background: var(--pv-white); color: var(--pv-nightrider); --pv-focus: var(--pv-navy); animation: pv-rise 900ms var(--pv-out) 320ms both;}
+#prive-v4-fibroblast .pv-lead-card__media img{width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 61%;}
 #prive-v4-fibroblast .pv-lead-card__form{padding: 1.5rem 1.25rem 1.75rem;}
 @media (min-width: 640px){
 #prive-v4-fibroblast .pv-lead-card__form{padding: 2rem 2rem 2.25rem;}
@@ -717,7 +708,6 @@
 #prive-v4-fibroblast .pv-sales-hero .pv-eyebrow,
 #prive-v4-fibroblast .pv-sales-hero__sub,
 #prive-v4-fibroblast .pv-sales-hero .pv-checks,
-#prive-v4-fibroblast .pv-sales-hero__media,
 #prive-v4-fibroblast .pv-lead-card{animation: none;}
 }
 #prive-v4-fibroblast .pv-stages{display: grid; gap: 3rem;}
@@ -1465,8 +1455,8 @@
     <path class="pv-sphere__dots" d="M872 701h0M484 722h0M269 828h0M215 664h0M686 291h0M799 610h0M865 438h0M596 537h0M278 694h0M803 590h0M687 151h0M801 621h0M513 683h0M168 340h0M895 563h0M420 261h0M396 268h0M823 334h0M553 353h0M523 160h0M819 222h0M174 737h0M207 454h0M338 181h0M558 695h0M277 261h0M721 800h0M260 243h0M127 463h0M419 729h0M177 584h0M114 376h0M907 545h0M425 917h0M742 227h0M638 291h0M906 325h0M945 475h0M794 484h0M359 247h0M310 778h0M666 593h0M633 896h0M66 549h0M103 609h0M828 401h0M624 161h0M699 881h0M437 943h0M129 575h0M373 447h0M835 576h0M195 183h0M566 677h0M939 513h0M795 626h0M472 819h0M198 369h0M451 317h0M359 567h0M321 126h0M109 412h0M645 112h0M319 141h0M299 341h0M317 591h0M598 906h0M481 242h0M845 232h0M307 861h0M479 543h0M299 497h0M111 390h0M602 377h0M393 691h0M459 210h0M91 431h0M621 128h0M385 792h0M265 850h0M872 499h0M93 434h0M817 266h0M510 847h0M251 505h0M832 324h0M804 424h0M768 506h0M354 525h0M567 103h0M401 604h0M604 437h0M469 78h0M367 903h0M753 232h0M530 405h0M635 370h0M666 107h0M489 949h0M844 434h0M572 444h0M873 292h0M86 490h0M744 302h0M543 826h0M96 460h0M542 517h0M365 515h0M539 341h0M188 197h0M937 583h0M799 777h0M847 759h0M898 611h0M879 645h0M674 387h0M457 741h0M555 679h0M379 610h0M778 202h0M628 660h0M257 320h0M758 547h0M507 585h0M828 514h0M462 104h0M889 329h0M450 109h0M699 100h0M854 369h0M633 419h0M185 779h0M196 383h0M715 126h0M476 579h0M740 589h0M589 498h0M584 301h0M530 100h0M165 359h0M851 549h0M597 562h0M763 376h0M309 743h0M795 787h0M726 789h0M347 668h0M697 676h0"/>
   </g>
 </svg>
-    <div class="pv-container pv-sales-hero__grid pv-sales-hero__grid--photo">
-      <div class="pv-sales-hero__copy">
+    <div class="pv-container pv-sales-hero__grid">
+      <div>
         <h1 class="pv-sales-hero__title" id="pv-sales-title">Become a certified Plasma Fibroblast specialist.</h1>
         <p class="pv-sales-hero__sub">With structured online training, a professional device, and ongoing support, from your first module to your first client.</p>
         <ul class="pv-checks">
@@ -1475,10 +1465,10 @@
           <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="10"/><path d="M6.8 11.4l2.8 2.8 5.6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A Privé certificate and a community of 1,000+ students.</span></li>
         </ul>
       </div>
-      <figure class="pv-sales-hero__media">
-        <img src="images/v4-lc-5.jpg" alt="A group of Privé graduates holding their Plasma Fibroblast certificates" width="785" height="1177" fetchpriority="high" decoding="async">
-      </figure>
       <div class="pv-lead-card">
+        <div class="pv-lead-card__media">
+          <img src="images/v4-lc-5.jpg" alt="A group of Privé graduates holding their Plasma Fibroblast certificates" width="785" height="1177" fetchpriority="high" decoding="async">
+        </div>
         <div class="pv-lead-card__form">
 <div class="pv-ghl-form is-mock" data-form="fibroblastLead">
 <form class="pv-form pv-form--stacked" aria-label="Enrollment form" novalidate>
