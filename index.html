@@ -988,6 +988,9 @@
 #prive-v4-home .pv-carousel__nav--prev{left: .75rem;}
 #prive-v4-home .pv-carousel__nav--next{right: .75rem;}
 #prive-v4-home .pv-carousel__nav[aria-disabled="true"]{opacity: 1; color: var(--pv-line-strong);}
+@media (max-width: 767px){
+#prive-v4-home .pv-carousel--swipe .pv-carousel__nav{display: none;}
+}
 @media (min-width: 1360px){
 #prive-v4-home .pv-carousel__nav--prev{left: -4.5rem;}
 #prive-v4-home .pv-carousel__nav--next{right: -4.5rem;}
@@ -1528,7 +1531,7 @@
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-alumni-title">Here's What Our Students Say</h2>
       </header>
-      <div class="pv-carousel pv-block" data-carousel>
+      <div class="pv-carousel pv-carousel--swipe pv-block" data-carousel>
         <div class="pv-carousel__track" data-carousel-track tabindex="0" aria-label="Video testimonials">
           <article class="pv-video">
   <div class="pv-video__media">
