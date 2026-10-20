@@ -8,7 +8,6 @@
 <link rel="icon" href="images/v4-favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 /* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
 :where(#prive-v4-treatments-hr, #prive-v4-treatments-hr *, #prive-v4-treatments-hr *::before, #prive-v4-treatments-hr *::after){box-sizing: border-box; margin: 0; padding: 0;}
 :where(#prive-v4-treatments-hr) ul,
@@ -22,10 +21,8 @@
 :where(#prive-v4-treatments-hr) input,
 :where(#prive-v4-treatments-hr) select,
 :where(#prive-v4-treatments-hr) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
-
 /* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-treatments-hr ---- */
 #prive-v4-treatments-hr,#prive-v4-treatments-hr *,#prive-v4-treatments-hr :after,#prive-v4-treatments-hr :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-treatments-hr .static{position:static}#prive-v4-treatments-hr .fixed{position:fixed}#prive-v4-treatments-hr .grid{display:grid}#prive-v4-treatments-hr .hidden{display:none}#prive-v4-treatments-hr .gap-10{gap:2.5rem}#prive-v4-treatments-hr .gap-5{gap:1.25rem}@media (min-width:768px){#prive-v4-treatments-hr .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){#prive-v4-treatments-hr .lg\:col-span-5{grid-column:span 5/span 5}#prive-v4-treatments-hr .lg\:col-span-7{grid-column:span 7/span 7}#prive-v4-treatments-hr .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}#prive-v4-treatments-hr .lg\:gap-16{gap:4rem}#prive-v4-treatments-hr .lg\:gap-8{gap:2rem}}
-
 /* ---- components (src/styles/components.css) ---- */
 #prive-v4-treatments-hr{--pv-navy: #013559;
   --pv-navy-700: #012842;
@@ -40,18 +37,14 @@
   --pv-on-dark: rgba(255, 255, 255, .8);
   --pv-on-dark-line: rgba(255, 255, 255, .14);
   --pv-focus: var(--pv-navy);
-
   --pv-display: 'Libre Bodoni', Didot, serif;
   --pv-sans: Montserrat, sans-serif;
   --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
   --pv-out: cubic-bezier(.22, 1, .36, 1);
-
-  
   --pv-section-y: 4rem;
   --pv-block-gap: 2.5rem;
   --pv-gutter: 1.5rem;
   --pv-nav-h: 4.5rem;
-
   background-color: var(--pv-white);
   color: var(--pv-nightrider);
   font-family: var(--pv-sans);
@@ -301,7 +294,6 @@
   top: 100%;
   left: 0;
   right: 0;
-  
   height: calc(100vh - var(--pv-nav-h));
   height: calc(100dvh - var(--pv-nav-h));
   overflow-y: auto;
@@ -1409,27 +1401,16 @@
 }
 #prive-v4-treatments-hr .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
 #prive-v4-treatments-hr .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
-
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-treatments-hr" class="pv-root" data-page="treatments-hr">
-<!-- Treatments (Privé Studio, Zagreb). Ported from v3-studio-tretmani/tretmani.html into the v4 design 2026-10-03.
-     Copy: v3-studio-tretmani/COPY-DECK-HR.md, word for word, in Croatian (Josip). Its hard rules still apply here:
-     no prices, no testimonials, counters or before/afters, no graphics with English captions, no outcome promises.
-     Changes against v3 (Josip): shared v4 nav + footer instead of the Studio wordmark, "Koji je tretman za vas?" removed,
-     "Kako izgleda postupak" turned into the step graphic below. Nav and footer stay English, so only <main> is lang="hr".
-     v5 2026-10-20 (Josip): this Croatian version is now a separate local page (/tretmani), not linked from the nav.
-     The nav's Treatments link goes to the English translation, src/pages/treatments.html. Keep the two in step. -->
-<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
-     data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
     <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
-
     <nav class="pv-nav__links" aria-label="Main">
       <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
@@ -1439,12 +1420,10 @@
       <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
       <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
     </nav>
-
     <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
       <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
@@ -1457,11 +1436,7 @@
     </nav>
   </div>
 </header>
-
-
 <main id="pv-main" lang="hr">
-
-  <!-- §1 Hero -->
   <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-studio-title">
     <svg class="pv-burst" viewBox="0 0 1200 600" width="1200" height="600" fill="none" aria-hidden="true" focusable="false">
   <g stroke="#fff" stroke-opacity=".17" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="22 11">
@@ -1471,7 +1446,6 @@
     <line x1="786" y1="560" x2="1060" y2="502"/><line x1="774" y1="523" x2="1029" y2="409"/><line x1="754" y1="488" x2="980" y2="324"/><line x1="727" y1="459" x2="914" y2="251"/><line x1="695" y1="435" x2="835" y2="193"/><line x1="659" y1="419" x2="745" y2="153"/><line x1="620" y1="411" x2="649" y2="133"/><line x1="580" y1="411" x2="551" y2="133"/><line x1="541" y1="419" x2="455" y2="153"/><line x1="505" y1="435" x2="365" y2="193"/><line x1="473" y1="459" x2="286" y2="251"/><line x1="446" y1="488" x2="220" y2="324"/><line x1="426" y1="523" x2="171" y2="409"/><line x1="414" y1="560" x2="140" y2="502"/>
   </g>
 </svg>
-
     <div class="pv-container pv-sales-hero__grid pv-studio-hero__grid">
       <div>
         <h1 class="pv-sales-hero__title" id="pv-studio-title">Plasma tretmani prilagođeni potrebama vaše kože</h1>
@@ -1485,17 +1459,12 @@
       </figure>
     </div>
   </section>
-
-  <!-- §2 Two treatments, equal weight: neither is marked as recommended, the recommendation comes after the assessment.
-       In v3 the buttons pre-selected the treatment in the form; a GHL form is an iframe, so they only scroll to it. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-areas-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-areas-title">Odaberite područje interesa</h2>
       </header>
       <div class="pv-block grid gap-5 md:grid-cols-2 lg:gap-8">
-        <!-- Card photos (v5 2026-10-20, Josip): Plasma Pen takes the Drive macro from the Fibroblast sales page offer stack;
-             Hladna plazma uses a Drive WhatsApp photo. CONFIRM (Sandra): both are Studio clients and consent is on file (claim-rules §4). -->
         <article class="pv-track">
           <div class="pv-track__media">
             <img src="images/v4-device-macro.jpg" alt="Krupni plan vrha plasma pena ispod oka klijentice, sa svježim točkicama tretmana na koži" width="1600" height="1200" loading="lazy" decoding="async" style="object-position: 50% 50%">
@@ -1543,10 +1512,6 @@
       </div>
     </div>
   </section>
-
-  <!-- §3b Before/after, eyelids and abdomen (v5 2026-10-06, Josip's review). Both areas are on the Plasma Pen list above.
-       CONFIRM (Sandra): these are academy images; confirm they are Studio clients before the page takes real traffic,
-       on top of the consent gate in claim-rules §4. Images carry their own BEFORE/AFTER labels, never cropped. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-studio-results-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1571,9 +1536,6 @@
       <p class="pv-caption pv-block">Rezultati Privé tretmana. Rezultati se razlikuju od osobe do osobe, s vremenom slabe i zahtijevaju održavanje.</p>
     </div>
   </section>
-
-  <!-- §4 Kako izgleda postupak, as a step graphic (Josip, 2026-10-03). Same six steps as the copy deck.
-       Step 3 is optional ("po potrebi"), so its node is dashed; the last node is filled because it's where the process lands. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-process-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1625,8 +1587,6 @@
       </ol>
     </div>
   </section>
-
-  <!-- §5 Consultation request: native GHL form (ghl-native/forms.md#treatment-consult), mock until its id is set -->
   <section class="pv-section pv-surface-navy pv-grain" id="pv-konzultacije" aria-labelledby="pv-consult-title">
     <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <header class="pv-section-head lg:col-span-5 pv-sticky">
@@ -1635,10 +1595,7 @@
       </header>
       <div class="lg:col-span-7">
         <div class="pv-form-panel pv-form-panel--white">
-          <!-- DEMO WIRING: static mock of GHL form "V4 Studio Consultation Request (HR)". It does not create a contact. Build the form per ghl-native/forms.md#treatment-consult, put its id in site.config.json, rebuild. -->
-<div class="pv-ghl-form is-mock" data-form="treatmentConsult"><!-- Static stand-in for the GHL "V4 Studio Consultation Request (HR)" form (ghl-native/forms.md#treatment-consult).
-     Fields, order and wording from v3-studio-tretmani/COPY-DECK-HR.md §5. type="button", so it can't pretend to submit.
-     Health data: the consent box is required and unticked, and needs Privé Studio's own privacy policy (not the Academy's). -->
+<div class="pv-ghl-form is-mock" data-form="treatmentConsult">
 <form class="pv-form" aria-label="Obrazac za konzultacije" novalidate>
   <div class="pv-form__grid">
     <div class="pv-field">
@@ -1683,7 +1640,7 @@
     </fieldset>
     <label class="pv-field--full pv-consent">
       <input type="checkbox" name="privola" required>
-      <span>Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam pravila privatnosti: [needs: studioPrivacyUrl]<span class="pv-field__req" aria-hidden="true">*</span></span>
+      <span>Suglasan/na sam da Privé Studio obradi moje podatke i fotografije u svrhu procjene i preporuke tretmana. Pročitao/la sam <a href="studio-privacy-hr.html">pravila privatnosti</a>.<span class="pv-field__req" aria-hidden="true">*</span></span>
     </label>
   </div>
   <div class="pv-form__foot">
@@ -1696,8 +1653,6 @@
       </div>
     </div>
   </section>
-
-  <!-- §6 Closing -->
   <section class="pv-section pv-surface-white pv-cta" aria-labelledby="pv-unsure-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
@@ -1709,10 +1664,7 @@
       </div>
     </div>
   </section>
-
 </main>
-
-<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
@@ -1738,7 +1690,6 @@
         </li>
       </ul>
     </div>
-
     <nav aria-labelledby="pv-footer-explore">
       <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
       <ul class="pv-footer__list">
@@ -1751,7 +1702,6 @@
         <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
-
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
@@ -1759,7 +1709,6 @@
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
-
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
@@ -1769,7 +1718,6 @@
       </ul>
     </div>
   </div>
-
   <div class="pv-footer__bar">
     <div class="pv-container pv-footer__bar-inner">
       <p>&copy; 2026 Privé Academy. All rights reserved.</p>
@@ -1782,9 +1730,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
-     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
 <div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
   <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
   <div class="pv-cookie__actions">
@@ -1792,8 +1737,6 @@
     <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
   </div>
 </div>
-
-
 </div>
 <script>
 (() => {
@@ -1812,13 +1755,10 @@
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
 //                                        youtube-nocookie iframe on click, so nothing
 //                                        from Google loads until the visitor asks
-
 const CONSENT_KEY = 'prive-consent-v1';
-
 function readConsent() {
   try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
 }
-
 // Analytics and ad tags must wait for this. The site-wide GHL head snippet in
 // ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
 function applyConsent(choice) {
@@ -1833,13 +1773,11 @@ function applyConsent(choice) {
   }
   window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
 }
-
 function initPage(root) {
   const controller = new AbortController();
   const { signal } = controller;
   const cleanup = [() => controller.abort()];
   root.classList.add('js-ready');
-
   // ---- nav: scrolled state + mobile menu
   const shell = root.querySelector('[data-nav-shell]');
   if (shell) {
@@ -1859,7 +1797,6 @@ function initPage(root) {
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
   }
-
   // ---- reveal on scroll
   const reveals = root.querySelectorAll('.pv-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
@@ -1871,7 +1808,6 @@ function initPage(root) {
   } else {
     reveals.forEach(el => el.classList.add('is-in'));
   }
-
   // ---- carousels: prev/next scroll the track by one visible width
   root.querySelectorAll('[data-carousel]').forEach(c => {
     const track = c.querySelector('[data-carousel-track]');
@@ -1907,7 +1843,6 @@ function initPage(root) {
     sync();
     place();
   });
-
   // ---- video facades: poster + play button until clicked
   root.querySelectorAll('[data-video]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1924,7 +1859,6 @@ function initPage(root) {
       frame.focus();
     }, { signal });
   });
-
   // ---- cookie consent
   const banner = root.querySelector('[data-cookie-banner]');
   if (banner) {
@@ -1940,10 +1874,8 @@ function initPage(root) {
     }, { signal }));
     root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
   }
-
   return () => cleanup.forEach(fn => fn());
 }
-
   function init() {
     window.__priveV4Cleanup?.();
     const teardowns = ["prive-v4-treatments-hr"]
@@ -1958,6 +1890,5 @@ function initPage(root) {
 })();
 </script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
 </body>
 </html>

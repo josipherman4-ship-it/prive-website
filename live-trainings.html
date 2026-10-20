@@ -8,7 +8,6 @@
 <link rel="icon" href="images/v4-favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 /* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
 :where(#prive-v4-live-trainings, #prive-v4-live-trainings *, #prive-v4-live-trainings *::before, #prive-v4-live-trainings *::after){box-sizing: border-box; margin: 0; padding: 0;}
 :where(#prive-v4-live-trainings) ul,
@@ -22,10 +21,8 @@
 :where(#prive-v4-live-trainings) input,
 :where(#prive-v4-live-trainings) select,
 :where(#prive-v4-live-trainings) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
-
 /* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-live-trainings ---- */
 #prive-v4-live-trainings,#prive-v4-live-trainings *,#prive-v4-live-trainings :after,#prive-v4-live-trainings :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-live-trainings .fixed{position:fixed}#prive-v4-live-trainings .hidden{display:none}
-
 /* ---- components (src/styles/components.css) ---- */
 #prive-v4-live-trainings{--pv-navy: #013559;
   --pv-navy-700: #012842;
@@ -40,18 +37,14 @@
   --pv-on-dark: rgba(255, 255, 255, .8);
   --pv-on-dark-line: rgba(255, 255, 255, .14);
   --pv-focus: var(--pv-navy);
-
   --pv-display: 'Libre Bodoni', Didot, serif;
   --pv-sans: Montserrat, sans-serif;
   --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
   --pv-out: cubic-bezier(.22, 1, .36, 1);
-
-  
   --pv-section-y: 4rem;
   --pv-block-gap: 2.5rem;
   --pv-gutter: 1.5rem;
   --pv-nav-h: 4.5rem;
-
   background-color: var(--pv-white);
   color: var(--pv-nightrider);
   font-family: var(--pv-sans);
@@ -301,7 +294,6 @@
   top: 100%;
   left: 0;
   right: 0;
-  
   height: calc(100vh - var(--pv-nav-h));
   height: calc(100dvh - var(--pv-nav-h));
   overflow-y: auto;
@@ -1409,23 +1401,16 @@
 }
 #prive-v4-live-trainings .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
 #prive-v4-live-trainings .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
-
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-live-trainings" class="pv-root" data-page="live-trainings">
-<!-- Live Trainings. Blueprint: reuse v1-baseline/live-trainings.html as-is. Same three sections and
-     copy, em dashes removed (copy deck §0 change 1), v4 components. Per §10b, "Reserve Your Spot"
-     and "Get In Touch" go to the Contact page. -->
-<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
-     data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
     <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
-
     <nav class="pv-nav__links" aria-label="Main">
       <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
@@ -1435,12 +1420,10 @@
       <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
       <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
     </nav>
-
     <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
       <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
@@ -1453,20 +1436,13 @@
     </nav>
   </div>
 </header>
-
-
 <main id="pv-main">
-
-  <!-- v5 2026-10-13: the Zagreb 15-16 October date was removed earlier today; the Zagreb class is back as a standing,
-       on-request training (Josip: runs indefinitely, scheduled when someone gets in touch). Event card from v4, no fixed
-       date, "Seats Limited" tag dropped (no scarcity on an open-ended class, claim-rules section 1 row 13). -->
   <section class="pv-section pv-surface-white" id="pv-events" aria-labelledby="pv-events-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h1 class="pv-h2" id="pv-events-title">Train With Us In Person</h1>
         <p class="pv-lead">Our Zagreb training runs on request. There are no fixed dates: get in touch and we'll plan your class with you.</p>
       </header>
-
       <div class="pv-block">
         <article class="pv-event">
           <div class="pv-event__media">
@@ -1490,9 +1466,6 @@
       </div>
     </div>
   </section>
-
-  <!-- v5 pt. 4: gallery from the live-training photos. The first is the Drive photo (brand-assets/drive-photos/05_04_2022...);
-       CONFIRM (Sandra): source and the model's consent, same gate as the before/after set (claim-rules section 4). -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-days-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1508,10 +1481,7 @@
       </div>
     </div>
   </section>
-
 </main>
-
-<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
@@ -1537,7 +1507,6 @@
         </li>
       </ul>
     </div>
-
     <nav aria-labelledby="pv-footer-explore">
       <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
       <ul class="pv-footer__list">
@@ -1550,7 +1519,6 @@
         <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
-
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
@@ -1558,7 +1526,6 @@
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
-
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
@@ -1568,7 +1535,6 @@
       </ul>
     </div>
   </div>
-
   <div class="pv-footer__bar">
     <div class="pv-container pv-footer__bar-inner">
       <p>&copy; 2026 Privé Academy. All rights reserved.</p>
@@ -1581,9 +1547,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
-     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
 <div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
   <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
   <div class="pv-cookie__actions">
@@ -1591,8 +1554,6 @@
     <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
   </div>
 </div>
-
-
 </div>
 <script>
 (() => {
@@ -1611,13 +1572,10 @@
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
 //                                        youtube-nocookie iframe on click, so nothing
 //                                        from Google loads until the visitor asks
-
 const CONSENT_KEY = 'prive-consent-v1';
-
 function readConsent() {
   try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
 }
-
 // Analytics and ad tags must wait for this. The site-wide GHL head snippet in
 // ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
 function applyConsent(choice) {
@@ -1632,13 +1590,11 @@ function applyConsent(choice) {
   }
   window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
 }
-
 function initPage(root) {
   const controller = new AbortController();
   const { signal } = controller;
   const cleanup = [() => controller.abort()];
   root.classList.add('js-ready');
-
   // ---- nav: scrolled state + mobile menu
   const shell = root.querySelector('[data-nav-shell]');
   if (shell) {
@@ -1658,7 +1614,6 @@ function initPage(root) {
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
   }
-
   // ---- reveal on scroll
   const reveals = root.querySelectorAll('.pv-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
@@ -1670,7 +1625,6 @@ function initPage(root) {
   } else {
     reveals.forEach(el => el.classList.add('is-in'));
   }
-
   // ---- carousels: prev/next scroll the track by one visible width
   root.querySelectorAll('[data-carousel]').forEach(c => {
     const track = c.querySelector('[data-carousel-track]');
@@ -1706,7 +1660,6 @@ function initPage(root) {
     sync();
     place();
   });
-
   // ---- video facades: poster + play button until clicked
   root.querySelectorAll('[data-video]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1723,7 +1676,6 @@ function initPage(root) {
       frame.focus();
     }, { signal });
   });
-
   // ---- cookie consent
   const banner = root.querySelector('[data-cookie-banner]');
   if (banner) {
@@ -1739,10 +1691,8 @@ function initPage(root) {
     }, { signal }));
     root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
   }
-
   return () => cleanup.forEach(fn => fn());
 }
-
   function init() {
     window.__priveV4Cleanup?.();
     const teardowns = ["prive-v4-live-trainings"]
@@ -1756,6 +1706,5 @@ function initPage(root) {
   document.addEventListener('hydrationDone', init);
 })();
 </script>
-
 </body>
 </html>

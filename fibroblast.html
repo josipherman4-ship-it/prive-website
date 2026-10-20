@@ -8,7 +8,6 @@
 <link rel="icon" href="images/v4-favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 /* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
 :where(#prive-v4-fibroblast, #prive-v4-fibroblast *, #prive-v4-fibroblast *::before, #prive-v4-fibroblast *::after){box-sizing: border-box; margin: 0; padding: 0;}
 :where(#prive-v4-fibroblast) ul,
@@ -22,10 +21,8 @@
 :where(#prive-v4-fibroblast) input,
 :where(#prive-v4-fibroblast) select,
 :where(#prive-v4-fibroblast) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
-
 /* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-fibroblast ---- */
 #prive-v4-fibroblast,#prive-v4-fibroblast *,#prive-v4-fibroblast :after,#prive-v4-fibroblast :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-fibroblast .static{position:static}#prive-v4-fibroblast .fixed{position:fixed}#prive-v4-fibroblast .mx-auto{margin-left:auto;margin-right:auto}#prive-v4-fibroblast .block{display:block}#prive-v4-fibroblast .grid{display:grid}#prive-v4-fibroblast .hidden{display:none}#prive-v4-fibroblast .gap-10{gap:2.5rem}#prive-v4-fibroblast .gap-8{gap:2rem}#prive-v4-fibroblast .text-center{text-align:center}@media (min-width:1024px){#prive-v4-fibroblast .lg\:col-span-4{grid-column:span 4/span 4}#prive-v4-fibroblast .lg\:col-span-8{grid-column:span 8/span 8}#prive-v4-fibroblast .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}#prive-v4-fibroblast .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}#prive-v4-fibroblast .lg\:items-start{align-items:flex-start}#prive-v4-fibroblast .lg\:gap-10{gap:2.5rem}#prive-v4-fibroblast .lg\:gap-16{gap:4rem}}
-
 /* ---- components (src/styles/components.css) ---- */
 #prive-v4-fibroblast{--pv-navy: #013559;
   --pv-navy-700: #012842;
@@ -40,18 +37,14 @@
   --pv-on-dark: rgba(255, 255, 255, .8);
   --pv-on-dark-line: rgba(255, 255, 255, .14);
   --pv-focus: var(--pv-navy);
-
   --pv-display: 'Libre Bodoni', Didot, serif;
   --pv-sans: Montserrat, sans-serif;
   --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
   --pv-out: cubic-bezier(.22, 1, .36, 1);
-
-  
   --pv-section-y: 4rem;
   --pv-block-gap: 2.5rem;
   --pv-gutter: 1.5rem;
   --pv-nav-h: 4.5rem;
-
   background-color: var(--pv-white);
   color: var(--pv-nightrider);
   font-family: var(--pv-sans);
@@ -301,7 +294,6 @@
   top: 100%;
   left: 0;
   right: 0;
-  
   height: calc(100vh - var(--pv-nav-h));
   height: calc(100dvh - var(--pv-nav-h));
   overflow-y: auto;
@@ -1409,24 +1401,16 @@
 }
 #prive-v4-fibroblast .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
 #prive-v4-fibroblast .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
-
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-fibroblast" class="pv-root" data-page="fibroblast">
-<!-- Plasma Fibroblast Certification sales page. Copy: content/sales-page-copy.md sections 1-14, word for word
-     ([B] blueprint, [D] copy-deck draft). The two "Note for Josip" blocks in that file are not page copy.
-     No course price anywhere on this page: it surfaces at checkout only (claim-rules section 1, row 11).
-     Every enroll action links to the checkout step. -->
-<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
-     data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
     <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
-
     <nav class="pv-nav__links" aria-label="Main">
       <a class="pv-nav__link" href="index.html" data-nav="home">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast" aria-current="page">Fibroblast Course</a>
@@ -1436,12 +1420,10 @@
       <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
       <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
     </nav>
-
     <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
       <a class="pv-nav__menu-link" href="index.html" data-nav="home">Home</a>
@@ -1454,15 +1436,8 @@
     </nav>
   </div>
 </header>
-
-
 <main id="pv-main">
-
-  <!-- 1. Hero [B] + lead form [D] -->
-  <!-- v5 2026-10-06: dashed sunburst rays removed from this hero (Josip's review). Grain stays. -->
-  <!-- v5 2026-10-13: plexus sphere background, recreating the old site's hero globe (tools/plexus-sphere.py) -->
   <section class="pv-sales-hero pv-surface-navy pv-grain" aria-labelledby="pv-sales-title">
-    <!-- Generated by tools/plexus-sphere.py, don't edit by hand. -->
 <svg class="pv-sphere" viewBox="0 0 1000 1000" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" focusable="false">
   <g class="pv-sphere__back">
     <path class="pv-sphere__lines" d="M446 571L463 614M446 571L477 661M446 571L371 632M446 571L518 566M463 614L544 666M463 614L477 661M463 614L371 632M463 614L518 566M463 614L564 786M384 308L384 277M384 308L386 266M384 308L395 334M384 308L372 363M384 308L390 335M792 486L817 457M792 486L842 539M792 486L765 489M792 486L715 425M792 486L842 460M834 701L844 626M834 701L776 859M834 701L827 655M834 701L814 703M834 701L827 761M834 701L806 753M377 756L450 808M377 756L318 735M377 756L302 725M377 756L425 804M323 619L290 653M323 619L275 573M323 619L336 559M323 619L351 603M323 619L371 632M323 619L284 602M127 263L126 265M250 830L302 851M250 830L242 753M250 830L270 848M250 830L264 798M250 830L201 814M250 830L197 755M544 666L628 646M544 666L477 661M544 666L583 607M888 718L883 740M888 718L869 733M598 902L633 843M598 902L579 873M598 902L580 924M598 902L566 934M721 878L712 890M230 613L290 653M230 613L275 573M230 613L284 602M230 613L233 669M183 360L185 406M183 360L244 391M183 360L226 414M183 360L142 376M183 360L260 220M183 360L231 388M178 781L201 814M178 781L197 755M844 626L875 537M844 626L827 655M844 626L796 667M844 626L814 703M844 626L910 603M450 808L472 834M450 808L509 808M450 808L425 804M336 884L302 851M336 884L289 864M336 884L270 848M336 884L261 876M336 884L419 909M843 367L891 391M843 367L810 380M843 367L793 333M843 367L801 385M843 367L815 367M843 367L886 386M94 553L124 603M94 553L66 593M94 553L145 525M94 553L65 527M472 834L509 808M472 834L564 786M472 834L425 804M302 851L289 864M302 851L270 848M302 851L261 876M302 851L419 909M624 776L653 749M624 776L608 842M624 776L598 849M624 776L569 770M624 776L564 786M624 776L649 762M776 859L712 890M242 753L264 798M242 753L201 814M242 753L197 755M290 653L318 735M290 653L275 573M290 653L284 602M290 653L233 669M290 653L302 725M814 815L840 774M633 843L579 873M633 843L691 811M633 843L608 842M633 843L598 849M633 843L701 855M602 283L610 437M602 283L556 289M602 283L586 186M602 283L662 375M602 283L636 189M891 391L870 434M891 391L886 386M891 391L892 403M951 473L909 488M318 735L233 669M318 735L302 725M579 873L580 924M579 873L608 842M579 873L598 849M403 73L386 92M610 437L662 375M610 437L715 425M610 437L741 384M875 537L842 539M875 537L909 488M875 537L892 495M875 537L842 460M817 457L801 385M817 457L842 539M817 457L765 489M817 457L842 460M185 406L244 391M185 406L226 414M185 406L142 376M185 406L231 388M185 406L181 492M691 811L653 749M691 811L751 748M691 811L608 842M691 811L701 855M646 153L637 173M646 153L586 186M646 153L636 189M646 153L640 86M646 153L510 159M653 749L569 770M653 749L649 762M883 740L869 733M883 740L840 774M289 864L270 848M289 864L261 876M124 603L66 593M124 603L145 525M124 603L65 527M275 573L284 602M827 655L796 667M827 655L814 703M312 384L264 402M312 384L315 342M312 384L315 393M312 384L372 363M751 748L796 667M751 748L814 703M751 748L806 753M810 380L793 333M810 380L801 385M810 380L815 367M810 380L741 384M386 92L365 76M386 92L347 153M386 92L304 105M580 924L566 934M580 924L531 956M244 391L226 414M244 391L264 402M244 391L231 388M244 391L247 438M608 842L598 849M66 593L65 527M870 434L886 386M870 434L892 403M870 434L909 488M870 434L892 495M870 434L842 460M336 559L351 603M336 559L371 632M336 559L284 602M793 333L801 385M793 333L815 367M793 333L750 241M793 333L730 284M793 333L747 269M628 646L676 657M628 646L583 607M628 646L709 648M628 646L728 586M270 848L264 798M270 848L261 876M801 385L815 367M801 385L741 384M226 414L231 388M226 414L195 510M226 414L247 438M226 414L181 492M691 881L701 855M691 881L712 890M264 402L315 393M264 402L247 438M598 849L564 786M351 603L371 632M351 603L284 602M264 798L197 755M796 667L814 703M796 667L709 648M676 657L583 607M676 657L709 648M676 657L728 586M365 76L347 153M365 76L304 105M142 376L80 335M142 376L126 265M384 277L386 266M384 277L395 334M384 277L390 335M869 733L827 761M869 733L840 774M569 770L509 808M569 770L564 786M569 770L649 762M932 600L910 603M477 661L371 632M477 661L518 566M637 173L586 186M637 173L636 189M637 173L510 159M701 855L712 890M827 761L806 753M827 761L840 774M260 220L205 180M260 220L261 156M260 220L347 153M886 386L892 403M886 386L910 358M201 814L197 755M201 814L161 805M205 180L261 156M205 180L126 265M315 342L315 393M315 342L372 363M315 342L390 335M750 241L730 284M750 241L747 269M750 241L636 189M806 753L840 774M261 156L347 153M261 156L304 105M556 289L586 186M556 289L662 375M556 289L636 189M389 951L419 909M231 388L247 438M583 607L518 566M145 525L195 510M145 525L65 527M145 525L181 492M195 510L247 438M195 510L181 492M842 539L765 489M842 539L842 460M730 284L747 269M730 284L741 384M586 186L636 189M586 186L510 159M765 489L715 425M765 489L728 586M80 335L126 265M662 375L715 425M662 375L741 384M747 269L741 384M509 808L564 786M509 808L425 804M892 403L909 488M892 403L910 358M910 603L902 654M910 603L931 596M386 266L395 334M386 266L390 335M709 648L728 586M315 393L372 363M395 334L372 363M395 334L390 335M909 488L892 495M858 784L840 774M715 425L741 384M372 363L390 335M549 68L640 86M564 786L649 762M636 189L510 159M892 495L842 460M284 602L233 669M233 669L302 725"/>
@@ -1477,10 +1452,8 @@
     <path class="pv-sphere__dots" d="M872 701h0M484 722h0M269 828h0M215 664h0M686 291h0M799 610h0M865 438h0M596 537h0M278 694h0M803 590h0M687 151h0M801 621h0M513 683h0M168 340h0M895 563h0M420 261h0M396 268h0M823 334h0M553 353h0M523 160h0M819 222h0M174 737h0M207 454h0M338 181h0M558 695h0M277 261h0M721 800h0M260 243h0M127 463h0M419 729h0M177 584h0M114 376h0M907 545h0M425 917h0M742 227h0M638 291h0M906 325h0M945 475h0M794 484h0M359 247h0M310 778h0M666 593h0M633 896h0M66 549h0M103 609h0M828 401h0M624 161h0M699 881h0M437 943h0M129 575h0M373 447h0M835 576h0M195 183h0M566 677h0M939 513h0M795 626h0M472 819h0M198 369h0M451 317h0M359 567h0M321 126h0M109 412h0M645 112h0M319 141h0M299 341h0M317 591h0M598 906h0M481 242h0M845 232h0M307 861h0M479 543h0M299 497h0M111 390h0M602 377h0M393 691h0M459 210h0M91 431h0M621 128h0M385 792h0M265 850h0M872 499h0M93 434h0M817 266h0M510 847h0M251 505h0M832 324h0M804 424h0M768 506h0M354 525h0M567 103h0M401 604h0M604 437h0M469 78h0M367 903h0M753 232h0M530 405h0M635 370h0M666 107h0M489 949h0M844 434h0M572 444h0M873 292h0M86 490h0M744 302h0M543 826h0M96 460h0M542 517h0M365 515h0M539 341h0M188 197h0M937 583h0M799 777h0M847 759h0M898 611h0M879 645h0M674 387h0M457 741h0M555 679h0M379 610h0M778 202h0M628 660h0M257 320h0M758 547h0M507 585h0M828 514h0M462 104h0M889 329h0M450 109h0M699 100h0M854 369h0M633 419h0M185 779h0M196 383h0M715 126h0M476 579h0M740 589h0M589 498h0M584 301h0M530 100h0M165 359h0M851 549h0M597 562h0M763 376h0M309 743h0M795 787h0M726 789h0M347 668h0M697 676h0"/>
   </g>
 </svg>
-
     <div class="pv-container pv-sales-hero__grid">
       <div>
-        <!-- v5 2026-10-13: h1 and sub rewritten to Josip's copy; the "pioneered the treatment in Europe" line dropped -->
         <h1 class="pv-sales-hero__title" id="pv-sales-title">Become a certified Plasma Fibroblast specialist.</h1>
         <p class="pv-sales-hero__sub">With structured online training, a professional device, and ongoing support, from your first module to your first client.</p>
         <ul class="pv-checks">
@@ -1494,10 +1467,7 @@
           <img src="images/v4-lc-13.jpg" alt="A professional device held to a client's brow during a Fibroblast treatment" width="785" height="1177" fetchpriority="high" decoding="async">
         </div>
         <div class="pv-lead-card__form">
-          <!-- DEMO WIRING: static mock of GHL form "V4 Fibroblast Enrollment Lead". It does not create a contact. Build the form per ghl-native/forms.md#fibroblast-lead, put its id in site.config.json, rebuild. -->
-<div class="pv-ghl-form is-mock" data-form="fibroblastLead"><!-- Static stand-in for the GHL "V4 Fibroblast Enrollment Lead" form (ghl-native/forms.md#fibroblast-lead).
-     Same fields and order as the spec. type="button", so it can't pretend to submit; the real form
-     redirects to checkout once its id is in site.config.json. -->
+<div class="pv-ghl-form is-mock" data-form="fibroblastLead">
 <form class="pv-form pv-form--stacked" aria-label="Enrollment form" novalidate>
   <div class="pv-form__grid">
     <div class="pv-field pv-field--full">
@@ -1523,17 +1493,12 @@
       </div>
     </div>
   </section>
-
-  <!-- 2. What Is Fibroblast [B], healing caption [D]
-       v5 pt. 4 (2026-10-08): H2 shortened, stage captions to one line, downtime paragraph turned into chips,
-       closing statement block cut (the Device section makes the same point). -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-technique-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-technique-title">How Fibroblast Works</h2>
         <p class="pv-lead">Precise plasma dots stimulate the skin to produce new collagen and elastin, so the treated area visibly tightens over time. No laser, no injectables.</p>
       </header>
-      <!-- Stage graphics: the three skin cross-sections from the live site's "How Fibroblast-Skin Tightening Works?" block (2026-10-03). -->
       <ol class="pv-block pv-stages">
         <li class="pv-stage">
           <img class="pv-stage__img" src="images/v4-skin-stage-1.jpg" alt="Illustration: a precise plasma dot touches the upper layer of the skin, above the collagen fibres and fibroblast cells beneath it" width="1200" height="641" loading="lazy" decoding="async">
@@ -1562,9 +1527,6 @@
       </ol>
     </div>
   </section>
-
-  <!-- 3. What Fibroblast Can Treat (v5 2026-10-13: new, moved up from the old Results section). The before/after carousel is
-       the proof for the areas listed. Healed results only (claim-rules section 4); consent per image still unconfirmed (Sandra). -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-results-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1590,7 +1552,6 @@
     <span class="pv-result__stage">Before, after, healed</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-upper-eyelid.jpg" alt="Close-up of an upper eyelid before and after Plasma Fibroblast, with less hooding over the lash line" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1598,7 +1559,6 @@
     <span class="pv-result__stage">Before and after</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-eyelids.jpg" alt="Front view of both eyes before and after Plasma Fibroblast on the upper eyelids" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1606,7 +1566,6 @@
     <span class="pv-result__stage">Before and after</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-eye-lines.jpg" alt="Close-up of crow's feet before and after Plasma Fibroblast, with visibly softer lines" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1614,7 +1573,6 @@
     <span class="pv-result__stage">Before and after</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-crows-feet.jpg" alt="Deep crow's feet before and after Plasma Fibroblast" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1622,7 +1580,6 @@
     <span class="pv-result__stage">Before and after</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-jawline.jpg" alt="Side profile before and after healing from Plasma Fibroblast on the jawline, showing a firmer jaw contour" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1630,7 +1587,6 @@
     <span class="pv-result__stage">Before and healed</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-lower-face-neck.jpg" alt="Lower face and neck before and after healing from Plasma Fibroblast" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1638,7 +1594,6 @@
     <span class="pv-result__stage">Before and healed</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-upper-lip.jpg" alt="Lines above the upper lip before and after healing from Plasma Fibroblast" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1646,7 +1601,6 @@
     <span class="pv-result__stage">Before and healed</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-forehead.jpg" alt="Forehead before treatment, during healing with carbon crusts, and after, with smoother forehead lines" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1654,7 +1608,6 @@
     <span class="pv-result__stage">Before, during, after</span>
   </figcaption>
 </figure>
-
 <figure class="pv-result">
   <img src="images/v4-ba-abdomen.jpg" alt="Abdomen skin around the navel before and after healing from Plasma Fibroblast, with less crepey texture" width="1200" height="1200" loading="lazy" decoding="async">
   <figcaption>
@@ -1662,9 +1615,7 @@
     <span class="pv-result__stage">Before and healed</span>
   </figcaption>
 </figure>
-
         </div>
-        <!-- v5 2026-10-13: arrows split to either side of the photos, centred on them (was a pair in the foot) -->
         <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--prev" data-carousel-prev aria-label="Previous results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--next" data-carousel-next aria-label="Next results"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="pv-carousel__foot">
@@ -1673,7 +1624,6 @@
       </div>
     </div>
   </section>
-
   <section class="pv-section pv-surface-white" aria-labelledby="pv-premium-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1694,17 +1644,9 @@
           <p class="pv-menu__basis">Illustrative comparison of income per hour and client volume, not a guarantee of earnings. Your results depend on your market, your pricing and how many clients you treat.</p>
         </div>
       </div>
-      <!-- v5 2026-10-13: second lead paragraph moved below the two images, centred (Josip) -->
       <p class="pv-block pv-lead mx-auto text-center">But a treatment is only as good as the practitioner and the equipment behind it. That's why Privé trains you on proper knowledge and technique, using the same professional device we use in our own practice.</p>
     </div>
   </section>
-
-  <!-- 5. What's Included [B] as a graphic offer stack (v5 2026-10-08, Josip's review pt. 3). Product visuals are cropped
-       from the old site's offer banners (brand-assets/site-photos/landing-graphics/offer-stack/), banner text left out.
-       Product names only, no claims about what the aftercare does (claim-rules section 1, row 16). No prices (row 11).
-       v5 2026-10-13 (Josip): moved up above the trainer, copy turned into bullets, six cards in his order. The course card
-       split into course (6+ hours) and demonstrations (4+ hours); kit and After Care merged (one set, #1-#3, as in the
-       blueprint); Training Material card dropped; Soft-Lifting is a regular card now, so the grid stays 3 + 3. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-included-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1712,7 +1654,6 @@
       </header>
       <ul class="pv-block pv-offers">
         <li class="pv-offer">
-          <!-- v5 2026-10-13 (Josip): Samo presenting, a frame from the online course (an exception to removing him from this page); title is the hours -->
           <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-course-theory.jpg" alt="Samo Sambol presenting in front of a lesson screen in the Privé online course" width="1400" height="743" loading="lazy" decoding="async" style="object-position: 35% 50%"></div>
           <div class="pv-offer__body">
             <h3 class="pv-offer__title">6h+ of Training</h3>
@@ -1723,9 +1664,6 @@
           </div>
         </li>
         <li class="pv-offer">
-          <!-- Photo: live-training brow treatment (v5 2026-10-20, Josip; the Drive macro moved to the Treatments Plasma Pen card).
-               CONFIRM (Sandra): source and the client's consent, same gate as the before/after set (claim-rules section 4).
-               "Filmed" kept from the blueprint: the demonstrations are recorded, and the word stops "live" reading as live attendance. -->
           <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-training-practice.jpg" alt="A practitioner treating a model's brow area with a plasma pen during a Privé live training" width="900" height="1200" loading="lazy" decoding="async" style="object-position: 50% 42%"></div>
           <div class="pv-offer__body">
             <h3 class="pv-offer__title">4h+ of Filmed Live Treatment Demonstrations</h3>
@@ -1735,7 +1673,6 @@
           </div>
         </li>
         <li class="pv-offer">
-          <!-- v5 pt. 4: Sandra's photo replaces the camera icon; the onboarding calendar is hers ("Support call with Master Trainer Sandra") -->
           <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-sandra.jpg" alt="Sandra Bijader, Privé Master Trainer" width="1200" height="1200" loading="lazy" decoding="async"></div>
           <div class="pv-offer__body">
             <h3 class="pv-offer__title">1:1 Onboarding Call</h3>
@@ -1747,7 +1684,6 @@
           </div>
         </li>
         <li class="pv-offer">
-          <!-- The shop banner (kit box, device, applicators, pre-treatment cream, beta-glucan mask, After Care #1-#3), cropped to its product group -->
           <div class="pv-offer__media pv-offer__media--photo"><img src="images/v4-shop-banner.jpg" alt="The Privé Professional Kit with the professional device, applicators, pre-treatment cream, a beta-glucan mask and After Care #1, #2 and #3" width="1280" height="512" loading="lazy" decoding="async" style="object-position: 88% 50%"></div>
           <div class="pv-offer__body">
             <h3 class="pv-offer__title">Privé Professional Kit &amp; After&nbsp;Care&nbsp;Set</h3>
@@ -1771,8 +1707,6 @@
           </div>
         </li>
         <li class="pv-offer">
-          <!-- CONFIRM (claim-rules section 5): the certificate artwork carries a small CPD seal; confirm Privé's CPD membership is current before launch.
-               The artwork reads "Certified Fibroblast Specialist", which now matches the regular course's certificate name (confirm with Sandra). -->
           <div class="pv-offer__media"><img src="images/v4-offer-certificate.jpg" alt="A sample Privé Fibroblast Specialist certificate" width="320" height="440" loading="lazy" decoding="async"></div>
           <div class="pv-offer__body">
             <h3 class="pv-offer__title">Fibroblast Specialist Certificate</h3>
@@ -1785,19 +1719,12 @@
       </ul>
     </div>
   </section>
-
-  <!-- 6. Our Trainer [D]. v5 2026-10-13 (Josip): Samo removed from this page; Sandra alone in the single-trainer layout
-       (photo left, bio right). Heading was "The Trainers Behind 1,000+ Privé Specialists": the 1,000+ is academy-wide, not
-       Sandra's alone (COPY-DECK section 0, row 3). On white now, so her alice photo backdrop reads as a panel. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-trainers-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-trainers-title">Meet Your Master Trainer</h2>
       </header>
       <div class="pv-block">
-        <!-- Trainer profile: Sandra Bijader (copy deck §1 Our Trainers). Self-contained so the
-     sales page can place it next to a trainer-samo partial under its own heading.
-     Her photo backdrop is alice (#f0f9ff), so it reads as a cutout on an alice section. -->
 <article class="pv-trainer">
   <div class="pv-trainer__media">
     <img src="images/v4-sandra.jpg" alt="Sandra Bijader, Master Trainer and Developer at Privé Academy" width="1200" height="1200" loading="lazy" decoding="async">
@@ -1805,20 +1732,12 @@
   <div class="pv-trainer__body">
     <h3 class="pv-trainer__name">Sandra Bijader</h3>
     <p class="pv-trainer__role">Master Trainer &amp; Developer</p>
-    <!-- v5 pt. 4: bio cut to about 25 words (Istanbul line dropped).
-         v5 2026-10-11: title and bio rewritten to Josip's copy. -->
     <p class="pv-trainer__bio">With Privé for 10 years. Started as a cosmetician and a permanent-makeup artist and became Privé's top Fibroblast specialist and educator while treating clients every day in her own practice.</p>
   </div>
 </article>
-
       </div>
     </div>
   </section>
-
-  <!-- 7. Curriculum [B], card 1 title and card 3 name [D]. A real sequence, so the cards are numbered.
-       v5 pt. 4 (F3a): a photo on each step, ten bullets down to one line per step, lead shortened.
-       Live-training photos stand in for the online course until Kartra screenshots exist (next pass).
-       v5 2026-10-13: on alice; steps 1 and 2 swapped from lc-19 and lc-6 (both Samo) to lc-17 and lc-12 (Samo removed from this page). -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-mission-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1853,10 +1772,6 @@
       </ol>
     </div>
   </section>
-
-  <!-- 8. Testimonials [D]. Every card shows its format, so none reads as an online-course review. No trust bar here (blueprint).
-       v5 2026-10-13: text reviews removed; all 12 video testimonials in one carousel, same as Home (was 3 videos in a grid).
-       No "Read more testimonials" link here, so the sales page doesn't send buyers away. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-students-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1882,7 +1797,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="v0ReGcDW6Kg" data-video-title="Video testimonial: Heather Freeman" aria-label="Play video testimonial from Heather Freeman">
@@ -1901,7 +1815,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="vat42Ny2Zs4" data-video-title="Video testimonial: Samia Reviera" aria-label="Play video testimonial from Samia Reviera">
@@ -1920,7 +1833,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="FAZOP3cEkuA" data-video-title="Video testimonial: Mick Barr" aria-label="Play video testimonial from Mick Barr">
@@ -1939,7 +1851,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="-g0mN_LxvOY" data-video-title="Video testimonial: Rachel Morris" aria-label="Play video testimonial from Rachel Morris">
@@ -1958,7 +1869,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="MPBp3zrXSjI" data-video-title="Video testimonial: Lenora Frost" aria-label="Play video testimonial from Lenora Frost">
@@ -1977,7 +1887,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="7PBcDqMQksM" data-video-title="Video testimonial: Ana Pascasio" aria-label="Play video testimonial from Ana Pascasio">
@@ -1996,7 +1905,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="P3k5KvaqthQ" data-video-title="Video testimonial: Karen Santos" aria-label="Play video testimonial from Karen Santos">
@@ -2015,7 +1923,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="OrBq4Rhs0c8" data-video-title="Video testimonial: Popi Green" aria-label="Play video testimonial from Popi Green">
@@ -2034,7 +1941,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="8L3a4__CFsk" data-video-title="Video testimonial: Vizela Meier" aria-label="Play video testimonial from Vizela Meier">
@@ -2053,7 +1959,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="vSs5-w3iVdQ" data-video-title="Video testimonial: Roni Evans" aria-label="Play video testimonial from Roni Evans">
@@ -2072,7 +1977,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="gzBggJNvf2U" data-video-title="Video testimonial: Carla Rose" aria-label="Play video testimonial from Carla Rose">
@@ -2091,17 +1995,12 @@
     </p>
   </div>
 </article>
-
         </div>
-        <!-- v5 2026-10-13: arrows split to either side of the videos, centred on them; the foot they sat in is gone -->
         <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--prev" data-carousel-prev aria-label="Previous videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--next" data-carousel-next aria-label="Next videos"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </div>
   </section>
-
-  <!-- 9. CTA. 2026-10-13 (Josip): there is no guarantee, so no guarantee slot or risk-reversal wording.
-       v5 2026-10-13: stays after the testimonials now the offer stack moved up; on alice. -->
   <section class="pv-section pv-surface-alice pv-cta" aria-labelledby="pv-start-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
@@ -2113,23 +2012,17 @@
       </div>
     </div>
   </section>
-
-  <!-- 10. Certification [B]. v5 2026-10-13 (Josip): moved down, just above the FAQ. -->
   <section class="pv-section pv-surface-navy pv-grain" aria-labelledby="pv-cert-title">
     <div class="pv-container pv-split pv-split--media-left">
       <div class="pv-split__text">
         <h2 class="pv-h2" id="pv-cert-title">Certification Is The Beginning, Not The End.</h2>
-        <!-- v5 pt. 4: 77 words down to 38 -->
         <p class="pv-lead">This certificate isn't handed out for finishing a video. It means your trainer has reviewed your practical results and confirmed you're ready for real clients. After graduation, you keep access to your trainers and the Privé community.</p>
       </div>
       <figure class="pv-split__media">
-        <!-- STAND-IN: needs a real graduate-with-certificate photo (Sandra). Samo is in the back row (Josip to decide, 2026-10-13) -->
         <img class="pv-cert-img" src="images/v4-lc-5.jpg" alt="A group of Privé live-training graduates holding their certificates" width="785" height="1177" loading="lazy" decoding="async">
       </figure>
     </div>
   </section>
-
-  <!-- 11. FAQ [B], Q5 and Q7 adjusted per COPY-DECK section 0. v5 2026-10-13: on white; hours match the offer stack (6+ / 4+). -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-enroll-faq-title">
     <div class="pv-container grid gap-10 lg:grid-cols-12 lg:gap-16">
       <header class="pv-section-head pv-sticky lg:col-span-4">
@@ -2147,8 +2040,6 @@
             <p>Who may perform Fibroblast is decided where you work, not by us or any certificate. Confirm your local requirements and your insurer before you treat clients.</p>
           </div>
         </details>
-        <!-- v5 pt. 4: "What makes the device different" and "Who is actually training me" cut. They repeated
-             the Device and Trainers sections. Remaining answers trimmed to about 60 words; claim-rules wording kept. -->
         <details class="pv-faq">
           <summary class="pv-faq__summary">
             <h3 class="pv-faq__q">Isn't Fibroblast just another trend that's going to become oversaturated?</h3>
@@ -2165,7 +2056,6 @@
             <span class="pv-faq__icon" aria-hidden="true"></span>
           </summary>
           <div class="pv-faq__a">
-            <!-- 2026-10-13 (Josip): students practise on an orange first, then a real model once technique is sound -->
             <p>Not if nobody checks your work, and that's the gap this course closes. You see every technique in 6+ hours of training and 4+ hours of filmed treatment demonstrations. You practise on an orange first, then move on to a real model once your technique is sound, with a Master Trainer reviewing your results until they're consistent.</p>
             <p>This is an online course. To train in a room with a trainer, see <a href="live-trainings.html">Live Trainings</a>.</p>
           </div>
@@ -2206,8 +2096,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 12. Final CTA [B]: bookends the hero -->
   <section class="pv-section pv-surface-navy pv-grain pv-cta pv-cta--burst" aria-labelledby="pv-final-title">
     <div class="pv-container">
       <div class="pv-cta__inner">
@@ -2220,7 +2108,6 @@
     <line x1="786" y1="560" x2="1060" y2="502"/><line x1="774" y1="523" x2="1029" y2="409"/><line x1="754" y1="488" x2="980" y2="324"/><line x1="727" y1="459" x2="914" y2="251"/><line x1="695" y1="435" x2="835" y2="193"/><line x1="659" y1="419" x2="745" y2="153"/><line x1="620" y1="411" x2="649" y2="133"/><line x1="580" y1="411" x2="551" y2="133"/><line x1="541" y1="419" x2="455" y2="153"/><line x1="505" y1="435" x2="365" y2="193"/><line x1="473" y1="459" x2="286" y2="251"/><line x1="446" y1="488" x2="220" y2="324"/><line x1="426" y1="523" x2="171" y2="409"/><line x1="414" y1="560" x2="140" y2="502"/>
   </g>
 </svg>
-
           <h2 class="pv-h2" id="pv-final-title">Your First Client Is Closer Than You Think.</h2>
         </div>
         <p class="pv-lead">The training, the device, the support: everything you need is waiting for you at Privé.</p>
@@ -2231,9 +2118,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 13. Cold plasma waitlist strip (v5 2026-10-13): quiet last line before the footer, links to the waitlist page.
-       The hub page that used to carry the Cold Plasma card was retired. -->
   <section class="pv-section pv-surface-alice pv-waitlist-strip" aria-labelledby="pv-cold-strip-title">
     <div class="pv-container pv-waitlist-strip__inner">
       <div>
@@ -2244,10 +2128,7 @@
       <a class="pv-btn pv-btn--secondary" href="cold-plasma.html">Join The Waitlist</a>
     </div>
   </section>
-
 </main>
-
-<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
@@ -2273,7 +2154,6 @@
         </li>
       </ul>
     </div>
-
     <nav aria-labelledby="pv-footer-explore">
       <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
       <ul class="pv-footer__list">
@@ -2286,7 +2166,6 @@
         <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
-
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
@@ -2294,7 +2173,6 @@
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
-
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
@@ -2304,7 +2182,6 @@
       </ul>
     </div>
   </div>
-
   <div class="pv-footer__bar">
     <div class="pv-container pv-footer__bar-inner">
       <p>&copy; 2026 Privé Academy. All rights reserved.</p>
@@ -2317,9 +2194,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
-     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
 <div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
   <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
   <div class="pv-cookie__actions">
@@ -2327,8 +2201,6 @@
     <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
   </div>
 </div>
-
-
 </div>
 <script>
 (() => {
@@ -2347,13 +2219,10 @@
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
 //                                        youtube-nocookie iframe on click, so nothing
 //                                        from Google loads until the visitor asks
-
 const CONSENT_KEY = 'prive-consent-v1';
-
 function readConsent() {
   try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
 }
-
 // Analytics and ad tags must wait for this. The site-wide GHL head snippet in
 // ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
 function applyConsent(choice) {
@@ -2368,13 +2237,11 @@ function applyConsent(choice) {
   }
   window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
 }
-
 function initPage(root) {
   const controller = new AbortController();
   const { signal } = controller;
   const cleanup = [() => controller.abort()];
   root.classList.add('js-ready');
-
   // ---- nav: scrolled state + mobile menu
   const shell = root.querySelector('[data-nav-shell]');
   if (shell) {
@@ -2394,7 +2261,6 @@ function initPage(root) {
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
   }
-
   // ---- reveal on scroll
   const reveals = root.querySelectorAll('.pv-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
@@ -2406,7 +2272,6 @@ function initPage(root) {
   } else {
     reveals.forEach(el => el.classList.add('is-in'));
   }
-
   // ---- carousels: prev/next scroll the track by one visible width
   root.querySelectorAll('[data-carousel]').forEach(c => {
     const track = c.querySelector('[data-carousel-track]');
@@ -2442,7 +2307,6 @@ function initPage(root) {
     sync();
     place();
   });
-
   // ---- video facades: poster + play button until clicked
   root.querySelectorAll('[data-video]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2459,7 +2323,6 @@ function initPage(root) {
       frame.focus();
     }, { signal });
   });
-
   // ---- cookie consent
   const banner = root.querySelector('[data-cookie-banner]');
   if (banner) {
@@ -2475,10 +2338,8 @@ function initPage(root) {
     }, { signal }));
     root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
   }
-
   return () => cleanup.forEach(fn => fn());
 }
-
   function init() {
     window.__priveV4Cleanup?.();
     const teardowns = ["prive-v4-fibroblast"]
@@ -2493,6 +2354,5 @@ function initPage(root) {
 })();
 </script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
 </body>
 </html>

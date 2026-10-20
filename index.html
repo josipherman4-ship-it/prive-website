@@ -8,7 +8,6 @@
 <link rel="icon" href="images/v4-favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 /* ---- scoped reset (zero specificity, always loses to real utilities) ---- */
 :where(#prive-v4-home, #prive-v4-home *, #prive-v4-home *::before, #prive-v4-home *::after){box-sizing: border-box; margin: 0; padding: 0;}
 :where(#prive-v4-home) ul,
@@ -22,10 +21,8 @@
 :where(#prive-v4-home) input,
 :where(#prive-v4-home) select,
 :where(#prive-v4-home) textarea{font: inherit; color: inherit; background: none; border: 0; appearance: none;}
-
 /* ---- Tailwind 3.4.17 utilities, scoped under #prive-v4-home ---- */
 #prive-v4-home,#prive-v4-home *,#prive-v4-home :after,#prive-v4-home :before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }#prive-v4-home .static{position:static}#prive-v4-home .fixed{position:fixed}#prive-v4-home .block{display:block}#prive-v4-home .grid{display:grid}#prive-v4-home .hidden{display:none}#prive-v4-home .gap-12{gap:3rem}#prive-v4-home .gap-5{gap:1.25rem}@media (min-width:768px){#prive-v4-home .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){#prive-v4-home .lg\:col-span-5{grid-column:span 5/span 5}#prive-v4-home .lg\:col-span-7{grid-column:span 7/span 7}#prive-v4-home .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}#prive-v4-home .lg\:gap-16{gap:4rem}#prive-v4-home .lg\:gap-8{gap:2rem}}
-
 /* ---- components (src/styles/components.css) ---- */
 #prive-v4-home{--pv-navy: #013559;
   --pv-navy-700: #012842;
@@ -40,18 +37,14 @@
   --pv-on-dark: rgba(255, 255, 255, .8);
   --pv-on-dark-line: rgba(255, 255, 255, .14);
   --pv-focus: var(--pv-navy);
-
   --pv-display: 'Libre Bodoni', Didot, serif;
   --pv-sans: Montserrat, sans-serif;
   --pv-spring: cubic-bezier(.34, 1.56, .64, 1);
   --pv-out: cubic-bezier(.22, 1, .36, 1);
-
-  
   --pv-section-y: 4rem;
   --pv-block-gap: 2.5rem;
   --pv-gutter: 1.5rem;
   --pv-nav-h: 4.5rem;
-
   background-color: var(--pv-white);
   color: var(--pv-nightrider);
   font-family: var(--pv-sans);
@@ -301,7 +294,6 @@
   top: 100%;
   left: 0;
   right: 0;
-  
   height: calc(100vh - var(--pv-nav-h));
   height: calc(100dvh - var(--pv-nav-h));
   overflow-y: auto;
@@ -1409,22 +1401,16 @@
 }
 #prive-v4-home .pv-waitlist-strip__title{margin-top: .75rem; font-size: 1.5rem; font-weight: 500; line-height: 1.25; color: var(--pv-navy);}
 #prive-v4-home .pv-waitlist-strip__text{max-width: 40rem; margin-top: .5rem; font-size: .9375rem; line-height: 1.7; color: var(--pv-nightrider);}
-
 </style>
 <style>body{margin:0}</style>
 </head>
 <body>
 <div id="prive-v4-home" class="pv-root" data-page="home">
-<!-- Home. Section order and fixed copy: blueprint "Home Page" 1-11. TBD copy: content/COPY-DECK.md §1 (first headline option).
-     Why Trust Us (3) and FAQ (9) removed 2026-10-03 (Sandra's feedback); section numbers below keep the blueprint's. -->
-<!-- Site nav. Sticky, not fixed (SOP Part 3: fixed misbehaves under transformed GHL ancestors).
-     data-nav="<page key>" lets the build mark the current page with aria-current. -->
 <header class="pv-nav" data-nav-shell>
   <div class="pv-container pv-nav__bar">
     <a class="pv-nav__logo" href="index.html" aria-label="Privé Academy, home">
       <img src="images/v4-logo-white.png" alt="" width="500" height="500" decoding="async">
     </a>
-
     <nav class="pv-nav__links" aria-label="Main">
       <a class="pv-nav__link" href="index.html" data-nav="home" aria-current="page">Home</a>
       <a class="pv-nav__link" href="fibroblast.html" data-nav="fibroblast">Fibroblast Course</a>
@@ -1434,12 +1420,10 @@
       <a class="pv-nav__link" href="about.html" data-nav="about">About Us</a>
       <a class="pv-nav__link" href="contact.html" data-nav="contact">Contact</a>
     </nav>
-
     <button type="button" class="pv-nav__toggle" data-menu-toggle aria-expanded="false" aria-controls="pv-nav-menu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="pv-nav__menu" id="pv-nav-menu" data-menu>
     <nav class="pv-container pv-nav__menu-list" aria-label="Main">
       <a class="pv-nav__menu-link" href="index.html" data-nav="home" aria-current="page">Home</a>
@@ -1452,13 +1436,7 @@
     </nav>
   </div>
 </header>
-
-
 <main id="pv-main">
-
-  <!-- 1. Hero (blueprint copy + copy deck change 8: one button, one text link).
-       Banner photo (2026-10-03): a band on top below lg, the right side of the hero from lg.
-       v5 2026-10-06: Josip's sharpened 2560px export replaces the 1280px source that upscaled on wide screens. -->
   <section class="pv-hero pv-grain" aria-labelledby="pv-hero-title">
     <div class="pv-hero__main">
       <div class="pv-hero__media">
@@ -1470,7 +1448,7 @@
           <span class="pv-hero__rule" aria-hidden="true"></span>
           <p class="pv-hero__sub">We train aestheticians and beauty professionals in non-invasive plasma treatments designed for premium skin rejuvenation.</p>
           <div class="pv-hero__actions">
-            <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore Online Certification</a>
+            <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore The Fibroblast Course</a>
             <a class="pv-textlink pv-textlink--inverse" href="live-trainings.html">or see Live Trainings</a>
           </div>
         </div>
@@ -1484,12 +1462,6 @@
       </ul>
     </div>
   </section>
-
-  <!-- 2. How You Train. v5 2026-10-08: replaces What We Teach (Fibroblast vs Cold Plasma) with the two
-       modalities (Josip's review pt. 2). Cold Plasma stays reachable through Online Certification.
-       Navy = enrolling now, white = second option, same encoding as before. Copy reuses existing site claims.
-       v5 pt. 4: a photo on each card, one sentence each, the online card's outcome line cut.
-       v5 2026-10-11: both cards rewritten to Josip's copy; the live card's next-date line cut. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-teach-title">
     <div class="pv-container">
       <header class="pv-section-head">
@@ -1505,7 +1477,7 @@
           <p class="pv-track__text">Master Plasma Fibroblast techniques with expert-led online training, practical demonstrations, and personalized Master Trainer support.</p>
           <p class="pv-track__text">Learn at your own pace. Build your expertise with confidence.</p>
           <div class="pv-track__cta">
-            <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore Online Certification</a>
+            <a class="pv-btn pv-btn--inverse" href="fibroblast.html">Explore The Fibroblast Course</a>
           </div>
         </article>
         <article class="pv-track">
@@ -1516,23 +1488,18 @@
           <h3 class="pv-track__title">Live Trainings</h3>
           <p class="pv-track__text">Elevate your skills through intensive, hands-on training with our experienced Master Trainers. Gain practical experience working on live models, refine your techniques, and build confidence through personalized guidance.</p>
           <div class="pv-track__cta">
-            <a class="pv-btn pv-btn--secondary" href="live-trainings.html">See Upcoming Dates</a>
+            <a class="pv-btn pv-btn--secondary" href="live-trainings.html">See Live Trainings</a>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <!-- 4. Our Trainers. v5 2026-10-06: Samo added next to Sandra, Founder section (7) cut and its story folded into his bio. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-trainers-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-trainers-title">The Trainers Behind 1,000+ Privé Specialists</h2>
       </header>
       <div class="pv-block pv-trainers-pair">
-        <!-- Trainer profile: Samo Sambol (sales page §3, content/sales-page-copy.md). Pairs with trainer-sandra.
-     v5 2026-10-06: bio absorbs the best of the home Founder section, which was cut.
-     The cutout's hard edge disappears on alice, same as Sandra's alice studio backdrop. -->
 <article class="pv-trainer">
   <div class="pv-trainer__media">
     <img src="images/v4-samo.webp" alt="Samo Sambol, CEO and founder of Privé Academy" width="1400" height="1399" loading="lazy" decoding="async">
@@ -1540,16 +1507,9 @@
   <div class="pv-trainer__body">
     <h3 class="pv-trainer__name">Samo Sambol</h3>
     <p class="pv-trainer__role">CEO &amp; Founder</p>
-    <!-- v5 pt. 4: bio cut from 47 to 29 words; the microblading history lives on About.
-         v5 2026-10-11: title and bio rewritten to Josip's copy. "Across the world" widens claim-rules §2 ("European market"); Josip's call.
-         v5 2026-10-13: bio rewritten to Josip's copy ("one of the earliest adopters" replaces "introduced"). Shared by Home and Fibroblast. -->
     <p class="pv-trainer__bio">As Privé's founder and one of the earliest adopters of the Fibroblast method, Samo popularized the treatment across the world and built the academy around teaching Fibroblast the right way.</p>
   </div>
 </article>
-
-        <!-- Trainer profile: Sandra Bijader (copy deck §1 Our Trainers). Self-contained so the
-     sales page can place it next to a trainer-samo partial under its own heading.
-     Her photo backdrop is alice (#f0f9ff), so it reads as a cutout on an alice section. -->
 <article class="pv-trainer">
   <div class="pv-trainer__media">
     <img src="images/v4-sandra.jpg" alt="Sandra Bijader, Master Trainer and Developer at Privé Academy" width="1200" height="1200" loading="lazy" decoding="async">
@@ -1557,24 +1517,17 @@
   <div class="pv-trainer__body">
     <h3 class="pv-trainer__name">Sandra Bijader</h3>
     <p class="pv-trainer__role">Master Trainer &amp; Developer</p>
-    <!-- v5 pt. 4: bio cut to about 25 words (Istanbul line dropped).
-         v5 2026-10-11: title and bio rewritten to Josip's copy. -->
     <p class="pv-trainer__bio">With Privé for 10 years. Started as a cosmetician and a permanent-makeup artist and became Privé's top Fibroblast specialist and educator while treating clients every day in her own practice.</p>
   </div>
 </article>
-
       </div>
     </div>
   </section>
-
-  <!-- 5. Testimonials: all video testimonials in one carousel (click-to-play, copy deck change 9); text reviews removed 2026-10-13.
-       v5 2026-10-08: trust bar (Google rating, 1,000+ trained) removed and headline changed (Josip's review pt. 2). -->
   <section class="pv-section pv-surface-alice" id="pv-testimonials" aria-labelledby="pv-alumni-title">
     <div class="pv-container">
       <header class="pv-section-head">
         <h2 class="pv-h2" id="pv-alumni-title">Here's What Our Students Say</h2>
       </header>
-
       <div class="pv-carousel pv-block" data-carousel>
         <div class="pv-carousel__track" data-carousel-track tabindex="0" aria-label="Video testimonials">
           <article class="pv-video">
@@ -1595,7 +1548,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="v0ReGcDW6Kg" data-video-title="Video testimonial: Heather Freeman" aria-label="Play video testimonial from Heather Freeman">
@@ -1614,7 +1566,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="vat42Ny2Zs4" data-video-title="Video testimonial: Samia Reviera" aria-label="Play video testimonial from Samia Reviera">
@@ -1633,7 +1584,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="FAZOP3cEkuA" data-video-title="Video testimonial: Mick Barr" aria-label="Play video testimonial from Mick Barr">
@@ -1652,7 +1602,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="-g0mN_LxvOY" data-video-title="Video testimonial: Rachel Morris" aria-label="Play video testimonial from Rachel Morris">
@@ -1671,7 +1620,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="MPBp3zrXSjI" data-video-title="Video testimonial: Lenora Frost" aria-label="Play video testimonial from Lenora Frost">
@@ -1690,7 +1638,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="7PBcDqMQksM" data-video-title="Video testimonial: Ana Pascasio" aria-label="Play video testimonial from Ana Pascasio">
@@ -1709,7 +1656,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="P3k5KvaqthQ" data-video-title="Video testimonial: Karen Santos" aria-label="Play video testimonial from Karen Santos">
@@ -1728,7 +1674,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="OrBq4Rhs0c8" data-video-title="Video testimonial: Popi Green" aria-label="Play video testimonial from Popi Green">
@@ -1747,7 +1692,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="8L3a4__CFsk" data-video-title="Video testimonial: Vizela Meier" aria-label="Play video testimonial from Vizela Meier">
@@ -1766,7 +1710,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="vSs5-w3iVdQ" data-video-title="Video testimonial: Roni Evans" aria-label="Play video testimonial from Roni Evans">
@@ -1785,7 +1728,6 @@
     </p>
   </div>
 </article>
-
 <article class="pv-video">
   <div class="pv-video__media">
     <button type="button" class="pv-video__play" data-video="gzBggJNvf2U" data-video-title="Video testimonial: Carla Rose" aria-label="Play video testimonial from Carla Rose">
@@ -1804,9 +1746,7 @@
     </p>
   </div>
 </article>
-
         </div>
-        <!-- v5 2026-10-13: arrows split to either side of the videos, centred on them (were a pair in the foot) -->
         <button type="button" class="pv-icon-btn pv-carousel__nav pv-carousel__nav--prev" data-carousel-prev aria-label="Previous videos">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
         </button>
@@ -1821,10 +1761,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 6. Shop: single brief card. Product banner (2026-10-03) on top below lg, filling the card from lg
-       with the copy in the banner's open left side.
-       v5 2026-10-11: lead rewritten to Josip's copy. -->
   <section class="pv-section pv-surface-white" aria-labelledby="pv-shop-title">
     <div class="pv-container">
       <article class="pv-redirect pv-redirect--banner">
@@ -1839,9 +1775,6 @@
       </article>
     </div>
   </section>
-
-  <!-- 8. Treatments redirect card (same format as Shop, with two healed results)
-       v5 2026-10-11: lead rewritten to Josip's copy. CONFIRM (Sandra): the consultation is free; the Treatments page doesn't say so. -->
   <section class="pv-section pv-surface-alice" aria-labelledby="pv-treat-title">
     <div class="pv-container">
       <article class="pv-redirect pv-redirect--media">
@@ -1864,10 +1797,6 @@
       </article>
     </div>
   </section>
-
-  <!-- 10. Contact Us -->
-  <!-- Contact Us block for Home (copy deck §1 Contact Us). The Contact page uses
-     contact-details + contact-panel directly under its own H1 (copy deck §3). -->
 <section class="pv-section pv-surface-white" id="pv-contact" aria-labelledby="pv-contact-title">
   <div class="pv-container grid gap-12 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
@@ -1875,7 +1804,6 @@
         <h2 class="pv-h2" id="pv-contact-title">Questions Before You Start?</h2>
         <p class="pv-lead">Ask us about the online certification, live trainings or an order. Send a message and we'll reply by email.</p>
       </div>
-      <!-- Contact details (copy deck §1 Contact Us, §3 Contact page): email, US phone, EU phone token, offices. -->
 <dl class="pv-contact-list">
   <div>
     <dt>Email</dt>
@@ -1894,15 +1822,10 @@
     <dd>Ljubljana, Slovenia<br>Newark, NJ, USA</dd>
   </div>
 </dl>
-
     </div>
     <div class="lg:col-span-7">
-      <!-- The contact form on its alice panel. Real GHL form once forms.contact.id is set; the static mock until then. -->
 <div class="pv-form-panel">
-  <!-- DEMO WIRING: static mock of GHL form "V4 Contact Form". It does not create a contact. Build the form per ghl-native/forms.md#contact, put its id in site.config.json, rebuild. -->
-<div class="pv-ghl-form is-mock" data-form="contact"><!-- Static stand-in for the GHL "V4 Contact Form" (ghl-native/forms.md#contact).
-     Same fields, order and styling as the spec. The button is type="button", so it
-     can't pretend to submit. The build swaps this for the real iframe once the form id is set. -->
+<div class="pv-ghl-form is-mock" data-form="contact">
 <form class="pv-form" aria-label="Contact form" novalidate>
   <div class="pv-form__grid">
     <div class="pv-field">
@@ -1945,16 +1868,10 @@
 </form>
 </div>
 </div>
-
     </div>
   </div>
 </section>
-
-
 </main>
-
-<!-- 11. Footer -->
-<!-- Site footer: blueprint Home §11 (4 columns + copyright bar) and Legal Pages (footer link row). -->
 <footer class="pv-footer">
   <div class="pv-container pv-footer__grid">
     <div>
@@ -1980,7 +1897,6 @@
         </li>
       </ul>
     </div>
-
     <nav aria-labelledby="pv-footer-explore">
       <p class="pv-footer__head" id="pv-footer-explore">Explore</p>
       <ul class="pv-footer__list">
@@ -1993,7 +1909,6 @@
         <li><a class="pv-footer__link" href="contact.html" data-nav="contact">Contact</a></li>
       </ul>
     </nav>
-
     <div role="group" aria-labelledby="pv-footer-offices">
       <p class="pv-footer__head" id="pv-footer-offices">Offices</p>
       <ul class="pv-footer__list">
@@ -2001,7 +1916,6 @@
         <li><address><span class="pv-footer__label">United States</span>One Gateway Center<br>Newark, NJ 07102</address></li>
       </ul>
     </div>
-
     <div role="group" aria-labelledby="pv-footer-contact">
       <p class="pv-footer__head" id="pv-footer-contact">Contact</p>
       <ul class="pv-footer__list">
@@ -2011,7 +1925,6 @@
       </ul>
     </div>
   </div>
-
   <div class="pv-footer__bar">
     <div class="pv-container pv-footer__bar-inner">
       <p>&copy; 2026 Privé Academy. All rights reserved.</p>
@@ -2024,9 +1937,6 @@
     </div>
   </div>
 </footer>
-
-<!-- Cookie consent (copy deck §12). site.js shows it until a choice is stored and
-     re-opens it from any [data-consent-open]. Both buttons carry equal weight. -->
 <div class="pv-cookie" data-cookie-banner hidden role="region" aria-label="Cookie consent">
   <p>We use necessary cookies to run this site. With your permission, we'd also use analytics and marketing cookies to understand how the site is used and to measure our ads. <a href="cookies.html">Cookie Policy</a></p>
   <div class="pv-cookie__actions">
@@ -2034,8 +1944,6 @@
     <button type="button" class="pv-btn pv-btn--consent" data-consent="necessary">Necessary Only</button>
   </div>
 </div>
-
-
 </div>
 <script>
 (() => {
@@ -2054,13 +1962,10 @@
 //   [data-video="<YouTube id>"]          click-to-play facade: swaps itself for a
 //                                        youtube-nocookie iframe on click, so nothing
 //                                        from Google loads until the visitor asks
-
 const CONSENT_KEY = 'prive-consent-v1';
-
 function readConsent() {
   try { return JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch { return null; }
 }
-
 // Analytics and ad tags must wait for this. The site-wide GHL head snippet in
 // ghl-native/tracking-consent.md listens for the event and for window.priveConsent.
 function applyConsent(choice) {
@@ -2075,13 +1980,11 @@ function applyConsent(choice) {
   }
   window.dispatchEvent(new CustomEvent('prive:consent', { detail: choice }));
 }
-
 function initPage(root) {
   const controller = new AbortController();
   const { signal } = controller;
   const cleanup = [() => controller.abort()];
   root.classList.add('js-ready');
-
   // ---- nav: scrolled state + mobile menu
   const shell = root.querySelector('[data-nav-shell]');
   if (shell) {
@@ -2101,7 +2004,6 @@ function initPage(root) {
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false), { signal }));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); }, { signal });
   }
-
   // ---- reveal on scroll
   const reveals = root.querySelectorAll('.pv-reveal');
   if ('IntersectionObserver' in window && reveals.length) {
@@ -2113,7 +2015,6 @@ function initPage(root) {
   } else {
     reveals.forEach(el => el.classList.add('is-in'));
   }
-
   // ---- carousels: prev/next scroll the track by one visible width
   root.querySelectorAll('[data-carousel]').forEach(c => {
     const track = c.querySelector('[data-carousel-track]');
@@ -2149,7 +2050,6 @@ function initPage(root) {
     sync();
     place();
   });
-
   // ---- video facades: poster + play button until clicked
   root.querySelectorAll('[data-video]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2166,7 +2066,6 @@ function initPage(root) {
       frame.focus();
     }, { signal });
   });
-
   // ---- cookie consent
   const banner = root.querySelector('[data-cookie-banner]');
   if (banner) {
@@ -2182,10 +2081,8 @@ function initPage(root) {
     }, { signal }));
     root.querySelectorAll('[data-consent-open]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(true); }, { signal }));
   }
-
   return () => cleanup.forEach(fn => fn());
 }
-
   function init() {
     window.__priveV4Cleanup?.();
     const teardowns = ["prive-v4-home"]
@@ -2200,6 +2097,5 @@ function initPage(root) {
 })();
 </script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-
 </body>
 </html>
